@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "identifier": "local.schachtrainer.desktop",
   "build": {
-    "beforeBuildCommand": "npm run engine && npm run build",
+    "beforeBuildCommand": "npm run engine && npm run maia && npm run build",
     "frontendDist": "../dist"
   },
   "app": {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { syncConfig } from './boardSync.ts'
 import { computed, onMounted, onBeforeUnmount, ref, watch, nextTick } from 'vue'
 import { Chessground } from '@lichess-org/chessground'
 import type { Api } from '@lichess-org/chessground/api'
@@ -36,7 +37,7 @@ const props = defineProps<{
   /** Shakes the board frame once when it turns true (wrong answer). */
   wobble?: boolean
   /** An open exercise is on the board: the layers that would give the answer away stay off until it is solved. */
-  layerLock?: boolean
+  layerLock?: boolean | 'all'
 }>()
 const emit = defineEmits<{ move: [uci: string] }>()
 
@@ -97,11 +98,12 @@ function config() {
   }
 }
 
-function resync() { api?.set(config()) }
+let syncedFen: string | null = null
+function resync() { api?.set(syncConfig(config(), syncedFen)); syncedFen = props.fen }
 
 // ----- optional layers (hanging pieces, counts, control, threats, reach of a piece), all off by default -----
-const active = computed(() => activeLayers(layerSettings.value, !!props.layerLock))
-watch(() => props.layerLock, (v) => { layersLocked.value = !!v }, { immediate: true })
+const active = computed(() => activeLayers(layerSettings.value, props.layerLock ?? false))
+watch(() => props.layerLock, (v) => { layersLocked.value = v ?? false }, { immediate: true })
 onBeforeUnmount(() => { layersLocked.value = false })
 const hovered = ref<string | null>(null)
 const pinned = ref<string | null>(null)
@@ -174,7 +176,7 @@ function cancelPromotion() {
   resync()
 }
 
-onMounted(() => { api = Chessground(el.value!, config()) })
+onMounted(() => { api = Chessground(el.value!, config()); syncedFen = props.fen })
 onBeforeUnmount(() => api?.destroy())
 watch(() => [props.fen, props.orientation, props.movable, props.arrows, props.lastMove, props.highlight, props.shapes, threats.value, tintShapes.value], resync, { deep: true })
 </script>

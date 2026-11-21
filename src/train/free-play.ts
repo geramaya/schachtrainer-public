@@ -40,7 +40,7 @@ export function pickOpening(b: ContentBundle, ucis: string[], startFen: string, 
 }
 
 /** Help the player asked for during the game (hints = piece marked, bests = best move shown, repertoire = planned repertoire move shown). */
-export interface Helps { hints: number; bests: number; repertoire: number }
+export interface Helps { hints: number; bests: number; repertoire: number; /** the engine field was switched on in a teacher game */ engine?: number }
 /** How many moves of the game are book moves: the longest stay in the repertoire tree among the own openings; null without opening data. */
 export function bookPliesOf(b: ContentBundle | null, ucis: string[], startFen: string, ov: OpeningOverlays, side: Side): number | null {
   if (!b) return null
@@ -52,7 +52,7 @@ export function bookPliesOf(b: ContentBundle | null, ucis: string[], startFen: s
   return best
 }
 
-export type EndReason = 'matt' | 'patt' | 'wiederholung' | '50-zuege' | 'material' | 'aufgabe' | 'remis' | 'abbruch'
+export type EndReason = 'matt' | 'patt' | 'wiederholung' | '50-zuege' | 'material' | 'aufgabe' | 'remis' | 'zeit' | 'abbruch'
 export interface Outcome { winner: Side | null; reason: EndReason }
 
 /** Everything needed to save a finished game later (PGN: start position, moves, result, date, strength, teacher). */
@@ -70,9 +70,17 @@ export interface GameRecord {
   teacher: FigurId | null
   ownSide: Side
   helps: Helps
+  /** PGN TimeControl ("180+2"), absent without a clock */
+  timeControl?: string
+  /** the clock was stopped by the teacher during the game */
+  learning?: boolean
+  /** played without a teacher: a Wertungspartie, no helps */
+  rated?: boolean
+  /** absent = Stockfish; with Maia `elo` is the Maia level */
+  opponent?: 'maia'
 }
 
-export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outcome; date: Date; elo: number; teacher: FigurId | null; ownSide: Side; helps: Helps }): GameRecord {
+export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outcome; date: Date; elo: number; teacher: FigurId | null; ownSide: Side; helps: Helps; timeControl?: string; learning?: boolean; rated?: boolean; opponent?: 'maia' }): GameRecord {
   let fen = o.startFen
   const sans = o.ucis.map((u) => {
     const r = applyUci(fen, u)!
@@ -80,5 +88,5 @@ export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outco
     return r.san
   })
   const result = o.outcome.reason === 'abbruch' ? '*' : o.outcome.winner === null ? '1/2-1/2' : o.outcome.winner === 'white' ? '1-0' : '0-1'
-  return { startFen: o.startFen, ucis: [...o.ucis], sans, result, reason: o.outcome.reason, date: o.date.toISOString(), elo: o.elo, teacher: o.teacher, ownSide: o.ownSide, helps: { ...o.helps } }
+  return { startFen: o.startFen, ucis: [...o.ucis], sans, result, reason: o.outcome.reason, date: o.date.toISOString(), elo: o.elo, teacher: o.teacher, ownSide: o.ownSide, helps: { ...o.helps }, ...(o.timeControl ? { timeControl: o.timeControl } : {}), ...(o.learning ? { learning: true } : {}), ...(o.rated ? { rated: true } : {}), ...(o.opponent ? { opponent: o.opponent } : {}) }
 }

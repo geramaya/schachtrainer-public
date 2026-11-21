@@ -9,7 +9,7 @@ test('image chain: the feeling, then neutral of the same figure; neutral alone h
 })
 
 test('teacher setting: default on with Jonas; stored value survives export/import; garbage falls back', () => {
-  assert.deepEqual(teacherOf({}), { on: true, figur: 'mann', quips: false, speak: false })
+  assert.deepEqual(teacherOf({}), { on: true, figur: 'mann', quips: false, speak: false, hold: 'blunder', explain: 'both' })
   assert.deepEqual(parseTeacher({ on: false, figur: 'fuchs' }), { on: false, figur: 'fuchs' })
   assert.deepEqual(parseTeacher({ on: 'ja', figur: 'drache' }), {})
   const p = emptyProgress()
@@ -19,10 +19,21 @@ test('teacher setting: default on with Jonas; stored value survives export/impor
 })
 
 test('quip settings: off by default, stored and imported, garbage dropped', () => {
-  assert.deepEqual(teacherOf({ teacher: { quips: true } }), { on: true, figur: 'mann', quips: true, speak: false })
+  assert.deepEqual(teacherOf({ teacher: { quips: true } }), { on: true, figur: 'mann', quips: true, speak: false, hold: 'blunder', explain: 'both' })
   assert.deepEqual(parseTeacher({ quips: true, speak: true }), { quips: true, speak: true })
   assert.deepEqual(parseTeacher({ quips: 'ja', speak: 1 }), {})
   const p = emptyProgress()
   p.settings = { ...p.settings, teacher: { quips: true, speak: true } }
   assert.deepEqual(importProgress(exportProgress(p)).settings.teacher, { quips: true, speak: true })
+})
+
+test('every teacher has a short tone line (from docs/design/lehrer-sprueche.md) for the pick cards', () => {
+  assert.deepEqual(FIGUREN.map((f) => f.ton), ['kumpelhaft, locker', 'trocken, präzise', 'altväterlich, gutmütig', 'frech, verschlagen'])
+})
+
+test('"Besseren Zug erklären": default after Fehler + Patzer, validated', () => {
+  assert.equal(teacherOf({}).explain, 'both')
+  assert.equal(teacherOf({ teacher: { explain: 'button' } }).explain, 'button')
+  assert.deepEqual(parseTeacher({ explain: 'blunder' }), { explain: 'blunder' })
+  assert.deepEqual(parseTeacher({ explain: true }), {})
 })

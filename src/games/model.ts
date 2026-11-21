@@ -5,6 +5,7 @@ import type { GameAnalysis } from '../analysis/build.ts'
 import type { EcoEntry } from '../openings/eco.ts'
 import { resultFor } from './identity.ts'
 import { hash } from '../teacher/blocks.ts'
+import type { Category } from '../train/rating.ts'
 
 export type GameResult = '1-0' | '0-1' | '1/2-1/2' | '*'
 export type Severity = 'ungenau' | 'fehler' | 'patzer'
@@ -52,6 +53,8 @@ export interface StoredGame {
   review: StoredReview | null
   /** full engine analysis (move signs, evaluations), computed once; null until the game was analysed */
   analysis: GameAnalysis | null
+  /** own training rating of a Wertungspartie (Elo per time category): before, after and the change of this game; absent for other games */
+  rating?: { category: Category; before: number; after: number; delta: number }
   /** own notes of the player per move (ply = 0-based index of the move) */
   notes: Record<number, string>
   /** comments that came with an imported file ("Fremdkommentar"), read-only */
@@ -102,14 +105,25 @@ export const resultLabel = (g: Pick<StoredGame, 'result' | 'ownSide'> & { reason
 
 export const ME = 'Ich'
 export const ENGINE = 'Stockfish'
+export const MAIA_NAME = 'Maia 2'
+/** Name of the Maia-2 opponent in a stored game and in the PGN: "Maia 2 (1500)". */
+export const maiaName = (elo: number): string => `${MAIA_NAME} (${elo})`
+export type Opponent = 'stockfish' | 'maia'
+/** Which kind of opponent an own game was played against: Maia by the name of the side that is not the player (it survives the PGN round trip). */
+export function opponentOf(g: Pick<StoredGame, 'white' | 'black' | 'ownSide'>): Opponent {
+  if (!g.ownSide) return 'stockfish'
+  const name = g.ownSide === 'white' ? g.black : g.white
+  return name.startsWith(`${MAIA_NAME} (`) ? 'maia' : 'stockfish'
+}
 
 export function storedFromRecord(r: GameRecord, extra: { source: 'sparring' | 'free'; opening: string | null; retractions: StoredGame['retractions']; review: StoredReview | null; analysis?: GameAnalysis | null; eco?: string | null; repertoire?: string | null; detected?: EcoEntry | null; enriched?: boolean; playerName?: string }): StoredGame {
   const me = extra.playerName?.trim() || ME
-  const white = r.ownSide === 'white' ? me : ENGINE
-  const black = r.ownSide === 'white' ? ENGINE : me
+  const opponent = r.opponent === 'maia' ? maiaName(r.elo) : ENGINE
+  const white = r.ownSide === 'white' ? me : opponent
+  const black = r.ownSide === 'white' ? opponent : me
   return {
     id: newId(), key: gameKey(r.startFen, r.ucis, r.date, white, black), source: extra.source, startFen: r.startFen, ucis: r.ucis, sans: r.sans,
     result: r.result, reason: r.reason, date: r.date, white, black, ownSide: r.ownSide, elo: r.elo, teacher: r.teacher, helps: r.helps,
-    opening: extra.opening, eco: extra.eco ?? null, repertoire: extra.repertoire ?? null, detected: extra.detected ?? null, enriched: extra.enriched ?? false, meta: emptyMeta(), retractions: extra.retractions, review: extra.review, analysis: extra.analysis ?? null, notes: {}, comments: {},
+    opening: extra.opening, eco: extra.eco ?? null, repertoire: extra.repertoire ?? null, detected: extra.detected ?? null, enriched: extra.enriched ?? false, meta: { ...emptyMeta(), timeControl: r.timeControl ?? null, event: r.learning ? 'Lernpartie' : r.rated ? 'Wertungspartie' : null }, retractions: extra.retractions, review: extra.review, analysis: extra.analysis ?? null, notes: {}, comments: {},
   }
 }

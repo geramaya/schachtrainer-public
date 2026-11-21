@@ -1,6 +1,6 @@
-export interface EngineSettings { enabled: boolean; multipv: number; depth: number }
+export interface EngineSettings { enabled: boolean; multipv: number; depth: number; /** evaluation bar */ showBar: boolean; /** variations and arrows */ showLines: boolean; /** also while Stockfish thinks in a game */ whileThinking: boolean }
 
-export const DEFAULT_SETTINGS: EngineSettings = { enabled: true, multipv: 3, depth: 22 }
+export const DEFAULT_SETTINGS: EngineSettings = { enabled: true, multipv: 3, depth: 22, showBar: true, showLines: true, whileThinking: false }
 export const MULTIPV_RANGE = { min: 1, max: 5 }
 export const DEPTH_RANGE = { min: 10, max: 30 }
 
@@ -18,6 +18,9 @@ export function parseSettings(raw: unknown): EngineSettings {
     enabled: typeof o.enabled === 'boolean' ? o.enabled : DEFAULT_SETTINGS.enabled,
     multipv: clampInt(o.multipv, MULTIPV_RANGE.min, MULTIPV_RANGE.max, DEFAULT_SETTINGS.multipv),
     depth: clampInt(o.depth, DEPTH_RANGE.min, DEPTH_RANGE.max, DEFAULT_SETTINGS.depth),
+    showBar: typeof o.showBar === 'boolean' ? o.showBar : DEFAULT_SETTINGS.showBar,
+    showLines: typeof o.showLines === 'boolean' ? o.showLines : DEFAULT_SETTINGS.showLines,
+    whileThinking: typeof o.whileThinking === 'boolean' ? o.whileThinking : DEFAULT_SETTINGS.whileThinking,
   }
 }
 

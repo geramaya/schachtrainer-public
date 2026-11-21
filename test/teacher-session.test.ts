@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { canKeep, undoHeld } from '../src/teacher/session.ts'
+import { adoptBest, canKeep, undoHeld } from '../src/teacher/session.ts'
 import type { Held } from '../src/teacher/session.ts'
 import { cardsFromErrors } from '../src/train/review.ts'
 import type { ReviewError } from '../src/train/review.ts'
@@ -37,4 +37,13 @@ test('retracted and kept mistakes are trained independently, whichever is clicke
   const existing = Object.fromEntries(first.map((c) => [cardKey(c.openingId!, c.key), c]))
   const second = cardsFromErrors([...retracted, ...kept], 'v1', 'scotch', 'c1', existing)
   assert.deepEqual(second.map((c) => c.key), [positionKey(afterE4.fen())])
+})
+
+test('adopt best: the held move is taken back for the training and the engine best move is played instead', () => {
+  const r = adoptBest(held, ['a2a3'], 'play')!
+  assert.deepEqual(r.ucis, ['e2e4'])
+  assert.equal(r.error.uci, 'a2a3')
+  assert.equal(r.error.ply, 0)
+  assert.equal(adoptBest(held, ['a2a3'], 'over'), null)
+  assert.equal(adoptBest(null, [], 'play'), null)
 })

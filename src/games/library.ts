@@ -1,5 +1,7 @@
+import { replayRatings } from '../train/rating.ts'
+import type { RatedGame } from '../train/rating.ts'
 import type { Side } from '../content/types.ts'
-import { gameKey, newId } from './model.ts'
+import { gameKey, newId, opponentOf } from './model.ts'
 import type { GameResult, StoredGame, StoredReview } from './model.ts'
 import { parseGame, splitGames, toPgn } from './pgn.ts'
 import type { GameAnalysis } from '../analysis/build.ts'
@@ -148,7 +150,7 @@ export async function importGames(store: GameStore, text: string, o: ImportOptio
 
 export const exportPgn = (games: StoredGame[]): string => games.map(toPgn).join('\n\n') + '\n'
 
-export interface GameFilter { text?: string; result?: GameResult | 'abgebrochen'; side?: Side }
+export interface GameFilter { text?: string; result?: GameResult | 'abgebrochen'; side?: Side; /** only games with a stored analysis */ analysed?: boolean }
 
 /** Completes the opening data of games that lack it and writes them back in one batch; a failing write is not fatal (it is tried again next time). */
 export async function enrichAll(store: GameStore, games: StoredGame[], table: EcoTable): Promise<StoredGame[]> {
@@ -163,7 +165,47 @@ export function filterGames(games: StoredGame[], f: GameFilter, me?: PlayerSetti
   const q = f.text?.trim().toLowerCase()
   return games.filter((g) => {
     if (f.result === 'abgebrochen' ? !(g.result === '*' && g.reason === 'abbruch') : f.result === '*' ? !(g.result === '*' && g.reason !== 'abbruch') : f.result && g.result !== f.result) return false
+    if (f.analysed && !g.analysis) return false
     if (f.side && (me ? sideOfPlayer(g, me) : g.ownSide) !== f.side) return false
     return !q || [g.opening, g.eco, g.repertoire, g.white, g.black, g.teacher, g.meta?.event, g.meta?.site, g.date.slice(0, 10), g.meta?.dateText].some((v) => v?.toLowerCase().includes(q))
   })
+}
+
+/** Small marks of a game in the list: has a stored analysis, was played with the clock stopped by the teacher, time control ("3+2"; unknown forms as they are). */
+export function badgesOf(g: Pick<StoredGame, 'analysis' | 'meta'>): { analysed: boolean; learning: boolean; rated: boolean; timeControl: string | null } {
+  const raw = g.meta?.timeControl ?? null
+  const m = raw?.match(/^(\d+)\+(\d+)$/)
+  const timeControl = m && Number(m[1]) % 60 === 0 ? `${Number(m[1]) / 60}+${m[2]}` : raw
+  return { analysed: !!g.analysis, learning: g.meta?.event === 'Lernpartie', rated: g.meta?.event === 'Wertungspartie', timeControl }
+}
+
+/** What the rating needs of a stored game. */
+export function ratedGameOf(g: StoredGame): RatedGame {
+  return { id: g.id, date: g.date, plies: g.ucis.length, ownSide: g.ownSide, elo: g.elo, result: g.result, reason: g.reason, event: g.meta?.event ?? null, timeControl: g.meta?.timeControl ?? null, opponent: opponentOf(g) }
+}
+
+/** The rating change of `game` if it is the newest of `games` (undefined if it does not count). */
+export function ratingOf(games: StoredGame[], game: StoredGame): StoredGame['rating'] {
+  const e = replayRatings([...games.filter((g) => g.id !== game.id), game].map(ratedGameOf), opponentOf(game)).entries.find((x) => x.id === game.id)
+  return e ? { category: e.category, before: e.before, after: e.after, delta: e.delta } : undefined
+}
+
+/**
+ * Fills `rating` of the Wertungspartien that lack it (or have an outdated one), chronologically. The change only adds a field; before anything is
+ * written `keepBackup` gets the previous versions of the games that change. Returns the number of changed games; a second run changes nothing.
+ */
+export async function backfillRatings(store: GameStore, keepBackup: (previous: StoredGame[]) => void): Promise<number> {
+  const games = await store.all()
+  const rated = games.map(ratedGameOf)
+  const entries = [...replayRatings(rated, 'stockfish').entries, ...replayRatings(rated, 'maia').entries]
+  const byId = new Map(entries.map((e) => [e.id, e]))
+  const changed = games.filter((g) => {
+    const e = byId.get(g.id)
+    const r = g.rating
+    return e ? !r || r.category !== e.category || r.before !== e.before || r.after !== e.after || r.delta !== e.delta : false
+  })
+  if (!changed.length) return 0
+  keepBackup(changed)
+  await store.putMany(changed.map((g) => { const e = byId.get(g.id)!; return { ...g, rating: { category: e.category, before: e.before, after: e.after, delta: e.delta } } }))
+  return changed.length
 }

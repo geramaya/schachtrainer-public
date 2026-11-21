@@ -6,6 +6,7 @@ import LayerMenu from './LayerMenu.vue'
 import { persistWidths, resetWidth, setWidth, viewportHeight, viewportWidth, widths } from './layoutState.ts'
 
 /** Page layout A: coach left, board with controls in the middle, engine and moves right; the side columns are resizable. */
+defineProps<{ /** the teacher holds the game: the board gets a frame in the colour of the verdict */ heldSeverity?: 'fehler' | 'patzer' | null }>()
 const onResize = () => { viewportWidth.value = window.innerWidth; viewportHeight.value = window.innerHeight }
 onMounted(() => { onResize(); window.addEventListener('resize', onResize) })
 onBeforeUnmount(() => window.removeEventListener('resize', onResize))
@@ -32,7 +33,7 @@ const SIDES: { side: SplitSide; label: string }[] = [{ side: 'left', label: 'Bre
 </script>
 
 <template>
-  <div class="lay" :class="{ bars: $slots.top || $slots.bottom }" :style="{ '--side-l': widths.left + 'px', '--side-r': widths.right + 'px' }">
+  <div class="lay" :class="{ bars: $slots.top || $slots.bottom, holdslot: $slots.hold }" :style="{ '--side-l': widths.left + 'px', '--side-r': widths.right + 'px' }">
     <div class="col left"><slot name="left" /></div>
     <div
       class="grip" role="separator" aria-orientation="vertical" tabindex="0" :aria-label="SIDES[0]!.label + ' (Pfeiltasten, Doppelklick = Standard)'"
@@ -42,7 +43,8 @@ const SIDES: { side: SplitSide; label: string }[] = [{ side: 'left', label: 'Bre
     <div class="center">
       <div class="stack">
         <div v-if="$slots.top" class="bar"><slot name="top" /></div>
-        <div class="boardwrap"><slot name="board" /></div>
+        <div class="boardwrap" :class="{ held: heldSeverity }" :data-held="heldSeverity || undefined"><slot name="board" /></div>
+        <div v-if="$slots.hold" class="holdrow"><slot name="hold" /></div>
         <div v-if="$slots.bottom" class="bar"><slot name="bottom" /></div>
         <div v-if="$slots.controls" class="ctl"><slot name="controls" /><LayerMenu /></div>
       </div>

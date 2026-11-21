@@ -9,7 +9,7 @@ import type { FigurId } from '../teacher/avatar.ts'
  * and the two quip switches as small icons (sayings, read aloud; the latter only where audio exists).
  */
 /** `on` stays undefined when the view has no switch (Vue would otherwise turn an absent boolean into false). */
-const props = withDefaults(defineProps<{ figur: FigurId; name: string; quips: boolean; speak: boolean; audio: boolean; on?: boolean; lockFigur?: boolean }>(), { on: undefined, lockFigur: false })
+const props = withDefaults(defineProps<{ figur: FigurId; name: string; quips: boolean; speak: boolean; audio: boolean; on?: boolean; lockFigur?: boolean; /** no avatar button: the pick cards show the teachers */ noPick?: boolean }>(), { on: undefined, lockFigur: false, noPick: false })
 const emit = defineEmits<{ figur: [FigurId]; on: [boolean]; quips: [boolean]; speak: [boolean] }>()
 
 const open = ref(false)
@@ -22,9 +22,9 @@ function choose(id: FigurId) { open.value = false; if (id !== props.figur) emit(
 
 <template>
   <div ref="root" class="thead" @keydown.escape="open = false">
-    <div class="pickwrap">
+    <div v-if="!noPick" class="pickwrap">
       <button type="button" class="avbtn" :disabled="lockFigur" aria-haspopup="menu" :aria-expanded="open" :title="lockFigur ? name : 'Lehrer wählen'" @click="open = !open">
-        <TeacherAvatar :figur="figur" gefuehl="neutral" :size="30" />
+        <TeacherAvatar :figur="figur" gefuehl="neutral" :size="lockFigur ? 44 : 30" />
         <span class="nm">{{ name }}</span>
         <span v-if="!lockFigur" class="car" aria-hidden="true">▾</span>
       </button>

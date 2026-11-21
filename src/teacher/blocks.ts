@@ -45,6 +45,14 @@ export const LABEL: Record<Rating, string> = { best: 'Bester Zug', excellent: 'E
 /** The same symbols as the analysis (category.ts). */
 export const SYMBOL: Record<Rating, string> = { best: '★', excellent: '✓✓', gut: '✓', ungenau: '?!', fehler: '?', patzer: '??' }
 
+/** Tooltip of the verdict badge: what the category means for this move (loss in pawn units against the best move). */
+export function badgeTip(r: Rating, lossCp: number): string {
+  if (r === 'best') return 'Der beste Zug der Engine.'
+  if (r === 'excellent' || r === 'gut') return 'Fast so gut wie der beste Zug.'
+  const x = (lossCp / 100).toFixed(1).replace('.', ',')
+  return `${LABEL[r]}: ${lossCp < 5 ? 'kostet kaum etwas' : `verliert etwa ${x} Bauerneinheiten`} gegenüber dem besten Zug.`
+}
+
 export const BOOK_NOTES = {
   treffer: (san: string) => [`Repertoirezug ✓ (${san}).`, `Das ist dein Repertoirezug: ${san} ✓.`],
   /** Never names the planned move: it is shown only on request ("Repertoirezug zeigen"). */

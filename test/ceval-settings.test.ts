@@ -8,21 +8,21 @@ function memStorage(initial: Record<string, string> = {}) {
 }
 
 test('parseSettings: defaults are enabled, 3 lines, depth 22', () => {
-  assert.deepEqual(DEFAULT_SETTINGS, { enabled: true, multipv: 3, depth: 22 })
+  assert.deepEqual(DEFAULT_SETTINGS, { enabled: true, multipv: 3, depth: 22, showBar: true, showLines: true, whileThinking: false })
   assert.deepEqual(parseSettings(undefined), DEFAULT_SETTINGS)
 })
 
 test('parseSettings clamps lines to 1-5 and depth to 10-30, drops wrong types', () => {
-  assert.deepEqual(parseSettings({ enabled: false, multipv: 9, depth: 99 }), { enabled: false, multipv: 5, depth: 30 })
-  assert.deepEqual(parseSettings({ multipv: 0, depth: 2 }), { enabled: true, multipv: 1, depth: 10 })
+  assert.deepEqual(parseSettings({ enabled: false, multipv: 9, depth: 99 }), { ...DEFAULT_SETTINGS, enabled: false, multipv: 5, depth: 30 })
+  assert.deepEqual(parseSettings({ multipv: 0, depth: 2 }), { ...DEFAULT_SETTINGS, multipv: 1, depth: 10 })
   assert.deepEqual(parseSettings({ enabled: 'yes', multipv: 'x', depth: null }), DEFAULT_SETTINGS)
   assert.deepEqual(parseSettings({ multipv: 2.7 }), { ...DEFAULT_SETTINGS, multipv: 3 })
 })
 
 test('save then load round-trips through storage', () => {
   const s = memStorage()
-  saveSettings({ enabled: false, multipv: 2, depth: 18 }, s)
-  assert.deepEqual(loadSettings(s), { enabled: false, multipv: 2, depth: 18 })
+  saveSettings({ ...DEFAULT_SETTINGS, enabled: false, multipv: 2, depth: 18 }, s)
+  assert.deepEqual(loadSettings(s), { ...DEFAULT_SETTINGS, enabled: false, multipv: 2, depth: 18 })
 })
 
 test('loadSettings survives missing storage, broken JSON and throwing storage', () => {
@@ -40,4 +40,9 @@ test('engineAccess: a lock beats the switch; off beats on; busy waits', () => {
   assert.equal(engineAccess(false, 'task'), 'locked')
   assert.equal(engineAccess(true, 'busy'), 'busy')
   assert.equal(engineAccess(false, 'busy'), 'off')
+})
+
+test('parseSettings: bar, lines and "auch während Stockfish denkt" are stored booleans with defaults', () => {
+  assert.deepEqual(parseSettings({ showBar: false, showLines: false, whileThinking: true }), { ...DEFAULT_SETTINGS, showBar: false, showLines: false, whileThinking: true })
+  assert.deepEqual(parseSettings({ showBar: 'no', whileThinking: 1 }), DEFAULT_SETTINGS)
 })

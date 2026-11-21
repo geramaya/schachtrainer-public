@@ -11,9 +11,11 @@ import { parsePlayer } from '../games/identity.ts'
 import type { PlayerSettings } from '../games/identity.ts'
 import { parseLastCourse, parseVisit } from './visit.ts'
 import type { LastCourse, Visit } from './visit.ts'
+import { parseOpponent } from '../maia/settings.ts'
+import type { OpponentSettings } from '../maia/settings.ts'
 
 /** cards: by card id (opening id + position key); a card without openingId is a legacy one that migrateProgress assigns once the bundle is known. days: cards answered per local calendar day (streak); understood: ids of correctly answered questions; applied: variations played in sparring. */
-export interface Progress { schema: 1; cards: Record<string, Card>; overlays: OpeningOverlays; feedback: Feedback; days: Record<string, number>; understood: string[]; applied: string[]; settings: { sparringElo: number; teacher?: Partial<TeacherSettings>; player?: Partial<PlayerSettings>; visit?: Visit; lastCourse?: LastCourse } & CoachSettings }
+export interface Progress { schema: 1; cards: Record<string, Card>; overlays: OpeningOverlays; feedback: Feedback; days: Record<string, number>; understood: string[]; applied: string[]; settings: { sparringElo: number; teacher?: Partial<TeacherSettings>; player?: Partial<PlayerSettings>; visit?: Visit; lastCourse?: LastCourse } & CoachSettings & Partial<OpponentSettings> }
 
 export const KEY = 'schachtrainer-v1'
 export const LEGACY_FEEDBACK_KEY = 'schachtrainer-feedback-v1'
@@ -44,7 +46,8 @@ export function importProgress(json: string): Progress {
   const player = isRecord(data.settings) ? parsePlayer(data.settings.player) : {}
   const visit = isRecord(data.settings) ? parseVisit(data.settings.visit) : undefined
   const lastCourse = isRecord(data.settings) ? parseLastCourse(data.settings.lastCourse) : undefined
-  const withMode = { ...settings, ...(Object.keys(coachMode).length ? { coachMode } : {}), ...(Object.keys(player).length ? { player } : {}), ...(visit ? { visit } : {}), ...(lastCourse ? { lastCourse } : {}) }
+  const opponent = isRecord(data.settings) ? parseOpponent(data.settings) : {}
+  const withMode = { ...settings, ...opponent, ...(Object.keys(coachMode).length ? { coachMode } : {}), ...(Object.keys(player).length ? { player } : {}), ...(visit ? { visit } : {}), ...(lastCourse ? { lastCourse } : {}) }
   return { schema: 1, cards: data.cards as Record<string, Card>, overlays, feedback: parseFeedback(JSON.stringify(data.feedback ?? {})), days: parseDays(data.days), understood: strings(data.understood), applied: strings(data.applied), settings: Object.keys(teacher).length ? { ...withMode, teacher } : withMode }
 }
 
