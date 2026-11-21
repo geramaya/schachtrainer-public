@@ -27,7 +27,6 @@ npm run engine    # copies the Stockfish WASM build to public/engine/
 npm run dev       # http://localhost:5173
 ```
 
-Agency preview: `node projekte/vorschau/bin/vorschau.mjs start schachtrainer` (port 4322, tunnel 7005).
 
 ## Check
 
@@ -77,14 +76,15 @@ A Tauri 2 shell (Linux `.deb`, Windows NSIS installer) is built by the GitHub Ac
 
 ## Web version (GitHub Pages)
 
-The source stays private; only the build folder is published to the public repo `geramaya/schachtrainer-play`
-(https://geramaya.github.io/schachtrainer-play/), audio included. The workflow `.github/workflows/pages.yml`
-(manual dispatch or `v*` tag) builds with `VITE_BASE=/schachtrainer-play/`, replaces the content of that repo and
-pushes to `main`. Needed once (by the owner): the public repo with Pages on `main`, and its write deploy key as
-secret `SCHACHTRAINER_PLAY_DEPLOY_KEY` here. Local check with a base path:
+Playable at https://geramaya.github.io/schachtrainer-play/ (audio included). The workflow
+`.github/workflows/mirror.yml` of the development repo runs on every push to `main` or `release`: it exports a cleaned
+copy of the sources (`tools/mirror-public.sh`, aborts if internal terms are found) into the same branch of
+`geramaya/schachtrainer-public`. On `release` it then builds exactly that public state with
+`VITE_BASE=/schachtrainer-play/` and replaces the content of `geramaya/schachtrainer-play` (deploy keys as secrets
+`SCHACHTRAINER_PUBLIC_DEPLOY_KEY` and `SCHACHTRAINER_PLAY_DEPLOY_KEY`). Local check with a base path:
 `VITE_BASE=/schachtrainer-play/ npm run build && npx vite preview --base /schachtrainer-play/`.
 All asset paths go through `publicUrl()` (`src/ui/assetBase.ts`); the default base `/` keeps dev, preview and the
-desktop app unchanged. Licence and third-party notice are copied into the play repo (`.github/pages/NOTICE.md`).
+desktop app unchanged. Licence and third-party notice (`NOTICE.md`) are copied into the play repo.
 
 ## Sounds
 
