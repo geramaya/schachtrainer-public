@@ -1,0 +1,41 @@
+{
+  "name": "schachtrainer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "test": "node --test test/",
+    "typecheck": "tsc --noEmit",
+    "engine": "node tools/copy-engine.ts",
+    "content": "node tools/build-content.ts",
+    "eco": "node tools/build-eco.ts",
+    "audio:texts": "node tools/export-audio-texts.ts",
+    "audio:lehrer": "bash tools/gen-lehrer-audio.sh",
+    "audio:test": "python3 -m unittest test/test_gen_audio.py"
+  },
+  "dependencies": {
+    "@lichess-org/chessground": "10.5.0",
+    "chess.js": "1.4.0",
+    "stockfish": "19.0.1",
+    "vue": "3.5.45"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "@types/node": "26.6.6",
+    "@vitejs/plugin-vue": "6.0.10",
+    "typescript": "5.9.3",
+    "vite": "8.3.6",
+    "vue-tsc": "3.3.14"
+  },
+  "overrides": {
+    "@babel/helper-string-parser": "7.29.13",
+    "@babel/parser": "7.29.13",
+    "@babel/types": "7.29.11",
+    "@rolldown/pluginutils": "1.0.1",
+    "csstype": "3.2.3",
+    "postcss": "8.5.32",
+    "rolldown": "1.2.16",
+    "source-map-js": "1.2.2"
+  }
+}

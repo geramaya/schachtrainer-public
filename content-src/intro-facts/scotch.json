@@ -1,0 +1,10368 @@
+{
+ "schema": 1,
+ "openingId": "scotch",
+ "dokument": [
+  {
+   "z": 63,
+   "text": "**Main Backend: Die Schottische Partie (Scotch Game)**"
+  },
+  {
+   "z": 64,
+   "text": "- Code: 1. e4 e5 2. Sf3 Sc6 3. d4!"
+  },
+  {
+   "z": 65,
+   "text": "- Die Logik: Wir fragen nicht um Erlaubnis, wir öffnen das Zentrum sofort."
+  },
+  {
+   "z": 66,
+   "text": "- Der Vorteil: Bestraft passives Spiel gnadenlos. Klare, offene Linien für die Figuren."
+  },
+  {
+   "z": 67,
+   "text": "- Scalability: Enterprise Grade (Stabil bis 2000+ Elo)."
+  },
+  {
+   "z": 139,
+   "text": "**1. Der „Schock-Modus“: Schottisches Gambit**"
+  },
+  {
+   "z": 140,
+   "text": "- Züge: 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4"
+  },
+  {
+   "z": 141,
+   "text": "- Charakter: Maximaler Straßenkampf ab Sekunde zwei."
+  },
+  {
+   "z": 142,
+   "text": "- Warum: Es reißt das Zentrum sofort auf und überfordert unvorbereitete Spieler durch hohen taktischen Druck."
+  },
+  {
+   "z": 143,
+   "text": "- Jarvis-Memo: Achtung vor „Wissenden“, die den Angriff durch Züge wie ...Nf6 und ...d5 oder ...Ne6 neutralisieren können."
+  },
+  {
+   "z": 144,
+   "text": "  Nur spielen, wenn man bereit für eine taktische Achterbahnfahrt ist."
+  }
+ ],
+ "varianten": {
+  "scotch-game": {
+   "schema": 1,
+   "variationId": "scotch-game",
+   "name": "Schottische Partie",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Sxd4",
+     "Dxd4",
+     "d6",
+     "Ld3",
+     "Sf6",
+     "Sc3",
+     "Le7",
+     "Lf4",
+     "O-O",
+     "O-O-O",
+     "c5",
+     "De3",
+     "Sg4",
+     "Df3",
+     "Se5",
+     "Lxe5",
+     "dxe5",
+     "Lc4",
+     "Da5",
+     "Dg3",
+     "Le6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Sxd4 5. Dxd4 d6 6. Ld3 Sf6 7. Sc3 Le7 8. Lf4 O-O 9. O-O-O c5 10. De3 Sg4 11. Df3 Se5 12. Lxe5 dxe5 13. Lc4 Da5 14. Dg3 Le6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": "scotch-game-ghulam-kassim-variation",
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Sxd4",
+      "cpWeiss": 62,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Dxd4",
+      "cpWeiss": 61,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… d6",
+      "cpWeiss": 126,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sf6",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Le7",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Lf4",
+      "cpWeiss": 38,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… O-O",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O-O",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. De3",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Sg4",
+      "cpWeiss": 120,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Df3",
+      "cpWeiss": 139,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Se5",
+      "cpWeiss": 141,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lxe5",
+      "cpWeiss": 114,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… dxe5",
+      "cpWeiss": 124,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Lc4",
+      "cpWeiss": 121,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Da5",
+      "cpWeiss": 107,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Dg3",
+      "cpWeiss": 100,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Le6",
+      "cpWeiss": 104,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… Sxd4",
+      "cpWeiss": 62,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 10,
+     "zug": "6. Ld3",
+     "zieher": "white",
+     "vonCp": 126,
+     "nachCp": 41,
+     "sprungCp": -85
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Le6",
+     "cpWeiss": 104,
+     "matt": null,
+     "cpEigen": 104,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Sxd4",
+     "gespielt": {
+      "de": "Sxd4",
+      "partien": 14884342,
+      "anteilProzent": 42.2
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 5505915,
+      "anteilProzent": 35.5
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 2811718,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "c5",
+       "partien": 2276424,
+       "anteilProzent": 14.7
+      },
+      {
+       "de": "Df6",
+       "partien": 2040916,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 15491600
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 131876,
+      "anteilProzent": 52.5
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 49008,
+       "anteilProzent": 19.5
+      },
+      {
+       "de": "Df6",
+       "partien": 19884,
+       "anteilProzent": 7.9
+      },
+      {
+       "de": "c5",
+       "partien": 18852,
+       "anteilProzent": 7.5
+      }
+     ],
+     "summePartien": 251277
+    },
+    {
+     "ply": 13,
+     "zug": "7… Le7",
+     "gespielt": {
+      "de": "Le7",
+      "partien": 103678,
+      "anteilProzent": 62.6
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 22667,
+       "anteilProzent": 13.7
+      },
+      {
+       "de": "c5",
+       "partien": 17345,
+       "anteilProzent": 10.5
+      },
+      {
+       "de": "g6",
+       "partien": 7221,
+       "anteilProzent": 4.4
+      }
+     ],
+     "summePartien": 165554
+    },
+    {
+     "ply": 15,
+     "zug": "8… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 6948,
+      "anteilProzent": 69.7
+     },
+     "alternativen": [
+      {
+       "de": "c5",
+       "partien": 1111,
+       "anteilProzent": 11.1
+      },
+      {
+       "de": "Le6",
+       "partien": 890,
+       "anteilProzent": 8.9
+      },
+      {
+       "de": "h6",
+       "partien": 259,
+       "anteilProzent": 2.6
+      }
+     ],
+     "summePartien": 9965
+    },
+    {
+     "ply": 17,
+     "zug": "9… c5",
+     "gespielt": {
+      "de": "c5",
+      "partien": 2502,
+      "anteilProzent": 39
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 1089,
+       "anteilProzent": 17
+      },
+      {
+       "de": "a6",
+       "partien": 490,
+       "anteilProzent": 7.6
+      },
+      {
+       "de": "Lg4",
+       "partien": 427,
+       "anteilProzent": 6.6
+      }
+     ],
+     "summePartien": 6422
+    },
+    {
+     "ply": 19,
+     "zug": "10… Sg4",
+     "gespielt": {
+      "de": "Sg4",
+      "partien": 674,
+      "anteilProzent": 25.9
+     },
+     "alternativen": [
+      {
+       "de": "a6",
+       "partien": 595,
+       "anteilProzent": 22.9
+      },
+      {
+       "de": "Le6",
+       "partien": 386,
+       "anteilProzent": 14.9
+      },
+      {
+       "de": "Lg4",
+       "partien": 155,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 2598
+    },
+    {
+     "ply": 21,
+     "zug": "11… Se5",
+     "gespielt": {
+      "de": "Se5",
+      "partien": 34,
+      "anteilProzent": 22.4
+     },
+     "alternativen": [
+      {
+       "de": "Lg5",
+       "partien": 27,
+       "anteilProzent": 17.8
+      },
+      {
+       "de": "Sf6",
+       "partien": 21,
+       "anteilProzent": 13.8
+      },
+      {
+       "de": "Lf6",
+       "partien": 20,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 152
+    },
+    {
+     "ply": 23,
+     "zug": "12… dxe5",
+     "gespielt": {
+      "de": "dxe5",
+      "partien": 29,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 29
+    },
+    {
+     "ply": 25,
+     "zug": "13… Da5",
+     "gespielt": {
+      "de": "Da5",
+      "partien": 5,
+      "anteilProzent": 35.7
+     },
+     "alternativen": [
+      {
+       "de": "De8",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Dc7",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Db6",
+       "partien": 2,
+       "anteilProzent": 14.3
+      }
+     ],
+     "summePartien": 14
+    }
+   ],
+   "endstellung": {
+    "fen": "r4rk1/pp2bppp/4b3/q1p1p3/2B1P3/2N3Q1/PPP2PPP/2KR3R w - - 4 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "−1 Läufer, +1 Springer"
+    },
+    "offeneLinien": [
+     "d"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-lolli-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-lolli-variation",
+   "name": "Schottisch: Lolli-Variante (3…Sxd4)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "Sxd4",
+     "Sxd4",
+     "exd4",
+     "Dxd4",
+     "d6",
+     "Ld3",
+     "Sf6",
+     "Sc3",
+     "Le7",
+     "Lf4",
+     "O-O",
+     "O-O-O",
+     "c5",
+     "De3",
+     "Sg4",
+     "Df3",
+     "Se5",
+     "Lxe5",
+     "dxe5",
+     "Lc4",
+     "Da5",
+     "Dg3",
+     "Le6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 Sxd4 4. Sxd4 exd4 5. Dxd4 d6 6. Ld3 Sf6 7. Sc3 Le7 8. Lf4 O-O 9. O-O-O c5 10. De3 Sg4 11. Df3 Se5 12. Lxe5 dxe5 13. Lc4 Da5 14. Dg3 Le6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… Sxd4",
+    "san": "Sxd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… Sxd4",
+      "cpWeiss": 61,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 58,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… exd4",
+      "cpWeiss": 57,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Dxd4",
+      "cpWeiss": 61,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… d6",
+      "cpWeiss": 126,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sf6",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Le7",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Lf4",
+      "cpWeiss": 38,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… O-O",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O-O",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. De3",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Sg4",
+      "cpWeiss": 120,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Df3",
+      "cpWeiss": 139,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Se5",
+      "cpWeiss": 141,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lxe5",
+      "cpWeiss": 114,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… dxe5",
+      "cpWeiss": 124,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Lc4",
+      "cpWeiss": 121,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Da5",
+      "cpWeiss": 107,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Dg3",
+      "cpWeiss": 100,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Le6",
+      "cpWeiss": 104,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 5,
+      "zug": "3… Sxd4",
+      "cpWeiss": 61,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 10,
+     "zug": "6. Ld3",
+     "zieher": "white",
+     "vonCp": 126,
+     "nachCp": 41,
+     "sprungCp": -85
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Le6",
+     "cpWeiss": 104,
+     "matt": null,
+     "cpEigen": 104,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… Sxd4",
+     "gespielt": {
+      "de": "Sxd4",
+      "partien": 1055631,
+      "anteilProzent": 1.7
+     },
+     "alternativen": [
+      {
+       "de": "exd4",
+       "partien": 50133668,
+       "anteilProzent": 81.6
+      },
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 874434,
+      "anteilProzent": 99
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 3740,
+       "anteilProzent": 0.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 1406,
+       "anteilProzent": 0.2
+      },
+      {
+       "de": "Dh4",
+       "partien": 1036,
+       "anteilProzent": 0.1
+      }
+     ],
+     "summePartien": 883639
+    },
+    {
+     "ply": 9,
+     "zug": "5… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 5505915,
+      "anteilProzent": 35.5
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 2811718,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "c5",
+       "partien": 2276424,
+       "anteilProzent": 14.7
+      },
+      {
+       "de": "Df6",
+       "partien": 2040916,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 15491600
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 131876,
+      "anteilProzent": 52.5
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 49008,
+       "anteilProzent": 19.5
+      },
+      {
+       "de": "Df6",
+       "partien": 19884,
+       "anteilProzent": 7.9
+      },
+      {
+       "de": "c5",
+       "partien": 18852,
+       "anteilProzent": 7.5
+      }
+     ],
+     "summePartien": 251277
+    },
+    {
+     "ply": 13,
+     "zug": "7… Le7",
+     "gespielt": {
+      "de": "Le7",
+      "partien": 103678,
+      "anteilProzent": 62.6
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 22667,
+       "anteilProzent": 13.7
+      },
+      {
+       "de": "c5",
+       "partien": 17345,
+       "anteilProzent": 10.5
+      },
+      {
+       "de": "g6",
+       "partien": 7221,
+       "anteilProzent": 4.4
+      }
+     ],
+     "summePartien": 165554
+    },
+    {
+     "ply": 15,
+     "zug": "8… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 6948,
+      "anteilProzent": 69.7
+     },
+     "alternativen": [
+      {
+       "de": "c5",
+       "partien": 1111,
+       "anteilProzent": 11.1
+      },
+      {
+       "de": "Le6",
+       "partien": 890,
+       "anteilProzent": 8.9
+      },
+      {
+       "de": "h6",
+       "partien": 259,
+       "anteilProzent": 2.6
+      }
+     ],
+     "summePartien": 9965
+    },
+    {
+     "ply": 17,
+     "zug": "9… c5",
+     "gespielt": {
+      "de": "c5",
+      "partien": 2502,
+      "anteilProzent": 39
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 1089,
+       "anteilProzent": 17
+      },
+      {
+       "de": "a6",
+       "partien": 490,
+       "anteilProzent": 7.6
+      },
+      {
+       "de": "Lg4",
+       "partien": 427,
+       "anteilProzent": 6.6
+      }
+     ],
+     "summePartien": 6422
+    },
+    {
+     "ply": 19,
+     "zug": "10… Sg4",
+     "gespielt": {
+      "de": "Sg4",
+      "partien": 674,
+      "anteilProzent": 25.9
+     },
+     "alternativen": [
+      {
+       "de": "a6",
+       "partien": 595,
+       "anteilProzent": 22.9
+      },
+      {
+       "de": "Le6",
+       "partien": 386,
+       "anteilProzent": 14.9
+      },
+      {
+       "de": "Lg4",
+       "partien": 155,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 2598
+    },
+    {
+     "ply": 21,
+     "zug": "11… Se5",
+     "gespielt": {
+      "de": "Se5",
+      "partien": 34,
+      "anteilProzent": 22.4
+     },
+     "alternativen": [
+      {
+       "de": "Lg5",
+       "partien": 27,
+       "anteilProzent": 17.8
+      },
+      {
+       "de": "Sf6",
+       "partien": 21,
+       "anteilProzent": 13.8
+      },
+      {
+       "de": "Lf6",
+       "partien": 20,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 152
+    },
+    {
+     "ply": 23,
+     "zug": "12… dxe5",
+     "gespielt": {
+      "de": "dxe5",
+      "partien": 29,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 29
+    },
+    {
+     "ply": 25,
+     "zug": "13… Da5",
+     "gespielt": {
+      "de": "Da5",
+      "partien": 5,
+      "anteilProzent": 35.7
+     },
+     "alternativen": [
+      {
+       "de": "De8",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Dc7",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Db6",
+       "partien": 2,
+       "anteilProzent": 14.3
+      }
+     ],
+     "summePartien": 14
+    }
+   ],
+   "endstellung": {
+    "fen": "r4rk1/pp2bppp/4b3/q1p1p3/2B1P3/2N3Q1/PPP2PPP/2KR3R w - - 4 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "−1 Läufer, +1 Springer"
+    },
+    "offeneLinien": [
+     "d"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-scotch-gambit": {
+   "schema": 1,
+   "variationId": "scotch-game-scotch-gambit",
+   "name": "Schottisches Gambit (4. Lc4)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Lc4",
+     "h6",
+     "Sxd4",
+     "Sxd4",
+     "Dxd4",
+     "d6",
+     "Sc3",
+     "Sf6",
+     "Lf4",
+     "Le7",
+     "O-O-O",
+     "O-O",
+     "e5",
+     "dxe5",
+     "Dxe5",
+     "Ld6",
+     "Dd4",
+     "Lxf4+",
+     "Dxf4",
+     "De7",
+     "The1",
+     "Dc5"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Lc4 h6 5. Sxd4 Sxd4 6. Dxd4 d6 7. Sc3 Sf6 8. Lf4 Le7 9. O-O-O O-O 10. e5 dxe5 11. Dxe5 Ld6 12. Dd4 Lxf4+ 13. Dxf4 De7 14. The1 Dc5",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Lc4",
+      "cpWeiss": 8,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… h6",
+      "cpWeiss": 67,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sxd4",
+      "cpWeiss": 63,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Sxd4",
+      "cpWeiss": 123,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Dxd4",
+      "cpWeiss": 124,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… d6",
+      "cpWeiss": 128,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Sf6",
+      "cpWeiss": 139,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Lf4",
+      "cpWeiss": 108,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Le7",
+      "cpWeiss": 103,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O-O",
+      "cpWeiss": 117,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… O-O",
+      "cpWeiss": 131,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. e5",
+      "cpWeiss": 120,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… dxe5",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Dxe5",
+      "cpWeiss": 118,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Ld6",
+      "cpWeiss": 101,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Dd4",
+      "cpWeiss": 121,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Lxf4+",
+      "cpWeiss": 123,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Dxf4",
+      "cpWeiss": 116,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… De7",
+      "cpWeiss": 114,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. The1",
+      "cpWeiss": 119,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Dc5",
+      "cpWeiss": 299,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… h6",
+      "cpWeiss": 67,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 27,
+     "zug": "14… Dc5",
+     "zieher": "black",
+     "vonCp": 119,
+     "nachCp": 299,
+     "sprungCp": 180
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Dc5",
+     "cpWeiss": 299,
+     "matt": null,
+     "cpEigen": 299,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… h6",
+     "gespielt": {
+      "de": "h6",
+      "partien": 2188659,
+      "anteilProzent": 18.1
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 2817892,
+       "anteilProzent": 23.3
+      },
+      {
+       "de": "Sf6",
+       "partien": 2684252,
+       "anteilProzent": 22.2
+      },
+      {
+       "de": "d6",
+       "partien": 1576896,
+       "anteilProzent": 13.1
+      }
+     ],
+     "summePartien": 12074760
+    },
+    {
+     "ply": 9,
+     "zug": "5… Sxd4",
+     "gespielt": {
+      "de": "Sxd4",
+      "partien": 1993502,
+      "anteilProzent": 48.6
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 554371,
+       "anteilProzent": 13.5
+      },
+      {
+       "de": "Se5",
+       "partien": 426193,
+       "anteilProzent": 10.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 324541,
+       "anteilProzent": 7.9
+      }
+     ],
+     "summePartien": 4101267
+    },
+    {
+     "ply": 11,
+     "zug": "6… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 746933,
+      "anteilProzent": 36.1
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 400475,
+       "anteilProzent": 19.4
+      },
+      {
+       "de": "Df6",
+       "partien": 315980,
+       "anteilProzent": 15.3
+      },
+      {
+       "de": "c5",
+       "partien": 284604,
+       "anteilProzent": 13.8
+      }
+     ],
+     "summePartien": 2067434
+    },
+    {
+     "ply": 13,
+     "zug": "7… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 168633,
+      "anteilProzent": 47
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 64026,
+       "anteilProzent": 17.8
+      },
+      {
+       "de": "Df6",
+       "partien": 37036,
+       "anteilProzent": 10.3
+      },
+      {
+       "de": "c5",
+       "partien": 32793,
+       "anteilProzent": 9.1
+      }
+     ],
+     "summePartien": 359031
+    },
+    {
+     "ply": 15,
+     "zug": "8… Le7",
+     "gespielt": {
+      "de": "Le7",
+      "partien": 29717,
+      "anteilProzent": 64
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 6027,
+       "anteilProzent": 13
+      },
+      {
+       "de": "c5",
+       "partien": 5453,
+       "anteilProzent": 11.8
+      },
+      {
+       "de": "De7",
+       "partien": 1332,
+       "anteilProzent": 2.9
+      }
+     ],
+     "summePartien": 46406
+    },
+    {
+     "ply": 17,
+     "zug": "9… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 15326,
+      "anteilProzent": 72.2
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 2011,
+       "anteilProzent": 9.5
+      },
+      {
+       "de": "c5",
+       "partien": 1512,
+       "anteilProzent": 7.1
+      },
+      {
+       "de": "a6",
+       "partien": 980,
+       "anteilProzent": 4.6
+      }
+     ],
+     "summePartien": 21233
+    },
+    {
+     "ply": 19,
+     "zug": "10… dxe5",
+     "gespielt": {
+      "de": "dxe5",
+      "partien": 3955,
+      "anteilProzent": 70.7
+     },
+     "alternativen": [
+      {
+       "de": "c5",
+       "partien": 657,
+       "anteilProzent": 11.7
+      },
+      {
+       "de": "Sh5",
+       "partien": 279,
+       "anteilProzent": 5
+      },
+      {
+       "de": "Sg4",
+       "partien": 247,
+       "anteilProzent": 4.4
+      }
+     ],
+     "summePartien": 5594
+    },
+    {
+     "ply": 21,
+     "zug": "11… Ld6",
+     "gespielt": {
+      "de": "Ld6",
+      "partien": 1865,
+      "anteilProzent": 64.4
+     },
+     "alternativen": [
+      {
+       "de": "De8",
+       "partien": 789,
+       "anteilProzent": 27.2
+      },
+      {
+       "de": "Sd7",
+       "partien": 95,
+       "anteilProzent": 3.3
+      },
+      {
+       "de": "Ld7",
+       "partien": 83,
+       "anteilProzent": 2.9
+      }
+     ],
+     "summePartien": 2898
+    },
+    {
+     "ply": 23,
+     "zug": "12… Lxf4+",
+     "gespielt": {
+      "de": "Lxf4+",
+      "partien": 303,
+      "anteilProzent": 67.3
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 29,
+       "anteilProzent": 6.4
+      },
+      {
+       "de": "De7",
+       "partien": 27,
+       "anteilProzent": 6
+      },
+      {
+       "de": "Lg4",
+       "partien": 22,
+       "anteilProzent": 4.9
+      }
+     ],
+     "summePartien": 450
+    },
+    {
+     "ply": 25,
+     "zug": "13… De7",
+     "gespielt": {
+      "de": "De7",
+      "partien": 608,
+      "anteilProzent": 88.8
+     },
+     "alternativen": [
+      {
+       "de": "De8",
+       "partien": 41,
+       "anteilProzent": 6
+      },
+      {
+       "de": "Ld7",
+       "partien": 31,
+       "anteilProzent": 4.5
+      },
+      {
+       "de": "Sh5",
+       "partien": 3,
+       "anteilProzent": 0.4
+      }
+     ],
+     "summePartien": 685
+    },
+    {
+     "ply": 27,
+     "zug": "14… Dc5",
+     "gespielt": {
+      "de": "Dc5",
+      "partien": 496,
+      "anteilProzent": 82.4
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 90,
+       "anteilProzent": 15
+      },
+      {
+       "de": "Db4",
+       "partien": 14,
+       "anteilProzent": 2.3
+      },
+      {
+       "de": "Sh5",
+       "partien": 1,
+       "anteilProzent": 0.2
+      }
+     ],
+     "summePartien": 602
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b2rk1/ppp2pp1/5n1p/2q5/2B2Q2/2N5/PPP2PPP/2KRR3 w - - 3 15",
+    "material": {
+     "weiss": 31,
+     "schwarz": 31,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 31,
+      "schwarz": 31,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [
+     "d",
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "identisch",
+    "codeZeile": null
+   }
+  },
+  "scotch-game-classical-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-classical-variation",
+   "name": "Schottisch: Klassische Variante (4…Lc5)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Lc5",
+     "Le3",
+     "Sxd4",
+     "Lxd4",
+     "Lxd4",
+     "Dxd4",
+     "Df6",
+     "e5",
+     "Db6",
+     "Dxb6",
+     "axb6",
+     "f4",
+     "Se7",
+     "Sc3",
+     "O-O",
+     "O-O-O",
+     "Sf5",
+     "Ld3",
+     "Se3",
+     "Td2",
+     "b5"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Lc5 5. Le3 Sxd4 6. Lxd4 Lxd4 7. Dxd4 Df6 8. e5 Db6 9. Dxb6 axb6 10. f4 Se7 11. Sc3 O-O 12. O-O-O Sf5 13. Ld3 Se3 14. Td2 b5",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lc5",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Le3",
+      "cpWeiss": 20,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Sxd4",
+      "cpWeiss": 33,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Lxd4",
+      "cpWeiss": 57,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Lxd4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Dxd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Df6",
+      "cpWeiss": 38,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. e5",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Db6",
+      "cpWeiss": 26,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Dxb6",
+      "cpWeiss": 40,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… axb6",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. f4",
+      "cpWeiss": 33,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Se7",
+      "cpWeiss": 58,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Sc3",
+      "cpWeiss": 56,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… O-O",
+      "cpWeiss": 146,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. O-O-O",
+      "cpWeiss": 158,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Sf5",
+      "cpWeiss": 224,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Ld3",
+      "cpWeiss": 235,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Se3",
+      "cpWeiss": 301,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Td2",
+      "cpWeiss": 322,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… b5",
+      "cpWeiss": 409,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 10,
+      "zug": "6. Lxd4",
+      "cpWeiss": 57,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 11,
+      "zug": "6… Lxd4",
+      "cpWeiss": 29,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 19,
+      "zug": "10… Se7",
+      "cpWeiss": 58,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 21,
+     "zug": "11… O-O",
+     "zieher": "black",
+     "vonCp": 56,
+     "nachCp": 146,
+     "sprungCp": 90
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… b5",
+     "cpWeiss": 409,
+     "matt": null,
+     "cpEigen": 409,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 8254680,
+      "anteilProzent": 23.4
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Sxd4",
+     "gespielt": {
+      "de": "Sxd4",
+      "partien": 505794,
+      "anteilProzent": 15.4
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 1396562,
+       "anteilProzent": 42.5
+      },
+      {
+       "de": "Lb6",
+       "partien": 442063,
+       "anteilProzent": 13.5
+      },
+      {
+       "de": "Lxd4",
+       "partien": 308766,
+       "anteilProzent": 9.4
+      }
+     ],
+     "summePartien": 3283841
+    },
+    {
+     "ply": 11,
+     "zug": "6… Lxd4",
+     "gespielt": {
+      "de": "Lxd4",
+      "partien": 449121,
+      "anteilProzent": 89.1
+     },
+     "alternativen": [
+      {
+       "de": "Lb6",
+       "partien": 16054,
+       "anteilProzent": 3.2
+      },
+      {
+       "de": "De7",
+       "partien": 14351,
+       "anteilProzent": 2.8
+      },
+      {
+       "de": "Lb4+",
+       "partien": 7892,
+       "anteilProzent": 1.6
+      }
+     ],
+     "summePartien": 503999
+    },
+    {
+     "ply": 13,
+     "zug": "7… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": 321953,
+      "anteilProzent": 50.6
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 205344,
+       "anteilProzent": 32.3
+      },
+      {
+       "de": "f6",
+       "partien": 41326,
+       "anteilProzent": 6.5
+      },
+      {
+       "de": "d6",
+       "partien": 33414,
+       "anteilProzent": 5.2
+      }
+     ],
+     "summePartien": 636490
+    },
+    {
+     "ply": 15,
+     "zug": "8… Db6",
+     "gespielt": {
+      "de": "Db6",
+      "partien": 84614,
+      "anteilProzent": 43.4
+     },
+     "alternativen": [
+      {
+       "de": "De6",
+       "partien": 48749,
+       "anteilProzent": 25
+      },
+      {
+       "de": "Dg6",
+       "partien": 25546,
+       "anteilProzent": 13.1
+      },
+      {
+       "de": "De7",
+       "partien": 12256,
+       "anteilProzent": 6.3
+      }
+     ],
+     "summePartien": 195089
+    },
+    {
+     "ply": 17,
+     "zug": "9… axb6",
+     "gespielt": {
+      "de": "axb6",
+      "partien": 51715,
+      "anteilProzent": 99.1
+     },
+     "alternativen": [
+      {
+       "de": "cxb6",
+       "partien": 427,
+       "anteilProzent": 0.8
+      },
+      {
+       "de": "a6",
+       "partien": 54,
+       "anteilProzent": 0.1
+      },
+      {
+       "de": "Se7",
+       "partien": 1,
+       "anteilProzent": 0
+      }
+     ],
+     "summePartien": 52198
+    },
+    {
+     "ply": 19,
+     "zug": "10… Se7",
+     "gespielt": {
+      "de": "Se7",
+      "partien": 1041,
+      "anteilProzent": 63.6
+     },
+     "alternativen": [
+      {
+       "de": "f6",
+       "partien": 326,
+       "anteilProzent": 19.9
+      },
+      {
+       "de": "d6",
+       "partien": 177,
+       "anteilProzent": 10.8
+      },
+      {
+       "de": "Ta4",
+       "partien": 31,
+       "anteilProzent": 1.9
+      }
+     ],
+     "summePartien": 1636
+    },
+    {
+     "ply": 21,
+     "zug": "11… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 1096,
+      "anteilProzent": 49.4
+     },
+     "alternativen": [
+      {
+       "de": "c6",
+       "partien": 394,
+       "anteilProzent": 17.8
+      },
+      {
+       "de": "Sg6",
+       "partien": 290,
+       "anteilProzent": 13.1
+      },
+      {
+       "de": "Sc6",
+       "partien": 161,
+       "anteilProzent": 7.3
+      }
+     ],
+     "summePartien": 2217
+    },
+    {
+     "ply": 23,
+     "zug": "12… Sf5",
+     "gespielt": {
+      "de": "Sf5",
+      "partien": 197,
+      "anteilProzent": 21.4
+     },
+     "alternativen": [
+      {
+       "de": "f6",
+       "partien": 169,
+       "anteilProzent": 18.4
+      },
+      {
+       "de": "Sc6",
+       "partien": 161,
+       "anteilProzent": 17.5
+      },
+      {
+       "de": "c6",
+       "partien": 159,
+       "anteilProzent": 17.3
+      }
+     ],
+     "summePartien": 919
+    },
+    {
+     "ply": 25,
+     "zug": "13… Se3",
+     "gespielt": {
+      "de": "Se3",
+      "partien": 42,
+      "anteilProzent": 60.9
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 19,
+       "anteilProzent": 27.5
+      },
+      {
+       "de": "Sd4",
+       "partien": 4,
+       "anteilProzent": 5.8
+      },
+      {
+       "de": "Se7",
+       "partien": 3,
+       "anteilProzent": 4.3
+      }
+     ],
+     "summePartien": 69
+    },
+    {
+     "ply": 27,
+     "zug": "14… b5",
+     "gespielt": {
+      "de": "b5",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "c6",
+       "partien": 10,
+       "anteilProzent": 29.4
+      },
+      {
+       "de": "d6",
+       "partien": 10,
+       "anteilProzent": 29.4
+      },
+      {
+       "de": "c5",
+       "partien": 4,
+       "anteilProzent": 11.8
+      }
+     ],
+     "summePartien": 34
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b2rk1/1ppp1ppp/8/1p2P3/5P2/2NBn3/PPPR2PP/2K4R w - - 0 15",
+    "material": {
+     "weiss": 23,
+     "schwarz": 23,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 23,
+      "schwarz": 23,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "a",
+      "e"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [
+      "b"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-haxo-gambit": {
+   "schema": 1,
+   "variationId": "scotch-game-haxo-gambit",
+   "name": "Schottisch: Haxo-Gambit",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Lc4",
+     "Lc5",
+     "Sg5",
+     "Sh6",
+     "Lxf7+",
+     "Sxf7",
+     "Sxf7",
+     "Kxf7",
+     "Dh5+",
+     "g6",
+     "Dxc5",
+     "d6",
+     "Dc4+",
+     "Le6",
+     "De2",
+     "Tf8",
+     "Lh6",
+     "Te8",
+     "h4",
+     "Kg8",
+     "Sd2",
+     "Df6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Lc4 Lc5 5. Sg5 Sh6 6. Lxf7+ Sxf7 7. Sxf7 Kxf7 8. Dh5+ g6 9. Dxc5 d6 10. Dc4+ Le6 11. De2 Tf8 12. Lh6 Te8 13. h4 Kg8 14. Sd2 Df6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": "scotch-game-scotch-gambit-sarratt-variation",
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Lc4",
+      "cpWeiss": 8,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lc5",
+      "cpWeiss": 0,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sg5",
+      "cpWeiss": -6,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Sh6",
+      "cpWeiss": 5,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Lxf7+",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sxf7",
+      "cpWeiss": 4,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sxf7",
+      "cpWeiss": -1,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Kxf7",
+      "cpWeiss": -5,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Dh5+",
+      "cpWeiss": 11,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… g6",
+      "cpWeiss": -3,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Dxc5",
+      "cpWeiss": 5,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… d6",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Dc4+",
+      "cpWeiss": 19,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Le6",
+      "cpWeiss": 10,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. De2",
+      "cpWeiss": 12,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Tf8",
+      "cpWeiss": 7,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lh6",
+      "cpWeiss": 7,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Te8",
+      "cpWeiss": 15,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. h4",
+      "cpWeiss": 17,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Kg8",
+      "cpWeiss": 18,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Sd2",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Df6",
+      "cpWeiss": 8,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [],
+    "kritischerZug": {
+     "ply": 6,
+     "zug": "4. Lc4",
+     "zieher": "white",
+     "vonCp": 36,
+     "nachCp": 8,
+     "sprungCp": -28
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Df6",
+     "cpWeiss": 8,
+     "matt": null,
+     "cpEigen": 8,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 2817892,
+      "anteilProzent": 23.3
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 2684252,
+       "anteilProzent": 22.2
+      },
+      {
+       "de": "h6",
+       "partien": 2188659,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "d6",
+       "partien": 1576896,
+       "anteilProzent": 13.1
+      }
+     ],
+     "summePartien": 12074760
+    },
+    {
+     "ply": 9,
+     "zug": "5… Sh6",
+     "gespielt": {
+      "de": "Sh6",
+      "partien": 730712,
+      "anteilProzent": 62.5
+     },
+     "alternativen": [
+      {
+       "de": "Se5",
+       "partien": 231095,
+       "anteilProzent": 19.8
+      },
+      {
+       "de": "d5",
+       "partien": 137319,
+       "anteilProzent": 11.7
+      },
+      {
+       "de": "Df6",
+       "partien": 31529,
+       "anteilProzent": 2.7
+      }
+     ],
+     "summePartien": 1169284
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sxf7",
+     "gespielt": {
+      "de": "Sxf7",
+      "partien": 65320,
+      "anteilProzent": 98.7
+     },
+     "alternativen": [
+      {
+       "de": "Kf8",
+       "partien": 806,
+       "anteilProzent": 1.2
+      },
+      {
+       "de": "Ke7",
+       "partien": 46,
+       "anteilProzent": 0.1
+      }
+     ],
+     "summePartien": 66172
+    },
+    {
+     "ply": 13,
+     "zug": "7… Kxf7",
+     "gespielt": {
+      "de": "Kxf7",
+      "partien": 60545,
+      "anteilProzent": 94
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 1730,
+       "anteilProzent": 2.7
+      },
+      {
+       "de": "Lb4+",
+       "partien": 920,
+       "anteilProzent": 1.4
+      },
+      {
+       "de": "O-O",
+       "partien": 389,
+       "anteilProzent": 0.6
+      }
+     ],
+     "summePartien": 64384
+    },
+    {
+     "ply": 15,
+     "zug": "8… g6",
+     "gespielt": {
+      "de": "g6",
+      "partien": 225936,
+      "anteilProzent": 66.7
+     },
+     "alternativen": [
+      {
+       "de": "Kg8",
+       "partien": 62993,
+       "anteilProzent": 18.6
+      },
+      {
+       "de": "Kf8",
+       "partien": 41411,
+       "anteilProzent": 12.2
+      },
+      {
+       "de": "Ke7",
+       "partien": 4310,
+       "anteilProzent": 1.3
+      }
+     ],
+     "summePartien": 338705
+    },
+    {
+     "ply": 17,
+     "zug": "9… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 87582,
+      "anteilProzent": 47.5
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 36576,
+       "anteilProzent": 19.9
+      },
+      {
+       "de": "Te8",
+       "partien": 22438,
+       "anteilProzent": 12.2
+      },
+      {
+       "de": "De7",
+       "partien": 20400,
+       "anteilProzent": 11.1
+      }
+     ],
+     "summePartien": 184226
+    },
+    {
+     "ply": 19,
+     "zug": "10… Le6",
+     "gespielt": {
+      "de": "Le6",
+      "partien": 37807,
+      "anteilProzent": 92.7
+     },
+     "alternativen": [
+      {
+       "de": "Kg7",
+       "partien": 2109,
+       "anteilProzent": 5.2
+      },
+      {
+       "de": "Ke8",
+       "partien": 434,
+       "anteilProzent": 1.1
+      },
+      {
+       "de": "Kf8",
+       "partien": 167,
+       "anteilProzent": 0.4
+      }
+     ],
+     "summePartien": 40800
+    },
+    {
+     "ply": 21,
+     "zug": "11… Tf8",
+     "gespielt": {
+      "de": "Tf8",
+      "partien": 5950,
+      "anteilProzent": 34.5
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 4620,
+       "anteilProzent": 26.8
+      },
+      {
+       "de": "Te8",
+       "partien": 2881,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Kg7",
+       "partien": 1363,
+       "anteilProzent": 7.9
+      }
+     ],
+     "summePartien": 17270
+    },
+    {
+     "ply": 23,
+     "zug": "12… Te8",
+     "gespielt": {
+      "de": "Te8",
+      "partien": 2559,
+      "anteilProzent": 88.2
+     },
+     "alternativen": [
+      {
+       "de": "Tg8",
+       "partien": 233,
+       "anteilProzent": 8
+      },
+      {
+       "de": "Kg8",
+       "partien": 34,
+       "anteilProzent": 1.2
+      },
+      {
+       "de": "Df6",
+       "partien": 32,
+       "anteilProzent": 1.1
+      }
+     ],
+     "summePartien": 2902
+    },
+    {
+     "ply": 25,
+     "zug": "13… Kg8",
+     "gespielt": {
+      "de": "Kg8",
+      "partien": 9,
+      "anteilProzent": 14.5
+     },
+     "alternativen": [
+      {
+       "de": "Se5",
+       "partien": 19,
+       "anteilProzent": 30.6
+      },
+      {
+       "de": "Df6",
+       "partien": 13,
+       "anteilProzent": 21
+      },
+      {
+       "de": "Dd7",
+       "partien": 8,
+       "anteilProzent": 12.9
+      }
+     ],
+     "summePartien": 62
+    },
+    {
+     "ply": 27,
+     "zug": "14… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "d5",
+       "partien": 4,
+       "anteilProzent": 66.7
+      },
+      {
+       "de": "Dd7",
+       "partien": 1,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Se5",
+       "partien": 1,
+       "anteilProzent": 16.7
+      }
+     ],
+     "summePartien": 6
+    }
+   ],
+   "endstellung": {
+    "fen": "r3r1k1/ppp4p/2npbqpB/8/3pP2P/8/PPPNQPP1/R3K2R w KQ - 3 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "e",
+      "f"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [
+      "d"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": false,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "identisch",
+    "codeZeile": null
+   }
+  },
+  "scotch-game-malaniuk-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-malaniuk-variation",
+   "name": "Schottisch: Malaniuk-Variante (4…Lb4+)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Lb4+",
+     "c3",
+     "Lc5",
+     "Le3",
+     "Lb6",
+     "Sf5",
+     "Df6",
+     "Sa3",
+     "Sge7",
+     "Lxb6",
+     "axb6",
+     "Sb5",
+     "Kd8",
+     "Se3",
+     "h5",
+     "Le2",
+     "Df4",
+     "Sd5",
+     "Sxd5",
+     "exd5",
+     "Se5"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Lb4+ 5. c3 Lc5 6. Le3 Lb6 7. Sf5 Df6 8. Sa3 Sge7 9. Lxb6 axb6 10. Sb5 Kd8 11. Se3 h5 12. Le2 Df4 13. Sd5 Sxd5 14. exd5 Se5",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lb4+",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. c3",
+      "cpWeiss": 27,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Lc5",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Le3",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Lb6",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sf5",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Df6",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Sa3",
+      "cpWeiss": 71,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Sge7",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Lxb6",
+      "cpWeiss": 50,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… axb6",
+      "cpWeiss": 61,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Sb5",
+      "cpWeiss": 46,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Kd8",
+      "cpWeiss": 51,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Se3",
+      "cpWeiss": 64,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… h5",
+      "cpWeiss": 78,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Le2",
+      "cpWeiss": 73,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Df4",
+      "cpWeiss": 53,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sd5",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Sxd5",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. exd5",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Se5",
+      "cpWeiss": 53,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 14,
+      "zug": "8. Sa3",
+      "cpWeiss": 71,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 18,
+      "zug": "10. Sb5",
+      "cpWeiss": 46,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 19,
+      "zug": "10… Kd8",
+      "cpWeiss": 51,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sd5",
+      "cpWeiss": 39,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 27,
+      "zug": "14… Se5",
+      "cpWeiss": 53,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 7,
+     "zug": "4… Lb4+",
+     "zieher": "black",
+     "vonCp": 16,
+     "nachCp": 39,
+     "sprungCp": 23
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Se5",
+     "cpWeiss": 53,
+     "matt": null,
+     "cpEigen": 53,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lb4+",
+     "gespielt": {
+      "de": "Lb4+",
+      "partien": 367623,
+      "anteilProzent": 1
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 159056,
+      "anteilProzent": 49.7
+     },
+     "alternativen": [
+      {
+       "de": "La5",
+       "partien": 89706,
+       "anteilProzent": 28
+      },
+      {
+       "de": "Sxd4",
+       "partien": 49278,
+       "anteilProzent": 15.4
+      },
+      {
+       "de": "Le7",
+       "partien": 15076,
+       "anteilProzent": 4.7
+      }
+     ],
+     "summePartien": 319935
+    },
+    {
+     "ply": 11,
+     "zug": "6… Lb6",
+     "gespielt": {
+      "de": "Lb6",
+      "partien": 36229,
+      "anteilProzent": 49.8
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 8567,
+       "anteilProzent": 11.8
+      },
+      {
+       "de": "Sf6",
+       "partien": 8109,
+       "anteilProzent": 11.1
+      },
+      {
+       "de": "Df6",
+       "partien": 5218,
+       "anteilProzent": 7.2
+      }
+     ],
+     "summePartien": 72800
+    },
+    {
+     "ply": 13,
+     "zug": "7… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": 468,
+      "anteilProzent": 39.7
+     },
+     "alternativen": [
+      {
+       "de": "Lxe3",
+       "partien": 305,
+       "anteilProzent": 25.9
+      },
+      {
+       "de": "g6",
+       "partien": 188,
+       "anteilProzent": 16
+      },
+      {
+       "de": "Sf6",
+       "partien": 72,
+       "anteilProzent": 6.1
+      }
+     ],
+     "summePartien": 1178
+    },
+    {
+     "ply": 15,
+     "zug": "8… Sge7",
+     "gespielt": {
+      "de": "Sge7",
+      "partien": 16,
+      "anteilProzent": 39
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 13,
+       "anteilProzent": 31.7
+      },
+      {
+       "de": "Lxe3",
+       "partien": 6,
+       "anteilProzent": 14.6
+      },
+      {
+       "de": "d5",
+       "partien": 3,
+       "anteilProzent": 7.3
+      }
+     ],
+     "summePartien": 41
+    },
+    {
+     "ply": 17,
+     "zug": "9… axb6",
+     "gespielt": {
+      "de": "axb6",
+      "partien": 4,
+      "anteilProzent": 66.7
+     },
+     "alternativen": [
+      {
+       "de": "Sxf5",
+       "partien": 1,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "cxb6",
+       "partien": 1,
+       "anteilProzent": 16.7
+      }
+     ],
+     "summePartien": 6
+    },
+    {
+     "ply": 19,
+     "zug": "10… Kd8",
+     "gespielt": {
+      "de": "Kd8",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "O-O",
+       "partien": 3,
+       "anteilProzent": 50
+      },
+      {
+       "de": "De5",
+       "partien": 2,
+       "anteilProzent": 33.3
+      },
+      {
+       "de": "Sxf5",
+       "partien": 1,
+       "anteilProzent": 16.7
+      }
+     ],
+     "summePartien": 6
+    }
+   ],
+   "endstellung": {
+    "fen": "r1bk3r/1ppp1pp1/1p6/1N1Pn2p/5q2/2P5/PP2BPPP/R2QK2R w KQ - 1 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": [
+      "a"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 1,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [
+      "b"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": false,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-schmidt-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-schmidt-variation",
+   "name": "Schottisch: Schmidt-Variante (4…Sf6)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Sf6",
+     "Sxc6",
+     "dxc6",
+     "Dxd8+",
+     "Kxd8",
+     "Sc3",
+     "Lb4",
+     "Ld2",
+     "Lxc3",
+     "Lxc3",
+     "Sxe4",
+     "O-O-O+",
+     "Ld7",
+     "Lxg7",
+     "Tg8",
+     "Ld4",
+     "c5",
+     "Le3",
+     "f5",
+     "f3",
+     "f4"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Sf6 5. Sxc6 dxc6 6. Dxd8+ Kxd8 7. Sc3 Lb4 8. Ld2 Lxc3 9. Lxc3 Sxe4 10. O-O-O+ Ld7 11. Lxg7 Tg8 12. Ld4 c5 13. Le3 f5 14. f3 f4",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Sf6",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sxc6",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… dxc6",
+      "cpWeiss": 43,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Dxd8+",
+      "cpWeiss": 45,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Kxd8",
+      "cpWeiss": 50,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Lb4",
+      "cpWeiss": 51,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Ld2",
+      "cpWeiss": 52,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Lxc3",
+      "cpWeiss": 171,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Lxc3",
+      "cpWeiss": 185,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… Sxe4",
+      "cpWeiss": 165,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. O-O-O+",
+      "cpWeiss": 165,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Ld7",
+      "cpWeiss": 170,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Lxg7",
+      "cpWeiss": 175,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Tg8",
+      "cpWeiss": 162,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Ld4",
+      "cpWeiss": 196,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… c5",
+      "cpWeiss": 229,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Le3",
+      "cpWeiss": 238,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… f5",
+      "cpWeiss": 385,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. f3",
+      "cpWeiss": 399,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… f4",
+      "cpWeiss": 419,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 11,
+      "zug": "6… Kxd8",
+      "cpWeiss": 50,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 36,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 13,
+      "zug": "7… Lb4",
+      "cpWeiss": 51,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 25,
+     "zug": "13… f5",
+     "zieher": "black",
+     "vonCp": 238,
+     "nachCp": 385,
+     "sprungCp": 147
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… f4",
+     "cpWeiss": 419,
+     "matt": null,
+     "cpEigen": 419,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 4208475,
+      "anteilProzent": 11.9
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… dxc6",
+     "gespielt": {
+      "de": "dxc6",
+      "partien": 261441,
+      "anteilProzent": 11.4
+     },
+     "alternativen": [
+      {
+       "de": "bxc6",
+       "partien": 2037605,
+       "anteilProzent": 88.5
+      },
+      {
+       "de": "b6",
+       "partien": 2056,
+       "anteilProzent": 0.1
+      },
+      {
+       "de": "Sxe4",
+       "partien": 579,
+       "anteilProzent": 0
+      }
+     ],
+     "summePartien": 2302960
+    },
+    {
+     "ply": 11,
+     "zug": "6… Kxd8",
+     "gespielt": {
+      "de": "Kxd8",
+      "partien": 161553,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 161553
+    },
+    {
+     "ply": 13,
+     "zug": "7… Lb4",
+     "gespielt": {
+      "de": "Lb4",
+      "partien": 27172,
+      "anteilProzent": 67.8
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 4385,
+       "anteilProzent": 10.9
+      },
+      {
+       "de": "Lc5",
+       "partien": 4010,
+       "anteilProzent": 10
+      },
+      {
+       "de": "Ld6",
+       "partien": 2736,
+       "anteilProzent": 6.8
+      }
+     ],
+     "summePartien": 40104
+    },
+    {
+     "ply": 15,
+     "zug": "8… Lxc3",
+     "gespielt": {
+      "de": "Lxc3",
+      "partien": 13528,
+      "anteilProzent": 47.2
+     },
+     "alternativen": [
+      {
+       "de": "Te8",
+       "partien": 7095,
+       "anteilProzent": 24.8
+      },
+      {
+       "de": "Le6",
+       "partien": 3774,
+       "anteilProzent": 13.2
+      },
+      {
+       "de": "Ke7",
+       "partien": 2003,
+       "anteilProzent": 7
+      }
+     ],
+     "summePartien": 28642
+    },
+    {
+     "ply": 17,
+     "zug": "9… Sxe4",
+     "gespielt": {
+      "de": "Sxe4",
+      "partien": 10998,
+      "anteilProzent": 82.4
+     },
+     "alternativen": [
+      {
+       "de": "Te8",
+       "partien": 1038,
+       "anteilProzent": 7.8
+      },
+      {
+       "de": "Ke7",
+       "partien": 495,
+       "anteilProzent": 3.7
+      },
+      {
+       "de": "Le6",
+       "partien": 358,
+       "anteilProzent": 2.7
+      }
+     ],
+     "summePartien": 13339
+    },
+    {
+     "ply": 19,
+     "zug": "10… Ld7",
+     "gespielt": {
+      "de": "Ld7",
+      "partien": 2849,
+      "anteilProzent": 60.8
+     },
+     "alternativen": [
+      {
+       "de": "Ke7",
+       "partien": 885,
+       "anteilProzent": 18.9
+      },
+      {
+       "de": "Sd6",
+       "partien": 726,
+       "anteilProzent": 15.5
+      },
+      {
+       "de": "Ke8",
+       "partien": 224,
+       "anteilProzent": 4.8
+      }
+     ],
+     "summePartien": 4684
+    },
+    {
+     "ply": 21,
+     "zug": "11… Tg8",
+     "gespielt": {
+      "de": "Tg8",
+      "partien": 1462,
+      "anteilProzent": 84.2
+     },
+     "alternativen": [
+      {
+       "de": "Sxf2",
+       "partien": 147,
+       "anteilProzent": 8.5
+      },
+      {
+       "de": "Te8",
+       "partien": 123,
+       "anteilProzent": 7.1
+      },
+      {
+       "de": "Ke7",
+       "partien": 3,
+       "anteilProzent": 0.2
+      }
+     ],
+     "summePartien": 1736
+    },
+    {
+     "ply": 23,
+     "zug": "12… c5",
+     "gespielt": {
+      "de": "c5",
+      "partien": 687,
+      "anteilProzent": 66.9
+     },
+     "alternativen": [
+      {
+       "de": "b6",
+       "partien": 135,
+       "anteilProzent": 13.1
+      },
+      {
+       "de": "Ke7",
+       "partien": 69,
+       "anteilProzent": 6.7
+      },
+      {
+       "de": "Kc8",
+       "partien": 34,
+       "anteilProzent": 3.3
+      }
+     ],
+     "summePartien": 1027
+    },
+    {
+     "ply": 25,
+     "zug": "13… f5",
+     "gespielt": {
+      "de": "f5",
+      "partien": 157,
+      "anteilProzent": 25.9
+     },
+     "alternativen": [
+      {
+       "de": "b6",
+       "partien": 133,
+       "anteilProzent": 21.9
+      },
+      {
+       "de": "Ke7",
+       "partien": 121,
+       "anteilProzent": 20
+      },
+      {
+       "de": "c6",
+       "partien": 97,
+       "anteilProzent": 16
+      }
+     ],
+     "summePartien": 606
+    },
+    {
+     "ply": 27,
+     "zug": "14… f4",
+     "gespielt": {
+      "de": "f4",
+      "partien": 55,
+      "anteilProzent": 53.4
+     },
+     "alternativen": [
+      {
+       "de": "Sd6",
+       "partien": 30,
+       "anteilProzent": 29.1
+      },
+      {
+       "de": "Sf6",
+       "partien": 16,
+       "anteilProzent": 15.5
+      },
+      {
+       "de": "Sg5",
+       "partien": 2,
+       "anteilProzent": 1.9
+      }
+     ],
+     "summePartien": 103
+    }
+   ],
+   "endstellung": {
+    "fen": "r2k2r1/pppb3p/8/2p5/4np2/4BP2/PPP3PP/2KR1B1R w - - 0 15",
+    "material": {
+     "weiss": 22,
+     "schwarz": 22,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 22,
+      "schwarz": 22,
+      "differenzEigen": 0
+     },
+     "bilanz": "+1 Läufer, −1 Springer"
+    },
+    "offeneLinien": [
+     "d",
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": [
+      "g"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [
+      "f",
+      "h"
+     ],
+     "doppelt": [
+      "c"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 1,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-scotch-gambit-london-defense": {
+   "schema": 1,
+   "variationId": "scotch-game-scotch-gambit-london-defense",
+   "name": "Schottisches Gambit: Londoner Verteidigung (4…Lb4+)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Lc4",
+     "Lb4+",
+     "c3",
+     "dxc3",
+     "bxc3",
+     "La5",
+     "O-O",
+     "d6",
+     "Db3",
+     "De7",
+     "e5",
+     "dxe5",
+     "La3",
+     "Df6",
+     "Sbd2",
+     "Sge7",
+     "Se4",
+     "Dg6",
+     "Seg5",
+     "O-O",
+     "Lxe7",
+     "Sxe7",
+     "Lxf7+",
+     "Txf7",
+     "Sxe5",
+     "Df5",
+     "Sexf7"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Lc4 Lb4+ 5. c3 dxc3 6. bxc3 La5 7. O-O d6 8. Db3 De7 9. e5 dxe5 10. La3 Df6 11. Sbd2 Sge7 12. Se4 Dg6 13. Seg5 O-O 14. Lxe7 Sxe7 15. Lxf7+ Txf7 16. Sxe5 Df5 17. Sexf7",
+    "plies": 33
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Lc4",
+      "cpWeiss": 8,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lb4+",
+      "cpWeiss": -3,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. c3",
+      "cpWeiss": 49,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… dxc3",
+      "cpWeiss": -7,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. bxc3",
+      "cpWeiss": 1,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… La5",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. O-O",
+      "cpWeiss": 25,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… d6",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Db3",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… De7",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. e5",
+      "cpWeiss": 43,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… dxe5",
+      "cpWeiss": 202,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. La3",
+      "cpWeiss": 201,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Df6",
+      "cpWeiss": 247,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Sbd2",
+      "cpWeiss": 197,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Sge7",
+      "cpWeiss": 210,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Se4",
+      "cpWeiss": 216,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Dg6",
+      "cpWeiss": 370,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Seg5",
+      "cpWeiss": 367,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… O-O",
+      "cpWeiss": 543,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Lxe7",
+      "cpWeiss": 536,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Sxe7",
+      "cpWeiss": 528,
+      "matt": null
+     },
+     {
+      "ply": 28,
+      "zug": "15. Lxf7+",
+      "cpWeiss": 582,
+      "matt": null
+     },
+     {
+      "ply": 29,
+      "zug": "15… Txf7",
+      "cpWeiss": 542,
+      "matt": null
+     },
+     {
+      "ply": 30,
+      "zug": "16. Sxe5",
+      "cpWeiss": 579,
+      "matt": null
+     },
+     {
+      "ply": 31,
+      "zug": "16… Df5",
+      "cpWeiss": 575,
+      "matt": null
+     },
+     {
+      "ply": 32,
+      "zug": "17. Sexf7",
+      "cpWeiss": null,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 17,
+      "zug": "9… dxe5",
+      "cpWeiss": 202,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 25,
+     "zug": "13… O-O",
+     "zieher": "black",
+     "vonCp": 367,
+     "nachCp": 543,
+     "sprungCp": 176
+    },
+    "endbewertung": {
+     "ply": 31,
+     "zug": "16… Df5",
+     "cpWeiss": 575,
+     "matt": null,
+     "cpEigen": 575,
+     "amLinienende": false
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lb4+",
+     "gespielt": {
+      "de": "Lb4+",
+      "partien": 963986,
+      "anteilProzent": 8
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 2817892,
+       "anteilProzent": 23.3
+      },
+      {
+       "de": "Sf6",
+       "partien": 2684252,
+       "anteilProzent": 22.2
+      },
+      {
+       "de": "h6",
+       "partien": 2188659,
+       "anteilProzent": 18.1
+      }
+     ],
+     "summePartien": 12074760
+    },
+    {
+     "ply": 9,
+     "zug": "5… dxc3",
+     "gespielt": {
+      "de": "dxc3",
+      "partien": 843053,
+      "anteilProzent": 97.8
+     },
+     "alternativen": [
+      {
+       "de": "La5",
+       "partien": 9610,
+       "anteilProzent": 1.1
+      },
+      {
+       "de": "Lc5",
+       "partien": 5384,
+       "anteilProzent": 0.6
+      },
+      {
+       "de": "Le7",
+       "partien": 2180,
+       "anteilProzent": 0.3
+      }
+     ],
+     "summePartien": 862407
+    },
+    {
+     "ply": 11,
+     "zug": "6… La5",
+     "gespielt": {
+      "de": "La5",
+      "partien": 259814,
+      "anteilProzent": 47.2
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 153473,
+       "anteilProzent": 27.9
+      },
+      {
+       "de": "Le7",
+       "partien": 86895,
+       "anteilProzent": 15.8
+      },
+      {
+       "de": "Ld6",
+       "partien": 20940,
+       "anteilProzent": 3.8
+      }
+     ],
+     "summePartien": 550586
+    },
+    {
+     "ply": 13,
+     "zug": "7… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 43163,
+      "anteilProzent": 28.8
+     },
+     "alternativen": [
+      {
+       "de": "Sge7",
+       "partien": 42143,
+       "anteilProzent": 28.2
+      },
+      {
+       "de": "Sf6",
+       "partien": 29076,
+       "anteilProzent": 19.4
+      },
+      {
+       "de": "Lb6",
+       "partien": 14995,
+       "anteilProzent": 10
+      }
+     ],
+     "summePartien": 149613
+    },
+    {
+     "ply": 15,
+     "zug": "8… De7",
+     "gespielt": {
+      "de": "De7",
+      "partien": 7170,
+      "anteilProzent": 61.1
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 2396,
+       "anteilProzent": 20.4
+      },
+      {
+       "de": "Dd7",
+       "partien": 1174,
+       "anteilProzent": 10
+      },
+      {
+       "de": "Le6",
+       "partien": 431,
+       "anteilProzent": 3.7
+      }
+     ],
+     "summePartien": 11733
+    },
+    {
+     "ply": 17,
+     "zug": "9… dxe5",
+     "gespielt": {
+      "de": "dxe5",
+      "partien": 1317,
+      "anteilProzent": 45.3
+     },
+     "alternativen": [
+      {
+       "de": "Sxe5",
+       "partien": 827,
+       "anteilProzent": 28.4
+      },
+      {
+       "de": "Le6",
+       "partien": 492,
+       "anteilProzent": 16.9
+      },
+      {
+       "de": "Lb6",
+       "partien": 136,
+       "anteilProzent": 4.7
+      }
+     ],
+     "summePartien": 2907
+    },
+    {
+     "ply": 19,
+     "zug": "10… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": 953,
+      "anteilProzent": 89.9
+     },
+     "alternativen": [
+      {
+       "de": "Dd7",
+       "partien": 101,
+       "anteilProzent": 9.5
+      },
+      {
+       "de": "Dd8",
+       "partien": 2,
+       "anteilProzent": 0.2
+      },
+      {
+       "de": "De6",
+       "partien": 2,
+       "anteilProzent": 0.2
+      }
+     ],
+     "summePartien": 1060
+    },
+    {
+     "ply": 21,
+     "zug": "11… Sge7",
+     "gespielt": {
+      "de": "Sge7",
+      "partien": 366,
+      "anteilProzent": 49.5
+     },
+     "alternativen": [
+      {
+       "de": "Lb6",
+       "partien": 129,
+       "anteilProzent": 17.4
+      },
+      {
+       "de": "Le6",
+       "partien": 73,
+       "anteilProzent": 9.9
+      },
+      {
+       "de": "Lf5",
+       "partien": 71,
+       "anteilProzent": 9.6
+      }
+     ],
+     "summePartien": 740
+    },
+    {
+     "ply": 23,
+     "zug": "12… Dg6",
+     "gespielt": {
+      "de": "Dg6",
+      "partien": 249,
+      "anteilProzent": 70.1
+     },
+     "alternativen": [
+      {
+       "de": "Df4",
+       "partien": 53,
+       "anteilProzent": 14.9
+      },
+      {
+       "de": "Df5",
+       "partien": 52,
+       "anteilProzent": 14.6
+      },
+      {
+       "de": "O-O",
+       "partien": 1,
+       "anteilProzent": 0.3
+      }
+     ],
+     "summePartien": 355
+    },
+    {
+     "ply": 25,
+     "zug": "13… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 50,
+      "anteilProzent": 98
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 1,
+       "anteilProzent": 2
+      }
+     ],
+     "summePartien": 51
+    },
+    {
+     "ply": 27,
+     "zug": "14… Sxe7",
+     "gespielt": {
+      "de": "Sxe7",
+      "partien": 27,
+      "anteilProzent": 96.4
+     },
+     "alternativen": [
+      {
+       "de": "Te8",
+       "partien": 1,
+       "anteilProzent": 3.6
+      }
+     ],
+     "summePartien": 28
+    },
+    {
+     "ply": 29,
+     "zug": "15… Txf7",
+     "gespielt": {
+      "de": "Txf7",
+      "partien": 18,
+      "anteilProzent": 90
+     },
+     "alternativen": [
+      {
+       "de": "Kh8",
+       "partien": 2,
+       "anteilProzent": 10
+      }
+     ],
+     "summePartien": 20
+    },
+    {
+     "ply": 31,
+     "zug": "16… Df5",
+     "gespielt": {
+      "de": "Df5",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Dxg5",
+       "partien": 12,
+       "anteilProzent": 70.6
+      },
+      {
+       "de": "Le6",
+       "partien": 3,
+       "anteilProzent": 17.6
+      },
+      {
+       "de": "Df6",
+       "partien": 2,
+       "anteilProzent": 11.8
+      }
+     ],
+     "summePartien": 17
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b3k1/ppp1nNpp/8/b4qN1/8/1QP5/P4PPP/R4RK1 b - - 0 17",
+    "material": {
+     "weiss": 30,
+     "schwarz": 28,
+     "differenzEigen": 2,
+     "schlagfolgeOffen": true,
+     "beruhigt": {
+      "weiss": 27,
+      "schwarz": 19,
+      "differenzEigen": 8
+     },
+     "bilanz": "Qualität mehr, +1 Dame, −1 Läufer"
+    },
+    "offeneLinien": [
+     "d",
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [
+      "b"
+     ],
+     "schwarz": [
+      "f"
+     ]
+    },
+    "eigen": {
+     "isoliert": [
+      "a",
+      "c"
+     ],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "identisch",
+    "codeZeile": null
+   }
+  },
+  "scotch-game-steinitz-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-steinitz-variation",
+   "name": "Schottisch: Steinitz-Variante (4…Dh4)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Dh4",
+     "Sb5",
+     "Dxe4+",
+     "Le2",
+     "Kd8",
+     "O-O",
+     "a6",
+     "S1c3",
+     "Dg6",
+     "Lh5",
+     "Df5",
+     "Sxc7",
+     "Kxc7",
+     "Sd5+",
+     "Kb8",
+     "g4",
+     "De4",
+     "Te1",
+     "Dd4",
+     "Lf4+",
+     "d6",
+     "Te8",
+     "Sf6",
+     "Dxd4"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Dh4 5. Sb5 Dxe4+ 6. Le2 Kd8 7. O-O a6 8. S1c3 Dg6 9. Lh5 Df5 10. Sxc7 Kxc7 11. Sd5+ Kb8 12. g4 De4 13. Te1 Dd4 14. Lf4+ d6 15. Te8 Sf6 16. Dxd4",
+    "plies": 31
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": [
+     "scotch-game-horwitz-attack"
+    ]
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Dxe4+",
+      "cpWeiss": 69,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Le2",
+      "cpWeiss": 72,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Kd8",
+      "cpWeiss": 142,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. O-O",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… a6",
+      "cpWeiss": 157,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. S1c3",
+      "cpWeiss": 150,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Dg6",
+      "cpWeiss": 171,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Lh5",
+      "cpWeiss": 136,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… Df5",
+      "cpWeiss": 150,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Sxc7",
+      "cpWeiss": 158,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Kxc7",
+      "cpWeiss": 142,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Sd5+",
+      "cpWeiss": 148,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Kb8",
+      "cpWeiss": 134,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. g4",
+      "cpWeiss": 160,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… De4",
+      "cpWeiss": 137,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Te1",
+      "cpWeiss": 134,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Dd4",
+      "cpWeiss": 126,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Lf4+",
+      "cpWeiss": 143,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… d6",
+      "cpWeiss": 145,
+      "matt": null
+     },
+     {
+      "ply": 28,
+      "zug": "15. Te8",
+      "cpWeiss": 132,
+      "matt": null
+     },
+     {
+      "ply": 29,
+      "zug": "15… Sf6",
+      "cpWeiss": 144,
+      "matt": null
+     },
+     {
+      "ply": 30,
+      "zug": "16. Dxd4",
+      "cpWeiss": null,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 9,
+      "zug": "5… Dxe4+",
+      "cpWeiss": 69,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 11,
+     "zug": "6… Kd8",
+     "zieher": "black",
+     "vonCp": 72,
+     "nachCp": 142,
+     "sprungCp": 70
+    },
+    "endbewertung": {
+     "ply": 29,
+     "zug": "15… Sf6",
+     "cpWeiss": 144,
+     "matt": null,
+     "cpEigen": 144,
+     "amLinienende": false
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Dh4",
+     "gespielt": {
+      "de": "Dh4",
+      "partien": 739957,
+      "anteilProzent": 2.1
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Dxe4+",
+     "gespielt": {
+      "de": "Dxe4+",
+      "partien": 16786,
+      "anteilProzent": 74.2
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 1913,
+       "anteilProzent": 8.5
+      },
+      {
+       "de": "Lc5",
+       "partien": 1700,
+       "anteilProzent": 7.5
+      },
+      {
+       "de": "Kd8",
+       "partien": 1045,
+       "anteilProzent": 4.6
+      }
+     ],
+     "summePartien": 22612
+    },
+    {
+     "ply": 11,
+     "zug": "6… Kd8",
+     "gespielt": {
+      "de": "Kd8",
+      "partien": 4710,
+      "anteilProzent": 35.4
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 2327,
+       "anteilProzent": 17.5
+      },
+      {
+       "de": "Ld6",
+       "partien": 1724,
+       "anteilProzent": 12.9
+      },
+      {
+       "de": "Dxg2",
+       "partien": 1692,
+       "anteilProzent": 12.7
+      }
+     ],
+     "summePartien": 13315
+    },
+    {
+     "ply": 13,
+     "zug": "7… a6",
+     "gespielt": {
+      "de": "a6",
+      "partien": 2002,
+      "anteilProzent": 64.2
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 520,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Lc5",
+       "partien": 308,
+       "anteilProzent": 9.9
+      },
+      {
+       "de": "d6",
+       "partien": 155,
+       "anteilProzent": 5
+      }
+     ],
+     "summePartien": 3119
+    },
+    {
+     "ply": 15,
+     "zug": "8… Dg6",
+     "gespielt": {
+      "de": "Dg6",
+      "partien": 425,
+      "anteilProzent": 44
+     },
+     "alternativen": [
+      {
+       "de": "Dh4",
+       "partien": 234,
+       "anteilProzent": 24.2
+      },
+      {
+       "de": "De5",
+       "partien": 110,
+       "anteilProzent": 11.4
+      },
+      {
+       "de": "De8",
+       "partien": 77,
+       "anteilProzent": 8
+      }
+     ],
+     "summePartien": 965
+    },
+    {
+     "ply": 17,
+     "zug": "9… Df5",
+     "gespielt": {
+      "de": "Df5",
+      "partien": 57,
+      "anteilProzent": 47.9
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 48,
+       "anteilProzent": 40.3
+      },
+      {
+       "de": "De6",
+       "partien": 13,
+       "anteilProzent": 10.9
+      },
+      {
+       "de": "Dg5",
+       "partien": 1,
+       "anteilProzent": 0.8
+      }
+     ],
+     "summePartien": 119
+    },
+    {
+     "ply": 19,
+     "zug": "10… Kxc7",
+     "gespielt": {
+      "de": "Kxc7",
+      "partien": 4,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 4
+    },
+    {
+     "ply": 21,
+     "zug": "11… Kb8",
+     "gespielt": {
+      "de": "Kb8",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Kd8",
+       "partien": 4,
+       "anteilProzent": 100
+      }
+     ],
+     "summePartien": 4
+    }
+   ],
+   "endstellung": {
+    "fen": "rkb1Rb1r/1p3ppp/p1np1n2/3N3B/3Q1BP1/8/PPP2P1P/R5K1 b - - 0 16",
+    "material": {
+     "weiss": 34,
+     "schwarz": 28,
+     "differenzEigen": 6,
+     "schlagfolgeOffen": true,
+     "beruhigt": {
+      "weiss": 25,
+      "schwarz": 28,
+      "differenzEigen": -3
+     },
+     "bilanz": "−1 Springer"
+    },
+    "offeneLinien": [
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "c"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 3,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [
+      "d"
+     ],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-horwitz-attack": {
+   "schema": 1,
+   "variationId": "scotch-game-horwitz-attack",
+   "name": "Schottisch: Horwitz-Angriff",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Dh4",
+     "Sb5",
+     "Dxe4+",
+     "Le2",
+     "Kd8",
+     "O-O",
+     "a6",
+     "S1c3",
+     "Dg6",
+     "Lh5",
+     "Df5",
+     "Sxc7",
+     "Kxc7",
+     "Sd5+",
+     "Kb8",
+     "g4",
+     "De4",
+     "Te1",
+     "Dd4",
+     "Lf4+",
+     "d6",
+     "Te8",
+     "Sf6",
+     "Dxd4"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Dh4 5. Sb5 Dxe4+ 6. Le2 Kd8 7. O-O a6 8. S1c3 Dg6 9. Lh5 Df5 10. Sxc7 Kxc7 11. Sd5+ Kb8 12. g4 De4 13. Te1 Dd4 14. Lf4+ d6 15. Te8 Sf6 16. Dxd4",
+    "plies": 31
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": "scotch-game-steinitz-variation",
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Dxe4+",
+      "cpWeiss": 69,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Le2",
+      "cpWeiss": 72,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Kd8",
+      "cpWeiss": 142,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. O-O",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… a6",
+      "cpWeiss": 157,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. S1c3",
+      "cpWeiss": 150,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Dg6",
+      "cpWeiss": 171,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Lh5",
+      "cpWeiss": 136,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… Df5",
+      "cpWeiss": 150,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Sxc7",
+      "cpWeiss": 158,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Kxc7",
+      "cpWeiss": 142,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Sd5+",
+      "cpWeiss": 148,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Kb8",
+      "cpWeiss": 134,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. g4",
+      "cpWeiss": 160,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… De4",
+      "cpWeiss": 137,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Te1",
+      "cpWeiss": 134,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Dd4",
+      "cpWeiss": 126,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Lf4+",
+      "cpWeiss": 143,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… d6",
+      "cpWeiss": 145,
+      "matt": null
+     },
+     {
+      "ply": 28,
+      "zug": "15. Te8",
+      "cpWeiss": 132,
+      "matt": null
+     },
+     {
+      "ply": 29,
+      "zug": "15… Sf6",
+      "cpWeiss": 144,
+      "matt": null
+     },
+     {
+      "ply": 30,
+      "zug": "16. Dxd4",
+      "cpWeiss": null,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 9,
+      "zug": "5… Dxe4+",
+      "cpWeiss": 69,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 11,
+     "zug": "6… Kd8",
+     "zieher": "black",
+     "vonCp": 72,
+     "nachCp": 142,
+     "sprungCp": 70
+    },
+    "endbewertung": {
+     "ply": 29,
+     "zug": "15… Sf6",
+     "cpWeiss": 144,
+     "matt": null,
+     "cpEigen": 144,
+     "amLinienende": false
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Dh4",
+     "gespielt": {
+      "de": "Dh4",
+      "partien": 739957,
+      "anteilProzent": 2.1
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Dxe4+",
+     "gespielt": {
+      "de": "Dxe4+",
+      "partien": 16786,
+      "anteilProzent": 74.2
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 1913,
+       "anteilProzent": 8.5
+      },
+      {
+       "de": "Lc5",
+       "partien": 1700,
+       "anteilProzent": 7.5
+      },
+      {
+       "de": "Kd8",
+       "partien": 1045,
+       "anteilProzent": 4.6
+      }
+     ],
+     "summePartien": 22612
+    },
+    {
+     "ply": 11,
+     "zug": "6… Kd8",
+     "gespielt": {
+      "de": "Kd8",
+      "partien": 4710,
+      "anteilProzent": 35.4
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 2327,
+       "anteilProzent": 17.5
+      },
+      {
+       "de": "Ld6",
+       "partien": 1724,
+       "anteilProzent": 12.9
+      },
+      {
+       "de": "Dxg2",
+       "partien": 1692,
+       "anteilProzent": 12.7
+      }
+     ],
+     "summePartien": 13315
+    },
+    {
+     "ply": 13,
+     "zug": "7… a6",
+     "gespielt": {
+      "de": "a6",
+      "partien": 2002,
+      "anteilProzent": 64.2
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 520,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Lc5",
+       "partien": 308,
+       "anteilProzent": 9.9
+      },
+      {
+       "de": "d6",
+       "partien": 155,
+       "anteilProzent": 5
+      }
+     ],
+     "summePartien": 3119
+    },
+    {
+     "ply": 15,
+     "zug": "8… Dg6",
+     "gespielt": {
+      "de": "Dg6",
+      "partien": 425,
+      "anteilProzent": 44
+     },
+     "alternativen": [
+      {
+       "de": "Dh4",
+       "partien": 234,
+       "anteilProzent": 24.2
+      },
+      {
+       "de": "De5",
+       "partien": 110,
+       "anteilProzent": 11.4
+      },
+      {
+       "de": "De8",
+       "partien": 77,
+       "anteilProzent": 8
+      }
+     ],
+     "summePartien": 965
+    },
+    {
+     "ply": 17,
+     "zug": "9… Df5",
+     "gespielt": {
+      "de": "Df5",
+      "partien": 57,
+      "anteilProzent": 47.9
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 48,
+       "anteilProzent": 40.3
+      },
+      {
+       "de": "De6",
+       "partien": 13,
+       "anteilProzent": 10.9
+      },
+      {
+       "de": "Dg5",
+       "partien": 1,
+       "anteilProzent": 0.8
+      }
+     ],
+     "summePartien": 119
+    },
+    {
+     "ply": 19,
+     "zug": "10… Kxc7",
+     "gespielt": {
+      "de": "Kxc7",
+      "partien": 4,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 4
+    },
+    {
+     "ply": 21,
+     "zug": "11… Kb8",
+     "gespielt": {
+      "de": "Kb8",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Kd8",
+       "partien": 4,
+       "anteilProzent": 100
+      }
+     ],
+     "summePartien": 4
+    }
+   ],
+   "endstellung": {
+    "fen": "rkb1Rb1r/1p3ppp/p1np1n2/3N3B/3Q1BP1/8/PPP2P1P/R5K1 b - - 0 16",
+    "material": {
+     "weiss": 34,
+     "schwarz": 28,
+     "differenzEigen": 6,
+     "schlagfolgeOffen": true,
+     "beruhigt": {
+      "weiss": 25,
+      "schwarz": 28,
+      "differenzEigen": -3
+     },
+     "bilanz": "−1 Springer"
+    },
+    "offeneLinien": [
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "c"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 3,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [
+      "d"
+     ],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-scotch-gambit-advance-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-scotch-gambit-advance-variation",
+   "name": "Schottisches Gambit: Vorstoß-Variante (4…Sf6 5. e5)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Lc4",
+     "Sf6",
+     "e5",
+     "d5",
+     "Lb5",
+     "Se4",
+     "Sxd4",
+     "Ld7",
+     "Lxc6",
+     "bxc6",
+     "O-O",
+     "Lc5",
+     "f3",
+     "Sg5",
+     "f4",
+     "Se4",
+     "Le3",
+     "O-O",
+     "Sd2",
+     "Sxd2",
+     "Dxd2",
+     "Lb6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Lc4 Sf6 5. e5 d5 6. Lb5 Se4 7. Sxd4 Ld7 8. Lxc6 bxc6 9. O-O Lc5 10. f3 Sg5 11. f4 Se4 12. Le3 O-O 13. Sd2 Sxd2 14. Dxd2 Lb6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Lc4",
+      "cpWeiss": 8,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Sf6",
+      "cpWeiss": -6,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. e5",
+      "cpWeiss": 7,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… d5",
+      "cpWeiss": 4,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Lb5",
+      "cpWeiss": 0,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Se4",
+      "cpWeiss": -6,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sxd4",
+      "cpWeiss": 17,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Ld7",
+      "cpWeiss": 1,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Lxc6",
+      "cpWeiss": 6,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… bxc6",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O",
+      "cpWeiss": 19,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… Lc5",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. f3",
+      "cpWeiss": 18,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Sg5",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. f4",
+      "cpWeiss": 22,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Se4",
+      "cpWeiss": 14,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Le3",
+      "cpWeiss": 25,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… O-O",
+      "cpWeiss": 52,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sd2",
+      "cpWeiss": 60,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Sxd2",
+      "cpWeiss": 50,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Dxd2",
+      "cpWeiss": 56,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Lb6",
+      "cpWeiss": 38,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 23,
+      "zug": "12… O-O",
+      "cpWeiss": 52,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 27,
+      "zug": "14… Lb6",
+      "cpWeiss": 38,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 6,
+     "zug": "4. Lc4",
+     "zieher": "white",
+     "vonCp": 36,
+     "nachCp": 8,
+     "sprungCp": -28
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Lb6",
+     "cpWeiss": 38,
+     "matt": null,
+     "cpEigen": 38,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 2684252,
+      "anteilProzent": 22.2
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 2817892,
+       "anteilProzent": 23.3
+      },
+      {
+       "de": "h6",
+       "partien": 2188659,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "d6",
+       "partien": 1576896,
+       "anteilProzent": 13.1
+      }
+     ],
+     "summePartien": 12074760
+    },
+    {
+     "ply": 9,
+     "zug": "5… d5",
+     "gespielt": {
+      "de": "d5",
+      "partien": 1029984,
+      "anteilProzent": 42.9
+     },
+     "alternativen": [
+      {
+       "de": "Sg4",
+       "partien": 545870,
+       "anteilProzent": 22.7
+      },
+      {
+       "de": "Se4",
+       "partien": 291889,
+       "anteilProzent": 12.2
+      },
+      {
+       "de": "De7",
+       "partien": 279667,
+       "anteilProzent": 11.6
+      }
+     ],
+     "summePartien": 2401010
+    },
+    {
+     "ply": 11,
+     "zug": "6… Se4",
+     "gespielt": {
+      "de": "Se4",
+      "partien": 498236,
+      "anteilProzent": 78.9
+     },
+     "alternativen": [
+      {
+       "de": "Sd7",
+       "partien": 78786,
+       "anteilProzent": 12.5
+      },
+      {
+       "de": "Sg4",
+       "partien": 19538,
+       "anteilProzent": 3.1
+      },
+      {
+       "de": "De7",
+       "partien": 12528,
+       "anteilProzent": 2
+      }
+     ],
+     "summePartien": 631683
+    },
+    {
+     "ply": 13,
+     "zug": "7… Ld7",
+     "gespielt": {
+      "de": "Ld7",
+      "partien": 300302,
+      "anteilProzent": 73.3
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 94457,
+       "anteilProzent": 23.1
+      },
+      {
+       "de": "Dh4",
+       "partien": 6273,
+       "anteilProzent": 1.5
+      },
+      {
+       "de": "a6",
+       "partien": 3758,
+       "anteilProzent": 0.9
+      }
+     ],
+     "summePartien": 409682
+    },
+    {
+     "ply": 15,
+     "zug": "8… bxc6",
+     "gespielt": {
+      "de": "bxc6",
+      "partien": 168554,
+      "anteilProzent": 81.1
+     },
+     "alternativen": [
+      {
+       "de": "Lxc6",
+       "partien": 39175,
+       "anteilProzent": 18.8
+      },
+      {
+       "de": "b6",
+       "partien": 94,
+       "anteilProzent": 0
+      },
+      {
+       "de": "Lc5",
+       "partien": 21,
+       "anteilProzent": 0
+      }
+     ],
+     "summePartien": 207882
+    },
+    {
+     "ply": 17,
+     "zug": "9… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 110116,
+      "anteilProzent": 71.8
+     },
+     "alternativen": [
+      {
+       "de": "Le7",
+       "partien": 26421,
+       "anteilProzent": 17.2
+      },
+      {
+       "de": "c5",
+       "partien": 14036,
+       "anteilProzent": 9.1
+      },
+      {
+       "de": "Dh4",
+       "partien": 717,
+       "anteilProzent": 0.5
+      }
+     ],
+     "summePartien": 153416
+    },
+    {
+     "ply": 19,
+     "zug": "10… Sg5",
+     "gespielt": {
+      "de": "Sg5",
+      "partien": 40026,
+      "anteilProzent": 91.6
+     },
+     "alternativen": [
+      {
+       "de": "Lxd4+",
+       "partien": 2469,
+       "anteilProzent": 5.7
+      },
+      {
+       "de": "Dh4",
+       "partien": 585,
+       "anteilProzent": 1.3
+      },
+      {
+       "de": "O-O",
+       "partien": 199,
+       "anteilProzent": 0.5
+      }
+     ],
+     "summePartien": 43681
+    },
+    {
+     "ply": 21,
+     "zug": "11… Se4",
+     "gespielt": {
+      "de": "Se4",
+      "partien": 16281,
+      "anteilProzent": 55
+     },
+     "alternativen": [
+      {
+       "de": "Se6",
+       "partien": 13140,
+       "anteilProzent": 44.4
+      },
+      {
+       "de": "Lxd4+",
+       "partien": 77,
+       "anteilProzent": 0.3
+      },
+      {
+       "de": "Lg4",
+       "partien": 41,
+       "anteilProzent": 0.1
+      }
+     ],
+     "summePartien": 29587
+    },
+    {
+     "ply": 23,
+     "zug": "12… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 7138,
+      "anteilProzent": 52.6
+     },
+     "alternativen": [
+      {
+       "de": "Lb6",
+       "partien": 3926,
+       "anteilProzent": 28.9
+      },
+      {
+       "de": "Db8",
+       "partien": 599,
+       "anteilProzent": 4.4
+      },
+      {
+       "de": "De7",
+       "partien": 549,
+       "anteilProzent": 4
+      }
+     ],
+     "summePartien": 13578
+    },
+    {
+     "ply": 25,
+     "zug": "13… Sxd2",
+     "gespielt": {
+      "de": "Sxd2",
+      "partien": 7022,
+      "anteilProzent": 54.5
+     },
+     "alternativen": [
+      {
+       "de": "f5",
+       "partien": 2234,
+       "anteilProzent": 17.3
+      },
+      {
+       "de": "Lxd4",
+       "partien": 950,
+       "anteilProzent": 7.4
+      },
+      {
+       "de": "f6",
+       "partien": 577,
+       "anteilProzent": 4.5
+      }
+     ],
+     "summePartien": 12896
+    },
+    {
+     "ply": 27,
+     "zug": "14… Lb6",
+     "gespielt": {
+      "de": "Lb6",
+      "partien": 2526,
+      "anteilProzent": 36.4
+     },
+     "alternativen": [
+      {
+       "de": "f6",
+       "partien": 1242,
+       "anteilProzent": 17.9
+      },
+      {
+       "de": "Tb8",
+       "partien": 1109,
+       "anteilProzent": 16
+      },
+      {
+       "de": "De7",
+       "partien": 846,
+       "anteilProzent": 12.2
+      }
+     ],
+     "summePartien": 6938
+    }
+   ],
+   "endstellung": {
+    "fen": "r2q1rk1/p1pb1ppp/1bp5/3pP3/3N1P2/4B3/PPPQ2PP/R4RK1 w - - 1 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "−1 Läufer, +1 Springer"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "b",
+      "e"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [
+      "a"
+     ],
+     "doppelt": [
+      "c"
+     ],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "identisch",
+    "codeZeile": null
+   }
+  },
+  "scotch-game-scotch-gambit-sarratt-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-scotch-gambit-sarratt-variation",
+   "name": "Schottisches Gambit: Sarratt-Variante (5. Sg5)",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Lc4",
+     "Lc5",
+     "Sg5",
+     "Sh6",
+     "Lxf7+",
+     "Sxf7",
+     "Sxf7",
+     "Kxf7",
+     "Dh5+",
+     "g6",
+     "Dxc5",
+     "d6",
+     "Dc4+",
+     "Le6",
+     "De2",
+     "Tf8",
+     "Lh6",
+     "Te8",
+     "h4",
+     "Kg8",
+     "Sd2",
+     "Df6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Lc4 Lc5 5. Sg5 Sh6 6. Lxf7+ Sxf7 7. Sxf7 Kxf7 8. Dh5+ g6 9. Dxc5 d6 10. Dc4+ Le6 11. De2 Tf8 12. Lh6 Te8 13. h4 Kg8 14. Sd2 Df6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": [
+     "scotch-game-haxo-gambit"
+    ]
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Lc4",
+      "cpWeiss": 8,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lc5",
+      "cpWeiss": 0,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sg5",
+      "cpWeiss": -6,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Sh6",
+      "cpWeiss": 5,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Lxf7+",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sxf7",
+      "cpWeiss": 4,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sxf7",
+      "cpWeiss": -1,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Kxf7",
+      "cpWeiss": -5,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Dh5+",
+      "cpWeiss": 11,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… g6",
+      "cpWeiss": -3,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Dxc5",
+      "cpWeiss": 5,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… d6",
+      "cpWeiss": 13,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Dc4+",
+      "cpWeiss": 19,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Le6",
+      "cpWeiss": 10,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. De2",
+      "cpWeiss": 12,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Tf8",
+      "cpWeiss": 7,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lh6",
+      "cpWeiss": 7,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Te8",
+      "cpWeiss": 15,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. h4",
+      "cpWeiss": 17,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Kg8",
+      "cpWeiss": 18,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Sd2",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Df6",
+      "cpWeiss": 8,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [],
+    "kritischerZug": {
+     "ply": 6,
+     "zug": "4. Lc4",
+     "zieher": "white",
+     "vonCp": 36,
+     "nachCp": 8,
+     "sprungCp": -28
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Df6",
+     "cpWeiss": 8,
+     "matt": null,
+     "cpEigen": 8,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 2817892,
+      "anteilProzent": 23.3
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 2684252,
+       "anteilProzent": 22.2
+      },
+      {
+       "de": "h6",
+       "partien": 2188659,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "d6",
+       "partien": 1576896,
+       "anteilProzent": 13.1
+      }
+     ],
+     "summePartien": 12074760
+    },
+    {
+     "ply": 9,
+     "zug": "5… Sh6",
+     "gespielt": {
+      "de": "Sh6",
+      "partien": 730712,
+      "anteilProzent": 62.5
+     },
+     "alternativen": [
+      {
+       "de": "Se5",
+       "partien": 231095,
+       "anteilProzent": 19.8
+      },
+      {
+       "de": "d5",
+       "partien": 137319,
+       "anteilProzent": 11.7
+      },
+      {
+       "de": "Df6",
+       "partien": 31529,
+       "anteilProzent": 2.7
+      }
+     ],
+     "summePartien": 1169284
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sxf7",
+     "gespielt": {
+      "de": "Sxf7",
+      "partien": 65320,
+      "anteilProzent": 98.7
+     },
+     "alternativen": [
+      {
+       "de": "Kf8",
+       "partien": 806,
+       "anteilProzent": 1.2
+      },
+      {
+       "de": "Ke7",
+       "partien": 46,
+       "anteilProzent": 0.1
+      }
+     ],
+     "summePartien": 66172
+    },
+    {
+     "ply": 13,
+     "zug": "7… Kxf7",
+     "gespielt": {
+      "de": "Kxf7",
+      "partien": 60545,
+      "anteilProzent": 94
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 1730,
+       "anteilProzent": 2.7
+      },
+      {
+       "de": "Lb4+",
+       "partien": 920,
+       "anteilProzent": 1.4
+      },
+      {
+       "de": "O-O",
+       "partien": 389,
+       "anteilProzent": 0.6
+      }
+     ],
+     "summePartien": 64384
+    },
+    {
+     "ply": 15,
+     "zug": "8… g6",
+     "gespielt": {
+      "de": "g6",
+      "partien": 225936,
+      "anteilProzent": 66.7
+     },
+     "alternativen": [
+      {
+       "de": "Kg8",
+       "partien": 62993,
+       "anteilProzent": 18.6
+      },
+      {
+       "de": "Kf8",
+       "partien": 41411,
+       "anteilProzent": 12.2
+      },
+      {
+       "de": "Ke7",
+       "partien": 4310,
+       "anteilProzent": 1.3
+      }
+     ],
+     "summePartien": 338705
+    },
+    {
+     "ply": 17,
+     "zug": "9… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 87582,
+      "anteilProzent": 47.5
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 36576,
+       "anteilProzent": 19.9
+      },
+      {
+       "de": "Te8",
+       "partien": 22438,
+       "anteilProzent": 12.2
+      },
+      {
+       "de": "De7",
+       "partien": 20400,
+       "anteilProzent": 11.1
+      }
+     ],
+     "summePartien": 184226
+    },
+    {
+     "ply": 19,
+     "zug": "10… Le6",
+     "gespielt": {
+      "de": "Le6",
+      "partien": 37807,
+      "anteilProzent": 92.7
+     },
+     "alternativen": [
+      {
+       "de": "Kg7",
+       "partien": 2109,
+       "anteilProzent": 5.2
+      },
+      {
+       "de": "Ke8",
+       "partien": 434,
+       "anteilProzent": 1.1
+      },
+      {
+       "de": "Kf8",
+       "partien": 167,
+       "anteilProzent": 0.4
+      }
+     ],
+     "summePartien": 40800
+    },
+    {
+     "ply": 21,
+     "zug": "11… Tf8",
+     "gespielt": {
+      "de": "Tf8",
+      "partien": 5950,
+      "anteilProzent": 34.5
+     },
+     "alternativen": [
+      {
+       "de": "Df6",
+       "partien": 4620,
+       "anteilProzent": 26.8
+      },
+      {
+       "de": "Te8",
+       "partien": 2881,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Kg7",
+       "partien": 1363,
+       "anteilProzent": 7.9
+      }
+     ],
+     "summePartien": 17270
+    },
+    {
+     "ply": 23,
+     "zug": "12… Te8",
+     "gespielt": {
+      "de": "Te8",
+      "partien": 2559,
+      "anteilProzent": 88.2
+     },
+     "alternativen": [
+      {
+       "de": "Tg8",
+       "partien": 233,
+       "anteilProzent": 8
+      },
+      {
+       "de": "Kg8",
+       "partien": 34,
+       "anteilProzent": 1.2
+      },
+      {
+       "de": "Df6",
+       "partien": 32,
+       "anteilProzent": 1.1
+      }
+     ],
+     "summePartien": 2902
+    },
+    {
+     "ply": 25,
+     "zug": "13… Kg8",
+     "gespielt": {
+      "de": "Kg8",
+      "partien": 9,
+      "anteilProzent": 14.5
+     },
+     "alternativen": [
+      {
+       "de": "Se5",
+       "partien": 19,
+       "anteilProzent": 30.6
+      },
+      {
+       "de": "Df6",
+       "partien": 13,
+       "anteilProzent": 21
+      },
+      {
+       "de": "Dd7",
+       "partien": 8,
+       "anteilProzent": 12.9
+      }
+     ],
+     "summePartien": 62
+    },
+    {
+     "ply": 27,
+     "zug": "14… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "d5",
+       "partien": 4,
+       "anteilProzent": 66.7
+      },
+      {
+       "de": "Dd7",
+       "partien": 1,
+       "anteilProzent": 16.7
+      },
+      {
+       "de": "Se5",
+       "partien": 1,
+       "anteilProzent": 16.7
+      }
+     ],
+     "summePartien": 6
+    }
+   ],
+   "endstellung": {
+    "fen": "r3r1k1/ppp4p/2npbqpB/8/3pP2P/8/PPPNQPP1/R3K2R w KQ - 3 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "e",
+      "f"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [
+      "d"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": false,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "identisch",
+    "codeZeile": null
+   }
+  },
+  "scotch-game-ghulam-kassim-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-ghulam-kassim-variation",
+   "name": "Schottisch: Ghulam-Kassim-Variante",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Sxd4",
+     "Dxd4",
+     "d6",
+     "Ld3",
+     "Sf6",
+     "Sc3",
+     "Le7",
+     "Lf4",
+     "O-O",
+     "O-O-O",
+     "c5",
+     "De3",
+     "Sg4",
+     "Df3",
+     "Se5",
+     "Lxe5",
+     "dxe5",
+     "Lc4",
+     "Da5",
+     "Dg3",
+     "Le6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Sxd4 5. Dxd4 d6 6. Ld3 Sf6 7. Sc3 Le7 8. Lf4 O-O 9. O-O-O c5 10. De3 Sg4 11. Df3 Se5 12. Lxe5 dxe5 13. Lc4 Da5 14. Dg3 Le6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": [
+     "scotch-game"
+    ]
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Sxd4",
+      "cpWeiss": 62,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Dxd4",
+      "cpWeiss": 61,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… d6",
+      "cpWeiss": 126,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sf6",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Sc3",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Le7",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Lf4",
+      "cpWeiss": 38,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… O-O",
+      "cpWeiss": 39,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O-O",
+      "cpWeiss": 44,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. De3",
+      "cpWeiss": 122,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Sg4",
+      "cpWeiss": 120,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Df3",
+      "cpWeiss": 139,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Se5",
+      "cpWeiss": 141,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lxe5",
+      "cpWeiss": 114,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… dxe5",
+      "cpWeiss": 124,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Lc4",
+      "cpWeiss": 121,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Da5",
+      "cpWeiss": 107,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Dg3",
+      "cpWeiss": 100,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Le6",
+      "cpWeiss": 104,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… Sxd4",
+      "cpWeiss": 62,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld3",
+      "cpWeiss": 41,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 17,
+      "zug": "9… c5",
+      "cpWeiss": 104,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 10,
+     "zug": "6. Ld3",
+     "zieher": "white",
+     "vonCp": 126,
+     "nachCp": 41,
+     "sprungCp": -85
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Le6",
+     "cpWeiss": 104,
+     "matt": null,
+     "cpEigen": 104,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Sxd4",
+     "gespielt": {
+      "de": "Sxd4",
+      "partien": 14884342,
+      "anteilProzent": 42.2
+     },
+     "alternativen": [
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 5505915,
+      "anteilProzent": 35.5
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 2811718,
+       "anteilProzent": 18.1
+      },
+      {
+       "de": "c5",
+       "partien": 2276424,
+       "anteilProzent": 14.7
+      },
+      {
+       "de": "Df6",
+       "partien": 2040916,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 15491600
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 131876,
+      "anteilProzent": 52.5
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 49008,
+       "anteilProzent": 19.5
+      },
+      {
+       "de": "Df6",
+       "partien": 19884,
+       "anteilProzent": 7.9
+      },
+      {
+       "de": "c5",
+       "partien": 18852,
+       "anteilProzent": 7.5
+      }
+     ],
+     "summePartien": 251277
+    },
+    {
+     "ply": 13,
+     "zug": "7… Le7",
+     "gespielt": {
+      "de": "Le7",
+      "partien": 103678,
+      "anteilProzent": 62.6
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 22667,
+       "anteilProzent": 13.7
+      },
+      {
+       "de": "c5",
+       "partien": 17345,
+       "anteilProzent": 10.5
+      },
+      {
+       "de": "g6",
+       "partien": 7221,
+       "anteilProzent": 4.4
+      }
+     ],
+     "summePartien": 165554
+    },
+    {
+     "ply": 15,
+     "zug": "8… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 6948,
+      "anteilProzent": 69.7
+     },
+     "alternativen": [
+      {
+       "de": "c5",
+       "partien": 1111,
+       "anteilProzent": 11.1
+      },
+      {
+       "de": "Le6",
+       "partien": 890,
+       "anteilProzent": 8.9
+      },
+      {
+       "de": "h6",
+       "partien": 259,
+       "anteilProzent": 2.6
+      }
+     ],
+     "summePartien": 9965
+    },
+    {
+     "ply": 17,
+     "zug": "9… c5",
+     "gespielt": {
+      "de": "c5",
+      "partien": 2502,
+      "anteilProzent": 39
+     },
+     "alternativen": [
+      {
+       "de": "Le6",
+       "partien": 1089,
+       "anteilProzent": 17
+      },
+      {
+       "de": "a6",
+       "partien": 490,
+       "anteilProzent": 7.6
+      },
+      {
+       "de": "Lg4",
+       "partien": 427,
+       "anteilProzent": 6.6
+      }
+     ],
+     "summePartien": 6422
+    },
+    {
+     "ply": 19,
+     "zug": "10… Sg4",
+     "gespielt": {
+      "de": "Sg4",
+      "partien": 674,
+      "anteilProzent": 25.9
+     },
+     "alternativen": [
+      {
+       "de": "a6",
+       "partien": 595,
+       "anteilProzent": 22.9
+      },
+      {
+       "de": "Le6",
+       "partien": 386,
+       "anteilProzent": 14.9
+      },
+      {
+       "de": "Lg4",
+       "partien": 155,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 2598
+    },
+    {
+     "ply": 21,
+     "zug": "11… Se5",
+     "gespielt": {
+      "de": "Se5",
+      "partien": 34,
+      "anteilProzent": 22.4
+     },
+     "alternativen": [
+      {
+       "de": "Lg5",
+       "partien": 27,
+       "anteilProzent": 17.8
+      },
+      {
+       "de": "Sf6",
+       "partien": 21,
+       "anteilProzent": 13.8
+      },
+      {
+       "de": "Lf6",
+       "partien": 20,
+       "anteilProzent": 13.2
+      }
+     ],
+     "summePartien": 152
+    },
+    {
+     "ply": 23,
+     "zug": "12… dxe5",
+     "gespielt": {
+      "de": "dxe5",
+      "partien": 29,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 29
+    },
+    {
+     "ply": 25,
+     "zug": "13… Da5",
+     "gespielt": {
+      "de": "Da5",
+      "partien": 5,
+      "anteilProzent": 35.7
+     },
+     "alternativen": [
+      {
+       "de": "De8",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Dc7",
+       "partien": 3,
+       "anteilProzent": 21.4
+      },
+      {
+       "de": "Db6",
+       "partien": 2,
+       "anteilProzent": 14.3
+      }
+     ],
+     "summePartien": 14
+    }
+   ],
+   "endstellung": {
+    "fen": "r4rk1/pp2bppp/4b3/q1p1p3/2B1P3/2N3Q1/PPP2PPP/2KR3R w - - 4 15",
+    "material": {
+     "weiss": 32,
+     "schwarz": 32,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 32,
+      "schwarz": 32,
+      "differenzEigen": 0
+     },
+     "bilanz": "−1 Läufer, +1 Springer"
+    },
+    "offeneLinien": [
+     "d"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-mieses-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-mieses-variation",
+   "name": "Schottisch: Mieses-Variante",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Sf6",
+     "Sxc6",
+     "bxc6",
+     "e5",
+     "Sd5",
+     "c4",
+     "Sb6",
+     "Ld3",
+     "Lc5",
+     "O-O",
+     "O-O",
+     "Sd2",
+     "d6",
+     "Se4",
+     "Ld4",
+     "Lg5",
+     "Dd7",
+     "Sf6+",
+     "gxf6",
+     "Lxh7+",
+     "Kg7",
+     "Lxf6+",
+     "Kh6",
+     "Le4",
+     "Sxc4",
+     "Dxd4"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Sf6 5. Sxc6 bxc6 6. e5 Sd5 7. c4 Sb6 8. Ld3 Lc5 9. O-O O-O 10. Sd2 d6 11. Se4 Ld4 12. Lg5 Dd7 13. Sf6+ gxf6 14. Lxh7+ Kg7 15. Lxf6+ Kh6 16. Le4 Sxc4 17. Dxd4",
+    "plies": 33
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Sf6",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sxc6",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… bxc6",
+      "cpWeiss": 19,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. e5",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sd5",
+      "cpWeiss": 52,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. c4",
+      "cpWeiss": 47,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Sb6",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Ld3",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Lc5",
+      "cpWeiss": 127,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. O-O",
+      "cpWeiss": 120,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… O-O",
+      "cpWeiss": 145,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Sd2",
+      "cpWeiss": 109,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… d6",
+      "cpWeiss": 327,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Se4",
+      "cpWeiss": 297,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… Ld4",
+      "cpWeiss": 292,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lg5",
+      "cpWeiss": 297,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Dd7",
+      "cpWeiss": 750,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sf6+",
+      "cpWeiss": 770,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… gxf6",
+      "cpWeiss": 790,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Lxh7+",
+      "cpWeiss": 769,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Kg7",
+      "cpWeiss": 739,
+      "matt": null
+     },
+     {
+      "ply": 28,
+      "zug": "15. Lxf6+",
+      "cpWeiss": 824,
+      "matt": null
+     },
+     {
+      "ply": 29,
+      "zug": "15… Kh6",
+      "cpWeiss": 856,
+      "matt": null
+     },
+     {
+      "ply": 30,
+      "zug": "16. Le4",
+      "cpWeiss": 844,
+      "matt": null
+     },
+     {
+      "ply": 31,
+      "zug": "16… Sxc4",
+      "cpWeiss": 835,
+      "matt": null
+     },
+     {
+      "ply": 32,
+      "zug": "17. Dxd4",
+      "cpWeiss": null,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 11,
+      "zug": "6… Sd5",
+      "cpWeiss": 52,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 12,
+      "zug": "7. c4",
+      "cpWeiss": 47,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 15,
+      "zug": "8… Lc5",
+      "cpWeiss": 127,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 23,
+     "zug": "12… Dd7",
+     "zieher": "black",
+     "vonCp": 297,
+     "nachCp": 750,
+     "sprungCp": 453
+    },
+    "endbewertung": {
+     "ply": 31,
+     "zug": "16… Sxc4",
+     "cpWeiss": 835,
+     "matt": null,
+     "cpEigen": 835,
+     "amLinienende": false
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 4208475,
+      "anteilProzent": 11.9
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… bxc6",
+     "gespielt": {
+      "de": "bxc6",
+      "partien": 2037605,
+      "anteilProzent": 88.5
+     },
+     "alternativen": [
+      {
+       "de": "dxc6",
+       "partien": 261441,
+       "anteilProzent": 11.4
+      },
+      {
+       "de": "b6",
+       "partien": 2056,
+       "anteilProzent": 0.1
+      },
+      {
+       "de": "Sxe4",
+       "partien": 579,
+       "anteilProzent": 0
+      }
+     ],
+     "summePartien": 2302960
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sd5",
+     "gespielt": {
+      "de": "Sd5",
+      "partien": 343877,
+      "anteilProzent": 56.8
+     },
+     "alternativen": [
+      {
+       "de": "De7",
+       "partien": 226209,
+       "anteilProzent": 37.4
+      },
+      {
+       "de": "Se4",
+       "partien": 22497,
+       "anteilProzent": 3.7
+      },
+      {
+       "de": "Sg8",
+       "partien": 7206,
+       "anteilProzent": 1.2
+      }
+     ],
+     "summePartien": 605171
+    },
+    {
+     "ply": 13,
+     "zug": "7… Sb6",
+     "gespielt": {
+      "de": "Sb6",
+      "partien": 133837,
+      "anteilProzent": 77.9
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 21409,
+       "anteilProzent": 12.5
+      },
+      {
+       "de": "Se7",
+       "partien": 10889,
+       "anteilProzent": 6.3
+      },
+      {
+       "de": "Sb4",
+       "partien": 4593,
+       "anteilProzent": 2.7
+      }
+     ],
+     "summePartien": 171790
+    },
+    {
+     "ply": 15,
+     "zug": "8… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 9408,
+      "anteilProzent": 27.6
+     },
+     "alternativen": [
+      {
+       "de": "Lb4+",
+       "partien": 7996,
+       "anteilProzent": 23.5
+      },
+      {
+       "de": "d5",
+       "partien": 5046,
+       "anteilProzent": 14.8
+      },
+      {
+       "de": "d6",
+       "partien": 4198,
+       "anteilProzent": 12.3
+      }
+     ],
+     "summePartien": 34076
+    },
+    {
+     "ply": 17,
+     "zug": "9… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 6382,
+      "anteilProzent": 79.8
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 490,
+       "anteilProzent": 6.1
+      },
+      {
+       "de": "Dh4",
+       "partien": 379,
+       "anteilProzent": 4.7
+      },
+      {
+       "de": "d5",
+       "partien": 229,
+       "anteilProzent": 2.9
+      }
+     ],
+     "summePartien": 8000
+    },
+    {
+     "ply": 19,
+     "zug": "10… d6",
+     "gespielt": {
+      "de": "d6",
+      "partien": 209,
+      "anteilProzent": 37.9
+     },
+     "alternativen": [
+      {
+       "de": "d5",
+       "partien": 154,
+       "anteilProzent": 27.9
+      },
+      {
+       "de": "Te8",
+       "partien": 87,
+       "anteilProzent": 15.8
+      },
+      {
+       "de": "La6",
+       "partien": 23,
+       "anteilProzent": 4.2
+      }
+     ],
+     "summePartien": 551
+    },
+    {
+     "ply": 21,
+     "zug": "11… Ld4",
+     "gespielt": {
+      "de": "Ld4",
+      "partien": 370,
+      "anteilProzent": 78.4
+     },
+     "alternativen": [
+      {
+       "de": "Sd7",
+       "partien": 24,
+       "anteilProzent": 5.1
+      },
+      {
+       "de": "Lb4",
+       "partien": 18,
+       "anteilProzent": 3.8
+      },
+      {
+       "de": "Le6",
+       "partien": 13,
+       "anteilProzent": 2.8
+      }
+     ],
+     "summePartien": 472
+    },
+    {
+     "ply": 23,
+     "zug": "12… Dd7",
+     "gespielt": {
+      "de": "Dd7",
+      "partien": 29,
+      "anteilProzent": 46.8
+     },
+     "alternativen": [
+      {
+       "de": "f6",
+       "partien": 17,
+       "anteilProzent": 27.4
+      },
+      {
+       "de": "De8",
+       "partien": 15,
+       "anteilProzent": 24.2
+      },
+      {
+       "de": "f5",
+       "partien": 1,
+       "anteilProzent": 1.6
+      }
+     ],
+     "summePartien": 62
+    },
+    {
+     "ply": 25,
+     "zug": "13… gxf6",
+     "gespielt": {
+      "de": "gxf6",
+      "partien": 18,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 18
+    },
+    {
+     "ply": 27,
+     "zug": "14… Kg7",
+     "gespielt": {
+      "de": "Kg7",
+      "partien": 1,
+      "anteilProzent": 12.5
+     },
+     "alternativen": [
+      {
+       "de": "Kxh7",
+       "partien": 7,
+       "anteilProzent": 87.5
+      }
+     ],
+     "summePartien": 8
+    },
+    {
+     "ply": 29,
+     "zug": "15… Kh6",
+     "gespielt": {
+      "de": "Kh6",
+      "partien": 1,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 1
+    },
+    {
+     "ply": 31,
+     "zug": "16… Sxc4",
+     "gespielt": {
+      "de": "Sxc4",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Lxe5",
+       "partien": 1,
+       "anteilProzent": 100
+      }
+     ],
+     "summePartien": 1
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b2r2/p1pq1p2/2pp1B1k/4P3/2nQB3/8/PP3PPP/R4RK1 b - - 0 17",
+    "material": {
+     "weiss": 31,
+     "schwarz": 30,
+     "differenzEigen": 1,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 31,
+      "schwarz": 30,
+      "differenzEigen": 1
+     },
+     "bilanz": "+1 Läufer, −1 Springer, +1 Bauer"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "c",
+      "d"
+     ],
+     "schwarz": [
+      "b",
+      "e",
+      "g",
+      "h"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [
+      "h"
+     ],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [
+      "a",
+      "f"
+     ],
+     "doppelt": [
+      "c"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 0,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-classical-variation-millennium-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-classical-variation-millennium-variation",
+   "name": "Klassische Variante: Millennium-Variante",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Lc5",
+     "Le3",
+     "Df6",
+     "c3",
+     "Dg6",
+     "Df3",
+     "Sf6",
+     "Sxc6",
+     "Lxe3",
+     "Se5",
+     "Dg5",
+     "Dxe3",
+     "Dxe5",
+     "Sd2",
+     "O-O",
+     "f4",
+     "De6",
+     "Ld3",
+     "Db6",
+     "Dxb6",
+     "axb6"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Lc5 5. Le3 Df6 6. c3 Dg6 7. Df3 Sf6 8. Sxc6 Lxe3 9. Se5 Dg5 10. Dxe3 Dxe5 11. Sd2 O-O 12. f4 De6 13. Ld3 Db6 14. Dxb6 axb6",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lc5",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Le3",
+      "cpWeiss": 20,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Df6",
+      "cpWeiss": 20,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. c3",
+      "cpWeiss": 22,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Dg6",
+      "cpWeiss": 23,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Df3",
+      "cpWeiss": 14,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Sf6",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Sxc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Lxe3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Se5",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… Dg5",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Dxe3",
+      "cpWeiss": 15,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Dxe5",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Sd2",
+      "cpWeiss": 24,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… O-O",
+      "cpWeiss": 30,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. f4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… De6",
+      "cpWeiss": 35,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Ld3",
+      "cpWeiss": 28,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Db6",
+      "cpWeiss": 26,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Dxb6",
+      "cpWeiss": 30,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… axb6",
+      "cpWeiss": 42,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [],
+    "kritischerZug": {
+     "ply": 6,
+     "zug": "4. Sxd4",
+     "zieher": "white",
+     "vonCp": 36,
+     "nachCp": 16,
+     "sprungCp": -20
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… axb6",
+     "cpWeiss": 42,
+     "matt": null,
+     "cpEigen": 42,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 8254680,
+      "anteilProzent": 23.4
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": 1396562,
+      "anteilProzent": 42.5
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 505794,
+       "anteilProzent": 15.4
+      },
+      {
+       "de": "Lb6",
+       "partien": 442063,
+       "anteilProzent": 13.5
+      },
+      {
+       "de": "Lxd4",
+       "partien": 308766,
+       "anteilProzent": 9.4
+      }
+     ],
+     "summePartien": 3283841
+    },
+    {
+     "ply": 11,
+     "zug": "6… Dg6",
+     "gespielt": {
+      "de": "Dg6",
+      "partien": 36338,
+      "anteilProzent": 1.7
+     },
+     "alternativen": [
+      {
+       "de": "Sge7",
+       "partien": 1281512,
+       "anteilProzent": 61.5
+      },
+      {
+       "de": "d6",
+       "partien": 249437,
+       "anteilProzent": 12
+      },
+      {
+       "de": "Sxd4",
+       "partien": 216031,
+       "anteilProzent": 10.4
+      }
+     ],
+     "summePartien": 2085392
+    },
+    {
+     "ply": 13,
+     "zug": "7… Sf6",
+     "gespielt": {
+      "de": "Sf6",
+      "partien": 3119,
+      "anteilProzent": 43
+     },
+     "alternativen": [
+      {
+       "de": "Se5",
+       "partien": 2046,
+       "anteilProzent": 28.2
+      },
+      {
+       "de": "d6",
+       "partien": 694,
+       "anteilProzent": 9.6
+      },
+      {
+       "de": "Sge7",
+       "partien": 632,
+       "anteilProzent": 8.7
+      }
+     ],
+     "summePartien": 7248
+    },
+    {
+     "ply": 15,
+     "zug": "8… Lxe3",
+     "gespielt": {
+      "de": "Lxe3",
+      "partien": 583,
+      "anteilProzent": 91.4
+     },
+     "alternativen": [
+      {
+       "de": "dxc6",
+       "partien": 45,
+       "anteilProzent": 7.1
+      },
+      {
+       "de": "bxc6",
+       "partien": 8,
+       "anteilProzent": 1.3
+      },
+      {
+       "de": "Sxe4",
+       "partien": 2,
+       "anteilProzent": 0.3
+      }
+     ],
+     "summePartien": 638
+    },
+    {
+     "ply": 17,
+     "zug": "9… Dg5",
+     "gespielt": {
+      "de": "Dg5",
+      "partien": 108,
+      "anteilProzent": 45
+     },
+     "alternativen": [
+      {
+       "de": "Lxf2+",
+       "partien": 71,
+       "anteilProzent": 29.6
+      },
+      {
+       "de": "Dxe4",
+       "partien": 55,
+       "anteilProzent": 22.9
+      },
+      {
+       "de": "Dh6",
+       "partien": 2,
+       "anteilProzent": 0.8
+      }
+     ],
+     "summePartien": 240
+    },
+    {
+     "ply": 19,
+     "zug": "10… Dxe5",
+     "gespielt": {
+      "de": "Dxe5",
+      "partien": 31,
+      "anteilProzent": 100
+     },
+     "alternativen": [],
+     "summePartien": 31
+    },
+    {
+     "ply": 21,
+     "zug": "11… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 26,
+      "anteilProzent": 74.3
+     },
+     "alternativen": [
+      {
+       "de": "d5",
+       "partien": 5,
+       "anteilProzent": 14.3
+      },
+      {
+       "de": "d6",
+       "partien": 2,
+       "anteilProzent": 5.7
+      },
+      {
+       "de": "g5",
+       "partien": 1,
+       "anteilProzent": 2.9
+      }
+     ],
+     "summePartien": 35
+    },
+    {
+     "ply": 23,
+     "zug": "12… De6",
+     "gespielt": {
+      "de": "De6",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Da5",
+       "partien": 4,
+       "anteilProzent": 57.1
+      },
+      {
+       "de": "Dh5",
+       "partien": 1,
+       "anteilProzent": 14.3
+      },
+      {
+       "de": "Dd6",
+       "partien": 1,
+       "anteilProzent": 14.3
+      }
+     ],
+     "summePartien": 7
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b2rk1/1ppp1ppp/1p3n2/8/4PP2/2PB4/PP1N2PP/R3K2R w KQ - 0 15",
+    "material": {
+     "weiss": 23,
+     "schwarz": 23,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 23,
+      "schwarz": 23,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": [
+      "a",
+      "e"
+     ]
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": false
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [
+      "b"
+     ],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": false,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-classical-variation-blackburne-attack": {
+   "schema": 1,
+   "variationId": "scotch-game-classical-variation-blackburne-attack",
+   "name": "Klassische Variante: Blackburne-Angriff",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Lc5",
+     "Le3",
+     "Df6",
+     "c3",
+     "Sge7",
+     "Dd2",
+     "O-O",
+     "Sxc6",
+     "Dxc6",
+     "Ld3",
+     "d5",
+     "O-O",
+     "Ld6",
+     "Dc2",
+     "dxe4",
+     "Lxe4",
+     "Db5",
+     "Sd2",
+     "Dh5",
+     "g3",
+     "Sf5"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Lc5 5. Le3 Df6 6. c3 Sge7 7. Dd2 O-O 8. Sxc6 Dxc6 9. Ld3 d5 10. O-O Ld6 11. Dc2 dxe4 12. Lxe4 Db5 13. Sd2 Dh5 14. g3 Sf5",
+    "plies": 28
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Lc5",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Le3",
+      "cpWeiss": 20,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Df6",
+      "cpWeiss": 20,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. c3",
+      "cpWeiss": 22,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Sge7",
+      "cpWeiss": 15,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Dd2",
+      "cpWeiss": -2,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… O-O",
+      "cpWeiss": -9,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. Sxc6",
+      "cpWeiss": -7,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Dxc6",
+      "cpWeiss": -15,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Ld3",
+      "cpWeiss": -8,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… d5",
+      "cpWeiss": -15,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. O-O",
+      "cpWeiss": -17,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Ld6",
+      "cpWeiss": -17,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. Dc2",
+      "cpWeiss": 0,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… dxe4",
+      "cpWeiss": 1,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. Lxe4",
+      "cpWeiss": 4,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Db5",
+      "cpWeiss": 1,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sd2",
+      "cpWeiss": 2,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Dh5",
+      "cpWeiss": 3,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. g3",
+      "cpWeiss": 0,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Sf5",
+      "cpWeiss": 0,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [],
+    "kritischerZug": {
+     "ply": 6,
+     "zug": "4. Sxd4",
+     "zieher": "white",
+     "vonCp": 36,
+     "nachCp": 16,
+     "sprungCp": -20
+    },
+    "endbewertung": {
+     "ply": 27,
+     "zug": "14… Sf5",
+     "cpWeiss": 0,
+     "matt": null,
+     "cpEigen": 0,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Lc5",
+     "gespielt": {
+      "de": "Lc5",
+      "partien": 8254680,
+      "anteilProzent": 23.4
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      },
+      {
+       "de": "Df6",
+       "partien": 2104513,
+       "anteilProzent": 6
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Df6",
+     "gespielt": {
+      "de": "Df6",
+      "partien": 1396562,
+      "anteilProzent": 42.5
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 505794,
+       "anteilProzent": 15.4
+      },
+      {
+       "de": "Lb6",
+       "partien": 442063,
+       "anteilProzent": 13.5
+      },
+      {
+       "de": "Lxd4",
+       "partien": 308766,
+       "anteilProzent": 9.4
+      }
+     ],
+     "summePartien": 3283841
+    },
+    {
+     "ply": 11,
+     "zug": "6… Sge7",
+     "gespielt": {
+      "de": "Sge7",
+      "partien": 1281512,
+      "anteilProzent": 61.5
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 249437,
+       "anteilProzent": 12
+      },
+      {
+       "de": "Sxd4",
+       "partien": 216031,
+       "anteilProzent": 10.4
+      },
+      {
+       "de": "Lxd4",
+       "partien": 76629,
+       "anteilProzent": 3.7
+      }
+     ],
+     "summePartien": 2085392
+    },
+    {
+     "ply": 13,
+     "zug": "7… O-O",
+     "gespielt": {
+      "de": "O-O",
+      "partien": 13080,
+      "anteilProzent": 36.9
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 6203,
+       "anteilProzent": 17.5
+      },
+      {
+       "de": "h6",
+       "partien": 5016,
+       "anteilProzent": 14.2
+      },
+      {
+       "de": "d5",
+       "partien": 4262,
+       "anteilProzent": 12
+      }
+     ],
+     "summePartien": 35436
+    },
+    {
+     "ply": 15,
+     "zug": "8… Dxc6",
+     "gespielt": {
+      "de": "Dxc6",
+      "partien": 2273,
+      "anteilProzent": 49
+     },
+     "alternativen": [
+      {
+       "de": "Lxe3",
+       "partien": 2079,
+       "anteilProzent": 44.8
+      },
+      {
+       "de": "Sxc6",
+       "partien": 194,
+       "anteilProzent": 4.2
+      },
+      {
+       "de": "dxc6",
+       "partien": 69,
+       "anteilProzent": 1.5
+      }
+     ],
+     "summePartien": 4638
+    },
+    {
+     "ply": 17,
+     "zug": "9… d5",
+     "gespielt": {
+      "de": "d5",
+      "partien": 124,
+      "anteilProzent": 35
+     },
+     "alternativen": [
+      {
+       "de": "Lxe3",
+       "partien": 84,
+       "anteilProzent": 23.7
+      },
+      {
+       "de": "d6",
+       "partien": 80,
+       "anteilProzent": 22.6
+      },
+      {
+       "de": "Sg6",
+       "partien": 44,
+       "anteilProzent": 12.4
+      }
+     ],
+     "summePartien": 354
+    },
+    {
+     "ply": 19,
+     "zug": "10… Ld6",
+     "gespielt": {
+      "de": "Ld6",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "dxe4",
+       "partien": 4,
+       "anteilProzent": 44.4
+      },
+      {
+       "de": "Lxe3",
+       "partien": 2,
+       "anteilProzent": 22.2
+      },
+      {
+       "de": "Le6",
+       "partien": 1,
+       "anteilProzent": 11.1
+      }
+     ],
+     "summePartien": 9
+    }
+   ],
+   "endstellung": {
+    "fen": "r1b2rk1/ppp2ppp/3b4/5n1q/4B3/2P1B1P1/PPQN1P1P/R4RK1 w - - 1 15",
+    "material": {
+     "weiss": 34,
+     "schwarz": 34,
+     "differenzEigen": 0,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 34,
+      "schwarz": 34,
+      "differenzEigen": 0
+     },
+     "bilanz": "ausgeglichen"
+    },
+    "offeneLinien": [
+     "d",
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 3,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": true,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": true
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  },
+  "scotch-game-horwitz-attack-blackburne-variation": {
+   "schema": 1,
+   "variationId": "scotch-game-horwitz-attack-blackburne-variation",
+   "name": "Horwitz-Angriff: Blackburne-Variante",
+   "seite": "white",
+   "zugfolge": {
+    "de": [
+     "e4",
+     "e5",
+     "Sf3",
+     "Sc6",
+     "d4",
+     "exd4",
+     "Sxd4",
+     "Dh4",
+     "Sb5",
+     "Lb4+",
+     "Ld2",
+     "Dxe4+",
+     "Le2",
+     "Kd8",
+     "O-O",
+     "Lxd2",
+     "Dxd2",
+     "a6",
+     "Lf3",
+     "Db4",
+     "S5c3",
+     "h6",
+     "De3",
+     "Sf6",
+     "Sd5",
+     "Dd4",
+     "Sxf6",
+     "Dxf6",
+     "Sc3",
+     "Te8",
+     "Le4",
+     "d6",
+     "Tfe1",
+     "a5",
+     "h3",
+     "a4"
+    ],
+    "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4 Dh4 5. Sb5 Lb4+ 6. Ld2 Dxe4+ 7. Le2 Kd8 8. O-O Lxd2 9. Dxd2 a6 10. Lf3 Db4 11. S5c3 h6 12. De3 Sf6 13. Sd5 Dd4 14. Sxf6 Dxf6 15. Sc3 Te8 16. Le4 d6 17. Tfe1 a5 18. h3 a4",
+    "plies": 36
+   },
+   "abzweigung": {
+    "ply": 5,
+    "zug": "3… exd4",
+    "san": "exd4",
+    "seite": "black",
+    "vonEigenerSeite": false
+   },
+   "etappe": {
+    "partOf": null,
+    "enthaeltEtappen": []
+   },
+   "bewertung": {
+    "tiefe": 18,
+    "schwelleCp": 50,
+    "entlangLinie": [
+     {
+      "ply": 0,
+      "zug": "1. e4",
+      "cpWeiss": 32,
+      "matt": null
+     },
+     {
+      "ply": 1,
+      "zug": "1… e5",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 2,
+      "zug": "2. Sf3",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 3,
+      "zug": "2… Sc6",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 4,
+      "zug": "3. d4",
+      "cpWeiss": 29,
+      "matt": null
+     },
+     {
+      "ply": 5,
+      "zug": "3… exd4",
+      "cpWeiss": 36,
+      "matt": null
+     },
+     {
+      "ply": 6,
+      "zug": "4. Sxd4",
+      "cpWeiss": 16,
+      "matt": null
+     },
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null
+     },
+     {
+      "ply": 9,
+      "zug": "5… Lb4+",
+      "cpWeiss": 41,
+      "matt": null
+     },
+     {
+      "ply": 10,
+      "zug": "6. Ld2",
+      "cpWeiss": 34,
+      "matt": null
+     },
+     {
+      "ply": 11,
+      "zug": "6… Dxe4+",
+      "cpWeiss": 35,
+      "matt": null
+     },
+     {
+      "ply": 12,
+      "zug": "7. Le2",
+      "cpWeiss": 28,
+      "matt": null
+     },
+     {
+      "ply": 13,
+      "zug": "7… Kd8",
+      "cpWeiss": 46,
+      "matt": null
+     },
+     {
+      "ply": 14,
+      "zug": "8. O-O",
+      "cpWeiss": null,
+      "matt": null
+     },
+     {
+      "ply": 15,
+      "zug": "8… Lxd2",
+      "cpWeiss": 45,
+      "matt": null
+     },
+     {
+      "ply": 16,
+      "zug": "9. Dxd2",
+      "cpWeiss": -6,
+      "matt": null
+     },
+     {
+      "ply": 17,
+      "zug": "9… a6",
+      "cpWeiss": -33,
+      "matt": null
+     },
+     {
+      "ply": 18,
+      "zug": "10. Lf3",
+      "cpWeiss": -2,
+      "matt": null
+     },
+     {
+      "ply": 19,
+      "zug": "10… Db4",
+      "cpWeiss": -59,
+      "matt": null
+     },
+     {
+      "ply": 20,
+      "zug": "11. S5c3",
+      "cpWeiss": -53,
+      "matt": null
+     },
+     {
+      "ply": 21,
+      "zug": "11… h6",
+      "cpWeiss": -52,
+      "matt": null
+     },
+     {
+      "ply": 22,
+      "zug": "12. De3",
+      "cpWeiss": -37,
+      "matt": null
+     },
+     {
+      "ply": 23,
+      "zug": "12… Sf6",
+      "cpWeiss": -51,
+      "matt": null
+     },
+     {
+      "ply": 24,
+      "zug": "13. Sd5",
+      "cpWeiss": -50,
+      "matt": null
+     },
+     {
+      "ply": 25,
+      "zug": "13… Dd4",
+      "cpWeiss": -59,
+      "matt": null
+     },
+     {
+      "ply": 26,
+      "zug": "14. Sxf6",
+      "cpWeiss": -51,
+      "matt": null
+     },
+     {
+      "ply": 27,
+      "zug": "14… Dxf6",
+      "cpWeiss": -52,
+      "matt": null
+     },
+     {
+      "ply": 28,
+      "zug": "15. Sc3",
+      "cpWeiss": -51,
+      "matt": null
+     },
+     {
+      "ply": 29,
+      "zug": "15… Te8",
+      "cpWeiss": -52,
+      "matt": null
+     },
+     {
+      "ply": 30,
+      "zug": "16. Le4",
+      "cpWeiss": -54,
+      "matt": null
+     },
+     {
+      "ply": 31,
+      "zug": "16… d6",
+      "cpWeiss": -59,
+      "matt": null
+     },
+     {
+      "ply": 32,
+      "zug": "17. Tfe1",
+      "cpWeiss": -51,
+      "matt": null
+     },
+     {
+      "ply": 33,
+      "zug": "17… a5",
+      "cpWeiss": -58,
+      "matt": null
+     },
+     {
+      "ply": 34,
+      "zug": "18. h3",
+      "cpWeiss": -67,
+      "matt": null
+     },
+     {
+      "ply": 35,
+      "zug": "18… a4",
+      "cpWeiss": -57,
+      "matt": null
+     }
+    ],
+    "wendepunkte": [
+     {
+      "ply": 7,
+      "zug": "4… Dh4",
+      "cpWeiss": 70,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "weiss"
+     },
+     {
+      "ply": 8,
+      "zug": "5. Sb5",
+      "cpWeiss": 48,
+      "matt": null,
+      "von": "weiss",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 19,
+      "zug": "10… Db4",
+      "cpWeiss": -59,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "schwarz"
+     },
+     {
+      "ply": 22,
+      "zug": "12. De3",
+      "cpWeiss": -37,
+      "matt": null,
+      "von": "schwarz",
+      "nach": "ausgeglichen"
+     },
+     {
+      "ply": 23,
+      "zug": "12… Sf6",
+      "cpWeiss": -51,
+      "matt": null,
+      "von": "ausgeglichen",
+      "nach": "schwarz"
+     }
+    ],
+    "kritischerZug": {
+     "ply": 19,
+     "zug": "10… Db4",
+     "zieher": "black",
+     "vonCp": -2,
+     "nachCp": -59,
+     "sprungCp": -57
+    },
+    "endbewertung": {
+     "ply": 35,
+     "zug": "18… a4",
+     "cpWeiss": -57,
+     "matt": null,
+     "cpEigen": -57,
+     "amLinienende": true
+    }
+   },
+   "gegnerzuege": [
+    {
+     "ply": 5,
+     "zug": "3… exd4",
+     "gespielt": {
+      "de": "exd4",
+      "partien": 50133668,
+      "anteilProzent": 81.6
+     },
+     "alternativen": [
+      {
+       "de": "d6",
+       "partien": 4279320,
+       "anteilProzent": 7
+      },
+      {
+       "de": "Sf6",
+       "partien": 1772482,
+       "anteilProzent": 2.9
+      },
+      {
+       "de": "Sxd4",
+       "partien": 1055631,
+       "anteilProzent": 1.7
+      }
+     ],
+     "summePartien": 61456481
+    },
+    {
+     "ply": 7,
+     "zug": "4… Dh4",
+     "gespielt": {
+      "de": "Dh4",
+      "partien": 739957,
+      "anteilProzent": 2.1
+     },
+     "alternativen": [
+      {
+       "de": "Sxd4",
+       "partien": 14884342,
+       "anteilProzent": 42.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 8254680,
+       "anteilProzent": 23.4
+      },
+      {
+       "de": "Sf6",
+       "partien": 4208475,
+       "anteilProzent": 11.9
+      }
+     ],
+     "summePartien": 35255839
+    },
+    {
+     "ply": 9,
+     "zug": "5… Lb4+",
+     "gespielt": {
+      "de": "Lb4+",
+      "partien": 1913,
+      "anteilProzent": 8.5
+     },
+     "alternativen": [
+      {
+       "de": "Dxe4+",
+       "partien": 16786,
+       "anteilProzent": 74.2
+      },
+      {
+       "de": "Lc5",
+       "partien": 1700,
+       "anteilProzent": 7.5
+      },
+      {
+       "de": "Kd8",
+       "partien": 1045,
+       "anteilProzent": 4.6
+      }
+     ],
+     "summePartien": 22612
+    },
+    {
+     "ply": 11,
+     "zug": "6… Dxe4+",
+     "gespielt": {
+      "de": "Dxe4+",
+      "partien": 359,
+      "anteilProzent": 56.4
+     },
+     "alternativen": [
+      {
+       "de": "Lxd2+",
+       "partien": 185,
+       "anteilProzent": 29
+      },
+      {
+       "de": "Lc5",
+       "partien": 57,
+       "anteilProzent": 8.9
+      },
+      {
+       "de": "Kd8",
+       "partien": 10,
+       "anteilProzent": 1.6
+      }
+     ],
+     "summePartien": 637
+    },
+    {
+     "ply": 13,
+     "zug": "7… Kd8",
+     "gespielt": {
+      "de": "Kd8",
+      "partien": 246,
+      "anteilProzent": 23.8
+     },
+     "alternativen": [
+      {
+       "de": "Lxd2+",
+       "partien": 581,
+       "anteilProzent": 56.2
+      },
+      {
+       "de": "Ld6",
+       "partien": 93,
+       "anteilProzent": 9
+      },
+      {
+       "de": "De5",
+       "partien": 51,
+       "anteilProzent": 4.9
+      }
+     ],
+     "summePartien": 1033
+    },
+    {
+     "ply": 17,
+     "zug": "9… a6",
+     "gespielt": {
+      "de": "a6",
+      "partien": 32,
+      "anteilProzent": 60.4
+     },
+     "alternativen": [
+      {
+       "de": "Sf6",
+       "partien": 11,
+       "anteilProzent": 20.8
+      },
+      {
+       "de": "Sge7",
+       "partien": 4,
+       "anteilProzent": 7.5
+      },
+      {
+       "de": "Db4",
+       "partien": 2,
+       "anteilProzent": 3.8
+      }
+     ],
+     "summePartien": 53
+    },
+    {
+     "ply": 19,
+     "zug": "10… Db4",
+     "gespielt": {
+      "de": "Db4",
+      "partien": null,
+      "anteilProzent": null
+     },
+     "alternativen": [
+      {
+       "de": "Dg6",
+       "partien": 4,
+       "anteilProzent": 80
+      },
+      {
+       "de": "De5",
+       "partien": 1,
+       "anteilProzent": 20
+      }
+     ],
+     "summePartien": 5
+    }
+   ],
+   "endstellung": {
+    "fen": "r1bkr3/1pp2pp1/2np1q1p/8/p3B3/2N1Q2P/PPP2PP1/R3R1K1 w - - 0 19",
+    "material": {
+     "weiss": 31,
+     "schwarz": 32,
+     "differenzEigen": -1,
+     "schlagfolgeOffen": false,
+     "beruhigt": {
+      "weiss": 31,
+      "schwarz": 32,
+      "differenzEigen": -1
+     },
+     "bilanz": "−1 Bauer"
+    },
+    "offeneLinien": [
+     "e"
+    ],
+    "halboffeneLinien": {
+     "weiss": [
+      "d"
+     ],
+     "schwarz": []
+    },
+    "eigen": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 3,
+     "entwickelteLeichtfiguren": 2,
+     "rochiertInLinie": true
+    },
+    "gegner": {
+     "isoliert": [],
+     "doppelt": [],
+     "freibauern": [],
+     "laeuferpaar": false,
+     "koenigsschutzBauern": 2,
+     "entwickelteLeichtfiguren": 1,
+     "rochiertInLinie": false
+    },
+    "rochade": {
+     "eigen": true,
+     "gegner": false
+    }
+   },
+   "doc": {
+    "quelle": "docs/repertoire-v1.8.md Abschnitt 5",
+    "eroeffnungImDokument": true,
+    "variantImDokument": true,
+    "bezug": "unterhalb",
+    "codeZeile": 64
+   }
+  }
+ }
+}

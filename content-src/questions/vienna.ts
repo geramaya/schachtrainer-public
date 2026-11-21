@@ -1,0 +1,10 @@
+import type { Explanation, Question } from '../../src/content/types.ts'
+import { buildQuestionsFor } from '../builders.ts'
+import type { QSpec } from '../builders.ts'
+import { ROWS } from '../explanations/vienna.ts'
+import { qspecsOf } from '../rows.ts'
+
+export const QSPECS: QSpec[] = qspecsOf(ROWS)
+
+export const buildQuestions = (explanations: Explanation[], specs: QSpec[] = QSPECS): Question[] =>
+  buildQuestionsFor('vienna', explanations, specs)

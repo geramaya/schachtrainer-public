@@ -1,0 +1,57 @@
+name: pages
+
+# The source repo stays private. This builds the app with the Pages base path and pushes only the
+# build folder to the public repo geramaya/schachtrainer-play, served by GitHub Pages:
+# https://geramaya.github.io/schachtrainer-play/
+# Auth: write deploy key of schachtrainer-play, stored here as secret SCHACHTRAINER_PLAY_DEPLOY_KEY.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26.12.1
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm run engine
+      - name: Build with the Pages base path
+        env:
+          VITE_BASE: /schachtrainer-play/
+        run: npm run build
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: geramaya/schachtrainer-play
+          ssh-key: ${{ secrets.SCHACHTRAINER_PLAY_DEPLOY_KEY }}
+          persist-credentials: true # the deploy key is needed for the push below; it only reaches the public repo
+          path: play
+      - name: Replace the content of schachtrainer-play with the new build
+        working-directory: play
+        run: |
+          git rm -r -q --ignore-unmatch .
+          cp -a ../dist/. .
+          cp ../LICENSE LICENSE
+          cp ../.github/pages/NOTICE.md NOTICE.md
+          touch .nojekyll
+          git add -A
+          if git diff --cached --quiet; then echo "nothing changed"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Build ${GITHUB_SHA::7}"
+          git push origin HEAD:main

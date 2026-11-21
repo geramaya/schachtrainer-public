@@ -1,0 +1,12 @@
+[package]
+name = "schachtrainer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+
+[build-dependencies]
+tauri-build = "=2.7.4"
+
+[dependencies]
+tauri = { version = "=2.12.5", default-features = true }
