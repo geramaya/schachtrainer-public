@@ -24,8 +24,10 @@ export function parseLayerSettings(raw: string | null): LayerSettings {
   } catch { return { ...OFF } }
 }
 
-export const isLocked = (id: LayerId, inTask: boolean): boolean => inTask && TASK_LOCKED.includes(id)
+/** false = free; true = open exercise (answer-revealing layers off); 'all' = Wertungspartie (every layer off). */
+export type LayerLock = boolean | 'all'
+export const isLocked = (id: LayerId, lock: LayerLock): boolean => lock === 'all' || (lock === true && TASK_LOCKED.includes(id))
 
-export function activeLayers(s: LayerSettings, inTask: boolean): Set<LayerId> {
-  return new Set(LAYERS.filter((l) => s[l.id] && !isLocked(l.id, inTask)).map((l) => l.id))
+export function activeLayers(s: LayerSettings, lock: LayerLock): Set<LayerId> {
+  return new Set(LAYERS.filter((l) => s[l.id] && !isLocked(l.id, lock)).map((l) => l.id))
 }

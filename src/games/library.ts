@@ -170,9 +170,9 @@ export function filterGames(games: StoredGame[], f: GameFilter, me?: PlayerSetti
 }
 
 /** Small marks of a game in the list: has a stored analysis, was played with the clock stopped by the teacher, time control ("3+2"; unknown forms as they are). */
-export function badgesOf(g: Pick<StoredGame, 'analysis' | 'meta'>): { analysed: boolean; learning: boolean; timeControl: string | null } {
+export function badgesOf(g: Pick<StoredGame, 'analysis' | 'meta'>): { analysed: boolean; learning: boolean; rated: boolean; timeControl: string | null } {
   const raw = g.meta?.timeControl ?? null
   const m = raw?.match(/^(\d+)\+(\d+)$/)
   const timeControl = m && Number(m[1]) % 60 === 0 ? `${Number(m[1]) / 60}+${m[2]}` : raw
-  return { analysed: !!g.analysis, learning: g.meta?.event === 'Lernpartie', timeControl }
+  return { analysed: !!g.analysis, learning: g.meta?.event === 'Lernpartie', rated: g.meta?.event === 'Wertungspartie', timeControl }
 }

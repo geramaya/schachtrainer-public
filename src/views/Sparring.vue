@@ -98,8 +98,6 @@ const drawn = ref<Side>(props.side)
 const freeSide = computed<Side>(() => (sideChoice.value === 'random' ? drawn.value : sideChoice.value))
 const chooseSide = (c: SideChoice) => { sideChoice.value = c; try { localStorage.setItem(SIDE_KEY, c) } catch { /* blocked: stays for this session */ } }
 const mySide = computed<Side>(() => (props.free ? (phase.value === 'setup' && sideChoice.value === 'random' ? 'white' : freeSide.value) : props.side))
-/** Free game without teacher: the engine panel may run along (off by default). */
-const along = ref(false)
 const phase = ref<'setup' | 'play' | 'over'>('setup')
 const startFen = ref(INITIAL)
 const ucis = ref<string[]>([])
@@ -184,7 +182,7 @@ function unlockEngine() {
   engineUnlocked.value = true
   helps.value = { ...helps.value, engine: helps.value.engine + 1 }
 }
-const acc = computed(() => access({ phase: phase.value, withTeacher: withTeacher.value, free: !!props.free, along: along.value, thinking: thinking.value, judging: judging.value, analysing: analysing.value, helping: helping.value, pending: !!pending.value, myTurn: turn.value === mySide.value, browsing: view.value !== null, engineUnlocked: engineUnlocked.value, analyseWhileThinking: engineSettings.value.whileThinking }))
+const acc = computed(() => access({ phase: phase.value, withTeacher: withTeacher.value, thinking: thinking.value, judging: judging.value, analysing: analysing.value, helping: helping.value, pending: !!pending.value, myTurn: turn.value === mySide.value, browsing: view.value !== null, engineUnlocked: engineUnlocked.value, analyseWhileThinking: engineSettings.value.whileThinking }))
 const canAsk = computed(() => acc.value.canAsk)
 const revealText = computed(() => (pending.value?.revealed ? pending.value.j.reveal : help.value?.shown ? help.value.text : late.value?.shown ? late.value.reveal : undefined))
 const bestFrom = computed(() => (pending.value?.hinted || pending.value?.revealed ? [pending.value.j.betterUci.slice(0, 2)] : help.value?.hinted ? [help.value.uci.slice(0, 2)] : []))
@@ -334,7 +332,7 @@ function finishGame(text: string, outcome: Outcome) {
   phase.value = 'over'; result.value = text; pending.value = null
   stopTicker(); closeComment(); if (clock.value) clock.value = pause(clock.value, Date.now())
   if (outcome.reason === 'aufgabe' || outcome.reason === 'remis' || outcome.reason === 'zeit') playSound('end') // mate and stalemate sound from the board
-  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord() })
+  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value })
   emit('finished', record)
   gameKey = `g${++gameNo}`
   noteDrafts.value = {}; noteStatus.value = null
@@ -365,7 +363,7 @@ async function autoSave(record: GameRecord): Promise<string | null> {
 /** A running game that is left (other page, other start position) is kept as an unfinished game. */
 function abandonGame() {
   if (phase.value !== 'play' || !ucis.value.length) return
-  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord() }))
+  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value }))
 }
 /** A game that counts for "Anwenden": only with a variation. */
 const markDone = () => { if (props.variation) markApplied(applySparringId(props.variation.id)) }
@@ -702,7 +700,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
     <template #left>
       <div class="pane sparring">
         <slot name="tabs" />
-        <h2>{{ free ? 'Freie Partie gegen Stockfish' : 'Sparring gegen Stockfish' }}</h2>
+        <h2>{{ free ? (phase === 'setup' ? 'Partie gegen Stockfish' : withTeacher ? 'Lehrerpartie gegen Stockfish' : 'Wertungspartie gegen Stockfish') : 'Sparring gegen Stockfish' }}</h2>
         <h3 v-if="phase === 'setup'" class="sech">Gegner</h3>
         <label class="eloline">Spielstärke (Elo): <b>{{ elo }}</b>
           <input type="range" :min="ELO_MIN" :max="ELO_MAX" step="10" :value="elo" @input="setElo" aria-label="Spielstärke der Engine" />
@@ -740,7 +738,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
             <h3 class="sech">Bedenkzeit</h3>
             <TimeControlPick :model-value="timeControl" :with-teacher="teacher.on" :teacher-pause="teacherPause" @select="pickTime" @pause="pickPause" />
           </section>
-          <label v-if="free && !teacher.on" class="along"><input v-model="along" type="checkbox" /> Engine mitlaufen lassen (zeigt Bewertung und Varianten während der Partie)</label>
+          <p v-if="!teacher.on" class="muted rated">Wertungspartie: ohne Hilfen – wie am Brett. Engine-Anzeige, Coach und Hinweise sind gesperrt, bis die Partie zu Ende ist.</p>
           <div class="choices">
             <button v-if="props.startFen" class="primary" @click="newGame(props.startFen)">{{ free ? 'Ab der Stellung aus der Adresse' : 'Ab der Stellung aus dem Festigen' }}</button>
             <button v-if="afterLine" @click="newGame(afterLine)">Ab Ende der Variante</button>
@@ -776,7 +774,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
               <p v-if="retracted.length" class="muted">Zurückgenommene Fehler gehen trotzdem ins Training.</p>
               <button v-if="retracted.length && !rv && untrained.length" @click="toTraining">Zurückgenommene Fehler ins Training</button>
             </div>
-            <div v-if="!rv && !analysing && ucis.length"><button class="primary" @click="analyseGame">Partie auswerten</button></div>
+            <div v-if="!rv && !analysing && ucis.length"><button class="primary" @click="analyseGame">Analysieren</button></div>
             <div v-if="analysing">
               <progress :max="total" :value="done"></progress> <span class="muted">Stellung {{ done }} von {{ total }} (Tiefe {{ REVIEW_DEPTH }})</span>
               <button @click="cancelAnalysis">Abbrechen</button>
@@ -803,13 +801,13 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
         </template>
       </div>
       <CoachPanel
-        v-if="phase !== 'setup'" :fen="shownFen" :own-side="mySide" mode-key="anwenden" :prev-fen="coachPrev" :last-uci="coachUci"
+        v-if="phase !== 'setup' && acc.coachPanel" :fen="shownFen" :own-side="mySide" mode-key="anwenden" :prev-fen="coachPrev" :last-uci="coachUci"
         :book-status="coachBook" :engine-enabled="coachEngine" @shapes="coachShapes = $event"
       />
     </template>
     <template #board>
       <EvalBar :view="ev" :orientation="boardSide" />
-      <Board :fen="shownFen" :orientation="boardSide" :movable="movable" :arrows="phase === 'play' && view !== null ? ev.arrows : [...arrows, ...ev.arrows]" :highlight="phase === 'play' && view !== null ? [] : bestFrom" :shapes="shapesShown" :last-move="shownLast" @move="onMove" />
+      <Board :fen="shownFen" :orientation="boardSide" :movable="movable" :layer-lock="acc.layersLocked ? 'all' : false" :arrows="phase === 'play' && view !== null ? ev.arrows : [...arrows, ...ev.arrows]" :highlight="phase === 'play' && view !== null ? [] : bestFrom" :shapes="shapesShown" :last-move="shownLast" @move="onMove" />
     </template>
     <template #hold>
       <HoldBar :status="status" :notice="notice" :held="pending ? (pending.j.rating === 'patzer' ? 'patzer' : 'fehler') : null" @keep="keepMove" @undo="undoMove" @best="takeBest" />
@@ -829,7 +827,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
       <span v-else class="muted">Wähle links den Start.</span>
     </template>
     <template #right>
-      <EnginePanel :fen="shownFen" :orientation="mySide" :lock="engineLock" :unlockable="withTeacher && phase === 'play'" @unlock="unlockEngine" @view="ev = $event" />
+      <EnginePanel :fen="shownFen" :orientation="mySide" :lock="engineLock" :unlockable="withTeacher && phase === 'play'" :locked-text="phase === 'play' && !withTeacher ? 'Wertungspartie: gesperrt bis zum Partieende.' : ''" @unlock="unlockEngine" @view="ev = $event" />
       <MoveList :sans="moveSans" :current="shownPly" :start-ply="startPly" :selectable="ucis.length > 0" :marks="marks" :titles="titles" :nags="labels.nags" :cats="labels.cats" @select="goto" />
       <AnalysisGraph v-if="fullAnalysis" class="graphbox" :positions="fullAnalysis.positions" :marks="graphMarkList" :current="shownPly" @select="goto" />
     </template>
@@ -841,7 +839,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
 .note textarea { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 0.3rem 0.5rem; font: inherit; resize: vertical; }
 .graphbox { flex: none; margin-top: 8px; }
 .said { border-left: 3px solid var(--acc); padding-left: 0.5rem; }
-.along { display: block; margin: 0.4rem 0; font-size: var(--fs-small, 0.85rem); }
+.rated { margin: 0.2rem 0 0.8rem; font-size: var(--fs-small, 0.85rem); }
 .mode { display: flex; gap: 6px; margin: 0.3rem 0 0.6rem; }
 .mode button { flex: 1; }
 .sel { border-color: var(--acc); }

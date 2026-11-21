@@ -6,7 +6,7 @@ import { FIGUREN } from '../teacher/avatar.ts'
 import type { FigurId } from '../teacher/avatar.ts'
 
 /** Game start: free game or with teacher, and which of the four teachers. */
-withDefaults(defineProps<{ on: boolean; figur: FigurId; quips: boolean; speak: boolean; audio: boolean; labels?: { on: string; off: string } }>(), { labels: () => ({ on: 'Mit Lehrer', off: 'Freie Partie' }) })
+withDefaults(defineProps<{ on: boolean; figur: FigurId; quips: boolean; speak: boolean; audio: boolean; labels?: { on: string; off: string } }>(), { labels: () => ({ on: 'Mit Lehrer', off: 'Wertungspartie' }) })
 const emit = defineEmits<{ on: [boolean]; figur: [FigurId]; quips: [boolean]; speak: [boolean] }>()
 </script>
 

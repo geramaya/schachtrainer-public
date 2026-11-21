@@ -231,6 +231,7 @@ async function upload(e: Event) {
                 <td class="marks nw">
                   <svg v-if="badgesOf(g).analysed" class="mk" data-tip="analysiert" role="img" aria-label="analysiert" viewBox="0 0 16 16" width="16" height="16"><path d="M2 13V9m4 4V4m4 9V7m4 6V2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
                   <span v-if="badgesOf(g).learning" class="mk tag" data-tip="Lernpartie: die Uhr stand beim Lehrer-Halt">Lern</span>
+                  <span v-if="badgesOf(g).rated" class="mk tag" data-tip="Wertungspartie: ohne Lehrer, ohne Hilfen">Wertung</span>
                   <span v-if="badgesOf(g).timeControl" class="mk tag" data-tip="Bedenkzeit">{{ badgesOf(g).timeControl }}</span>
                 </td>
                 <td class="acts" @click.stop>

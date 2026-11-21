@@ -23,7 +23,7 @@ onBeforeUnmount(() => { document.removeEventListener('mousedown', outside); docu
       <label v-for="l in LAYERS" :key="l.id" class="row" :class="{ locked: isLocked(l.id, layersLocked) }">
         <input type="checkbox" role="switch" :checked="layerSettings[l.id]" :disabled="isLocked(l.id, layersLocked)" @change="setLayer(l.id, ($event.target as HTMLInputElement).checked)" />
         <span class="knob" aria-hidden="true"></span>
-        <span class="t"><b>{{ l.label }}</b><small>{{ l.hint }}</small><small v-if="isLocked(l.id, layersLocked)" class="lock">Gesperrt, bis die Aufgabe gelöst ist: sie würde die Antwort verraten.</small></span>
+        <span class="t"><b>{{ l.label }}</b><small>{{ l.hint }}</small><small v-if="isLocked(l.id, layersLocked)" class="lock">{{ layersLocked === 'all' ? 'Gesperrt in der Wertungspartie: ohne Hilfen.' : 'Gesperrt, bis die Aufgabe gelöst ist: sie würde die Antwort verraten.' }}</small></span>
       </label>
     </div>
   </div>

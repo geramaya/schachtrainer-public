@@ -25,7 +25,9 @@ const props = withDefaults(defineProps<{
   analyseLink?: boolean
   /** teacher game: the player may lift the lock on purpose (counts as a help, the caller decides) */
   unlockable?: boolean
-}>(), { lock: null, analyseLink: true, unlockable: false })
+  /** text of the locked state when the default does not fit (Wertungspartie) */
+  lockedText?: string
+}>(), { lock: null, analyseLink: true, unlockable: false, lockedText: '' })
 const emit = defineEmits<{ view: [EngineView]; unlock: [] }>()
 
 /** Scores come from White view; with the setting "from the bottom side" they flip when Black stands at the bottom. */
@@ -132,7 +134,7 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
     </div>
 
     <div class="body" :style="{ '--lines': engineSettings.multipv }">
-      <p v-if="access === 'locked'" class="note" role="status">{{ unlockable ? 'Im Spiel mit Lehrer gesperrt.' : 'Bewertung und Varianten nach deinem Zug verfügbar.' }} <button v-if="unlockable" type="button" class="unlock" @click="emit('unlock')">Trotzdem anzeigen (zählt als Hilfe)</button></p>
+      <p v-if="access === 'locked'" class="note" role="status">{{ lockedText || (unlockable ? 'Im Spiel mit Lehrer gesperrt.' : 'Bewertung und Varianten nach deinem Zug verfügbar.') }} <button v-if="unlockable" type="button" class="unlock" @click="emit('unlock')">Trotzdem anzeigen (zählt als Hilfe)</button></p>
       <p v-else-if="access === 'off'" class="note">Engine aus. Schalter oben einschalten.</p>
       <p v-else-if="access === 'busy'" class="note" role="status">Die Engine ist gerade mit der Partie beschäftigt.</p>
       <template v-else>

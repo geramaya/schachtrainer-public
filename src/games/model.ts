@@ -110,6 +110,6 @@ export function storedFromRecord(r: GameRecord, extra: { source: 'sparring' | 'f
   return {
     id: newId(), key: gameKey(r.startFen, r.ucis, r.date, white, black), source: extra.source, startFen: r.startFen, ucis: r.ucis, sans: r.sans,
     result: r.result, reason: r.reason, date: r.date, white, black, ownSide: r.ownSide, elo: r.elo, teacher: r.teacher, helps: r.helps,
-    opening: extra.opening, eco: extra.eco ?? null, repertoire: extra.repertoire ?? null, detected: extra.detected ?? null, enriched: extra.enriched ?? false, meta: { ...emptyMeta(), timeControl: r.timeControl ?? null, event: r.learning ? 'Lernpartie' : null }, retractions: extra.retractions, review: extra.review, analysis: extra.analysis ?? null, notes: {}, comments: {},
+    opening: extra.opening, eco: extra.eco ?? null, repertoire: extra.repertoire ?? null, detected: extra.detected ?? null, enriched: extra.enriched ?? false, meta: { ...emptyMeta(), timeControl: r.timeControl ?? null, event: r.learning ? 'Lernpartie' : r.rated ? 'Wertungspartie' : null }, retractions: extra.retractions, review: extra.review, analysis: extra.analysis ?? null, notes: {}, comments: {},
   }
 }
