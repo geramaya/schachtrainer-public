@@ -93,6 +93,8 @@ Chess sounds (move, capture, check, castling, promotion, wrong, correct, game en
 Töne: eigene Synthese (`tools/gen-sounds.py`), keine fremden Aufnahmen. On/off in the top bar, volume under "Über".
 Test: `python3 -m unittest test/test_gen_sounds.py`.
 
+Own pack "Brett" (wooden piece with a felt base on a wooden board, three takes per event, also from `tools/gen-sounds.py`).
+
 Further sound packs (choose under "Über"): SFX, Piano, NES, Futuristic. Sounds: Enigmahack (github.com/Enigmahack), AGPLv3+, via
 lichess-org/lila; pinned commit, file hashes and mapping in `public/sounds/SOURCES.md`, license text in `public/sounds/LICENSE-AGPL-3.0.txt`.
 The Lichess standard set is not free and is not used.

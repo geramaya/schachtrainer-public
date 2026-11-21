@@ -3,9 +3,10 @@ import { Chess } from 'chess.js'
 import { publicUrl } from './assetBase.ts'
 
 export type SoundName = 'move' | 'capture' | 'check' | 'castle' | 'promote' | 'wrong' | 'end' | 'correct'
-export type SoundSetId = 'holz' | 'sfx' | 'piano' | 'nes' | 'futuristic'
+export type SoundSetId = 'holz' | 'brett' | 'sfx' | 'piano' | 'nes' | 'futuristic'
 export const SOUND_SETS: { id: SoundSetId; label: string }[] = [
   { id: 'holz', label: 'Holz (eigene Synthese)' },
+  { id: 'brett', label: 'Brett (eigene Synthese, Holzfigur mit Filz)' },
   { id: 'sfx', label: 'SFX' },
   { id: 'piano', label: 'Piano' },
   { id: 'nes', label: 'NES' },
@@ -50,7 +51,8 @@ export function soundForTransition(prev: string, next: string): SoundName | null
  * or promotion sound (Lichess plays the move sound there too), and their Error file points to the non-free standard set,
  * so "wrong" is always our own tone.
  */
-export function soundFile(set: SoundSetId, name: SoundName): string {
+export function soundFile(set: SoundSetId, name: SoundName, take = 1): string {
+  if (set === 'brett') return `sounds/brett/${name}-${take}.mp3` // own set, three takes per event
   if (set === 'holz' || name === 'wrong') return `sounds/${name}.mp3`
   return `sounds/${set}/${name === 'castle' || name === 'promote' ? 'move' : name}.mp3`
 }
@@ -81,9 +83,18 @@ export function setSoundSettings(patch: Partial<SoundSettings>): void {
 const pool = new Map<string, HTMLAudioElement>()
 
 /** Plays a sound now (if sounds are on). Never throws: blocked autoplay or a missing file just stays silent. */
+/** Next take (1-3) for sets with varied takes: random, never the same twice in a row. `r` is a random number in [0, 1). */
+export function nextTake(prev: number, r: number): number {
+  const choices = [1, 2, 3].filter((t) => t !== prev)
+  return choices[Math.min(choices.length - 1, Math.floor(r * choices.length))]!
+}
+
+let lastTake = 0
+
 export function playSound(name: SoundName, set: SoundSetId = soundSettings.value.set): void {
   if (!soundSettings.value.on || typeof Audio === 'undefined') return
-  const file = soundFile(set, name)
+  if (set === 'brett') lastTake = nextTake(lastTake, Math.random())
+  const file = soundFile(set, name, lastTake || 1)
   let a = pool.get(file)
   if (!a) { a = new Audio(publicUrl(file)); pool.set(file, a) }
   a.volume = soundSettings.value.volume

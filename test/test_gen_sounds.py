@@ -50,3 +50,31 @@ class GenSounds(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Brett(unittest.TestCase):
+    def test_all_events_have_three_variants(self):
+        self.assertEqual(sorted(gs.BRETT), sorted(NAMES))
+        for n in NAMES:
+            self.assertEqual(len({tuple(gs.synth_brett(n, v)[:600]) for v in (1, 2, 3)}), 3, n)
+
+    def test_deterministic_and_levelled(self):
+        for n in NAMES:
+            for v in (1, 2, 3):
+                s = gs.synth_brett(n, v)
+                self.assertEqual(s, gs.synth_brett(n, v), (n, v))
+                self.assertAlmostEqual(max(abs(x) for x in s), 10 ** (-3 / 20), delta=0.01, msg=(n, v))
+                self.assertLess(abs(s[0]), 0.02, (n, v))
+                self.assertLess(abs(s[-1]), 0.02, (n, v))
+
+    def test_felt_on_wood_is_dull_and_low(self):
+        # the energy sits below 1 kHz: a one-pole lowpass at ~1 kHz removes little, a highpass (difference) leaves little
+        s = gs.synth_brett('move', 1)
+        high = [s[i] - s[i - 1] for i in range(1, len(s))]
+        self.assertLess(sum(x * x for x in high), 0.25 * sum(x * x for x in s))
+
+    def test_durations(self):
+        ms = {n: len(gs.synth_brett(n, 1)) * 1000 / gs.RATE for n in NAMES}
+        self.assertTrue(60 <= ms['move'] <= 260, ms)
+        self.assertTrue(ms['castle'] > ms['move'], ms)
+        self.assertTrue(ms['end'] >= 400, ms)

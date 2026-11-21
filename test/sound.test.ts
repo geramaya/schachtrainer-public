@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { soundForSan, soundForTransition, parseSoundSettings, DEFAULT_SOUND, soundFile, SOUND_SETS } from '../src/ui/sound.ts'
+import { soundForSan, soundForTransition, parseSoundSettings, DEFAULT_SOUND, soundFile, SOUND_SETS, nextTake } from '../src/ui/sound.ts'
 
 const START = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
@@ -57,5 +57,22 @@ test('parseSoundSettings: set must be a known one, else the own set', () => {
   assert.equal(parseSoundSettings({ set: 'nes' }).set, 'nes')
   assert.equal(parseSoundSettings({ set: 'standard' }).set, 'holz')
   assert.equal(parseSoundSettings({ set: 7 }).set, 'holz')
-  assert.deepEqual(SOUND_SETS.map((x) => x.id), ['holz', 'sfx', 'piano', 'nes', 'futuristic'])
+  assert.deepEqual(SOUND_SETS.map((x) => x.id), ['holz', 'brett', 'sfx', 'piano', 'nes', 'futuristic'])
+})
+
+test('soundFile: the Brett set has three takes per event, all eight events own', () => {
+  for (const n of ['move', 'capture', 'check', 'castle', 'promote', 'wrong', 'end', 'correct'] as const) {
+    for (const v of [1, 2, 3]) assert.equal(soundFile('brett', n, v), `sounds/brett/${n}-${v}.mp3`)
+  }
+  assert.equal(soundFile('holz', 'move', 3), 'sounds/move.mp3') // other sets have one take
+  assert.equal(soundFile('sfx', 'move', 2), 'sounds/sfx/move.mp3')
+})
+
+test('nextTake: rotates randomly over three takes and never repeats the previous one', () => {
+  let prev = 0
+  const seen = new Set<number>()
+  for (let i = 0; i < 300; i++) { const t = nextTake(prev, Math.random()); assert.ok([1, 2, 3].includes(t)); assert.notEqual(t, prev); seen.add(t); prev = t }
+  assert.equal(seen.size, 3)
+  assert.equal(nextTake(2, 0), 1)
+  assert.equal(nextTake(2, 0.99), 3)
 })

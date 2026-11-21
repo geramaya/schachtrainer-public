@@ -10,4 +10,9 @@ for f in "$tmp"/*.wav; do
   n="$(basename "$f" .wav)"
   ffmpeg -loglevel error -y -i "$f" -ac 1 -c:a libmp3lame -b:a 48k "public/sounds/$n.mp3"
 done
+mkdir -p public/sounds/brett
+for f in "$tmp"/brett/*.wav; do
+  n="$(basename "$f" .wav)"
+  ffmpeg -loglevel error -y -i "$f" -ac 1 -c:a libmp3lame -b:a 48k "public/sounds/brett/$n.mp3"
+done
 ls -l public/sounds
