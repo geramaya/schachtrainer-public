@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { initialView } from '../games/open-view.ts'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { hrefAnalyse, hrefHome, hrefMeinePartien } from '../router.ts'
 import type { Side } from '../content/types.ts'
@@ -99,7 +100,7 @@ watch(() => props.id, async (id) => {
     game.value = g?.analysis ? { ...g, analysis: normalizeAnalysis(g.analysis, g.startFen, g.ucis) } : g
     problem.value = ''
   } catch (e) { game.value = null; problem.value = storageErrorOf(e).message }
-  view.value = game.value ? game.value.ucis.length : 0
+  view.value = game.value ? initialView(game.value.ucis.length) : 0
   noteStatus.value = null
   loaded.value = true
 }, { immediate: true })
