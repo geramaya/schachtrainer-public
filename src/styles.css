@@ -240,6 +240,19 @@ textarea { width: 100%; margin-top: 0.5rem; background: var(--bg); color: var(--
 
 /* Audio und Sparring-Knoepfe im Token-Stil */
 .audio button, .sparring button, .linkish { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 0.3rem 0.9rem; min-height: 32px; font: inherit; cursor: pointer; text-decoration: none; transition: transform var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out); }
+/* start field of a game: one segment style for side, teacher, hold and time tiles (pressed = accent fill) */
+.sparring .sec { margin: 0 0 16px; }
+.sparring .sech { margin: 0 0 6px; font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sparring .segs { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 6px; }
+.sparring .segs.wide { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+.sparring button.seg { box-sizing: border-box; height: 40px; min-height: 40px; min-width: 0; padding: 0 5px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-size: var(--fs-small); font-weight: 600; line-height: 1.15; text-align: center; transform: none; }
+.sparring button.seg:hover:not(:disabled) { transform: none; border-color: var(--acc); }
+.sparring button.seg[aria-pressed='true'] { background: var(--acc); border-color: var(--acc); color: var(--ink); }
+.sparring button.seg:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.sparring button.seg.ctile { height: 56px; min-height: 56px; flex-direction: column; gap: 4px; padding: 0 4px; white-space: nowrap; line-height: 1; }
+.sparring .seg .big { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.sparring .seg .sub { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 500; color: var(--muted); }
+.sparring .seg[aria-pressed='true'] .sub { color: var(--ink); }
 .audio button:hover, .sparring button:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--acc); }
 .audio progress { appearance: none; -webkit-appearance: none; height: 6px; border: 0; border-radius: 3px; background: var(--panel-2); overflow: hidden; }
 .audio progress::-webkit-progress-bar { background: var(--panel-2); }

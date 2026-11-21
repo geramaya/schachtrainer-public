@@ -22,6 +22,7 @@ import { engineSettings, setEngineSettings } from '../ui/useEngineSettings.ts'
 import HoldBar from '../ui/HoldBar.vue'
 import Icon from '../ui/Icon.vue'
 import TimeControlPick from '../ui/TimeControlPick.vue'
+import KingIcon from '../ui/KingIcon.vue'
 import { clockPaused, engineMoveMs, holdSuggestion, flagWinner, flagged, formatClock, isLow, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../train/clock.ts'
 import type { Clock, TimeControl } from '../train/clock.ts'
 import PlayerBar from '../ui/PlayerBar.vue'
@@ -693,27 +694,39 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
       <div class="pane sparring">
         <slot name="tabs" />
         <h2>{{ free ? 'Freie Partie gegen Stockfish' : 'Sparring gegen Stockfish' }}</h2>
+        <h3 v-if="phase === 'setup'" class="sech">Gegner</h3>
         <label class="eloline">Spielstärke (Elo): <b>{{ elo }}</b>
           <input type="range" :min="ELO_MIN" :max="ELO_MAX" step="10" :value="elo" @input="setElo" aria-label="Spielstärke der Engine" />
         </label>
 
         <div v-if="phase === 'setup'" class="expl">
-          <div v-if="free" class="mode" role="group" aria-label="Farbe">
-            <button :class="{ sel: sideChoice === 'white' }" :aria-pressed="sideChoice === 'white'" @click="chooseSide('white')">Ich spiele Weiß</button>
-            <button :class="{ sel: sideChoice === 'black' }" :aria-pressed="sideChoice === 'black'" @click="chooseSide('black')">Schwarz</button>
-            <button :class="{ sel: sideChoice === 'random' }" :aria-pressed="sideChoice === 'random'" title="Die Farbe wird beim Start ausgelost" @click="chooseSide('random')">Zufall</button>
-          </div>
+          <section v-if="free" class="sec">
+            <h3 class="sech">Seite</h3>
+            <div class="segs wide" role="group" aria-label="Seite">
+              <button type="button" class="seg" :aria-pressed="sideChoice === 'white'" @click="chooseSide('white')"><KingIcon mode="white" /> Weiß</button>
+              <button type="button" class="seg" :aria-pressed="sideChoice === 'black'" @click="chooseSide('black')"><KingIcon mode="black" /> Schwarz</button>
+              <button type="button" class="seg" :aria-pressed="sideChoice === 'random'" title="Die Farbe wird beim Start ausgelost" @click="chooseSide('random')"><KingIcon mode="half" /> Zufall</button>
+            </div>
+          </section>
           <p v-if="free && !props.startFen" class="muted">{{ sideChoice === 'white' ? 'Zieh einfach auf dem Brett – die Partie beginnt mit deinem ersten Zug.' : sideChoice === 'black' ? 'Du spielst Schwarz: Stockfish beginnt.' : 'Die Farbe wird beim Start ausgelost.' }}</p>
           <p v-else class="muted">Du spielst {{ side === 'white' ? 'Weiß' : 'Schwarz' }}. Wähle den Start:</p>
-          <TeacherPick
-            :on="teacher.on" :figur="teacher.figur" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
-            @on="setTeacher({ on: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
-          />
-          <div v-if="teacher.on" class="holdset" role="group" aria-label="Anhalten bei">
-            <span class="muted">Anhalten bei:</span>
-            <button v-for="m in HOLD_MODES" :key="m.id" :class="{ sel: teacher.hold === m.id }" :aria-pressed="teacher.hold === m.id" @click="setTeacher({ hold: parseHold(m.id) })">{{ m.label }}</button>
-          </div>
-          <TimeControlPick :model-value="timeControl" :with-teacher="teacher.on" :teacher-pause="teacherPause" @select="pickTime" @pause="pickPause" />
+          <section class="sec">
+            <h3 class="sech">Lehrer</h3>
+            <TeacherPick
+              :on="teacher.on" :figur="teacher.figur" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
+              @on="setTeacher({ on: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+            />
+            <template v-if="teacher.on">
+              <p class="sub2 muted">Anhalten bei</p>
+              <div class="segs wide" role="group" aria-label="Anhalten bei">
+                <button v-for="m in HOLD_MODES" :key="m.id" type="button" class="seg" :aria-pressed="teacher.hold === m.id" @click="setTeacher({ hold: parseHold(m.id) })">{{ m.label }}</button>
+              </div>
+            </template>
+          </section>
+          <section class="sec">
+            <h3 class="sech">Bedenkzeit</h3>
+            <TimeControlPick :model-value="timeControl" :with-teacher="teacher.on" :teacher-pause="teacherPause" @select="pickTime" @pause="pickPause" />
+          </section>
           <label v-if="free && !teacher.on" class="along"><input v-model="along" type="checkbox" /> Engine mitlaufen lassen (zeigt Bewertung und Varianten während der Partie)</label>
           <div class="choices">
             <button v-if="props.startFen" class="primary" @click="newGame(props.startFen)">{{ free ? 'Ab der Stellung aus der Adresse' : 'Ab der Stellung aus dem Festigen' }}</button>
@@ -819,7 +832,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
 .mode { display: flex; gap: 6px; margin: 0.3rem 0 0.6rem; }
 .mode button { flex: 1; }
 .sel { border-color: var(--acc); }
-.holdset { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0.4rem 0; }
+.sub2 { margin: 8px 0 4px; font-size: var(--fs-small); }
 .statusline.halt { color: var(--q-mistake); font-weight: 800; }
 .ctl kbd { font: 600 var(--fs-label)/1 var(--mono); padding: 2px 5px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
 .eloline { display: block; margin: 0.4rem 0; }
