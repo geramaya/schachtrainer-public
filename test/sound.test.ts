@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { soundForSan, soundForTransition, parseSoundSettings, DEFAULT_SOUND } from '../src/ui/sound.ts'
+import { soundForSan, soundForTransition, parseSoundSettings, DEFAULT_SOUND, soundFile, SOUND_SETS } from '../src/ui/sound.ts'
 
 const START = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
@@ -36,8 +36,26 @@ test('soundForTransition: jumps, steps back and identical positions are silent',
 test('parseSoundSettings: defaults on, bad stored data falls back, volume is clamped', () => {
   assert.deepEqual(parseSoundSettings(undefined), DEFAULT_SOUND)
   assert.equal(DEFAULT_SOUND.on, true)
-  assert.deepEqual(parseSoundSettings({ on: false, volume: 0.25 }), { on: false, volume: 0.25 })
+  assert.deepEqual(parseSoundSettings({ on: false, volume: 0.25 }), { on: false, volume: 0.25, set: 'holz' })
   assert.equal(parseSoundSettings({ volume: 7 }).volume, 1)
   assert.equal(parseSoundSettings({ volume: -1 }).volume, 0)
   assert.deepEqual(parseSoundSettings({ on: 'yes', volume: 'loud' }), DEFAULT_SOUND)
+})
+
+test('soundFile: own set uses sounds/<name>.mp3; a lila set uses its folder and falls back to our own files for missing sounds', () => {
+  assert.equal(soundFile('holz', 'move'), 'sounds/move.mp3')
+  assert.equal(soundFile('holz', 'castle'), 'sounds/castle.mp3')
+  for (const set of ['sfx', 'piano', 'nes', 'futuristic'] as const) {
+    for (const n of ['move', 'capture', 'check', 'end', 'correct'] as const) assert.equal(soundFile(set, n), `sounds/${set}/${n}.mp3`)
+    assert.equal(soundFile(set, 'castle'), `sounds/${set}/move.mp3`) // the sets have no castling sound (like Lichess)
+    assert.equal(soundFile(set, 'promote'), `sounds/${set}/move.mp3`)
+    assert.equal(soundFile(set, 'wrong'), 'sounds/wrong.mp3') // their Error file is the non-free standard set: own tone
+  }
+})
+
+test('parseSoundSettings: set must be a known one, else the own set', () => {
+  assert.equal(parseSoundSettings({ set: 'nes' }).set, 'nes')
+  assert.equal(parseSoundSettings({ set: 'standard' }).set, 'holz')
+  assert.equal(parseSoundSettings({ set: 7 }).set, 'holz')
+  assert.deepEqual(SOUND_SETS.map((x) => x.id), ['holz', 'sfx', 'piano', 'nes', 'futuristic'])
 })

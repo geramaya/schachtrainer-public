@@ -42,7 +42,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.35; font-weight: 650; }
 .top { display: flex; align-items: center; justify-content: space-between; height: var(--hdr); padding: 0 2rem; border-bottom: 1px solid var(--line); }
 .brand { font-weight: 700; letter-spacing: 0.02em; display: flex; align-items: center; gap: 10px; }
 .brand .logo { display: block; width: 28px; height: 28px; }
-.top nav { display: flex; gap: 1.2rem; color: var(--muted); }
+.top nav { display: flex; gap: 1.2rem; color: var(--muted); margin-left: auto; margin-right: 1.2rem; }
 .top nav a { position: relative; padding: 12px 0; }
 .top nav a:hover, .top nav a.on { color: var(--text); }
 .top nav a.on::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px; background: var(--text); }
@@ -408,7 +408,7 @@ a.course:hover { border-color: var(--acc); }
 @media (max-width: 760px) {
   .top { flex-wrap: wrap; height: auto; padding: 0 1rem; }
   .brand { height: var(--hdr); }
-  .top nav { order: 2; width: 100%; justify-content: space-between; gap: 0; height: 40px; align-items: stretch; font-size: 14px; }
+  .top nav { order: 2; width: 100%; margin: 0; justify-content: space-between; gap: 0; height: 40px; align-items: stretch; font-size: 14px; }
   .top nav a { display: flex; align-items: center; padding: 0 2px; }
   main { padding: 1rem 1rem 2rem; }
   .hero { grid-template-columns: 1fr; min-height: 0; gap: .5rem; padding-top: 0; }

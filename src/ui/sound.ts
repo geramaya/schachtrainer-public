@@ -3,8 +3,16 @@ import { Chess } from 'chess.js'
 import { publicUrl } from './assetBase.ts'
 
 export type SoundName = 'move' | 'capture' | 'check' | 'castle' | 'promote' | 'wrong' | 'end' | 'correct'
-export interface SoundSettings { on: boolean; volume: number }
-export const DEFAULT_SOUND: SoundSettings = { on: true, volume: 0.7 }
+export type SoundSetId = 'holz' | 'sfx' | 'piano' | 'nes' | 'futuristic'
+export const SOUND_SETS: { id: SoundSetId; label: string }[] = [
+  { id: 'holz', label: 'Holz (eigene Synthese)' },
+  { id: 'sfx', label: 'SFX' },
+  { id: 'piano', label: 'Piano' },
+  { id: 'nes', label: 'NES' },
+  { id: 'futuristic', label: 'Futuristic' },
+]
+export interface SoundSettings { on: boolean; volume: number; set: SoundSetId }
+export const DEFAULT_SOUND: SoundSettings = { on: true, volume: 0.7, set: 'holz' }
 const KEY = 'schachtrainer.sound'
 const DEBOUNCE_MS = 70
 
@@ -37,12 +45,23 @@ export function soundForTransition(prev: string, next: string): SoundName | null
   return null
 }
 
+/**
+ * File (below public/) for a sound in a set. The own set has all eight. The sets of Enigmahack (via lila) have no castling
+ * or promotion sound (Lichess plays the move sound there too), and their Error file points to the non-free standard set,
+ * so "wrong" is always our own tone.
+ */
+export function soundFile(set: SoundSetId, name: SoundName): string {
+  if (set === 'holz' || name === 'wrong') return `sounds/${name}.mp3`
+  return `sounds/${set}/${name === 'castle' || name === 'promote' ? 'move' : name}.mp3`
+}
+
 export function parseSoundSettings(raw: unknown): SoundSettings {
   const o = typeof raw === 'object' && raw !== null ? (raw as Record<string, unknown>) : {}
   const v = o.volume
   return {
     on: typeof o.on === 'boolean' ? o.on : DEFAULT_SOUND.on,
     volume: typeof v === 'number' && Number.isFinite(v) ? Math.min(1, Math.max(0, v)) : DEFAULT_SOUND.volume,
+    set: SOUND_SETS.find((x) => x.id === o.set)?.id ?? DEFAULT_SOUND.set,
   }
 }
 
@@ -59,13 +78,14 @@ export function setSoundSettings(patch: Partial<SoundSettings>): void {
   try { storage()?.setItem(KEY, JSON.stringify(soundSettings.value)) } catch { /* storage blocked or full: the setting stays for this session */ }
 }
 
-const pool = new Map<SoundName, HTMLAudioElement>()
+const pool = new Map<string, HTMLAudioElement>()
 
 /** Plays a sound now (if sounds are on). Never throws: blocked autoplay or a missing file just stays silent. */
-export function playSound(name: SoundName): void {
+export function playSound(name: SoundName, set: SoundSetId = soundSettings.value.set): void {
   if (!soundSettings.value.on || typeof Audio === 'undefined') return
-  let a = pool.get(name)
-  if (!a) { a = new Audio(publicUrl(`sounds/${name}.mp3`)); pool.set(name, a) }
+  const file = soundFile(set, name)
+  let a = pool.get(file)
+  if (!a) { a = new Audio(publicUrl(file)); pool.set(file, a) }
   a.volume = soundSettings.value.volume
   a.currentTime = 0
   void a.play().catch(() => undefined)
