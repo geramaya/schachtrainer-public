@@ -24,9 +24,9 @@ const emit = defineEmits<{ keep: []; undo: []; best: [] }>()
         <span>Dein Zug war {{ held === 'patzer' ? 'ein Patzer' : 'ein Fehler' }} – zurücknehmen oder weiterspielen?</span>
       </div>
       <div class="btns">
-        <button type="button" class="go" title="Weiterspielen (Leertaste)" @click="emit('keep')"><Icon name="play" /> Weiterspielen <kbd>␣</kbd></button>
-        <button type="button" title="Zug zurücknehmen" @click="emit('undo')"><Icon name="undo" /> Zurücknehmen</button>
-        <button type="button" title="Besten Zug übernehmen (Taste B)" @click="emit('best')"><Icon name="take" /> Besten übernehmen <kbd>B</kbd></button>
+        <button type="button" class="go" title="Weiterspielen (Leertaste)" @click="emit('keep')"><Icon name="play" /> <span class="long">Weiterspielen</span><span class="short">Weiter</span> <kbd>␣</kbd></button>
+        <button type="button" title="Zug zurücknehmen" @click="emit('undo')"><Icon name="undo" /> <span class="long">Zurücknehmen</span><span class="short">Zurück</span></button>
+        <button type="button" title="Besten Zug übernehmen (Taste B)" @click="emit('best')"><Icon name="take" /> <span class="long">Besten übernehmen</span><span class="short">Übernehmen</span> <kbd>B</kbd></button>
       </div>
     </template>
     <template v-else>
@@ -47,7 +47,9 @@ const emit = defineEmits<{ keep: []; undo: []; best: [] }>()
 .held.patzer { background: color-mix(in srgb, var(--q-blunder) 24%, var(--panel)); border-color: var(--q-blunder); }
 .q { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; min-width: 0; line-height: 1.25; }
 .h { font-size: 1.05rem; }
-.btns { display: flex; gap: 6px; flex: none; justify-content: flex-end; }
+.btns { display: flex; gap: 6px; min-width: 0; justify-content: flex-end; }
+.btns button { min-width: 0; flex: 0 1 auto; }
+.short { display: none; }
 .btns button { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; }
 .btns button.go { background: var(--acc); color: var(--ink); border-color: var(--acc); font-size: 1rem; height: 44px; padding: 0 16px; }
 .btns button:hover { filter: brightness(1.12); }
@@ -56,5 +58,5 @@ kbd { font: 700 11px/1 var(--mono); padding: 2px 5px; border: 1px solid currentC
 @keyframes pulse { 50% { opacity: 0.35; } }
 @keyframes slide-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .held, .thinking .dot { animation: none; } }
-@container (max-width: 560px) { .btns button { padding: 0 8px; } .btns kbd { display: none; } }
+@container (max-width: 600px) { .btns button { padding: 0 8px; gap: 4px; } .btns kbd { display: none; } .long { display: none; } .short { display: inline; } .q span { display: none; } }
 </style>

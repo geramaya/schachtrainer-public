@@ -21,6 +21,9 @@ import { HOLD_MODES, holds, parseHold } from '../teacher/hold.ts'
 import { engineSettings, setEngineSettings } from '../ui/useEngineSettings.ts'
 import HoldBar from '../ui/HoldBar.vue'
 import Icon from '../ui/Icon.vue'
+import TimeControlPick from '../ui/TimeControlPick.vue'
+import { clockPaused, engineMoveMs, flagWinner, flagged, formatClock, isLow, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../train/clock.ts'
+import type { Clock, TimeControl } from '../train/clock.ts'
 import PlayerBar from '../ui/PlayerBar.vue'
 import { barSides, flipSide } from '../ui/orientation.ts'
 import { applySparringId } from '../train/pipeline.ts'
@@ -196,6 +199,59 @@ const deviationStarts = computed(() =>
   }),
 )
 
+// Thinking time: chosen at the start (remembered), the clock is a pure value (train/clock.ts); the ticker only reads Date.now().
+const TC_KEY = 'schachtrainer.timecontrol'
+const PAUSE_KEY = 'schachtrainer.clockpause'
+const store = (): Storage | undefined => { try { return typeof localStorage === 'undefined' ? undefined : localStorage } catch { return undefined } }
+const timeControl = ref<TimeControl | null>(parseTimeControl(store()?.getItem(TC_KEY)))
+const teacherPause = ref(store()?.getItem(PAUSE_KEY) !== 'off')
+/** A time control picked while a teacher plays suggests "Anhalten bei: nie": the clock and the question to the player do not go together. */
+function pickTime(t: TimeControl | null) {
+  if (t && !timeControl.value && teacher.value.on) setTeacher({ hold: 'never' })
+  timeControl.value = t
+  try { store()?.setItem(TC_KEY, t?.id ?? 'none') } catch { /* blocked: stays for this session */ }
+}
+function pickPause(on: boolean) { teacherPause.value = on; try { store()?.setItem(PAUSE_KEY, on ? 'on' : 'off') } catch { /* blocked */ } }
+const gameTime = ref<TimeControl | null>(null) // fixed at game start
+const clock = ref<Clock | null>(null)
+const clockNow = ref(Date.now())
+const learning = ref(false) // the teacher stopped the clock at least once
+let clockBefore: Clock | null = null // before the own last move: a taken-back move gets its time back
+let ticker: ReturnType<typeof setInterval> | undefined
+const stopTicker = () => { clearInterval(ticker); ticker = undefined }
+function tick() {
+  const c = clock.value
+  if (!c || phase.value !== 'play') return
+  clockNow.value = Date.now()
+  const out = flagged(c, clockNow.value)
+  if (out) timeOut(out)
+}
+function startClock() {
+  stopTicker()
+  gameTime.value = timeControl.value
+  clock.value = gameTime.value ? newClock(gameTime.value) : null
+  clockBefore = null; learning.value = false
+  if (clock.value) ticker = setInterval(tick, 100)
+}
+function timeOut(loser: Side) {
+  token++; cancelEngine(); thinking.value = false; judging.value = false
+  const winner = flagWinner(fen.value, loser)
+  const text = winner === null ? 'Zeit abgelaufen – Remis (der Gegner hat kein Mattmaterial)' : winner === mySide.value ? 'Die Zeit des Gegners ist abgelaufen – du hast gewonnen' : 'Deine Zeit ist abgelaufen – verloren'
+  finishGame(text, { winner, reason: 'zeit' })
+}
+const helpOpen = computed(() => !!help.value && (help.value.hinted || help.value.shown))
+watch(() => clockPaused({ withTeacher: withTeacher.value, teacherPause: teacherPause.value, judging: judging.value, pending: !!pending.value, helpOpen: helpOpen.value }), (paused) => {
+  if (!clock.value || phase.value !== 'play') return
+  if (paused) { if (clock.value.ticking) learning.value = true; clock.value = pause(clock.value, Date.now()) } else clock.value = resume(clock.value, Date.now())
+}, { flush: 'sync' })
+const clockStopped = computed(() => !!clock.value && !clock.value.ticking && phase.value === 'play' && clockPaused({ withTeacher: withTeacher.value, teacherPause: teacherPause.value, judging: judging.value, pending: !!pending.value, helpOpen: helpOpen.value }))
+const barClock = (side: Side) => {
+  const c = clock.value
+  if (!c) return null
+  const ms = remaining(c, side, clockNow.value)
+  return { text: formatClock(ms), low: isLow(ms), active: c.ticking && c.turn === side, paused: clockStopped.value && c.turn === side }
+}
+
 /** Free game: the start position is ready, the first move on the board starts the game. */
 const startable = computed(() => canStartByMove({ phase: phase.value, free: !!props.free, hasStartFen: !!props.startFen, side: sideChoice.value }))
 function toSetup() { resetState(); startFen.value = INITIAL; flipped.value = false; phase.value = 'setup' }
@@ -215,6 +271,7 @@ function resetState() {
   result.value = ''; message.value = ''; thinking.value = false; view.value = null; rv.value = null; analysing.value = false; trained.value = 0
   said.value = null; pending.value = null; judging.value = false; retracted.value = []
   speech.reset()
+  stopTicker(); clock.value = null; clockBefore = null
   fullAnalysis.value = null
   help.value = null; helping.value = false; helps.value = { hints: 0, bests: 0, repertoire: 0, engine: 0 }; engineUnlocked.value = false; fresh.value = false; late.value = lateHelp(late.value, { kind: 'reset' })
 }
@@ -233,6 +290,7 @@ function newGame(from: string) {
   }
   withTeacher.value = teacher.value.on
   phase.value = 'play'
+  startClock()
   say(['partie_start'], {}, from)
   if (turn.value !== mySide.value) void engineMove()
 }
@@ -261,8 +319,9 @@ function onNoteInput() {
 
 function finishGame(text: string, outcome: Outcome) {
   phase.value = 'over'; result.value = text; pending.value = null
-  if (outcome.reason === 'aufgabe' || outcome.reason === 'remis') playSound('end') // mate and stalemate sound from the board
-  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value })
+  stopTicker(); if (clock.value) clock.value = pause(clock.value, Date.now())
+  if (outcome.reason === 'aufgabe' || outcome.reason === 'remis' || outcome.reason === 'zeit') playSound('end') // mate and stalemate sound from the board
+  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord() })
   emit('finished', record)
   gameKey = `g${++gameNo}`
   noteDrafts.value = {}; noteStatus.value = null
@@ -293,14 +352,18 @@ async function autoSave(record: GameRecord): Promise<string | null> {
 /** A running game that is left (other page, other start position) is kept as an unfinished game. */
 function abandonGame() {
   if (phase.value !== 'play' || !ucis.value.length) return
-  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value }))
+  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord() }))
 }
 /** A game that counts for "Anwenden": only with a variation. */
 const markDone = () => { if (props.variation) markApplied(applySparringId(props.variation.id)) }
 
+const clockRecord = () => (gameTime.value ? { timeControl: pgnTimeControl(gameTime.value), ...(learning.value ? { learning: true } : {}) } : {})
+
 function applyMove(uci: string): boolean {
   const r = applyUci(fen.value, uci)
   if (!r) return false
+  const mover = turn.value
+  if (clock.value) { if (mover === mySide.value) clockBefore = clock.value; clock.value = press(clock.value, mover, Date.now()) }
   ucis.value = [...ucis.value, uci]
   lastMove.value = [uci.slice(0, 2), uci.slice(2, 4)]
   if (view.value !== null && phase.value === 'play') fresh.value = true // the game moves on while an earlier position is shown
@@ -313,7 +376,9 @@ async function engineMove() {
   const mine = token
   thinking.value = true; message.value = ''
   try {
-    const uci = await getEngine().play(fen.value, { elo: elo.value, movetimeMs: 300 + Math.floor(Math.random() * 500) })
+    const c = clock.value
+    const movetimeMs = c && gameTime.value ? engineMoveMs(remaining(c, turn.value, Date.now()), gameTime.value.incMs, elo.value) : 300 + Math.floor(Math.random() * 500)
+    const uci = await getEngine().play(fen.value, { elo: elo.value, movetimeMs })
     const before = [...ucis.value]
     const fenBefore = fen.value
     if (mine === token && !applyMove(uci)) {
@@ -383,6 +448,7 @@ function undoMove() {
   const last = ucis.value.at(-1)
   lastMove.value = last ? [last.slice(0, 2), last.slice(2, 4)] : undefined
   pending.value = null; view.value = null; fresh.value = false
+  if (clockBefore && clock.value) clock.value = rewind(clockBefore, Date.now())
   said.value = { j: null, note: null, extra: 'Zug zurückgenommen. Versuch einen anderen.', seed: p.fenBefore }
   say(['zuruecknehmen'], moveFacts(p.fenBefore, p.uci), p.fenBefore)
 }
@@ -396,6 +462,7 @@ function takeBest() {
   ucis.value = r.ucis.slice(0, -1)
   pending.value = null; view.value = null; fresh.value = false
   clearQuip(); eventMood.value = null
+  if (clockBefore && clock.value) clock.value = rewind(clockBefore, Date.now())
   if (!applyMove(p.j.betterUci)) { message.value = 'Der beste Zug konnte nicht gespielt werden.'; return }
   said.value = { j: null, note: null, extra: 'Besten Zug übernommen. Weiter geht es.', seed: p.fenBefore }
   if (phase.value === 'play') void engineMove()
@@ -605,13 +672,13 @@ onMounted(() => window.addEventListener('keydown', onKey))
 // Kept alive by Apply (tab switch): while hidden no keys and no speech; the game itself stays as it is.
 onDeactivated(() => { void noteSaver.flush(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
 onActivated(() => { window.removeEventListener('keydown', onKey); window.addEventListener('keydown', onKey) })
-onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEngine(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
+onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); token++; cancelEngine(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
 </script>
 
 <template>
   <BoardLayout :held-severity="pending ? (pending.j.rating === 'patzer' ? 'patzer' : 'fehler') : null">
-    <template #top><PlayerBar :side="bars.top" v-bind="barPlayer(bars.top)" :fen="shownFen" /></template>
-    <template #bottom><PlayerBar :side="bars.bottom" v-bind="barPlayer(bars.bottom)" :fen="shownFen" /></template>
+    <template #top><PlayerBar :side="bars.top" v-bind="barPlayer(bars.top)" :fen="shownFen" :clock="barClock(bars.top)" /></template>
+    <template #bottom><PlayerBar :side="bars.bottom" v-bind="barPlayer(bars.bottom)" :fen="shownFen" :clock="barClock(bars.bottom)" /></template>
     <template #left>
       <div class="pane sparring">
         <slot name="tabs" />
@@ -636,6 +703,7 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
             <span class="muted">Anhalten bei:</span>
             <button v-for="m in HOLD_MODES" :key="m.id" :class="{ sel: teacher.hold === m.id }" :aria-pressed="teacher.hold === m.id" @click="setTeacher({ hold: parseHold(m.id) })">{{ m.label }}</button>
           </div>
+          <TimeControlPick :model-value="timeControl" :with-teacher="teacher.on" :teacher-pause="teacherPause" @select="pickTime" @pause="pickPause" />
           <label v-if="free && !teacher.on" class="along"><input v-model="along" type="checkbox" /> Engine mitlaufen lassen (zeigt Bewertung und Varianten während der Partie)</label>
           <div class="choices">
             <button v-if="props.startFen" class="primary" @click="newGame(props.startFen)">{{ free ? 'Ab der Stellung aus der Adresse' : 'Ab der Stellung aus dem Festigen' }}</button>
@@ -652,7 +720,7 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
             v-if="showCard" :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity"
             :text="cardView.text" :note="cardView.note" :reveal="revealText" :blocked="!!pending" :hinted="!!pending?.hinted" :later="later" :repertoire-offer="repertoireOffer"
             :lock-figur="true" :quip="quip" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
-            @undo="undoMove" @hint="hint" @best="showBest" @take="takeBest" @keep="keepMove" @later="showLate" @repertoire="showRepertoire" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+            @hint="hint" @best="showBest" @later="showLate" @repertoire="showRepertoire" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
           />
           <p v-if="message" class="verdict" role="status">{{ message }}</p>
           <div v-if="phase === 'over'" class="expl">
@@ -714,11 +782,11 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
       <button aria-label="Brett drehen (F)" title="Brett drehen (F)" @click="flipBoard"><Icon name="flip" /></button>
       <template v-if="phase === 'play'">
         <template v-if="withTeacher">
-          <button :disabled="!canAsk" title="Markiert die Figur des besten Zuges (Taste H)" @click="askHelp('hint')"><Icon name="hint" /> Hinweis <kbd>H</kbd></button>
-          <button :disabled="!canAsk" title="Zeigt den besten Zug mit Begründung" @click="askHelp('best')"><Icon name="target" /> Bester Zug</button>
+          <button :disabled="!canAsk" title="Markiert die Figur des besten Zuges (Taste H)" @click="askHelp('hint')"><Icon name="hint" /><span class="lbl"> Hinweis</span> <kbd class="lbl">H</kbd></button>
+          <button :disabled="!canAsk" title="Zeigt den besten Zug mit Begründung" @click="askHelp('best')"><Icon name="target" /><span class="lbl"> Bester Zug</span></button>
         </template>
-        <button :disabled="thinking || judging || !!pending || turn !== mySide" @click="offerDraw"><Icon name="draw" /> Remis</button>
-        <button class="danger" @click="resign"><Icon name="flag" /> Aufgeben</button>
+        <button :disabled="thinking || judging || !!pending || turn !== mySide" @click="offerDraw"><Icon name="draw" /><span class="lbl"> Remis</span></button>
+        <button class="danger" @click="resign"><Icon name="flag" /><span class="lbl"> Aufgeben</span></button>
       </template>
       <button v-else-if="phase === 'over'" class="pri" @click="toSetup">Neue Partie</button>
       <span v-else-if="free && !props.startFen" class="muted">Zieh auf dem Brett, um zu beginnen.</span>

@@ -148,7 +148,7 @@ export async function importGames(store: GameStore, text: string, o: ImportOptio
 
 export const exportPgn = (games: StoredGame[]): string => games.map(toPgn).join('\n\n') + '\n'
 
-export interface GameFilter { text?: string; result?: GameResult | 'abgebrochen'; side?: Side }
+export interface GameFilter { text?: string; result?: GameResult | 'abgebrochen'; side?: Side; /** only games with a stored analysis */ analysed?: boolean }
 
 /** Completes the opening data of games that lack it and writes them back in one batch; a failing write is not fatal (it is tried again next time). */
 export async function enrichAll(store: GameStore, games: StoredGame[], table: EcoTable): Promise<StoredGame[]> {
@@ -163,7 +163,16 @@ export function filterGames(games: StoredGame[], f: GameFilter, me?: PlayerSetti
   const q = f.text?.trim().toLowerCase()
   return games.filter((g) => {
     if (f.result === 'abgebrochen' ? !(g.result === '*' && g.reason === 'abbruch') : f.result === '*' ? !(g.result === '*' && g.reason !== 'abbruch') : f.result && g.result !== f.result) return false
+    if (f.analysed && !g.analysis) return false
     if (f.side && (me ? sideOfPlayer(g, me) : g.ownSide) !== f.side) return false
     return !q || [g.opening, g.eco, g.repertoire, g.white, g.black, g.teacher, g.meta?.event, g.meta?.site, g.date.slice(0, 10), g.meta?.dateText].some((v) => v?.toLowerCase().includes(q))
   })
+}
+
+/** Small marks of a game in the list: has a stored analysis, was played with the clock stopped by the teacher, time control ("3+2"; unknown forms as they are). */
+export function badgesOf(g: Pick<StoredGame, 'analysis' | 'meta'>): { analysed: boolean; learning: boolean; timeControl: string | null } {
+  const raw = g.meta?.timeControl ?? null
+  const m = raw?.match(/^(\d+)\+(\d+)$/)
+  const timeControl = m && Number(m[1]) % 60 === 0 ? `${Number(m[1]) / 60}+${m[2]}` : raw
+  return { analysed: !!g.analysis, learning: g.meta?.event === 'Lernpartie', timeControl }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { hrefHome, hrefMeinePartien, hrefSpielen } from '../router.ts'
-import { enrichAll, exportPgn, filterGames, importGames, listGames, removeGame } from '../games/library.ts'
+import { badgesOf, enrichAll, exportPgn, filterGames, importGames, listGames, removeGame } from '../games/library.ts'
 import { eloText, identityOf, parseAccounts, resultClass, resultFor, sideOfPlayer } from '../games/identity.ts'
 import { loadEco } from '../openings/eco-load.ts'
 import { progress, update } from '../store/state.ts'
@@ -25,6 +25,7 @@ const problem = ref('')
 const text = ref('')
 const result = ref<GameResult | 'abgebrochen' | ''>('')
 const side = ref<Side | ''>('')
+const onlyAnalysed = ref(false)
 const confirming = ref<string | null>(null)
 const report = ref<ImportReport | null>(null)
 const importNote = ref('')
@@ -33,7 +34,7 @@ let cancelImport = false
 
 const me = computed(() => identityOf(progress.value.settings))
 const accountsText = ref(me.value.accounts.join(', '))
-const shown = computed(() => filterGames(games.value, { text: text.value, result: result.value || undefined, side: side.value || undefined }, me.value))
+const shown = computed(() => filterGames(games.value, { text: text.value, result: result.value || undefined, side: side.value || undefined, analysed: onlyAnalysed.value }, me.value))
 const viewSide = (g: StoredGame) => sideOfPlayer(g, me.value)
 const sideLabel = (g: StoredGame) => { const s = viewSide(g); return s === 'white' ? 'Weiß' : s === 'black' ? 'Schwarz' : '–' }
 const setPlayer = (patch: { name?: string; accounts?: string[] }) => update((p) => ({ ...p, settings: { ...p.settings, player: { ...p.settings.player, ...patch } } }))
@@ -177,6 +178,7 @@ async function upload(e: Event) {
         <select v-model="side" aria-label="Farbe">
           <option value="">Beide Farben</option><option value="white">Weiß</option><option value="black">Schwarz</option>
         </select>
+        <label class="onlyan"><input v-model="onlyAnalysed" type="checkbox" /> nur analysierte</label>
       </div>
       <!-- always there once games exist: it only changes content, never height, so the rows do not jump on the first tick -->
       <div v-if="games.length" class="bulk" role="region" aria-label="Aktionen für die Auswahl">
@@ -205,10 +207,10 @@ async function upload(e: Event) {
       <p v-else-if="!shown.length" class="muted">Keine Partie passt zum Filter.</p>
       <div v-else class="tablewrap">
         <table class="games">
-          <colgroup><col class="c-sel" /><col class="c-date" /><col class="c-names" /><col class="c-res" /><col class="c-side" /><col class="c-elo" /><col class="c-eco" /><col /><col v-if="hasTeachers" class="c-teacher" /><col class="c-acts" /></colgroup>
+          <colgroup><col class="c-sel" /><col class="c-date" /><col class="c-names" /><col class="c-res" /><col class="c-side" /><col class="c-elo" /><col class="c-eco" /><col /><col v-if="hasTeachers" class="c-teacher" /><col class="c-marks" /><col class="c-acts" /></colgroup>
           <thead><tr><th class="selcell" @click="pickAll">
             <button type="button" role="checkbox" class="cb" :class="head" :aria-checked="head === 'all' ? 'true' : head === 'some' ? 'mixed' : 'false'" aria-label="Alle gefilterten Partien auswählen"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path v-if="head === 'all'" d="M3.5 8.5l3 3 6-6.5" /><path v-else-if="head === 'some'" d="M4 8h8" /></svg></button>
-          </th><th>Datum</th><th>Partie</th><th>Ergebnis</th><th>Farbe</th><th>Elo</th><th>ECO</th><th>Eröffnung</th><th v-if="hasTeachers">Lehrer</th><th><span class="sr">Aktionen</span></th></tr></thead>
+          </th><th>Datum</th><th>Partie</th><th>Ergebnis</th><th>Farbe</th><th>Elo</th><th>ECO</th><th>Eröffnung</th><th v-if="hasTeachers">Lehrer</th><th><span class="sr">Marken</span></th><th><span class="sr">Aktionen</span></th></tr></thead>
           <tbody>
             <template v-for="g in shown" :key="g.id">
               <tr class="row" :class="{ sel: selected.has(g.id) }" tabindex="0" role="link" :aria-label="`Partie öffnen: ${g.white} gegen ${g.black}, ${day(g)}${g.opening ? ', ' + g.opening : ''}`" @click="openGame(g)" @keydown.enter="openGame(g)" @keydown.space.prevent="openGame(g)">
@@ -226,6 +228,11 @@ async function upload(e: Event) {
                   <span v-if="g.repertoire" class="rep" aria-label="Repertoire getroffen">☰ {{ g.repertoire }}</span>
                 </td>
                 <td v-if="hasTeachers" class="nw">{{ teacherName(g.teacher) }}</td>
+                <td class="marks nw">
+                  <svg v-if="badgesOf(g).analysed" class="mk" data-tip="analysiert" role="img" aria-label="analysiert" viewBox="0 0 16 16" width="16" height="16"><path d="M2 13V9m4 4V4m4 9V7m4 6V2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                  <span v-if="badgesOf(g).learning" class="mk tag" data-tip="Lernpartie: die Uhr stand beim Lehrer-Halt">Lern</span>
+                  <span v-if="badgesOf(g).timeControl" class="mk tag" data-tip="Bedenkzeit">{{ badgesOf(g).timeControl }}</span>
+                </td>
                 <td class="acts" @click.stop>
                   <button class="ico" data-tip="PGN dieser Partie laden" aria-label="PGN dieser Partie herunterladen" @click="exportOne(g)">
                     <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3 3-3M3 13h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -236,7 +243,7 @@ async function upload(e: Event) {
                 </td>
               </tr>
               <tr v-if="confirming === g.id" class="confirm">
-                <td :colspan="hasTeachers ? 10 : 9" role="alert">
+                <td :colspan="hasTeachers ? 11 : 10" role="alert">
                   Partie {{ day(g) }}, {{ g.white }} – {{ g.black }} wirklich löschen?
                   <button class="tbtn danger" @click="remove(g.id)">Ja, löschen</button>
                   <button class="tbtn" @click="confirming = null">Abbrechen</button>
@@ -283,7 +290,11 @@ async function upload(e: Event) {
 .loading { min-height: 1.5em; }
 .empty .emptyact { display: flex; gap: 0.5rem; margin: 0.8rem 0 0.2rem; }
 .games { width: 100%; min-width: 960px; table-layout: fixed; border-collapse: collapse; }
-.c-sel { width: 2.8rem; } .c-date { width: 6.5rem; } .c-names { width: 22%; } .c-res { width: 7.6rem; } .c-side { width: 6rem; } .c-elo { width: 7rem; } .c-eco { width: 3.6rem; } .c-teacher { width: 7rem; } .c-acts { width: 5rem; }
+.c-sel { width: 2.8rem; } .c-date { width: 6.5rem; } .c-names { width: 22%; } .c-res { width: 7.6rem; } .c-side { width: 6rem; } .c-elo { width: 7rem; } .c-eco { width: 3.6rem; } .c-teacher { width: 7rem; } .c-acts { width: 5rem; } .c-marks { width: 9rem; }
+.marks { text-align: right; }
+.mk { display: inline-block; vertical-align: middle; margin-left: 6px; color: var(--muted); }
+.mk.tag { font: 600 11px/1 var(--mono); padding: 3px 5px; border: 1px solid var(--line); border-radius: 4px; }
+.onlyan { display: inline-flex; align-items: center; gap: 6px; height: 36px; color: var(--muted); }
 .games th, .games td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .games thead th { color: var(--muted); font-weight: 600; font-size: var(--fs-small, 0.85rem); }
 .nw { white-space: nowrap; }

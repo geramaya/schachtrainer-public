@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<{
   /** the teacher cannot be changed here (a running game) */
   lockFigur?: boolean
 }>(), { on: undefined, lockFigur: false })
-const emit = defineEmits<{ undo: []; hint: []; best: []; take: []; keep: []; later: []; repertoire: []; quips: [boolean]; speak: [boolean]; figur: [FigurId]; on: [boolean] }>()
+const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips: [boolean]; speak: [boolean]; figur: [FigurId]; on: [boolean] }>()
 </script>
 
 <template>
@@ -54,11 +54,8 @@ const emit = defineEmits<{ undo: []; hint: []; best: []; take: []; keep: []; lat
       </div>
       <p v-if="quips" class="quip" :class="{ empty: !quip }" role="status" data-testid="quip" :aria-hidden="!quip">{{ quip }}</p>
       <div v-if="blocked" class="decide">
-        <button type="button" class="go" title="Weiterspielen (Leertaste)" @click="emit('keep')"><Icon name="play" /> Weiterspielen <kbd>␣</kbd></button>
-        <button type="button" title="Zug zurücknehmen" @click="emit('undo')"><Icon name="undo" /> Zurücknehmen</button>
-        <button type="button" :disabled="hinted" title="Markiert die Figur des besten Zuges (Taste H)" @click="emit('hint')"><Icon name="hint" /> Hinweis <kbd>H</kbd></button>
-        <button type="button" :disabled="!!reveal" title="Zeigt den besten Zug als Pfeil" @click="emit('best')"><Icon name="target" /> Besten Zug zeigen</button>
-        <button type="button" title="Nimmt deinen Zug zurück und spielt den besten Zug (Taste B)" @click="emit('take')"><Icon name="take" /> Besten Zug übernehmen <kbd>B</kbd></button>
+        <button type="button" :disabled="hinted" title="Markiert die Figur des besten Zuges (Taste H)" @click="emit('hint')"><Icon name="hint" /> Hinweis</button>
+        <button type="button" :disabled="!!reveal" title="Zeigt den besten Zug als Pfeil" @click="emit('best')"><Icon name="target" /> Bester Zug</button>
       </div>
     </template>
   </section>
@@ -80,10 +77,9 @@ const emit = defineEmits<{ undo: []; hint: []; best: []; take: []; keep: []; lat
 @keyframes quip-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .quip { animation: none; } }
 .decide { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
-.decide button { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 42px; min-width: 0; padding-inline: 0.4rem; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+.decide button { display: inline-flex; white-space: nowrap; align-items: center; justify-content: center; gap: 6px; min-height: 42px; min-width: 0; padding-inline: 0.4rem; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
 .decide button:disabled { color: var(--muted); border-style: dashed; cursor: default; }
 .decide button:not(:disabled):hover { filter: brightness(1.15); }
-.decide button.go { min-height: 48px; font-size: 1.05rem; background: var(--acc); color: var(--ink); border-color: var(--acc); }
 .decide kbd { font: 700 11px/1 var(--mono); padding: 2px 5px; border: 1px solid currentColor; border-radius: 4px; opacity: 0.75; }
 .ask { margin: 0; font-weight: 800; font-size: 1.05rem; color: var(--text); }
 .who.big .verdict-tag { font-size: 1.3rem; font-weight: 800; }
