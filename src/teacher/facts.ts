@@ -4,7 +4,7 @@ import type { AnalysisLine } from '../engine/service.ts'
 import type { Side } from '../content/types.ts'
 import { tacticalMotifs } from '../coach/features.ts'
 import type { Motif, MotifKind } from '../coach/features.ts'
-import { VALUE } from '../coach/texts.ts'
+import { VALUE, cap, the } from '../coach/texts.ts'
 import type { PieceType } from '../coach/texts.ts'
 import { formatLine } from '../chess/notation.ts'
 import { units } from './blocks.ts'
@@ -156,7 +156,14 @@ export function explainBest(fenBefore: string, best: AnalysisLine): string | nul
   if (best.mate !== null && best.mate > 0) return best.mate === 1 ? 'Er setzt sofort matt.' : `Er setzt in ${best.mate} Zügen matt.`
   if (first.promotion) return 'Er wandelt den Bauern um.'
   const gain = saldo(bs, mover)
-  if (gain !== null && gain >= 1) return `Er gewinnt in der Folge ${units(gain)} Material (${formatLine(window(bs, mover).map((s) => s.san), startPly(fenBefore))}).`
+  const grab = first.captured && first.captureSquare && new Chess(first.before).attackers(first.captureSquare as Square, colorOf(opposite(mover))).length === 0
+    ? `Er schlägt ${the(first.captured, true)} auf ${first.captureSquare}: ${cap(the(first.captured))} steht ungedeckt.`
+    : null
+  if (gain !== null && gain >= 1) {
+    const won = `Er gewinnt in der Folge ${units(gain)} Material (${formatLine(window(bs, mover).map((s) => s.san), startPly(fenBefore))}).`
+    return grab ? `${grab} ${won}` : won
+  }
+  if (grab) return grab
   const hanging = tacticalMotifs(fenBefore).some((m) => m.kind === 'haengend' && m.side === opposite(mover) && m.squares[0] === first.from)
   if (hanging) return `Er rettet die angegriffene Figur auf ${first.from}.`
   const fork = newMotifs(first.before, first.after, mover)[0]
@@ -166,4 +173,9 @@ export function explainBest(fenBefore: string, best: AnalysisLine): string | nul
   if (first.san.startsWith('O-O')) return `Er rochiert kurz: Der König zieht nach ${first.to} in die Ecke, der Turm kommt ins Spiel.`
   if ((first.piece === 'n' || first.piece === 'b') && HOME[mover].includes(first.from)) return `Er entwickelt ${first.piece === 'n' ? 'den Springer' : 'den Läufer'} von ${first.from}.`
   return null
+}
+
+/** The first plies of an engine line as a German move list ("1. a4 a5 2. b4 b5"). */
+export function mainLine(fen: string, pv: string[], plies = 4): string {
+  return formatLine(replay(fen, pv).slice(0, plies).map((s) => s.san), startPly(fen))
 }

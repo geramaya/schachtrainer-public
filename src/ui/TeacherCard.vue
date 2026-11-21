@@ -12,6 +12,8 @@ const props = withDefaults(defineProps<{
   /** "?? Patzer" etc.; empty for pure notes */
   headline?: string
   severity?: string
+  /** tooltip of the verdict badge: what the category means for this move */
+  tip?: string
   text: string
   note?: string
   /** shown after "Besten Zug zeigen" */
@@ -44,12 +46,12 @@ const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips:
       <div class="main">
         <TeacherAvatar :figur="figur" :gefuehl="gefuehl" />
         <div class="bubble" role="status">
-          <p v-if="headline" class="who" :class="{ big: blocked }"><span class="verdict-tag">{{ headline }}</span></p>
+          <p v-if="headline" class="who"><span class="badge" :class="severity" :title="tip" tabindex="0">{{ headline }}</span></p>
           <p v-if="text" class="said">{{ text }}</p>
           <p v-if="note" class="note">{{ note }}</p>
           <button v-if="repertoireOffer" type="button" class="later" @click="emit('repertoire')">Repertoirezug zeigen</button>
           <p v-if="reveal" class="reveal">{{ reveal }}</p>
-          <button v-else-if="later" type="button" class="later" @click="emit('later')">Besseren Zug zeigen</button>
+          <button v-else-if="later" type="button" class="later" @click="emit('later')"><Icon name="target" :size="16" /> Warum? Besseren Zug zeigen</button>
         </div>
       </div>
       <p v-if="quips" class="quip" :class="{ empty: !quip }" role="status" data-testid="quip" :aria-hidden="!quip">{{ quip }}</p>
@@ -67,7 +69,10 @@ const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips:
 .bubble { min-width: 0; height: 10em; overflow-y: auto; } /* fixed: the card does not change its height from move to move */
 .bubble p { margin: 0.15rem 0; }
 .who { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
-.verdict-tag { color: var(--text); }
+.badge { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 1.2rem; font-weight: 800; line-height: 1.2; color: var(--ink); background: var(--q-best); cursor: help; }
+.badge.ungenau { background: var(--q-inaccuracy); }
+.badge.fehler { background: var(--q-mistake); }
+.badge.patzer { background: var(--q-blunder); }
 .said { font-size: var(--fs-body, 1rem); }
 .note { color: var(--muted); }
 .reveal { border-left: 3px solid var(--acc); padding-left: 0.5rem; }
@@ -82,7 +87,6 @@ const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips:
 .decide button:not(:disabled):hover { filter: brightness(1.15); }
 .decide kbd { font: 700 11px/1 var(--mono); padding: 2px 5px; border: 1px solid currentColor; border-radius: 4px; opacity: 0.75; }
 .ask { margin: 0; font-weight: 800; font-size: 1.05rem; color: var(--text); }
-.who.big .verdict-tag { font-size: 1.3rem; font-weight: 800; }
 .teacher.held { border-width: 2px; background: color-mix(in srgb, var(--q-mistake) 16%, var(--panel-2)); }
 .teacher.held.patzer { background: color-mix(in srgb, var(--q-blunder) 18%, var(--panel-2)); }
 .teacher.best, .teacher.excellent, .teacher.gut { border-color: var(--q-best); }

@@ -18,6 +18,7 @@ import { engineStatus, historyNotice, historyTarget } from '../ui/history.ts'
 import { canStartByMove, flipIntent, parseSideChoice, resolveSide } from '../train/free-start.ts'
 import type { SideChoice } from '../train/free-start.ts'
 import { HOLD_MODES, holds, parseHold } from '../teacher/hold.ts'
+import { EXPLAIN_MODES, autoExplain, parseExplain } from '../teacher/explain.ts'
 import { engineSettings, setEngineSettings } from '../ui/useEngineSettings.ts'
 import HoldBar from '../ui/HoldBar.vue'
 import Icon from '../ui/Icon.vue'
@@ -68,7 +69,7 @@ import { adoptBest, canKeep, undoHeld } from '../teacher/session.ts'
 import type { Held } from '../teacher/session.ts'
 import { repertoireNote, repertoireSentence } from '../teacher/repertoire.ts'
 import type { RepertoireNote } from '../teacher/repertoire.ts'
-import { LABEL, SYMBOL } from '../teacher/blocks.ts'
+import { LABEL, SYMBOL, badgeTip } from '../teacher/blocks.ts'
 import { moveFacts, quipCategories } from '../teacher/quip-events.ts'
 import type { Rating } from '../teacher/judge.ts'
 import { stopQuip } from '../audio/play-quip.ts'
@@ -152,12 +153,13 @@ const card = computed(() => {
     gefuehl: mood.value,
     headline: r ? `${SYMBOL[r]} ${LABEL[r]}` : '',
     severity: r ?? '',
+    tip: r && sd.j ? badgeTip(r, sd.j.lossCp) : '',
     text: sd.extra ?? sd.j?.text ?? noteText,
     note: sd.j ? noteText : '',
   }
 })
 const showCard = computed(() => withTeacher.value && (card.value !== null || quip.value !== '' || !!revealText.value))
-const cardView = computed(() => card.value ?? { gefuehl: mood.value, headline: '', severity: '', text: '', note: '' })
+const cardView = computed(() => card.value ?? { gefuehl: mood.value, headline: '', severity: '', tip: '', text: '', note: '' })
 // Help on request: the teacher never volunteers a better move. Hint = the piece, best move = arrow and reason; both are counted.
 interface Help { fen: string; uci: string; text: string; hinted: boolean; shown: boolean }
 const help = ref<Help | null>(null)
@@ -171,6 +173,8 @@ function showRepertoire() {
   said.value = { ...said.value, repShown: true }
   helps.value = { ...helps.value, repertoire: helps.value.repertoire + 1 }
 }
+/** Position before the judged move: the arrow of "Besseren Zug zeigen" belongs to it. */
+const lateFen = ref('')
 const later = computed(() => !!late.value && !late.value.shown && !pending.value)
 /** The player lifted the engine lock of a teacher game on purpose (counts once as a help). */
 const engineUnlocked = ref(false)
@@ -433,11 +437,14 @@ async function teach(fenBefore: string, before: string[], uci: string) {
     said.value = { j, note, seed: `${fenBefore}|${uci}` }
     openComment()
     late.value = lateHelp(late.value, { kind: 'judged', j })
+    lateFen.value = fenBefore
     sayMove(fenBefore, uci, true, j.rating, note)
     if (holds(j.rating, teacher.value.hold) && (j.rating === 'fehler' || j.rating === 'patzer')) {
       pending.value = { j, uci, fenBefore, san: applyUci(fenBefore, uci)!.san, hinted: false, revealed: false }
+      if (autoExplain(j.rating, teacher.value.explain)) showBest() // explained at once: counts as the help "Bester Zug"
       return
     }
+    if (autoExplain(j.rating, teacher.value.explain)) showLate()
     void engineMove()
   } catch (e) {
     if (e instanceof CancelledError || mine !== token) return
@@ -489,6 +496,7 @@ const showBest = () => {
   if (!p) return
   if (!p.revealed) helps.value = { ...helps.value, bests: helps.value.bests + 1 }
   pending.value = { ...p, revealed: true }
+  late.value = lateHelp(late.value, { kind: 'show' }) // after "Weiterspielen" the explanation stays, no second offer
 }
 const showLate = () => {
   if (!late.value || late.value.shown) return
@@ -630,6 +638,7 @@ const arrows = computed<Arrow[]>(() => {
   const p = pending.value
   if (p?.revealed) return [{ orig: p.j.betterUci.slice(0, 2), dest: p.j.betterUci.slice(2, 4), brush: 'green' }]
   if (help.value?.shown) return [{ orig: help.value.uci.slice(0, 2), dest: help.value.uci.slice(2, 4), brush: 'green' }]
+  if (late.value?.shown && shownFen.value === lateFen.value) return [{ orig: late.value.uci.slice(0, 2), dest: late.value.uci.slice(2, 4), brush: 'green' }]
   const e = selected.value
   if (!e) return []
   return [
@@ -721,6 +730,10 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
               <div class="segs wide" role="group" aria-label="Anhalten bei">
                 <button v-for="m in HOLD_MODES" :key="m.id" type="button" class="seg" :aria-pressed="teacher.hold === m.id" @click="setTeacher({ hold: parseHold(m.id) })">{{ m.label }}</button>
               </div>
+              <h3 class="sech sub2" title="Der Lehrer zeigt den besseren Zug mit Begründung von selbst; sonst bleibt der Knopf „Warum? Besseren Zug zeigen“. Das zählt jeweils als Hilfe.">Besseren Zug erklären</h3>
+              <div class="segs wide" role="group" aria-label="Besseren Zug erklären">
+                <button v-for="m in EXPLAIN_MODES" :key="m.id" type="button" class="seg" :aria-pressed="teacher.explain === m.id" @click="setTeacher({ explain: parseExplain(m.id) })">{{ m.label }}</button>
+              </div>
             </template>
           </section>
           <section class="sec">
@@ -740,7 +753,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
         <template v-else>
           <p v-if="phase === 'play'" class="muted statusline" :class="{ halt: pending }" role="status">{{ judging ? `${teacherName} prüft deinen Zug …` : thinking ? 'Die Engine denkt …' : pending ? 'Die Partie hält an – du entscheidest.' : turn === mySide ? 'Du bist am Zug.' : '' }}{{ free ? ` Du spielst ${mySide === 'white' ? 'Weiß' : 'Schwarz'}.` : '' }}</p>
           <TeacherCard
-            v-if="showCard" :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity"
+            v-if="showCard" :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity" :tip="cardView.tip"
             :text="cardView.text" :note="cardView.note" :reveal="revealText" :blocked="!!pending" :hinted="!!pending?.hinted" :later="later" :repertoire-offer="repertoireOffer"
             :lock-figur="true" :quip="quip" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
             @hint="hint" @best="showBest" @later="showLate" @repertoire="showRepertoire" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"

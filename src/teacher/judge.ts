@@ -7,7 +7,7 @@ import { lossCategory } from '../analysis/category.ts'
 import type { Category } from '../analysis/category.ts'
 import { fmtScore } from '../coach/texts.ts'
 import type { Side } from '../content/types.ts'
-import { detectFacts, explainBest } from './facts.ts'
+import { detectFacts, explainBest, mainLine } from './facts.ts'
 import type { Fact } from './facts.ts'
 import { PRAISE_BEST, PRAISE_EXCELLENT, PRAISE_GOOD, factSentence, pick } from './blocks.ts'
 
@@ -60,6 +60,13 @@ function gainSentence(ev: MoveEvals, lossCp: number): string | null {
   return `Der beste Zug hätte dir etwa ${(lossCp / 100).toFixed(1).replace('.', ',')} Bauerneinheiten mehr gebracht.`
 }
 
+/** No provable motive: only what the engine says, the difference and the main line. */
+function fallbackWhy(ev: MoveEvals, lossCp: number, score: string, line: string): string {
+  const mate = ev.best.mate !== null || ev.played.mate !== null
+  const diff = mate || lossCp < 5 ? '' : ` Stockfish bewertet es um ${(lossCp / 100).toFixed(1).replace('.', ',')} Bauerneinheiten besser`
+  return `${diff ? `:${diff}` : ''} (${score}).${line ? ` Hauptlinie: ${line}.` : ''}`
+}
+
 export function judgeMove(fenBefore: string, uci: string, ev: MoveEvals): Judgement {
   const mover: Side = fenBefore.split(' ')[1] === 'b' ? 'black' : 'white'
   const lossCp = lossOf(ev.best, ev.played)
@@ -72,7 +79,7 @@ export function judgeMove(fenBefore: string, uci: string, ev: MoveEvals): Judgem
   const bestWhy = explainBest(fenBefore, ev.best)
   const facts = rating === 'ungenau' || rating === 'fehler' || rating === 'patzer' ? detectFacts(fenBefore, ev.played, ev.best) : []
   const stockfish = `Stockfish sieht nach ${san} ${shown(ev.played)}`
-  const reveal = `Besser war ${better}${bestWhy ? `: ${bestWhy}` : ` (${shown(ev.best)}).`}`
+  const reveal = `Besser war ${better}${bestWhy ? `: ${bestWhy}` : fallbackWhy(ev, lossCp, shown(ev.best), mainLine(fenBefore, ev.best.pv))}`
   const fact = facts[0] ? factSentence(facts[0], seed) : null
 
   let text: string

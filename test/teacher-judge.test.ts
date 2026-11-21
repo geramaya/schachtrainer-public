@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { judgeMove } from '../src/teacher/judge.ts'
-import { factSentence, units } from '../src/teacher/blocks.ts'
+import { badgeTip, factSentence, units } from '../src/teacher/blocks.ts'
 import type { MoveEvals } from '../src/teacher/judge.ts'
 
 const line = (uci: string, pv: string[], cp: number | null, mate: number | null = null) => ({ uci, pv, cp, mate })
@@ -59,7 +59,7 @@ test('fallback: no provable fact -> Stockfish sentence with both evaluations', (
   const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4'], 30), line('a2a3', ['a2a3', 'e7e5'], -150)))
   assert.equal(j.rating, 'fehler')
   assert.deepEqual(j.facts, [])
-  assert.equal(j.reveal, 'Besser war e4 (+0,30).')
+  assert.equal(j.reveal, 'Besser war e4: Stockfish bewertet es um 1,8 Bauerneinheiten besser (+0,30). Hauptlinie: 1. e4.')
   assert.match(j.text, /^Stockfish sieht nach a3 −1,50\./) // the evaluation sentence is said once (text), the reveal only adds the move
   assert.doesNotMatch(j.text, /e4/, 'the better move is revealed only on request')
 })
@@ -293,4 +293,35 @@ test('no gain sentence for mate scores (cp is meaningless there) and none for go
   assert.doesNotMatch(m.text, /Bauerneinheiten mehr gebracht/)
   const g = judgeMove(START, 'd2d4', ev(line('e2e4', ['e2e4', 'e7e5'], 30), line('d2d4', ['d2d4', 'd7d5'], 25)))
   assert.doesNotMatch(g.text, /mehr gebracht/)
+})
+
+const reasonOf = (fen: string, best: ReturnType<typeof line>, playedUci: string, playedCp: number) =>
+  judgeMove(fen, playedUci, ev(best, line(playedUci, [playedUci], playedCp))).reveal
+
+test('reveal: the best move captures an undefended piece -> says so, proven by the position', () => {
+  const fen = '4k3/8/8/n7/8/8/8/R3K3 w - - 0 1'
+  const r = reasonOf(fen, line('a1a5', ['a1a5'], 500), 'e1e2', 0)
+  assert.match(r, /^Besser war Txa5: Er schlägt den Springer auf a5: Der Springer steht ungedeckt\./)
+})
+
+test('reveal: the best move gives check -> says so', () => {
+  const r = reasonOf('4k3/8/8/8/8/8/8/R3K3 w - - 0 1', line('a1a8', ['a1a8', 'e8e7'], 400), 'e1e2', 0)
+  assert.match(r, /Besser war Ta8\+: Er gibt Schach\./)
+})
+
+test('reveal: the best move saves the attacked piece -> says so', () => {
+  const r = reasonOf('4k3/8/8/4p3/3N4/8/8/4K3 w - - 0 1', line('d4b5', ['d4b5', 'e8e7'], 0), 'e1e2', -300)
+  assert.match(r, /Besser war Sb5: Er rettet die angegriffene Figur auf d4\./)
+})
+
+test('reveal: no provable motive -> the evaluation difference and the main line instead of an invented reason', () => {
+  const r = reasonOf(START, line('a2a4', ['a2a4', 'a7a5', 'b2b4', 'b7b5', 'c2c4'], 30), 'h2h3', -30)
+  assert.equal(r, 'Besser war a4: Stockfish bewertet es um 0,6 Bauerneinheiten besser (+0,30). Hauptlinie: 1. a4 a5 2. b4 b5.')
+})
+
+test('the verdict badge explains its category with the loss of this move', () => {
+  assert.equal(badgeTip('fehler', 130), 'Fehler: verliert etwa 1,3 Bauerneinheiten gegenüber dem besten Zug.')
+  assert.equal(badgeTip('ungenau', 3), 'Ungenau: kostet kaum etwas gegenüber dem besten Zug.')
+  assert.equal(badgeTip('best', 0), 'Der beste Zug der Engine.')
+  assert.equal(badgeTip('gut', 12), 'Fast so gut wie der beste Zug.')
 })
