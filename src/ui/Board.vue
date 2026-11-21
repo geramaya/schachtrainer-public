@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { syncConfig } from './boardSync.ts'
 import { computed, onMounted, onBeforeUnmount, ref, watch, nextTick } from 'vue'
 import { Chessground } from '@lichess-org/chessground'
 import type { Api } from '@lichess-org/chessground/api'
@@ -97,7 +98,8 @@ function config() {
   }
 }
 
-function resync() { api?.set(config()) }
+let syncedFen: string | null = null
+function resync() { api?.set(syncConfig(config(), syncedFen)); syncedFen = props.fen }
 
 // ----- optional layers (hanging pieces, counts, control, threats, reach of a piece), all off by default -----
 const active = computed(() => activeLayers(layerSettings.value, !!props.layerLock))
@@ -174,7 +176,7 @@ function cancelPromotion() {
   resync()
 }
 
-onMounted(() => { api = Chessground(el.value!, config()) })
+onMounted(() => { api = Chessground(el.value!, config()); syncedFen = props.fen })
 onBeforeUnmount(() => api?.destroy())
 watch(() => [props.fen, props.orientation, props.movable, props.arrows, props.lastMove, props.highlight, props.shapes, threats.value, tintShapes.value], resync, { deep: true })
 </script>
