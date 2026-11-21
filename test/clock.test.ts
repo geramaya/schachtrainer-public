@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { TIME_CONTROLS, canMate, clockPaused, engineMoveMs, flagWinner, flagged, formatClock, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../src/train/clock.ts'
+import { TIME_CONTROLS, canMate, clockPaused, holdSuggestion, engineMoveMs, flagWinner, flagged, formatClock, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../src/train/clock.ts'
 
 const tc = parseTimeControl('3+2')!
 const S = 1000
@@ -70,10 +70,10 @@ test('rewind (a held move is taken back): the thinking time is refunded and no i
   assert.equal(remaining(back, 'white', 41 * S), 179 * S)
 })
 
-test('clockPaused: the teacher stops the clocks during judging, the question and an open hint, only with the switch on and a teacher', () => {
-  const idle = { withTeacher: true, teacherPause: true, judging: false, pending: false, helpOpen: false }
+test('clockPaused: the teacher stops the clocks during judging, the question, the comment after the move and an open hint, only with the switch on and a teacher', () => {
+  const idle = { withTeacher: true, teacherPause: true, judging: false, pending: false, helpOpen: false, commentOpen: false }
   assert.equal(clockPaused(idle), false)
-  for (const k of ['judging', 'pending', 'helpOpen'] as const) {
+  for (const k of ['judging', 'pending', 'helpOpen', 'commentOpen'] as const) {
     assert.equal(clockPaused({ ...idle, [k]: true }), true, k)
     assert.equal(clockPaused({ ...idle, [k]: true, teacherPause: false }), false, `${k} with the switch off`)
     assert.equal(clockPaused({ ...idle, [k]: true, withTeacher: false }), false, `${k} without teacher`)
@@ -107,4 +107,23 @@ test('engineMoveMs: share of the remaining time plus most of the increment, capp
   assert.equal(engineMoveMs(10 * S, 2 * S, 1500), 1250) // 333 + 1600 capped
   assert.equal(engineMoveMs(100, 0, 1500), 30)
   assert.ok(engineMoveMs(1000, 0, 2400) < 1000)
+})
+
+test('press while the teacher holds the clocks: the opponent clock does not start, it starts with the resume (hint open, then the player moves)', () => {
+  let c = press(press(newClock(tc), 'white', 0), 'black', 0)
+  c = press(c, 'white', 20 * S, true) // own move while a hint was open
+  assert.equal(c.ticking, false)
+  assert.equal(c.turn, 'black')
+  assert.equal(remaining(c, 'black', 90 * S), 180 * S)
+  c = resume(c, 100 * S)
+  assert.equal(remaining(c, 'black', 103 * S), 177 * S)
+})
+
+test('holdSuggestion: a time control suggests "nie" only when the teacher does not stop the clock', () => {
+  const base = { teacherOn: true, teacherPause: true, hadTime: false, hasTime: true }
+  assert.equal(holdSuggestion(base), null)
+  assert.equal(holdSuggestion({ ...base, teacherPause: false }), 'never')
+  assert.equal(holdSuggestion({ ...base, teacherPause: false, teacherOn: false }), null)
+  assert.equal(holdSuggestion({ ...base, teacherPause: false, hadTime: true }), null)
+  assert.equal(holdSuggestion({ ...base, teacherPause: false, hasTime: false }), null)
 })

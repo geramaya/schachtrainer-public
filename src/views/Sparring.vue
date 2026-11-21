@@ -22,7 +22,7 @@ import { engineSettings, setEngineSettings } from '../ui/useEngineSettings.ts'
 import HoldBar from '../ui/HoldBar.vue'
 import Icon from '../ui/Icon.vue'
 import TimeControlPick from '../ui/TimeControlPick.vue'
-import { clockPaused, engineMoveMs, flagWinner, flagged, formatClock, isLow, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../train/clock.ts'
+import { clockPaused, engineMoveMs, holdSuggestion, flagWinner, flagged, formatClock, isLow, newClock, parseTimeControl, pause, pgnTimeControl, press, remaining, resume, rewind } from '../train/clock.ts'
 import type { Clock, TimeControl } from '../train/clock.ts'
 import PlayerBar from '../ui/PlayerBar.vue'
 import { barSides, flipSide } from '../ui/orientation.ts'
@@ -71,7 +71,7 @@ import { LABEL, SYMBOL } from '../teacher/blocks.ts'
 import { moveFacts, quipCategories } from '../teacher/quip-events.ts'
 import type { Rating } from '../teacher/judge.ts'
 import { stopQuip } from '../audio/play-quip.ts'
-import { useTeacherSpeech } from '../teacher/speech.ts'
+import { QUIP_SHOWN_MS, useTeacherSpeech } from '../teacher/speech.ts'
 import BoardLayout from '../ui/BoardLayout.vue'
 import { EMPTY_VIEW } from '../coach/ceval.ts'
 import type { EngineView } from '../coach/ceval.ts'
@@ -205,13 +205,15 @@ const PAUSE_KEY = 'schachtrainer.clockpause'
 const store = (): Storage | undefined => { try { return typeof localStorage === 'undefined' ? undefined : localStorage } catch { return undefined } }
 const timeControl = ref<TimeControl | null>(parseTimeControl(store()?.getItem(TC_KEY)))
 const teacherPause = ref(store()?.getItem(PAUSE_KEY) !== 'off')
-/** A time control picked while a teacher plays suggests "Anhalten bei: nie": the clock and the question to the player do not go together. */
+/** A time control without the clock stop of the teacher suggests "Anhalten bei: nie": a running clock and a question to the player do not go together. */
 function pickTime(t: TimeControl | null) {
-  if (t && !timeControl.value && teacher.value.on) setTeacher({ hold: 'never' })
+  if (holdSuggestion({ teacherOn: teacher.value.on, teacherPause: teacherPause.value, hadTime: !!timeControl.value, hasTime: !!t })) setTeacher({ hold: 'never' })
   timeControl.value = t
   try { store()?.setItem(TC_KEY, t?.id ?? 'none') } catch { /* blocked: stays for this session */ }
 }
-function pickPause(on: boolean) { teacherPause.value = on; try { store()?.setItem(PAUSE_KEY, on ? 'on' : 'off') } catch { /* blocked */ } }
+function pickPause(on: boolean) {
+  if (holdSuggestion({ teacherOn: teacher.value.on, teacherPause: on, hadTime: false, hasTime: !!timeControl.value })) setTeacher({ hold: 'never' })
+  teacherPause.value = on; try { store()?.setItem(PAUSE_KEY, on ? 'on' : 'off') } catch { /* blocked */ } }
 const gameTime = ref<TimeControl | null>(null) // fixed at game start
 const clock = ref<Clock | null>(null)
 const clockNow = ref(Date.now())
@@ -240,11 +242,17 @@ function timeOut(loser: Side) {
   finishGame(text, { winner, reason: 'zeit' })
 }
 const helpOpen = computed(() => !!help.value && (help.value.hinted || help.value.shown))
-watch(() => clockPaused({ withTeacher: withTeacher.value, teacherPause: teacherPause.value, judging: judging.value, pending: !!pending.value, helpOpen: helpOpen.value }), (paused) => {
+/** The comment of the teacher after the move is on screen (QUIP_SHOWN_MS, or until the own next move). */
+const commentOpen = ref(false)
+let commentTimer: ReturnType<typeof setTimeout> | undefined
+function openComment() { clearTimeout(commentTimer); commentOpen.value = true; commentTimer = setTimeout(() => { commentOpen.value = false }, QUIP_SHOWN_MS) }
+function closeComment() { clearTimeout(commentTimer); commentOpen.value = false }
+const clockHeld = computed(() => clockPaused({ withTeacher: withTeacher.value, teacherPause: teacherPause.value, judging: judging.value, pending: !!pending.value, helpOpen: helpOpen.value, commentOpen: commentOpen.value }))
+watch(clockHeld, (paused) => {
   if (!clock.value || phase.value !== 'play') return
   if (paused) { if (clock.value.ticking) learning.value = true; clock.value = pause(clock.value, Date.now()) } else clock.value = resume(clock.value, Date.now())
 }, { flush: 'sync' })
-const clockStopped = computed(() => !!clock.value && !clock.value.ticking && phase.value === 'play' && clockPaused({ withTeacher: withTeacher.value, teacherPause: teacherPause.value, judging: judging.value, pending: !!pending.value, helpOpen: helpOpen.value }))
+const clockStopped = computed(() => !!clock.value && !clock.value.ticking && phase.value === 'play' && clockHeld.value)
 const barClock = (side: Side) => {
   const c = clock.value
   if (!c) return null
@@ -271,7 +279,7 @@ function resetState() {
   result.value = ''; message.value = ''; thinking.value = false; view.value = null; rv.value = null; analysing.value = false; trained.value = 0
   said.value = null; pending.value = null; judging.value = false; retracted.value = []
   speech.reset()
-  stopTicker(); clock.value = null; clockBefore = null
+  stopTicker(); clock.value = null; clockBefore = null; closeComment()
   fullAnalysis.value = null
   help.value = null; helping.value = false; helps.value = { hints: 0, bests: 0, repertoire: 0, engine: 0 }; engineUnlocked.value = false; fresh.value = false; late.value = lateHelp(late.value, { kind: 'reset' })
 }
@@ -319,7 +327,7 @@ function onNoteInput() {
 
 function finishGame(text: string, outcome: Outcome) {
   phase.value = 'over'; result.value = text; pending.value = null
-  stopTicker(); if (clock.value) clock.value = pause(clock.value, Date.now())
+  stopTicker(); closeComment(); if (clock.value) clock.value = pause(clock.value, Date.now())
   if (outcome.reason === 'aufgabe' || outcome.reason === 'remis' || outcome.reason === 'zeit') playSound('end') // mate and stalemate sound from the board
   const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord() })
   emit('finished', record)
@@ -363,7 +371,7 @@ function applyMove(uci: string): boolean {
   const r = applyUci(fen.value, uci)
   if (!r) return false
   const mover = turn.value
-  if (clock.value) { if (mover === mySide.value) clockBefore = clock.value; clock.value = press(clock.value, mover, Date.now()) }
+  if (clock.value) { if (mover === mySide.value) clockBefore = clock.value; clock.value = press(clock.value, mover, Date.now(), clockHeld.value) }
   ucis.value = [...ucis.value, uci]
   lastMove.value = [uci.slice(0, 2), uci.slice(2, 4)]
   if (view.value !== null && phase.value === 'play') fresh.value = true // the game moves on while an earlier position is shown
@@ -403,6 +411,7 @@ function onMove(uci: string) {
   if (phase.value !== 'play' || thinking.value || judging.value || pending.value || turn.value !== mySide.value || view.value !== null) return
   const fenBefore = fen.value
   const before = [...ucis.value]
+  closeComment()
   if (!applyMove(uci)) return
   late.value = lateHelp(late.value, { kind: 'moved' })
   if (phase.value !== 'play') { if (withTeacher.value) sayMove(fenBefore, uci, true, null, null); return }
@@ -421,6 +430,7 @@ async function teach(fenBefore: string, before: string[], uci: string) {
     positionCp.value = scoreCp(ev.played)
     const note = repertoireNote(before, uci, startFen.value, props.bundle, openingAt([...before, uci]), progress.value.overlays, mySide.value)
     said.value = { j, note, seed: `${fenBefore}|${uci}` }
+    openComment()
     late.value = lateHelp(late.value, { kind: 'judged', j })
     sayMove(fenBefore, uci, true, j.rating, note)
     if (holds(j.rating, teacher.value.hold) && (j.rating === 'fehler' || j.rating === 'patzer')) {
