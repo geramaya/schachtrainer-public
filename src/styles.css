@@ -250,6 +250,12 @@ textarea { width: 100%; margin-top: 0.5rem; background: var(--bg); color: var(--
 .sparring button.seg[aria-pressed='true'] { background: var(--acc); border-color: var(--acc); color: var(--ink); }
 .sparring button.seg:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 .sparring button.seg.ctile { height: 56px; min-height: 56px; flex-direction: column; gap: 4px; padding: 0 4px; white-space: nowrap; line-height: 1; }
+.sparring .segs.figs { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); }
+.sparring button.seg.fig { height: 134px; min-height: 134px; flex-direction: column; justify-content: center; gap: 4px; padding: 6px 4px; }
+.sparring .seg.fig .nm { font-size: var(--fs-small); font-weight: 700; }
+.sparring .seg.fig .ton { font-size: 11px; font-weight: 500; color: var(--muted); white-space: normal; line-height: 1.2; }
+.sparring .seg.fig[aria-pressed='true'] .ton { color: var(--ink); }
+.sparring .seg.fig[aria-pressed='true'] .avatar { border-color: var(--ink); }
 .sparring .seg .big { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .sparring .seg .sub { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 500; color: var(--muted); }
 .sparring .seg[aria-pressed='true'] .sub { color: var(--ink); }

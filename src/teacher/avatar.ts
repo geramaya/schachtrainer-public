@@ -1,8 +1,10 @@
 import { DEFAULT_HOLD, parseHold } from './hold.ts'
 import type { HoldMode } from './hold.ts'
 
+/** `ton`: the tone of the figure, taken from docs/design/lehrer-sprueche.md. */
 export const FIGUREN = [
-  { id: 'mann', name: 'Jonas' }, { id: 'frau', name: 'Mira' }, { id: 'meister', name: 'Meister Aldo' }, { id: 'fuchs', name: 'Fuchs Ferro' },
+  { id: 'mann', name: 'Jonas', ton: 'kumpelhaft, locker' }, { id: 'frau', name: 'Mira', ton: 'trocken, präzise' },
+  { id: 'meister', name: 'Meister Aldo', ton: 'altväterlich, gutmütig' }, { id: 'fuchs', name: 'Fuchs Ferro', ton: 'frech, verschlagen' },
 ] as const
 export type FigurId = (typeof FIGUREN)[number]['id']
 export type Gefuehl = 'neutral' | 'freude' | 'begeistert' | 'lachen' | 'sarkastisch' | 'nachdenklich' | 'mitleid' | 'besorgt' | 'aergerlich' | 'entsetzt'

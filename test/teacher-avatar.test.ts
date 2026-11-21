@@ -26,3 +26,7 @@ test('quip settings: off by default, stored and imported, garbage dropped', () =
   p.settings = { ...p.settings, teacher: { quips: true, speak: true } }
   assert.deepEqual(importProgress(exportProgress(p)).settings.teacher, { quips: true, speak: true })
 })
+
+test('every teacher has a short tone line (from docs/design/lehrer-sprueche.md) for the pick cards', () => {
+  assert.deepEqual(FIGUREN.map((f) => f.ton), ['kumpelhaft, locker', 'trocken, präzise', 'altväterlich, gutmütig', 'frech, verschlagen'])
+})
