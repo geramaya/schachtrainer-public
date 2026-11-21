@@ -220,7 +220,7 @@ async function upload(e: Event) {
       <p v-else-if="!shown.length" class="muted">Keine Partie passt zum Filter.</p>
       <div v-else class="tablewrap">
         <table class="games">
-          <colgroup><col class="c-sel" /><col class="c-date" /><col class="c-names" /><col class="c-res" /><col class="c-side" /><col class="c-elo" /><col class="c-eco" /><col /><col v-if="hasTeachers" class="c-teacher" /><col class="c-marks" /><col class="c-acts" /></colgroup>
+          <colgroup><col class="c-sel" /><col class="c-date" /><col class="c-names" /><col class="c-res" /><col class="c-side" /><col class="c-elo" /><col class="c-eco" /><col class="c-open" /><col v-if="hasTeachers" class="c-teacher" /><col class="c-marks" /><col class="c-acts" /></colgroup>
           <thead><tr><th class="selcell" @click="pickAll">
             <button type="button" role="checkbox" class="cb" :class="head" :aria-checked="head === 'all' ? 'true' : head === 'some' ? 'mixed' : 'false'" aria-label="Alle gefilterten Partien auswählen"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path v-if="head === 'all'" d="M3.5 8.5l3 3 6-6.5" /><path v-else-if="head === 'some'" d="M4 8h8" /></svg></button>
           </th><th>Datum</th><th>Partie</th><th>Ergebnis</th><th>Farbe</th><th>Elo</th><th>ECO</th><th>Eröffnung</th><th v-if="hasTeachers">Lehrer</th><th><span class="sr">Marken</span></th><th><span class="sr">Aktionen</span></th></tr></thead>
@@ -237,7 +237,7 @@ async function upload(e: Event) {
                 <td class="nw">{{ eloText(g) }}</td>
                 <td class="nw"><b class="eco">{{ g.eco ?? '' }}</b></td>
                 <td>
-                  <div class="clamp">{{ g.opening ?? '' }}</div>
+                  <div class="clamp open" :title="g.opening ?? undefined">{{ g.opening ?? '' }}</div>
                   <span v-if="g.repertoire" class="rep" aria-label="Repertoire getroffen">☰ {{ g.repertoire }}</span>
                 </td>
                 <td v-if="hasTeachers" class="nw">{{ teacherName(g.teacher) }}</td>
@@ -304,16 +304,17 @@ async function upload(e: Event) {
 .filter select { appearance: none; padding-right: 2rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4.5l4 4 4-4' fill='none' stroke='%23a3aec0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; cursor: pointer; }
 .loading { min-height: 1.5em; }
 .empty .emptyact { display: flex; gap: 0.5rem; margin: 0.8rem 0 0.2rem; }
-.games { width: 100%; min-width: 960px; table-layout: fixed; border-collapse: collapse; }
-.c-sel { width: 2.8rem; } .c-date { width: 6.5rem; } .c-names { width: 22%; } .c-res { width: 7.6rem; } .c-side { width: 6rem; } .c-elo { width: 7rem; } .c-eco { width: 3.6rem; } .c-teacher { width: 7rem; } .c-acts { width: 5rem; } .c-marks { width: 10rem; }
+.games { width: 100%; min-width: 1000px; table-layout: fixed; border-collapse: collapse; }
+.c-sel { width: 2.6rem; } .c-date { width: 6.4rem; } .c-names { width: 9.2rem; } .c-res { width: 6.8rem; } .c-side { width: 5rem; } .c-elo { width: 3.2rem; } .c-eco { width: 3.2rem; } .c-teacher { width: 5.6rem; } .c-acts { width: 4.4rem; } .c-marks { width: 8.4rem; }
 .marks { text-align: right; }
 .mk { display: inline-block; vertical-align: middle; margin-left: 6px; color: var(--muted); }
 .mk.tag { font: 600 11px/1 var(--mono); padding: 3px 5px; border: 1px solid var(--line); border-radius: 4px; }
-.filter .onlyan input { flex: none; min-width: 0; height: auto; }
+.filter .onlyan input { flex: none; width: 16px; min-width: 0; height: 16px; padding: 0; border: 0; background: none; appearance: auto; }
 .onlyan { display: inline-flex; align-items: center; gap: 6px; height: 36px; color: var(--muted); }
 .games th, .games td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .games thead th { color: var(--muted); font-weight: 600; font-size: var(--fs-small, 0.85rem); }
 .nw { white-space: nowrap; }
+.clamp.open { overflow-wrap: normal; word-break: normal; }
 .clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; line-height: 1.35; overflow-wrap: anywhere; }
 /* own checkbox: a button with role=checkbox (Space works natively, Shift is readable on click); focus ring like the rows */
 .selcell { text-align: center; padding-left: 0.4rem; padding-right: 0.2rem; }

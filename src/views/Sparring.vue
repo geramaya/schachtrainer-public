@@ -701,7 +701,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
     <template #left>
       <div class="pane sparring">
         <slot name="tabs" />
-        <h2>{{ free ? (phase === 'setup' ? 'Partie gegen Stockfish' : withTeacher ? 'Lehrerpartie gegen Stockfish' : 'Wertungspartie gegen Stockfish') : 'Sparring gegen Stockfish' }}</h2>
+        <h2>{{ free ? ((phase === 'setup' ? teacher.on : withTeacher) ? `Lernpartie mit ${teacherName}` : 'Wertungspartie gegen Stockfish') : 'Sparring gegen Stockfish' }}</h2>
         <h3 v-if="phase === 'setup'" class="sech">Gegner</h3>
         <label class="eloline">Spielstärke (Elo): <b>{{ elo }}</b>
           <input type="range" :min="ELO_MIN" :max="ELO_MAX" step="10" :value="elo" @input="setElo" aria-label="Spielstärke der Engine" />

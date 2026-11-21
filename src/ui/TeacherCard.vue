@@ -66,10 +66,10 @@ const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips:
 <style scoped>
 .teacher { min-width: 0; display: grid; gap: 0.5rem; align-items: start; margin: 0.6rem 0; padding: 0.6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); }
 .main { display: grid; grid-template-columns: auto 1fr; gap: 0.7rem; align-items: start; }
-.bubble { min-width: 0; height: 10em; overflow-y: auto; } /* fixed: the card does not change its height from move to move */
+.bubble { min-width: 0; min-height: 8em; } /* the text is never cut: the card grows with it (the board does not move) */
 .bubble p { margin: 0.15rem 0; }
 .who { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
-.badge { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: 1.2rem; font-weight: 800; line-height: 1.2; color: var(--ink); background: var(--q-best); cursor: help; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 1.05rem; font-weight: 800; line-height: 1.3; white-space: nowrap; color: var(--ink); background: var(--q-best); cursor: help; }
 .badge.ungenau { background: var(--q-inaccuracy); }
 .badge.fehler { background: var(--q-mistake); }
 .badge.patzer { background: var(--q-blunder); }
