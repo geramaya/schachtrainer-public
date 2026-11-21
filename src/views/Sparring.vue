@@ -663,7 +663,7 @@ watch(() => [props.variation?.id, props.startFen], () => { abandonGame(); resetS
 /** Shows an earlier position (null = back to the live game). */
 function goto(n: number | null) { view.value = n === null || n >= ucis.value.length ? null : n; if (view.value === null) fresh.value = false }
 const notice = computed(() => historyNotice({ view: view.value, startPly: startPly.value, fresh: fresh.value }))
-const status = computed(() => engineStatus({ phase: phase.value, thinking: thinking.value, judging: judging.value, pending: !!pending.value, myTurn: turn.value === mySide.value }))
+const status = computed(() => engineStatus({ phase: phase.value, thinking: thinking.value, judging: judging.value, pending: !!pending.value, myTurn: turn.value === mySide.value, setupHint: props.free && !props.startFen ? (sideChoice.value === 'white' ? 'move' : 'engine') : 'choose' }))
 /** Browsing the moves of a game (running or finished): ←/→/Home/End like in the lesson (not while a game is running, not in text fields). */
 function onKey(e: KeyboardEvent) {
   const t = e.target as HTMLElement | null
@@ -717,7 +717,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
               @on="setTeacher({ on: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
             />
             <template v-if="teacher.on">
-              <p class="sub2 muted">Anhalten bei</p>
+              <h3 class="sech sub2">Anhalten bei</h3>
               <div class="segs wide" role="group" aria-label="Anhalten bei">
                 <button v-for="m in HOLD_MODES" :key="m.id" type="button" class="seg" :aria-pressed="teacher.hold === m.id" @click="setTeacher({ hold: parseHold(m.id) })">{{ m.label }}</button>
               </div>
@@ -832,7 +832,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
 .mode { display: flex; gap: 6px; margin: 0.3rem 0 0.6rem; }
 .mode button { flex: 1; }
 .sel { border-color: var(--acc); }
-.sub2 { margin: 8px 0 4px; font-size: var(--fs-small); }
+.sech.sub2 { margin-top: 12px; }
 .statusline.halt { color: var(--q-mistake); font-weight: 800; }
 .ctl kbd { font: 600 var(--fs-label)/1 var(--mono); padding: 2px 5px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
 .eloline { display: block; margin: 0.4rem 0; }

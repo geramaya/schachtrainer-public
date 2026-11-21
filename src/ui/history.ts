@@ -21,8 +21,9 @@ export function historyNotice(o: { view: number | null; startPly: number; fresh:
 
 export type EngineStatusKind = 'thinking' | 'waiting' | 'ready' | 'off'
 /** What the opponent is doing, in one line that is always visible at the board. */
-export function engineStatus(s: { phase: 'setup' | 'play' | 'over'; thinking: boolean; judging: boolean; pending: boolean; myTurn: boolean }): { kind: EngineStatusKind; text: string } {
-  if (s.phase !== 'play') return { kind: 'off', text: 'Stockfish aus' }
+export function engineStatus(s: { phase: 'setup' | 'play' | 'over'; thinking: boolean; judging: boolean; pending: boolean; myTurn: boolean; /** before the game: who starts */ setupHint?: 'move' | 'engine' | 'choose' }): { kind: EngineStatusKind; text: string } {
+  if (s.phase === 'over') return { kind: 'off', text: 'Partie beendet' }
+  if (s.phase === 'setup') return { kind: 'ready', text: s.setupHint === 'move' ? 'Bereit – zieh, um zu beginnen' : s.setupHint === 'engine' ? 'Bereit – Trainer beginnt nach dem Start' : 'Bereit – wähle den Start' }
   if (s.pending) return { kind: 'waiting', text: 'Stockfish wartet auf deine Antwort' }
   if (s.judging) return { kind: 'thinking', text: 'Lehrer prüft deinen Zug …' }
   if (s.thinking) return { kind: 'thinking', text: 'Stockfish denkt …' }

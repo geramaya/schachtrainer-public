@@ -31,6 +31,12 @@ test('engineStatus: one word per state, held game wins', () => {
   assert.deepEqual(engineStatus({ ...base, pending: true }), { kind: 'waiting', text: 'Stockfish wartet auf deine Antwort' })
   assert.deepEqual(engineStatus(base), { kind: 'ready', text: 'Du bist am Zug' })
   assert.deepEqual(engineStatus({ ...base, myTurn: false }), { kind: 'ready', text: 'Stockfish ist bereit' })
-  assert.deepEqual(engineStatus({ ...base, phase: 'setup' }), { kind: 'off', text: 'Stockfish aus' })
-  assert.deepEqual(engineStatus({ ...base, phase: 'over' }), { kind: 'off', text: 'Stockfish aus' })
+  assert.deepEqual(engineStatus({ ...base, phase: 'over' }), { kind: 'off', text: 'Partie beendet' })
+})
+
+test('engineStatus before the game: ready, says who begins; never "aus" while the engine is on', () => {
+  const setup = { phase: 'setup' as const, thinking: false, judging: false, pending: false, myTurn: true }
+  assert.deepEqual(engineStatus({ ...setup, setupHint: 'move' }), { kind: 'ready', text: 'Bereit – zieh, um zu beginnen' })
+  assert.deepEqual(engineStatus({ ...setup, setupHint: 'engine' }), { kind: 'ready', text: 'Bereit – Trainer beginnt nach dem Start' })
+  assert.deepEqual(engineStatus(setup), { kind: 'ready', text: 'Bereit – wähle den Start' })
 })
