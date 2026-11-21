@@ -27,7 +27,7 @@
   --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --acc: var(--muted);
   /* Seitenaufbau A (drei Spalten): Kopfzeile, Stufenleiste, Abstand, Steuerung, Bewertungsbalken samt Abstand */
-  --hdr: 48px; --head: 40px; --pad: 12px; --gap: 20px; --ctl: 44px; --evw: 22px;
+  --hdr: 48px; --head: 40px; --pad: 12px; --gap: 20px; --ctl: 44px; --evw: 22px; --pbar: 28px;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -258,7 +258,8 @@ button.danger { background: none; color: var(--err-text); border-color: var(--er
 .lay {
   /* Das Brett nimmt, was die Mittelspalte hergibt: min(Hoehe - Steuerung, Breite - Balken). Breiten der Seitenspalten setzt BoardLayout (ziehbar). */
   --side-l: 310px; --side-r: 290px;
-  --bs: min(calc(100cqh - var(--ctl) - 8px), calc(100cqw - var(--evw)));
+  --bars: 0px;
+  --bs: min(calc(100cqh - var(--ctl) - 8px - var(--bars)), calc(100cqw - var(--evw)));
   height: calc(100vh - var(--hdr) - var(--head)); padding: 0 var(--pad) var(--pad); display: grid; gap: 0; overflow: hidden;
   grid-template-columns: var(--side-l) var(--gap) minmax(0, 1fr) var(--gap) var(--side-r); grid-template-rows: minmax(0, 1fr);
 }
@@ -268,8 +269,10 @@ button.danger { background: none; color: var(--err-text); border-color: var(--er
 .lay .grip:hover::before, .lay .grip:focus-visible::before, .lay .grip:active::before { opacity: 1; }
 .lay .grip:hover::after, .lay .grip:focus-visible::after, .lay .grip:active::after { opacity: 0; }
 .lay .grip:focus-visible { outline: none; }
-.lay .col { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow-x: hidden; overflow-y: auto; }
+.lay .col { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow-x: hidden; overflow-y: auto; scrollbar-gutter: stable; }
 .lay .center { min-width: 0; min-height: 0; container-type: size; }
+.lay.bars { --bars: calc(2 * (var(--pbar) + 8px)); }
+.lay .bar { width: var(--bs); flex: none; }
 .lay .stack { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; width: fit-content; margin: 0 auto; }
 .lay .boardwrap { display: flex; gap: 8px; align-items: flex-start; }
 .lay .ctl { height: var(--ctl); width: var(--bs); display: flex; align-items: center; gap: 8px; padding: 0 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
@@ -294,7 +297,7 @@ button.danger { background: none; color: var(--err-text); border-color: var(--er
 @media (max-width: 1199px) {
   .pagebar { height: auto; min-height: var(--head); flex-wrap: wrap; white-space: normal; padding-top: 6px; padding-bottom: 6px; }
   .pagebar .stepper { flex-wrap: wrap; }
-  .lay { --bs: min(calc(100cqw - var(--evw)), 640px); height: auto; overflow: visible; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 12px; }
+  .lay { --bs: min(calc(100cqw - var(--evw)), 640px); --bars: 0px; height: auto; overflow: visible; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 12px; }
   .lay > .center { order: -1; container-type: inline-size; }
   .lay .grip { display: none; }
   .lay .col { overflow: visible; }

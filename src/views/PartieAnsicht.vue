@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { hrefAnalyse, hrefHome, hrefMeinePartien } from '../router.ts'
+import type { Side } from '../content/types.ts'
 import { removeGame, setNote, storageErrorOf } from '../games/library.ts'
 import { dateDe, dateNote, siteLink } from '../games/model.ts'
 import { IN_DESKTOP_APP } from '../ui/desktop.ts'
-import { displayName, identityOf, resultClass, resultFor, sideOfPlayer } from '../games/identity.ts'
+import { displayName, identityOf, playerOf, resultClass, resultFor, sideOfPlayer } from '../games/identity.ts'
 import { loadEco } from '../openings/eco-load.ts'
 import { enrichOpening } from '../openings/enrich.ts'
 import type { StoredGame } from '../games/model.ts'
@@ -29,13 +30,17 @@ import { cancelEngine, getEngine, resetEngine } from '../engine/instance.ts'
 import { FIGUREN, teacherOf } from '../teacher/avatar.ts'
 import type { TeacherSettings } from '../teacher/avatar.ts'
 import TeacherCard from '../ui/TeacherCard.vue'
-import TeacherPick from '../ui/TeacherPick.vue'
+import AnalysisBrief from '../ui/AnalysisBrief.vue'
+import Disclosure from '../ui/Disclosure.vue'
+import PlayerBar from '../ui/PlayerBar.vue'
+import { resultText } from '../ui/compact.ts'
+import { barSides, flipSide, rememberOrientation, savedOrientation, startOrientation } from '../ui/orientation.ts'
 import { useTeacherSpeech, talk, setTalk } from '../teacher/speech.ts'
 import { balance, balanceMoves, gefuehlForCategory, quipCategoryOf, severityOfCategory } from '../teacher/commentary.ts'
 import { moveFacts } from '../teacher/quip-events.ts'
 import { moverAt } from '../analysis/build.ts'
 import { toGermanSan } from '../chess/notation.ts'
-import { navTarget, shouldHandleKey } from '../ui/keys.ts'
+import { isFlipKey, navTarget, shouldHandleKey } from '../ui/keys.ts'
 import { downloadText } from '../ui/download.ts'
 import Board from '../ui/Board.vue'
 import BoardLayout from '../ui/BoardLayout.vue'
@@ -101,7 +106,7 @@ watch(() => props.id, async (id) => {
 
 const fens = computed(() => (game.value ? gameFens(game.value.startFen, game.value.ucis) : []))
 const fen = computed(() => fens.value[view.value] ?? '')
-const orientation = computed(() => game.value?.ownSide ?? 'white')
+const orientation = ref<Side>('white')
 const startPly = computed(() => { const f = game.value?.startFen.split(' '); return f ? (Number(f[5]) - 1) * 2 + (f[1] === 'b' ? 1 : 0) : 0 })
 const lastMove = computed<[string, string] | undefined>(() => {
   const u = game.value?.ucis[view.value - 1]
@@ -145,6 +150,13 @@ function commentAt(i: number): string | null {
   }
   return moveComment(a, g.startFen, g.ucis, i, { repertoire })
 }
+/** Board side per game: the own side (the viewer's side if the file names him), otherwise White at the bottom; a flip is remembered per game. */
+watch(() => game.value?.id, (id) => { if (id) orientation.value = savedOrientation(`game:${id}`) ?? startOrientation(mySide.value ?? game.value?.ownSide) }, { immediate: true })
+function flipBoard() {
+  orientation.value = flipSide(orientation.value)
+  if (game.value) rememberOrientation(`game:${game.value.id}`, orientation.value)
+}
+const bars = computed(() => barSides(orientation.value))
 // Teacher: walks through the game with the viewer (own comment text, feeling per category, optional quip) and sums up at the ends
 const teacher = computed(() => teacherOf(progress.value.settings))
 const setTeacher = (patch: Partial<TeacherSettings>) => update((p) => ({ ...p, settings: { ...p.settings, teacher: { ...p.settings.teacher, ...patch } } }))
@@ -192,6 +204,8 @@ const moveTitle = computed(() => {
 const comment = computed(() => commentAt(ply.value))
 const cat = computed(() => analysis.value?.moves[ply.value]?.cat ?? null)
 const foreign = computed(() => game.value?.comments?.[ply.value] ?? null)
+/** The line for comments from the file exists for the whole game as soon as one move has one (so it does not come and go per step). */
+const hasForeign = computed(() => !!game.value?.comments && Object.keys(game.value.comments).length > 0)
 watch([ply, () => game.value?.id], () => { noteDraft.value = game.value?.notes?.[ply.value] ?? ''; noteStatus.value = null }, { immediate: true })
 watch(ply, () => { void saver.flush() }, { flush: 'sync' })
 function onNoteInput() {
@@ -226,6 +240,7 @@ async function remove() {
 function onKey(e: KeyboardEvent) {
   const t = e.target as HTMLElement | null
   const mods = { alt: e.altKey, ctrl: e.ctrlKey, meta: e.metaKey, shift: e.shiftKey }
+  if (game.value && isFlipKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) { flipBoard(); e.preventDefault(); return }
   if (!game.value || e.key === ' ' || !shouldHandleKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) return
   const to = navTarget(e.key, view.value, game.value.ucis.length)
   if (to === null) return
@@ -248,50 +263,48 @@ onBeforeUnmount(() => {
   <BoardLayout v-if="game">
     <template #left>
       <div class="pane">
-        <h2>Partie</h2>
-        <dl class="head">
-          <dt>Datum</dt><dd :data-tip="dateNote(game) || undefined">{{ dateDe(game) }}</dd>
-          <dt>Weiß</dt><dd>{{ displayName(game, 'white') }}</dd>
-          <dt>Schwarz</dt><dd>{{ displayName(game, 'black') }}</dd>
-          <dt>Ergebnis</dt><dd>{{ game.result }} · <span class="res" :class="resultClass(resultFor(game, mySide))">{{ resultFor(game, mySide) }}</span><template v-if="mySide"> (du: {{ mySide === 'white' ? 'Weiß' : 'Schwarz' }})</template></dd>
-          <dt>Eröffnung</dt>
-          <dd>
-            <template v-if="game.eco || game.opening"><b class="eco">{{ game.eco ?? '' }}</b> {{ game.opening ?? '' }}</template><template v-else>–</template>
-            <span v-if="game.detected && (game.detected.eco !== game.eco || game.detected.name !== game.opening)" class="muted sub">Eigene Erkennung: {{ game.detected.eco }} {{ game.detected.name }}</span>
-            <span v-if="game.repertoire" class="sub rep">Repertoire: {{ game.repertoire }}</span>
-          </dd>
-          <template v-if="event"><dt>Ereignis</dt><dd>{{ event }}</dd></template>
-          <template v-if="site"><dt>Ort</dt><dd class="ort"><a v-if="siteAs && !IN_DESKTOP_APP" :href="siteAs.href" target="_blank" rel="noopener noreferrer" :data-tip="siteAs.href">{{ siteAs.label }}</a><template v-else>{{ site }}</template></dd></template>
-          <template v-if="game.meta?.timeControl"><dt>Bedenkzeit</dt><dd>{{ game.meta.timeControl }}</dd></template>
-          <template v-if="teacherName"><dt>Lehrer</dt><dd>{{ teacherName }}</dd></template>
-        </dl>
-        <p v-if="game.helps" class="muted">Hilfen: Hinweise {{ game.helps.hints }}, Beste Züge {{ game.helps.bests }}, Repertoirezüge {{ game.helps.repertoire ?? 0 }}</p>
+        <TeacherCard
+          v-if="analysis" :figur="teacher.figur" :name="teacherName2" :on="talk.game" :gefuehl="teacherCard.gefuehl" :headline="teacherCard.headline" :severity="teacherCard.severity"
+          :text="teacherCard.text" :note="teacherCard.note" :blocked="false" :hinted="false" :quip="speech.quip.value" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value"
+          @on="setTalk({ game: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+        />
+        <p class="line1">
+          <b>{{ displayName(game, 'white') }}</b> – <b>{{ displayName(game, 'black') }}</b>
+          · <span class="res" :class="resultClass(resultFor(game, mySide))" :data-tip="mySide ? `du: ${mySide === 'white' ? 'Weiß' : 'Schwarz'}` : undefined">{{ resultText(game.result, resultFor(game, mySide)) }}</span>
+          · <span :data-tip="dateNote(game) || undefined">{{ dateDe(game) }}</span>
+        </p>
+        <p class="line2"><template v-if="game.eco || game.opening"><b class="eco">{{ game.eco ?? '' }}</b> {{ game.opening ?? '' }}</template><template v-else>–</template></p>
+        <Disclosure id="partie-details" title="Details">
+          <dl class="head">
+            <template v-if="game.detected && (game.detected.eco !== game.eco || game.detected.name !== game.opening)"><dt>Erkennung</dt><dd>{{ game.detected.eco }} {{ game.detected.name }}</dd></template>
+            <template v-if="game.repertoire"><dt>Repertoire</dt><dd>{{ game.repertoire }}</dd></template>
+            <template v-if="event"><dt>Ereignis</dt><dd>{{ event }}</dd></template>
+            <template v-if="site"><dt>Ort</dt><dd class="ort"><a v-if="siteAs && !IN_DESKTOP_APP" :href="siteAs.href" target="_blank" rel="noopener noreferrer" :data-tip="siteAs.href">{{ siteAs.label }}</a><template v-else>{{ site }}</template></dd></template>
+            <template v-if="game.meta?.timeControl"><dt>Bedenkzeit</dt><dd>{{ game.meta.timeControl }}</dd></template>
+            <template v-if="teacherName"><dt>Lehrer</dt><dd>{{ teacherName }}</dd></template>
+          </dl>
+          <p v-if="game.helps" class="muted">Hilfen: Hinweise {{ game.helps.hints }}, Beste Züge {{ game.helps.bests }}, Repertoirezüge {{ game.helps.repertoire ?? 0 }}</p>
+        </Disclosure>
 
-        <h3>Analyse</h3>
         <div v-if="analysing" class="run">
           <progress :max="total || 1" :value="done"></progress> <span class="muted">Stellung {{ done }} von {{ total }}</span>
           <button @click="cancelAnalysis">Abbrechen</button>
         </div>
         <template v-else>
-          <AnalysisSummary v-if="summary" :summary="summary" :white="game.white" :black="game.black" />
-          <p v-if="analysis && analysis.source === 'pgn'" class="muted">Aus der PGN-Datei gelesen (Zeichen und Bewertungen), ohne Engine-Linien.</p>
-          <button :class="{ primary: !analysis }" @click="analyse">{{ analysis ? 'Neu analysieren' : 'Analysieren' }}</button>
+          <AnalysisBrief v-if="summary" :summary="summary" :white="game.white" :black="game.black" />
+          <button v-if="!analysis" class="primary" @click="analyse">Analysieren</button>
           <p v-if="!analysis" class="muted">Noch keine Analyse. Sie wird mit der Partie gespeichert und nicht neu gerechnet.</p>
+          <Disclosure v-else id="analyse-details" title="Analyse-Details">
+            <AnalysisSummary v-if="summary" :summary="summary" :white="game.white" :black="game.black" />
+            <p v-if="analysis.source === 'pgn'" class="muted">Aus der PGN-Datei gelesen (Zeichen und Bewertungen), ohne Engine-Linien.</p>
+            <button @click="analyse">Neu analysieren</button>
+          </Disclosure>
         </template>
 
-        <TeacherPick
-          :on="talk.game" :figur="teacher.figur" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value" :labels="{ on: 'Lehrer an', off: 'Lehrer aus' }"
-          @on="setTalk({ game: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
-        />
-        <TeacherCard
-          v-if="talk.game && analysis" :figur="teacher.figur" :name="teacherName2" :gefuehl="teacherCard.gefuehl" :headline="teacherCard.headline" :severity="teacherCard.severity"
-          :text="teacherCard.text" :note="teacherCard.note" :blocked="false" :hinted="false" :quip="speech.quip.value" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value"
-          @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
-        />
-        <section v-if="view > 0" class="comment" :class="cat ? `q-${cat}` : ''" aria-label="Kommentar zum Zug">
-          <h3>Zug {{ moveTitle }}<span v-if="cat" class="chip"><b class="sym">{{ SYMBOL[cat] }}</b> {{ NAME[cat] }}</span></h3>
-          <p v-if="comment" class="said">{{ comment }}</p>
-          <p v-if="foreign" class="muted">Kommentar aus der Datei: {{ foreign }}</p>
+        <section class="comment" :class="[cat ? `q-${cat}` : '', { idle: view === 0 }]" :aria-hidden="view === 0" aria-label="Kommentar zum Zug">
+          <h3>Zug {{ moveTitle || '\u00a0' }}<span v-if="cat" class="chip"><b class="sym">{{ SYMBOL[cat] }}</b> {{ NAME[cat] }}</span></h3>
+          <p v-if="!(talk.game && analysis)" class="said">{{ comment }}</p>
+          <p v-if="hasForeign" class="muted foreign">{{ foreign ? `Kommentar aus der Datei: ${foreign}` : '' }}</p>
           <label class="note">Eigene Notiz zu diesem Zug
             <textarea v-model="noteDraft" rows="2" maxlength="500" @input="onNoteInput"></textarea>
             <span class="status" role="status">
@@ -326,6 +339,8 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </template>
+    <template #top><PlayerBar :side="bars.top" v-bind="playerOf(game, bars.top)" :fen="fen" /></template>
+    <template #bottom><PlayerBar :side="bars.bottom" v-bind="playerOf(game, bars.bottom)" :fen="fen" /></template>
     <template #board>
       <EvalBar :view="ev" :orientation="orientation" />
       <Board :fen="fen" :orientation="orientation" :movable="false" :arrows="ev.arrows" :last-move="lastMove" />
@@ -335,6 +350,7 @@ onBeforeUnmount(() => {
       <button :disabled="view === 0" aria-label="Ein Zug zurück" @click="view--">◀</button>
       <button :disabled="view === game.ucis.length" aria-label="Ein Zug vor" @click="view++">▶</button>
       <button :disabled="view === game.ucis.length" aria-label="Zum Ende" @click="view = game.ucis.length">⇥</button>
+      <button aria-label="Brett drehen (F)" title="Brett drehen (F)" @click="flipBoard">⇅</button>
       <a class="pbtn" :href="hrefAnalyse(fen)">Im Analysebrett weiterspielen</a>
     </template>
     <template #right>
@@ -367,7 +383,12 @@ onBeforeUnmount(() => {
 .run progress { width: 100%; }
 .comment { margin: 0.8rem 0; padding: 0.5rem 0.7rem; background: var(--panel-2); border-radius: 8px; border-left: 4px solid var(--qc, var(--line)); }
 .comment h3 { margin-top: 0; }
-.comment .said { margin: 0.3rem 0; }
+.line1 { margin: 0.5rem 0 0.1rem; font-size: var(--fs-small, 0.85rem); overflow-wrap: anywhere; }
+.line2 { margin: 0 0 0.2rem; font-size: var(--fs-small, 0.85rem); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.comment h3 { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.comment .said { margin: 0.3rem 0; height: 5.6em; overflow-y: auto; } /* fixed text area: the notes below do not move per step */
+.comment .foreign { height: 3.4em; overflow-y: auto; }
+.comment.idle { visibility: hidden; }
 .chip { margin-left: 0.6rem; font-size: var(--fs-small, 0.85rem); color: var(--qc); font-weight: 600; }
 .chip .sym { font-family: var(--mono); }
 .note { display: grid; gap: 4px; font-size: var(--fs-small, 0.85rem); color: var(--muted); }

@@ -23,3 +23,9 @@ export function navTarget(key: string, cur: number, last: number): number | null
   if (key === 'End') return last
   return null
 }
+
+/** F flips the board (not in text fields, not with Ctrl/Alt/Meta). */
+export function isFlipKey(key: string, tag: string, editable: boolean, mods: Mods): boolean {
+  if (mods.alt || mods.ctrl || mods.meta || editable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) return false
+  return key.toLowerCase() === 'f'
+}

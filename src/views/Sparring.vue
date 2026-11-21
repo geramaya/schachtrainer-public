@@ -13,7 +13,9 @@ import { cancelEngine, getEngine, resetEngine } from '../engine/instance.ts'
 import { bookExit, cardsFromErrors, drawAccepted, evaluatePositions, gameFens, reviewErrors, scoreCp } from '../train/review.ts'
 import type { ReviewError } from '../train/review.ts'
 import { markApplied, progress, update } from '../store/state.ts'
-import { isHintKey, navTarget, shouldHandleKey } from '../ui/keys.ts'
+import { isFlipKey, isHintKey, navTarget, shouldHandleKey } from '../ui/keys.ts'
+import PlayerBar from '../ui/PlayerBar.vue'
+import { barSides, flipSide } from '../ui/orientation.ts'
 import { applySparringId } from '../train/pipeline.ts'
 import { hrefPartien } from '../router.ts'
 import { bookPliesOf, gameRecord, pickOpening } from '../train/free-play.ts'
@@ -92,6 +94,11 @@ let token = 0 // bumped on every new game / unmount: a late engine answer of an 
 const fen = computed(() => gameFens(startFen.value, ucis.value).at(-1)!)
 const turn = computed<Side>(() => (fen.value.split(' ')[1] === 'b' ? 'black' : 'white'))
 const elo = computed(() => progress.value.settings.sparringElo)
+/** The board shows the own side at the bottom; the flip button turns it for this game (a new game starts with the own side again). */
+const flipped = ref(false)
+const boardSide = computed<Side>(() => (flipped.value ? flipSide(mySide.value) : mySide.value))
+const bars = computed(() => barSides(boardSide.value))
+const barPlayer = (side: Side) => (side === mySide.value ? { name: 'Du', elo: null } : { name: 'Stockfish', elo: elo.value })
 const setElo = (e: Event) => {
   const v = Math.min(ELO_MAX, Math.max(ELO_MIN, Number((e.target as HTMLInputElement).value)))
   update((p) => ({ ...p, settings: { ...p.settings, sparringElo: v } }))
@@ -183,6 +190,7 @@ function resetState() {
 
 function newGame(from: string) {
   resetState()
+  flipped.value = false
   startFen.value = from
   withTeacher.value = teacher.value.on
   const s = gameStatus(from, [])
@@ -529,6 +537,7 @@ watch(() => [props.variation?.id, props.startFen], () => { abandonGame(); resetS
 function onKey(e: KeyboardEvent) {
   const t = e.target as HTMLElement | null
   const mods = { alt: e.altKey, ctrl: e.ctrlKey, meta: e.metaKey, shift: e.shiftKey }
+  if (isFlipKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) { flipped.value = !flipped.value; e.preventDefault(); return }
   if (isHintKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods) && canAsk.value) { e.preventDefault(); void askHelp('hint'); return }
   if (phase.value !== 'over' || e.key === ' ' || !shouldHandleKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) return
   const to = navTarget(e.key, shownPly.value, ucis.value.length)
@@ -545,6 +554,8 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
 
 <template>
   <BoardLayout>
+    <template #top><PlayerBar :side="bars.top" v-bind="barPlayer(bars.top)" :fen="shownFen" /></template>
+    <template #bottom><PlayerBar :side="bars.bottom" v-bind="barPlayer(bars.bottom)" :fen="shownFen" /></template>
     <template #left>
       <div class="pane sparring">
         <slot name="tabs" />
@@ -577,7 +588,7 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
           <TeacherCard
             v-if="showCard" :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity"
             :text="cardView.text" :note="cardView.note" :reveal="revealText" :blocked="!!pending" :hinted="!!pending?.hinted" :later="later" :repertoire-offer="repertoireOffer"
-            :quip="quip" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
+            :lock-figur="true" :quip="quip" :quips="teacher.quips" :speak="teacher.speak" :audio="audioAvailable"
             @undo="undoMove" @hint="hint" @best="showBest" @keep="keepMove" @later="showLate" @repertoire="showRepertoire" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
           />
           <p v-if="message" class="verdict" role="status">{{ message }}</p>
@@ -630,10 +641,11 @@ onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEn
       />
     </template>
     <template #board>
-      <EvalBar :view="ev" :orientation="mySide" />
-      <Board :fen="shownFen" :orientation="mySide" :movable="movable" :arrows="[...arrows, ...ev.arrows]" :highlight="bestFrom" :shapes="coachShapes" :last-move="shownLast" @move="onMove" />
+      <EvalBar :view="ev" :orientation="boardSide" />
+      <Board :fen="shownFen" :orientation="boardSide" :movable="movable" :arrows="[...arrows, ...ev.arrows]" :highlight="bestFrom" :shapes="coachShapes" :last-move="shownLast" @move="onMove" />
     </template>
     <template #controls>
+      <button aria-label="Brett drehen (F)" title="Brett drehen (F)" @click="flipped = !flipped">⇅</button>
       <template v-if="phase === 'play'">
         <template v-if="withTeacher">
           <button :disabled="!canAsk" title="Markiert die Figur des besten Zuges (Taste H)" @click="askHelp('hint')">Hinweis</button>

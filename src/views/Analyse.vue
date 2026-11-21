@@ -4,7 +4,7 @@ import { Chess } from 'chess.js'
 import type { Side } from '../content/types.ts'
 import { analysisFen, currentFen, goBack, goForward, goTo, moveLine, newAnalysis, playMove } from '../train/analysisBoard.ts'
 import { hrefHome, hrefSpielen } from '../router.ts'
-import { navTarget, shouldHandleKey } from '../ui/keys.ts'
+import { isFlipKey, navTarget, shouldHandleKey } from '../ui/keys.ts'
 import Board from '../ui/Board.vue'
 import EvalBar from '../ui/EvalBar.vue'
 import EnginePanel from '../ui/EnginePanel.vue'
@@ -16,7 +16,8 @@ import { progress, update } from '../store/state.ts'
 import { FIGUREN, teacherOf } from '../teacher/avatar.ts'
 import type { TeacherSettings } from '../teacher/avatar.ts'
 import TeacherCard from '../ui/TeacherCard.vue'
-import TeacherPick from '../ui/TeacherPick.vue'
+import PlayerBar from '../ui/PlayerBar.vue'
+import { barSides, flipSide, rememberOrientation, savedOrientation } from '../ui/orientation.ts'
 import { useTeacherSpeech, talk, setTalk } from '../teacher/speech.ts'
 import { boardMoveCategories, bestMoveText, judgedCard } from '../teacher/commentary.ts'
 import { evaluateMove } from '../teacher/analyse.ts'
@@ -39,9 +40,11 @@ const orientation = ref<Side>('white')
 const ev = ref<EngineView>(EMPTY_VIEW)
 watch(normalised, (f) => {
   board.value = newAnalysis(f ?? INITIAL)
-  orientation.value = board.value.startFen.split(' ')[1] === 'b' ? 'black' : 'white'
+  orientation.value = savedOrientation('analyse') ?? (board.value.startFen.split(' ')[1] === 'b' ? 'black' : 'white')
 }, { immediate: true })
 
+function flipBoard() { orientation.value = flipSide(orientation.value); rememberOrientation('analyse', orientation.value) }
+const bars = computed(() => barSides(orientation.value))
 const fen = computed(() => currentFen(board.value))
 const line = computed(() => moveLine(board.value))
 const lastMove = computed<[string, string] | undefined>(() => {
@@ -123,6 +126,7 @@ const canLater = computed(() => !!verdict.value && !revealed.value && ['ungenau'
 function onKey(e: KeyboardEvent) {
   const t = e.target as HTMLElement | null
   const mods = { alt: e.altKey, ctrl: e.ctrlKey, meta: e.metaKey, shift: e.shiftKey }
+  if (isFlipKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) { flipBoard(); e.preventDefault(); return }
   if (e.key === ' ' || !shouldHandleKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, mods)) return
   const to = navTarget(e.key, board.value.view, board.value.ucis.length)
   if (to === null) return
@@ -138,26 +142,24 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
   <BoardLayout>
     <template #left>
       <div class="pane">
-        <h2>Analysebrett</h2>
-        <p v-if="!validFen" class="err" role="alert">Die Stellung in der Adresse ist ungültig oder unmöglich. Das Brett zeigt die Grundstellung.</p>
-        <p class="muted">Zieh für beide Seiten. Stockfish rechnet mit.</p>
-        <TeacherPick
-          :on="talk.board" :figur="teacher.figur" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value" :labels="{ on: 'Lehrer an', off: 'Lehrer aus' }"
-          @on="setTalk({ board: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+        <TeacherCard
+          :figur="teacher.figur" :name="teacherName" :on="talk.board" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity" :text="cardView.text"
+          :reveal="revealText" :later="canLater" :blocked="false" :hinted="false" :quip="speech.quip.value" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value"
+          @on="setTalk({ board: $event })" @figur="setTeacher({ figur: $event })" @later="revealed = true" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
         />
         <template v-if="talk.board">
-          <TeacherCard
-            :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity" :text="cardView.text"
-            :reveal="revealText" :later="canLater" :blocked="false" :hinted="false" :quip="speech.quip.value" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value"
-            @later="revealed = true" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
-          />
           <p class="helpbtns">
             <button :disabled="judging" title="Markiert die Figur des besten Zuges" @click="askHelp('hint')">Hinweis</button>
             <button :disabled="judging" @click="askHelp('best')">Bester Zug</button>
           </p>
         </template>
+        <h2>Analysebrett</h2>
+        <p v-if="!validFen" class="err" role="alert">Die Stellung in der Adresse ist ungültig oder unmöglich. Das Brett zeigt die Grundstellung.</p>
+        <p class="muted">Zieh für beide Seiten. Stockfish rechnet mit.</p>
       </div>
     </template>
+    <template #top><PlayerBar :side="bars.top" :name="bars.top === 'white' ? 'Weiß' : 'Schwarz'" :fen="fen" /></template>
+    <template #bottom><PlayerBar :side="bars.bottom" :name="bars.bottom === 'white' ? 'Weiß' : 'Schwarz'" :fen="fen" /></template>
     <template #board>
       <EvalBar :view="ev" :orientation="orientation" />
       <Board :fen="fen" :orientation="orientation" :movable="true" :arrows="boardArrows" :highlight="hintSquare" :last-move="lastMove" @move="onBoardMove" />
@@ -168,7 +170,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
       <button :disabled="board.view === board.ucis.length" aria-label="Ein Zug vor" @click="board = goForward(board)">▶</button>
       <button :disabled="board.view === board.ucis.length" aria-label="Zum Ende" title="Ende" @click="board = goTo(board, board.ucis.length)">⇥</button>
       <a class="pbtn" :href="hrefSpielen(fen)">Partie ab hier</a>
-      <button @click="orientation = orientation === 'white' ? 'black' : 'white'">Brett drehen</button>
+      <button aria-label="Brett drehen (F)" title="Brett drehen (F)" @click="flipBoard">⇅</button>
       <button :disabled="!board.ucis.length" @click="board = goTo(board, 0)">Zur Ausgangsstellung</button>
     </template>
     <template #right>

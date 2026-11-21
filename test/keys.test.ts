@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { isHintKey, navTarget, shouldHandleKey } from '../src/ui/keys.ts'
+import { isFlipKey, isHintKey, navTarget, shouldHandleKey } from '../src/ui/keys.ts'
 
 const none = { alt: false, ctrl: false, meta: false, shift: false }
 
@@ -47,4 +47,14 @@ test('H asks for a hint, but never while typing and never with modifiers', () =>
   assert.equal(isHintKey('h', 'DIV', true, none), false)
   assert.equal(isHintKey('h', 'BODY', false, { ...none, ctrl: true }), false)
   assert.equal(isHintKey('x', 'BODY', false, none), false)
+})
+
+test('F flips the board, but never while typing and never with modifiers', () => {
+  assert.equal(isFlipKey('f', 'BODY', false, none), true)
+  assert.equal(isFlipKey('F', 'BUTTON', false, none), true)
+  assert.equal(isFlipKey('f', 'TEXTAREA', false, none), false)
+  assert.equal(isFlipKey('f', 'SELECT', false, none), false)
+  assert.equal(isFlipKey('f', 'DIV', true, none), false)
+  assert.equal(isFlipKey('f', 'BODY', false, { ...none, ctrl: true }), false)
+  assert.equal(isFlipKey('h', 'BODY', false, none), false)
 })

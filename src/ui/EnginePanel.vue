@@ -7,6 +7,7 @@ import { engineEpoch, getCoachEngine, resetEngine } from '../engine/instance.ts'
 import { engineArrows, shownScore, summarize } from '../coach/ceval.ts'
 import type { EngineView, PvMove, Score } from '../coach/ceval.ts'
 import { scoreLabel } from '../coach/ceval.ts'
+import { evalPov, povSign, setEvalPov, parsePov } from './orientation.ts'
 import { DEPTH_RANGE, MULTIPV_RANGE, engineAccess } from '../coach/cevalSettings.ts'
 import type { EngineLock } from '../coach/cevalSettings.ts'
 import { hrefAnalyse } from '../router.ts'
@@ -25,6 +26,8 @@ const props = withDefaults(defineProps<{
 }>(), { lock: null, analyseLink: true })
 const emit = defineEmits<{ view: [EngineView] }>()
 
+/** Scores come from White view; with the setting "from the bottom side" they flip when Black stands at the bottom. */
+const lab = (s: Score): string => (povSign(evalPov.value, props.orientation) === 1 ? scoreLabel(s) : scoreLabel({ cp: s.cp === null ? null : -s.cp, mate: s.mate === null ? null : -s.mate }))
 const access = computed(() => engineAccess(engineSettings.value.enabled, props.lock))
 const state = ref<LiveState | null>(null)
 let usedEpoch = 0 // instance of the engine the running analysis belongs to: a late error of a replaced worker must not reset its successor
@@ -90,7 +93,7 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
           <span class="knob" aria-hidden="true"></span>
           <b>Stockfish</b>
         </label>
-        <span v-if="access === 'on' && summary?.best" class="best" aria-label="Beste Bewertung (Sicht Weiß)">{{ scoreLabel(summary.best) }}</span>
+        <span v-if="access === 'on' && summary?.best" class="best" :aria-label="`Beste Bewertung (Sicht ${evalPov === 'white' ? 'Weiß' : 'der unteren Seite'})`">{{ lab(summary.best) }}</span>
       </div>
       <div class="hr">
         <span v-if="access === 'locked'" class="depth lockword">gesperrt</span>
@@ -107,31 +110,37 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
       <label>Linien
         <select :value="engineSettings.multipv" @change="onLines"><option v-for="n in lineCounts" :key="n" :value="n">{{ n }}</option></select>
       </label>
+      <label>Bewertung aus Sicht
+        <select :value="evalPov" @change="setEvalPov(parsePov(($event.target as HTMLSelectElement).value))"><option value="white">Weiß</option><option value="bottom">unten stehende Seite</option></select>
+      </label>
       <label>Höchsttiefe <b>{{ engineSettings.depth }}</b>
         <input type="range" :min="DEPTH_RANGE.min" :max="DEPTH_RANGE.max" :value="engineSettings.depth" aria-label="Höchsttiefe der Analyse" @change="onDepth" />
       </label>
     </div>
 
-    <p v-if="access === 'locked'" class="note" role="status">Bewertung und Varianten nach deinem Zug verfügbar.</p>
-    <p v-else-if="access === 'off'" class="note">Engine aus. Schalter oben einschalten.</p>
-    <p v-else-if="access === 'busy'" class="note" role="status">Die Engine ist gerade mit der Partie beschäftigt.</p>
-    <template v-else>
-      <p v-if="state?.ended" class="note">Stellung beendet: kein Zug mehr möglich.</p>
-      <p v-else-if="state?.error" class="note" role="status" :title="state.error">{{ engineErrorText(new EngineError(state.error)) }} <button type="button" @click="retry">Erneut versuchen</button></p>
-      <p v-else-if="!summary" class="note" role="status">Stockfish rechnet …</p>
-      <ol v-else class="pvs">
-        <li v-for="(l, i) in summary.lines" :key="i">
-          <b class="sc">{{ l.label }}</b>
-          <span class="mv">
-            <template v-for="(m, j) in l.moves" :key="j">
-              <i v-if="m.num" class="num">{{ m.num }}</i>
-              <button type="button" class="san" :class="{ pin: pinned?.fen === m.fen }" @mouseenter="hovered = m" @mouseleave="hovered = null" @focus="hovered = m" @blur="hovered = null" @click="togglePin(m)">{{ m.san }}</button>
-            </template>
-          </span>
-        </li>
-      </ol>
-      <div v-if="preview" class="preview"><MiniBoard :fen="preview.fen" :orientation="orientation" :last-move="previewLast" /></div>
-    </template>
+    <div class="body" :style="{ '--lines': engineSettings.multipv }">
+      <p v-if="access === 'locked'" class="note" role="status">Bewertung und Varianten nach deinem Zug verfügbar.</p>
+      <p v-else-if="access === 'off'" class="note">Engine aus. Schalter oben einschalten.</p>
+      <p v-else-if="access === 'busy'" class="note" role="status">Die Engine ist gerade mit der Partie beschäftigt.</p>
+      <template v-else>
+        <p v-if="state?.ended" class="note">Stellung beendet: kein Zug mehr möglich.</p>
+        <p v-else-if="state?.error" class="note" role="status" :title="state.error">{{ engineErrorText(new EngineError(state.error)) }} <button type="button" @click="retry">Erneut versuchen</button></p>
+        <p v-else-if="!summary" class="note" role="status">Stockfish rechnet …</p>
+        <ol v-else class="pvs">
+          <li v-for="(l, i) in summary.lines" :key="i">
+            <b class="sc">{{ lab(l.score) }}</b>
+            <span class="mv">
+              <template v-for="(m, j) in l.moves" :key="j">
+                <i v-if="m.num" class="num">{{ m.num }}</i>
+                <button type="button" class="san" :class="{ pin: pinned?.fen === m.fen }" @mouseenter="hovered = m" @mouseleave="hovered = null" @focus="hovered = m" @blur="hovered = null" @click="togglePin(m)">{{ m.san }}</button>
+              </template>
+            </span>
+          </li>
+        </ol>
+        <div v-if="preview" class="preview"><MiniBoard :fen="preview.fen" :orientation="orientation" :last-move="previewLast" /></div>
+      </template>
+  
+    </div>
   </section>
 </template>
 
@@ -160,6 +169,8 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
 .spin { display: inline-block; width: 9px; height: 9px; margin-left: 3px; border: 2px solid var(--muted); border-top-color: transparent; border-radius: 50%; animation: spin 0.9s linear infinite; vertical-align: -1px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spin { animation: none; border-top-color: var(--muted); } }
+/* the lines area keeps the height of the configured number of lines: no jump when the lines arrive or the position changes */
+.body { min-height: calc(var(--lines) * (1.75 * var(--fs-small) + 1px) + 4px); }
 .note { margin: 6px 0 0; padding: 8px 10px; border: 1px dashed var(--line); border-radius: 8px; color: var(--muted); font-size: var(--fs-small); }
 .pvs { list-style: none; margin: 4px 0 0; padding: 0; }
 .pvs li { display: flex; gap: 10px; align-items: baseline; border-top: 1px solid var(--line); font: 500 var(--fs-small)/1.75 var(--mono); white-space: nowrap; }

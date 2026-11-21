@@ -32,7 +32,7 @@ const SIDES: { side: SplitSide; label: string }[] = [{ side: 'left', label: 'Bre
 </script>
 
 <template>
-  <div class="lay" :style="{ '--side-l': widths.left + 'px', '--side-r': widths.right + 'px' }">
+  <div class="lay" :class="{ bars: $slots.top || $slots.bottom }" :style="{ '--side-l': widths.left + 'px', '--side-r': widths.right + 'px' }">
     <div class="col left"><slot name="left" /></div>
     <div
       class="grip" role="separator" aria-orientation="vertical" tabindex="0" :aria-label="SIDES[0]!.label + ' (Pfeiltasten, Doppelklick = Standard)'"
@@ -41,7 +41,9 @@ const SIDES: { side: SplitSide; label: string }[] = [{ side: 'left', label: 'Bre
     ></div>
     <div class="center">
       <div class="stack">
+        <div v-if="$slots.top" class="bar"><slot name="top" /></div>
         <div class="boardwrap"><slot name="board" /></div>
+        <div v-if="$slots.bottom" class="bar"><slot name="bottom" /></div>
         <div v-if="$slots.controls" class="ctl"><slot name="controls" /><LayerMenu /></div>
       </div>
     </div>

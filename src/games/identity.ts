@@ -63,3 +63,10 @@ export function eloText(g: Pick<StoredGame, 'ownSide' | 'elo'> & { meta?: Pick<G
 
 /** CSS class of a result label (colour on top of the text). */
 export const resultClass = (label: string): string => (label === 'Sieg' ? 'res-win' : label === 'Niederlage' ? 'res-loss' : label === 'Remis' ? 'res-draw' : label === 'abgebrochen' || label === 'offen' ? 'res-abort' : '')
+
+/** Name and rating of a side for the player bar: the engine strength in an own game, the ratings of the file in an imported one. */
+export function playerOf(g: Pick<StoredGame, 'white' | 'black' | 'ownSide' | 'elo'> & { meta?: Pick<GameMeta, 'whiteElo' | 'blackElo'> | null }, side: Side): { name: string; elo: number | null } {
+  const name = side === 'white' ? g.white : g.black
+  if (g.ownSide) return { name, elo: g.ownSide !== side ? g.elo : null }
+  return { name, elo: (side === 'white' ? g.meta?.whiteElo : g.meta?.blackElo) ?? null }
+}
