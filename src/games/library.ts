@@ -1,7 +1,7 @@
 import { replayRatings } from '../train/rating.ts'
 import type { RatedGame } from '../train/rating.ts'
 import type { Side } from '../content/types.ts'
-import { gameKey, newId } from './model.ts'
+import { gameKey, newId, opponentOf } from './model.ts'
 import type { GameResult, StoredGame, StoredReview } from './model.ts'
 import { parseGame, splitGames, toPgn } from './pgn.ts'
 import type { GameAnalysis } from '../analysis/build.ts'
@@ -181,12 +181,12 @@ export function badgesOf(g: Pick<StoredGame, 'analysis' | 'meta'>): { analysed: 
 
 /** What the rating needs of a stored game. */
 export function ratedGameOf(g: StoredGame): RatedGame {
-  return { id: g.id, date: g.date, plies: g.ucis.length, ownSide: g.ownSide, elo: g.elo, result: g.result, reason: g.reason, event: g.meta?.event ?? null, timeControl: g.meta?.timeControl ?? null }
+  return { id: g.id, date: g.date, plies: g.ucis.length, ownSide: g.ownSide, elo: g.elo, result: g.result, reason: g.reason, event: g.meta?.event ?? null, timeControl: g.meta?.timeControl ?? null, opponent: opponentOf(g) }
 }
 
 /** The rating change of `game` if it is the newest of `games` (undefined if it does not count). */
 export function ratingOf(games: StoredGame[], game: StoredGame): StoredGame['rating'] {
-  const e = replayRatings([...games.filter((g) => g.id !== game.id), game].map(ratedGameOf)).entries.find((x) => x.id === game.id)
+  const e = replayRatings([...games.filter((g) => g.id !== game.id), game].map(ratedGameOf), opponentOf(game)).entries.find((x) => x.id === game.id)
   return e ? { category: e.category, before: e.before, after: e.after, delta: e.delta } : undefined
 }
 
@@ -196,7 +196,8 @@ export function ratingOf(games: StoredGame[], game: StoredGame): StoredGame['rat
  */
 export async function backfillRatings(store: GameStore, keepBackup: (previous: StoredGame[]) => void): Promise<number> {
   const games = await store.all()
-  const { entries } = replayRatings(games.map(ratedGameOf))
+  const rated = games.map(ratedGameOf)
+  const entries = [...replayRatings(rated, 'stockfish').entries, ...replayRatings(rated, 'maia').entries]
   const byId = new Map(entries.map((e) => [e.id, e]))
   const changed = games.filter((g) => {
     const e = byId.get(g.id)

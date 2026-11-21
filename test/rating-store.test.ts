@@ -16,7 +16,7 @@ const make = (date: string, over: { winner?: 'white' | 'black' | null; rated?: b
 
 test('ratedGameOf: maps a stored game to what the rating needs', () => {
   const g = make('2026-01-01T00:00:00.000Z', { timeControl: '180+2' })
-  assert.deepEqual(ratedGameOf(g), { id: g.id, date: g.date, plies: 3, ownSide: 'white', elo: 1500, result: '1-0', reason: 'matt', event: 'Wertungspartie', timeControl: '180+2' })
+  assert.deepEqual(ratedGameOf(g), { id: g.id, date: g.date, plies: 3, ownSide: 'white', elo: 1500, result: '1-0', reason: 'matt', event: 'Wertungspartie', timeControl: '180+2', opponent: 'stockfish' })
 })
 
 test('ratingOf: the rating before/after of a new game, given the games so far', () => {

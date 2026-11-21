@@ -105,11 +105,22 @@ export const resultLabel = (g: Pick<StoredGame, 'result' | 'ownSide'> & { reason
 
 export const ME = 'Ich'
 export const ENGINE = 'Stockfish'
+export const MAIA_NAME = 'Maia 2'
+/** Name of the Maia-2 opponent in a stored game and in the PGN: "Maia 2 (1500)". */
+export const maiaName = (elo: number): string => `${MAIA_NAME} (${elo})`
+export type Opponent = 'stockfish' | 'maia'
+/** Which kind of opponent an own game was played against: Maia by the name of the side that is not the player (it survives the PGN round trip). */
+export function opponentOf(g: Pick<StoredGame, 'white' | 'black' | 'ownSide'>): Opponent {
+  if (!g.ownSide) return 'stockfish'
+  const name = g.ownSide === 'white' ? g.black : g.white
+  return name.startsWith(`${MAIA_NAME} (`) ? 'maia' : 'stockfish'
+}
 
 export function storedFromRecord(r: GameRecord, extra: { source: 'sparring' | 'free'; opening: string | null; retractions: StoredGame['retractions']; review: StoredReview | null; analysis?: GameAnalysis | null; eco?: string | null; repertoire?: string | null; detected?: EcoEntry | null; enriched?: boolean; playerName?: string }): StoredGame {
   const me = extra.playerName?.trim() || ME
-  const white = r.ownSide === 'white' ? me : ENGINE
-  const black = r.ownSide === 'white' ? ENGINE : me
+  const opponent = r.opponent === 'maia' ? maiaName(r.elo) : ENGINE
+  const white = r.ownSide === 'white' ? me : opponent
+  const black = r.ownSide === 'white' ? opponent : me
   return {
     id: newId(), key: gameKey(r.startFen, r.ucis, r.date, white, black), source: extra.source, startFen: r.startFen, ucis: r.ucis, sans: r.sans,
     result: r.result, reason: r.reason, date: r.date, white, black, ownSide: r.ownSide, elo: r.elo, teacher: r.teacher, helps: r.helps,

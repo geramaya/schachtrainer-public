@@ -53,6 +53,11 @@ import { playSound } from '../ui/sound.ts'
 import CoachPanel from '../ui/CoachPanel.vue'
 import EvalBar from '../ui/EvalBar.vue'
 import EnginePanel from '../ui/EnginePanel.vue'
+import MaiaStatus from '../ui/MaiaStatus.vue'
+import type { MaiaStatus as MaiaState } from '../maia/client.ts'
+import { maia, maiaStatus } from '../maia/useMaia.ts'
+import { DEFAULT_MAIA_ELO, MAIA_STEP } from '../maia/settings.ts'
+import { LEVEL_MAX as MAIA_MAX, LEVEL_MIN as MAIA_MIN } from '../maia/encode.ts'
 import MoveList from '../ui/MoveList.vue'
 import TeacherCard from '../ui/TeacherCard.vue'
 import TeacherPick from '../ui/TeacherPick.vue'
@@ -110,11 +115,30 @@ let token = 0 // bumped on every new game / unmount: a late engine answer of an 
 const fen = computed(() => gameFens(startFen.value, ucis.value).at(-1)!)
 const turn = computed<Side>(() => (fen.value.split(' ')[1] === 'b' ? 'black' : 'white'))
 const elo = computed(() => progress.value.settings.sparringElo)
+// Opponent (free game only): chosen in the start field, fixed when the game starts. A failing Maia hands the rest of the game to Stockfish.
+const opponentKind = computed<'stockfish' | 'maia'>(() => (props.free && progress.value.settings.opponent === 'maia' ? 'maia' : 'stockfish'))
+const maiaLevel = computed(() => progress.value.settings.maiaElo ?? DEFAULT_MAIA_ELO)
+const setOpponent = (o: 'stockfish' | 'maia') => update((p) => ({ ...p, settings: { ...p.settings, opponent: o } }))
+const setMaiaElo = (e: Event) => update((p) => ({ ...p, settings: { ...p.settings, maiaElo: Math.min(MAIA_MAX, Math.max(MAIA_MIN, Number((e.target as HTMLInputElement).value))) } }))
+const setMaiaGreedy = (e: Event) => update((p) => ({ ...p, settings: { ...p.settings, maiaGreedy: (e.target as HTMLInputElement).checked } }))
+const gameOpponent = ref<'stockfish' | 'maia'>('stockfish')
+const gameMaiaElo = ref(DEFAULT_MAIA_ELO)
+const maiaFailed = ref(false)
+const maiaFailMsg = ref('')
+/** Stockfish played moves of a Maia game: the game does not count for the Maia rating. */
+const usedFallback = ref(false)
+const shownOpponent = computed(() => (phase.value === 'setup' ? opponentKind.value : gameOpponent.value))
+const opponentName = computed(() => (shownOpponent.value === 'maia' ? 'Maia' : 'Stockfish'))
+const recordElo = computed(() => (gameOpponent.value === 'maia' ? gameMaiaElo.value : elo.value))
+/** What the status block shows: a failed move of a loaded Maia counts as an error too (Stockfish plays instead until Erneut versuchen). */
+const maiaShown = computed<MaiaState>(() => (maiaFailed.value && maiaStatus.value.state !== 'error' ? { state: 'error', message: maiaFailMsg.value } : maiaStatus.value))
+const maiaLoading = computed(() => gameOpponent.value === 'maia' && !maiaFailed.value && maiaStatus.value.state === 'loading')
+function retryMaia() { maiaFailed.value = false; message.value = ''; void maia.load().catch((e) => console.warn('Maia:', e)) }
 /** The board shows the own side at the bottom; the flip button turns it for this game (a new game starts with the own side again). */
 const flipped = ref(false)
 const boardSide = computed<Side>(() => (flipped.value ? flipSide(mySide.value) : mySide.value))
 const bars = computed(() => barSides(boardSide.value))
-const barPlayer = (side: Side) => (side === mySide.value ? { name: 'Du', elo: null } : { name: 'Stockfish', elo: elo.value })
+const barPlayer = (side: Side) => (side === mySide.value ? { name: 'Du', elo: null } : gameOpponent.value === 'maia' && phase.value !== 'setup' ? { name: 'Maia', elo: gameMaiaElo.value } : shownOpponent.value === 'maia' ? { name: 'Maia', elo: maiaLevel.value } : { name: 'Stockfish', elo: elo.value })
 const setElo = (e: Event) => {
   const v = Math.min(ELO_MAX, Math.max(ELO_MIN, Number((e.target as HTMLInputElement).value)))
   update((p) => ({ ...p, settings: { ...p.settings, sparringElo: v } }))
@@ -300,6 +324,8 @@ function newGame(from: string) {
     return
   }
   withTeacher.value = teacher.value.on
+  gameOpponent.value = opponentKind.value; gameMaiaElo.value = maiaLevel.value; maiaFailed.value = false; usedFallback.value = false
+  if (gameOpponent.value === 'maia') void maia.load().catch((e) => console.warn('Maia:', e)) // starts at once, the first move may have to wait for it
   phase.value = 'play'
   startClock()
   say(['partie_start'], {}, from)
@@ -332,7 +358,7 @@ function finishGame(text: string, outcome: Outcome) {
   phase.value = 'over'; result.value = text; pending.value = null
   stopTicker(); closeComment(); if (clock.value) clock.value = pause(clock.value, Date.now())
   if (outcome.reason === 'aufgabe' || outcome.reason === 'remis' || outcome.reason === 'zeit') playSound('end') // mate and stalemate sound from the board
-  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value })
+  const record = gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome, date: new Date(), elo: recordElo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value && !usedFallback.value, ...(gameOpponent.value === 'maia' ? { opponent: 'maia' as const } : {}) })
   emit('finished', record)
   gameKey = `g${++gameNo}`
   noteDrafts.value = {}; noteStatus.value = null
@@ -364,7 +390,7 @@ async function autoSave(record: GameRecord): Promise<string | null> {
 /** A running game that is left (other page, other start position) is kept as an unfinished game. */
 function abandonGame() {
   if (phase.value !== 'play' || !ucis.value.length) return
-  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: elo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value }))
+  void autoSave(gameRecord({ startFen: startFen.value, ucis: ucis.value, outcome: { winner: null, reason: 'abbruch' }, date: new Date(), elo: recordElo.value, teacher: withTeacher.value ? teacher.value.figur : null, ownSide: mySide.value, helps: helps.value, ...clockRecord(), rated: !withTeacher.value && !usedFallback.value, ...(gameOpponent.value === 'maia' ? { opponent: 'maia' as const } : {}) }))
 }
 /** A game that counts for "Anwenden": only with a variation. */
 const markDone = () => { if (props.variation) markApplied(applySparringId(props.variation.id)) }
@@ -390,12 +416,27 @@ async function engineMove() {
   try {
     const c = clock.value
     const movetimeMs = c && gameTime.value ? engineMoveMs(remaining(c, turn.value, Date.now()), gameTime.value.incMs, elo.value) : 300 + Math.floor(Math.random() * 500)
-    const uci = await getEngine().play(fen.value, { elo: elo.value, movetimeMs })
+    let uci: string | null = null
+    if (gameOpponent.value === 'maia' && !maiaFailed.value) {
+      const started = Date.now()
+      try {
+        const fenNow = fen.value
+        uci = await maia.move(fenNow, gameMaiaElo.value, progress.value.settings.maiaGreedy ? { temperature: 0 } : {})
+        if (mine === token) await new Promise((r) => setTimeout(r, Math.max(0, Math.min(movetimeMs, 1500) - (Date.now() - started)))) // a human does not answer at once
+      } catch (e) {
+        if (mine !== token) return
+        console.warn('Maia:', e)
+        maiaFailed.value = true; usedFallback.value = true; uci = null; maiaFailMsg.value = (e as Error).message
+      }
+      if (mine !== token) return
+    }
+    const fromMaia = uci !== null
+    if (uci === null) uci = await getEngine().play(fen.value, { elo: elo.value, movetimeMs })
     const before = [...ucis.value]
     const fenBefore = fen.value
     if (mine === token && !applyMove(uci)) {
       resetEngine()
-      message.value = `Die Engine lieferte einen ungültigen Zug (${uci}). Starte die Partie neu.`
+      message.value = `${fromMaia ? 'Maia' : 'Die Engine'} lieferte einen ungültigen Zug (${uci}). Starte die Partie neu.`
     } else if (mine === token && withTeacher.value) {
       const note = repertoireNote(before, uci, startFen.value, props.bundle, openingAt([...before, uci]), progress.value.overlays, mySide.value)
       if (note) said.value = { j: null, note, seed: `${fenBefore}|${uci}` }
@@ -671,7 +712,7 @@ watch(() => [props.variation?.id, props.startFen], () => { abandonGame(); resetS
 /** Shows an earlier position (null = back to the live game). */
 function goto(n: number | null) { view.value = n === null || n >= ucis.value.length ? null : n; if (view.value === null) fresh.value = false }
 const notice = computed(() => historyNotice({ view: view.value, startPly: startPly.value, fresh: fresh.value }))
-const status = computed(() => engineStatus({ phase: phase.value, thinking: thinking.value, judging: judging.value, pending: !!pending.value, myTurn: turn.value === mySide.value, setupHint: props.free && !props.startFen ? (sideChoice.value === 'white' ? 'move' : 'engine') : 'choose' }))
+const status = computed(() => engineStatus({ opponent: gameOpponent.value === 'maia' && !maiaFailed.value ? 'maia' : 'stockfish', maiaLoading: maiaLoading.value, phase: phase.value, thinking: thinking.value, judging: judging.value, pending: !!pending.value, myTurn: turn.value === mySide.value, setupHint: props.free && !props.startFen ? (sideChoice.value === 'white' ? 'move' : 'engine') : 'choose' }))
 /** Browsing the moves of a game (running or finished): ←/→/Home/End like in the lesson (not while a game is running, not in text fields). */
 function onKey(e: KeyboardEvent) {
   const t = e.target as HTMLElement | null
@@ -701,9 +742,21 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
     <template #left>
       <div class="pane sparring">
         <slot name="tabs" />
-        <h2>{{ free ? ((phase === 'setup' ? teacher.on : withTeacher) ? `Lernpartie mit ${teacherName}` : 'Wertungspartie gegen Stockfish') : 'Sparring gegen Stockfish' }}</h2>
+        <h2>{{ free ? ((phase === 'setup' ? teacher.on : withTeacher) ? `Lernpartie mit ${teacherName}` : `Wertungspartie gegen ${opponentName}`) : 'Sparring gegen Stockfish' }}</h2>
         <h3 v-if="phase === 'setup'" class="sech">Gegner</h3>
-        <label class="eloline">Spielstärke (Elo): <b>{{ elo }}</b>
+        <div v-if="free && phase === 'setup'" class="segs wide" role="group" aria-label="Gegner">
+          <button type="button" class="seg" :aria-pressed="opponentKind === 'stockfish'" @click="setOpponent('stockfish')">Stockfish</button>
+          <button type="button" class="seg" :aria-pressed="opponentKind === 'maia'" title="Maia 2 spielt wie ein Mensch dieser Stärke, mit menschlichen Fehlern" @click="setOpponent('maia')">Maia (menschlich)</button>
+        </div>
+        <template v-if="shownOpponent === 'maia'">
+          <label v-if="phase === 'setup'" class="eloline">Maia-Stufe (Elo): <b>{{ maiaLevel }}</b>
+            <input type="range" :min="MAIA_MIN" :max="MAIA_MAX" :step="MAIA_STEP" :value="maiaLevel" @input="setMaiaElo" aria-label="Stufe von Maia" />
+          </label>
+          <label v-if="phase === 'setup'" class="check"><input type="checkbox" :checked="!!progress.settings.maiaGreedy" @change="setMaiaGreedy" /> Immer den wahrscheinlichsten Zug (weniger menschlich)</label>
+          <p v-else class="eloline">Maia (menschlich): <b>{{ gameMaiaElo }}</b></p>
+          <MaiaStatus :status="maiaShown" :preload="phase === 'setup'" @load="retryMaia" />
+        </template>
+        <label v-else class="eloline">Spielstärke (Elo): <b>{{ elo }}</b>
           <input type="range" :min="ELO_MIN" :max="ELO_MAX" step="10" :value="elo" @input="setElo" aria-label="Spielstärke der Engine" />
         </label>
 
@@ -716,7 +769,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
               <button type="button" class="seg" :aria-pressed="sideChoice === 'random'" title="Die Farbe wird beim Start ausgelost" @click="chooseSide('random')"><KingIcon mode="half" /> Zufall</button>
             </div>
           </section>
-          <p v-if="free && !props.startFen" class="muted">{{ sideChoice === 'white' ? 'Zieh einfach auf dem Brett – die Partie beginnt mit deinem ersten Zug.' : sideChoice === 'black' ? 'Du spielst Schwarz: Stockfish beginnt.' : 'Die Farbe wird beim Start ausgelost.' }}</p>
+          <p v-if="free && !props.startFen" class="muted">{{ sideChoice === 'white' ? 'Zieh einfach auf dem Brett – die Partie beginnt mit deinem ersten Zug.' : sideChoice === 'black' ? 'Du spielst Schwarz: ' + opponentName + ' beginnt.' : 'Die Farbe wird beim Start ausgelost.' }}</p>
           <p v-else class="muted">Du spielst {{ side === 'white' ? 'Weiß' : 'Schwarz' }}. Wähle den Start:</p>
           <section class="sec">
             <h3 class="sech">Lehrer</h3>
@@ -750,7 +803,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
         </div>
 
         <template v-else>
-          <p v-if="phase === 'play'" class="muted statusline" :class="{ halt: pending }" role="status">{{ judging ? `${teacherName} prüft deinen Zug …` : thinking ? 'Die Engine denkt …' : pending ? 'Die Partie hält an – du entscheidest.' : turn === mySide ? 'Du bist am Zug.' : '' }}{{ free ? ` Du spielst ${mySide === 'white' ? 'Weiß' : 'Schwarz'}.` : '' }}</p>
+          <p v-if="phase === 'play'" class="muted statusline" :class="{ halt: pending }" role="status">{{ judging ? `${teacherName} prüft deinen Zug …` : thinking ? (maiaLoading ? 'Maia lädt …' : gameOpponent === 'maia' && !maiaFailed ? 'Maia denkt …' : 'Die Engine denkt …') : pending ? 'Die Partie hält an – du entscheidest.' : turn === mySide ? 'Du bist am Zug.' : '' }}{{ free ? ` Du spielst ${mySide === 'white' ? 'Weiß' : 'Schwarz'}.` : '' }}</p>
           <TeacherCard
             v-if="showCard" :figur="teacher.figur" :name="teacherName" :gefuehl="cardView.gefuehl" :headline="cardView.headline" :severity="cardView.severity" :tip="cardView.tip"
             :text="cardView.text" :note="cardView.note" :reveal="revealText" :blocked="!!pending" :hinted="!!pending?.hinted" :later="later" :repertoire-offer="repertoireOffer"
@@ -792,7 +845,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
                   </button>
                 </li>
               </ul>
-              <AnalysisSummary v-if="summary" :summary="summary" :white="mySide === 'white' ? 'Ich' : 'Stockfish'" :black="mySide === 'white' ? 'Stockfish' : 'Ich'" />
+              <AnalysisSummary v-if="summary" :summary="summary" :white="mySide === 'white' ? 'Ich' : opponentName" :black="mySide === 'white' ? opponentName : 'Ich'" />
               <p v-if="shownComment" class="said">{{ shownComment }}</p>
               <button v-if="untrained.length" class="primary" @click="toTraining">Fehler ins Training</button>
               <p v-if="trained" class="muted" role="status">{{ trained }} Karten angelegt (Herkunft: Partie). <a class="linkbtn" :href="hrefPartien()">Jetzt üben</a></p>
@@ -848,6 +901,7 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
 .statusline.halt { color: var(--q-mistake); font-weight: 800; }
 .ctl kbd { font: 600 var(--fs-label)/1 var(--mono); padding: 2px 5px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
 .eloline { display: block; margin: 0.4rem 0; }
+.check { display: block; margin: 0.4rem 0; font-size: var(--fs-small, 0.85rem); }
 .eloline input { width: 100%; }
 .errors { list-style: none; padding: 0; margin: 0.4rem 0; display: grid; gap: 4px; }
 .errors button { width: 100%; background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 0.3rem 0.6rem; cursor: pointer; font: inherit; text-align: left; }

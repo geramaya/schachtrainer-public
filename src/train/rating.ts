@@ -30,6 +30,8 @@ export interface RatedGame {
   event: string | null
   /** PGN TimeControl, "180+2" */
   timeControl: string | null
+  /** who the game was played against; absent = Stockfish. The rating is kept per opponent kind. */
+  opponent?: 'stockfish' | 'maia'
 }
 
 /** Lichess rule: estimated duration = base seconds + 40 * increment; < 180 s Bullet, < 480 Blitz, < 1500 Schnellschach, else Klassisch. */
@@ -58,12 +60,12 @@ export function scoreOf(g: RatedGame): number | null {
 
 export interface RatingEntry { id: string; date: string; category: Category; before: number; after: number; delta: number; opponent: number; score: number }
 
-/** All counting games in chronological order, the rating per category after each game. A pure function of the games: it can be recomputed any time. */
-export function replayRatings(games: RatedGame[]): { entries: RatingEntry[]; current: Record<Category, number> } {
+/** All counting games in chronological order, the rating per category after each game. Only games against `opponent` count (Stockfish and Maia levels are not comparable). A pure function of the games: it can be recomputed any time. */
+export function replayRatings(games: RatedGame[], opponent: 'stockfish' | 'maia' = 'stockfish'): { entries: RatingEntry[]; current: Record<Category, number> } {
   const current = Object.fromEntries(CATEGORIES.map((c) => [c, START_RATING])) as Record<Category, number>
   const played = Object.fromEntries(CATEGORIES.map((c) => [c, 0])) as Record<Category, number>
   const entries: RatingEntry[] = []
-  const sorted = [...games].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id))
+  const sorted = games.filter((g) => (g.opponent ?? 'stockfish') === opponent).sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id))
   for (const g of sorted) {
     const score = scoreOf(g)
     if (score === null) continue
@@ -77,11 +79,11 @@ export function replayRatings(games: RatedGame[]): { entries: RatingEntry[]; cur
 }
 
 /** Advice for the next level: from the last 5 games of a category (at least 3), >= 60 % -> +100, <= 30 % -> -100. `level` = the Stockfish level set now. */
-export function recommend(entries: RatingEntry[], category: Category, level: number): { level: number; text: string } | null {
+export function recommend(entries: RatingEntry[], category: Category, level: number, range: { min: number; max: number } = { min: LEVEL_MIN, max: LEVEL_MAX }): { level: number; text: string } | null {
   const last = entries.filter((e) => e.category === category).slice(-5)
   if (last.length < 3) return null
   const share = last.reduce((s, e) => s + e.score, 0) / last.length
-  const clamp = (v: number) => Math.min(LEVEL_MAX, Math.max(LEVEL_MIN, v))
+  const clamp = (v: number) => Math.min(range.max, Math.max(range.min, v))
   if (share >= 0.6) return { level: clamp(level + 100), text: `Du gewinnst meist gegen ${level} – probier ${clamp(level + 100)}.` }
   if (share <= 0.3) return { level: clamp(level - 100), text: `Gegen ${level} fällt es dir noch schwer – probier ${clamp(level - 100)}.` }
   return { level, text: `Gegen ${level} hältst du gut mit – bleib dabei, bis du mehr als die Hälfte gewinnst.` }

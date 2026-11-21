@@ -6,9 +6,11 @@ import { CATEGORIES, CATEGORY_LABEL, START_RATING, recommend, replayRatings } fr
 import type { Category } from '../train/rating.ts'
 
 /** Own training rating from Wertungspartien: one number per time category, its course as a small graph, and the advice for the next level. */
-const props = defineProps<{ games: StoredGame[]; /** Stockfish level set now */ level: number }>()
+const props = defineProps<{ games: StoredGame[]; /** Stockfish level set now */ level: number; /** Maia level set now */ maiaLevel: number }>()
 
-const rated = computed(() => replayRatings(props.games.map(ratedGameOf)))
+/** The rating is kept per opponent: Stockfish levels and Maia levels are not comparable. */
+const opponent = ref<'stockfish' | 'maia'>('stockfish')
+const rated = computed(() => replayRatings(props.games.map(ratedGameOf), opponent.value))
 const count = (c: Category) => rated.value.entries.filter((e) => e.category === c).length
 const chosen = ref<Category>('none')
 // the category with the most games is shown first
@@ -16,7 +18,7 @@ watch(rated, () => { if (!count(chosen.value)) chosen.value = [...CATEGORIES].so
 const mine = computed(() => rated.value.entries.filter((e) => e.category === chosen.value))
 const last = (c: Category) => rated.value.entries.filter((e) => e.category === c).at(-1)
 const signed = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : '±0')
-const advice = computed(() => recommend(rated.value.entries, chosen.value, props.level))
+const advice = computed(() => (opponent.value === 'maia' ? recommend(rated.value.entries, chosen.value, props.maiaLevel, { min: 1100, max: 1900 }) : recommend(rated.value.entries, chosen.value, props.level)))
 
 const W = 280
 const H = 64
@@ -41,7 +43,11 @@ const baseY = computed(() => {
 <template>
   <section class="card rating" aria-label="Meine Wertung">
     <h2>Meine Wertung</h2>
-    <p class="muted note">Eigene Trainingswertung aus Wertungspartien gegen Stockfish – nicht mit Lichess oder FIDE vergleichbar. Gegner ist die eingestellte Stockfish-Stufe.</p>
+    <div class="opp" role="group" aria-label="Gegner">
+      <button type="button" class="cat" :aria-pressed="opponent === 'stockfish'" @click="opponent = 'stockfish'">Stockfish</button>
+      <button type="button" class="cat" :aria-pressed="opponent === 'maia'" @click="opponent = 'maia'">Maia (menschlich)</button>
+    </div>
+    <p class="muted note">Eigene Trainingswertung aus Wertungspartien gegen {{ opponent === 'maia' ? 'Maia 2' : 'Stockfish' }} – nicht mit Lichess oder FIDE vergleichbar. Gegner ist die eingestellte {{ opponent === 'maia' ? 'Maia' : 'Stockfish' }}-Stufe; je Gegnerart wird getrennt gezählt.</p>
     <div class="cats" role="group" aria-label="Bedenkzeit">
       <button v-for="c in CATEGORIES" :key="c" type="button" class="cat" :aria-pressed="chosen === c" @click="chosen = c">
         <span class="nm">{{ CATEGORY_LABEL[c] }}</span>
@@ -63,6 +69,8 @@ const baseY = computed(() => {
 <style scoped>
 .rating h2 { margin: 0 0 0.3rem; font-size: var(--fs-h3); }
 .note { margin: 0 0 0.6rem; font-size: var(--fs-small); }
+.opp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 0 0 0.5rem; }
+.opp .cat { height: 36px; }
 .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 6px; }
 .cat { box-sizing: border-box; height: 64px; display: grid; justify-items: center; align-content: center; gap: 2px; padding: 4px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font: inherit; cursor: pointer; }
 .cat[aria-pressed='true'] { background: var(--acc); border-color: var(--acc); color: var(--ink); }

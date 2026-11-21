@@ -5,3 +5,6 @@ public/engine/
 __pycache__/
 public/audio/proben/
 tools/laufzeit/
+public/maia2/*.onnx
+public/ort/*.mjs
+public/ort/*.wasm

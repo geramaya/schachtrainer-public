@@ -76,9 +76,11 @@ export interface GameRecord {
   learning?: boolean
   /** played without a teacher: a Wertungspartie, no helps */
   rated?: boolean
+  /** absent = Stockfish; with Maia `elo` is the Maia level */
+  opponent?: 'maia'
 }
 
-export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outcome; date: Date; elo: number; teacher: FigurId | null; ownSide: Side; helps: Helps; timeControl?: string; learning?: boolean; rated?: boolean }): GameRecord {
+export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outcome; date: Date; elo: number; teacher: FigurId | null; ownSide: Side; helps: Helps; timeControl?: string; learning?: boolean; rated?: boolean; opponent?: 'maia' }): GameRecord {
   let fen = o.startFen
   const sans = o.ucis.map((u) => {
     const r = applyUci(fen, u)!
@@ -86,5 +88,5 @@ export function gameRecord(o: { startFen: string; ucis: string[]; outcome: Outco
     return r.san
   })
   const result = o.outcome.reason === 'abbruch' ? '*' : o.outcome.winner === null ? '1/2-1/2' : o.outcome.winner === 'white' ? '1-0' : '0-1'
-  return { startFen: o.startFen, ucis: [...o.ucis], sans, result, reason: o.outcome.reason, date: o.date.toISOString(), elo: o.elo, teacher: o.teacher, ownSide: o.ownSide, helps: { ...o.helps }, ...(o.timeControl ? { timeControl: o.timeControl } : {}), ...(o.learning ? { learning: true } : {}), ...(o.rated ? { rated: true } : {}) }
+  return { startFen: o.startFen, ucis: [...o.ucis], sans, result, reason: o.outcome.reason, date: o.date.toISOString(), elo: o.elo, teacher: o.teacher, ownSide: o.ownSide, helps: { ...o.helps }, ...(o.timeControl ? { timeControl: o.timeControl } : {}), ...(o.learning ? { learning: true } : {}), ...(o.rated ? { rated: true } : {}), ...(o.opponent ? { opponent: o.opponent } : {}) }
 }

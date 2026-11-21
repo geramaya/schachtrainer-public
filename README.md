@@ -3,6 +3,10 @@
 Local browser trainer for a personal opening repertoire ("Schach-Architektur v1.8", `docs/repertoire-v1.8.md`).
 UI language German, code English.
 
+## Maia-2 (human-like opponent)
+
+In "Spielen" the opponent can be Stockfish or Maia 2 (levels 1100-1900). Maia runs in a web worker with ONNX Runtime Web (WASM, one thread, own origin only); the model is loaded on first use, checked with SHA-256 over exactly the loaded bytes and refused on any deviation. Stockfish keeps evaluation, analysis, teacher and coach; if Maia fails, Stockfish plays on. The own rating is kept per opponent kind. The model and the WASM files are pinned by SHA-256 (see `tools/fetch-maia.ts`). Licenses: `NOTICE.md`.
+
 ## What it does
 
 Ten openings (Scotch, Smith-Morra, Caro-Kann, Budapest, King's Indian, Italian, Alapin, Vienna, Nimzo-Indian,
@@ -24,6 +28,7 @@ arrows, hover preview, `#/analyse` board). In exercises it stays locked until th
 ```bash
 npm ci            # packages are pinned via audited overrides – do not upgrade without a supply-chain review
 npm run engine    # copies the Stockfish WASM build to public/engine/
+npm run maia      # Maia-2 opponent: downloads maia_rapid.onnx (93 MB, pinned commit, SHA-256 checked) to public/maia2/ and copies the ONNX Runtime WASM files to public/ort/ (both gitignored)
 npm run dev       # http://localhost:5173
 ```
 

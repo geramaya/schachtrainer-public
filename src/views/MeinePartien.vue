@@ -180,7 +180,7 @@ async function upload(e: Event) {
       </div>
     </details>
 
-    <RatingCard v-if="loaded && games.length" :games="games" :level="progress.settings.sparringElo" />
+    <RatingCard v-if="loaded && games.length" :games="games" :level="progress.settings.sparringElo" :maia-level="progress.settings.maiaElo ?? 1500" />
 
     <section class="card list">
       <div v-if="games.length" class="filter" role="search">
@@ -305,7 +305,7 @@ async function upload(e: Event) {
 .loading { min-height: 1.5em; }
 .empty .emptyact { display: flex; gap: 0.5rem; margin: 0.8rem 0 0.2rem; }
 .games { width: 100%; min-width: 1000px; table-layout: fixed; border-collapse: collapse; }
-.c-sel { width: 2.6rem; } .c-date { width: 6.4rem; } .c-names { width: 9.2rem; } .c-res { width: 6.8rem; } .c-side { width: 5rem; } .c-elo { width: 3.2rem; } .c-eco { width: 3.2rem; } .c-teacher { width: 5.6rem; } .c-acts { width: 4.4rem; } .c-marks { width: 8.4rem; }
+.c-sel { width: 2.6rem; } .c-date { width: 7.6rem; } .c-names { width: 9.2rem; } .c-res { width: 8rem; } .c-side { width: 6rem; } .c-elo { width: 4.2rem; } .c-eco { width: 3.2rem; } .c-teacher { width: 5.6rem; } .c-acts { width: 4.4rem; } .c-marks { width: 8.4rem; }
 .marks { text-align: right; }
 .mk { display: inline-block; vertical-align: middle; margin-left: 6px; color: var(--muted); }
 .mk.tag { font: 600 11px/1 var(--mono); padding: 3px 5px; border: 1px solid var(--line); border-radius: 4px; }

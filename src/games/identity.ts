@@ -49,7 +49,7 @@ export function resultFor(g: Pick<StoredGame, 'result' | 'reason'>, side: Side |
 /** The name of a side as shown: the engine of an own game with its strength, a player of an imported game with his rating if the file has it. */
 export function displayName(g: Pick<StoredGame, 'white' | 'black' | 'ownSide' | 'elo'> & { meta?: Pick<GameMeta, 'whiteElo' | 'blackElo'> | null }, side: Side): string {
   const name = side === 'white' ? g.white : g.black
-  if (g.ownSide && g.ownSide !== side && g.elo !== null) return `${name} (Elo ${g.elo})`
+  if (g.ownSide && g.ownSide !== side && g.elo !== null && !name.startsWith('Maia 2 (')) return `${name} (Elo ${g.elo})`
   const rating = side === 'white' ? g.meta?.whiteElo : g.meta?.blackElo
   return !g.ownSide && rating ? `${name} (${rating})` : name
 }
@@ -67,6 +67,6 @@ export const resultClass = (label: string): string => (label === 'Sieg' ? 'res-w
 /** Name and rating of a side for the player bar: the engine strength in an own game, the ratings of the file in an imported one. */
 export function playerOf(g: Pick<StoredGame, 'white' | 'black' | 'ownSide' | 'elo'> & { meta?: Pick<GameMeta, 'whiteElo' | 'blackElo'> | null }, side: Side): { name: string; elo: number | null } {
   const name = side === 'white' ? g.white : g.black
-  if (g.ownSide) return { name, elo: g.ownSide !== side ? g.elo : null }
+  if (g.ownSide) return { name, elo: g.ownSide !== side && !name.startsWith('Maia 2 (') ? g.elo : null }
   return { name, elo: (side === 'white' ? g.meta?.whiteElo : g.meta?.blackElo) ?? null }
 }
