@@ -40,7 +40,7 @@ export function pickOpening(b: ContentBundle, ucis: string[], startFen: string, 
 }
 
 /** Help the player asked for during the game (hints = piece marked, bests = best move shown, repertoire = planned repertoire move shown). */
-export interface Helps { hints: number; bests: number; repertoire: number }
+export interface Helps { hints: number; bests: number; repertoire: number; /** the engine field was switched on in a teacher game */ engine?: number }
 /** How many moves of the game are book moves: the longest stay in the repertoire tree among the own openings; null without opening data. */
 export function bookPliesOf(b: ContentBundle | null, ucis: string[], startFen: string, ov: OpeningOverlays, side: Side): number | null {
   if (!b) return null

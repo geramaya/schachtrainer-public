@@ -14,5 +14,11 @@ export function undoHeld(held: Held | null, ucis: string[], phase: Phase): { uci
   }
 }
 
+/** "Besten Zug übernehmen": like undoHeld, but the best move of the engine is played in place of the held one. */
+export function adoptBest(held: Held | null, ucis: string[], phase: Phase): { ucis: string[]; error: ReviewError } | null {
+  const r = undoHeld(held, ucis, phase)
+  return r && held ? { ...r, ucis: [...r.ucis, held.j.betterUci] } : null
+}
+
 /** "Weiterspielen" is only possible while the game is running and a move is held. */
 export const canKeep = (held: Held | null, phase: Phase): boolean => held !== null && phase === 'play'

@@ -272,6 +272,10 @@ button.danger { background: none; color: var(--err-text); border-color: var(--er
 .lay .col { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow-x: hidden; overflow-y: auto; scrollbar-gutter: stable; }
 .lay .center { min-width: 0; min-height: 0; container-type: size; }
 .lay.bars { --bars: calc(2 * (var(--pbar) + 8px)); }
+.lay.holdslot { --hold: 92px; --bars: calc(2 * (var(--pbar) + 8px) + var(--hold) + 8px); }
+.lay .holdrow { width: var(--bs); flex: none; container-type: inline-size; }
+.lay .boardwrap.held { outline: 3px solid var(--q-mistake); outline-offset: 2px; border-radius: 2px; }
+.lay .boardwrap.held[data-held='patzer'] { outline-color: var(--q-blunder); }
 .lay .bar { width: var(--bs); flex: none; }
 .lay .stack { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; width: fit-content; margin: 0 auto; }
 .lay .boardwrap { display: flex; gap: 8px; align-items: flex-start; }

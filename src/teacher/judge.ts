@@ -54,6 +54,12 @@ function ratingOf(uci: string, ev: MoveEvals, lossCp: number): Rating {
   return RATING_OF[lossCategory(Math.max(0, loss), false)]
 }
 
+/** How much the best move would have brought, in pawn units; null for mate scores (centipawns mean nothing there). Never names the move. */
+function gainSentence(ev: MoveEvals, lossCp: number): string | null {
+  if (ev.best.mate !== null || ev.played.mate !== null || lossCp < 5) return null
+  return `Der beste Zug hätte dir etwa ${(lossCp / 100).toFixed(1).replace('.', ',')} Bauerneinheiten mehr gebracht.`
+}
+
 export function judgeMove(fenBefore: string, uci: string, ev: MoveEvals): Judgement {
   const mover: Side = fenBefore.split(' ')[1] === 'b' ? 'black' : 'white'
   const lossCp = lossOf(ev.best, ev.played)
@@ -66,14 +72,16 @@ export function judgeMove(fenBefore: string, uci: string, ev: MoveEvals): Judgem
   const bestWhy = explainBest(fenBefore, ev.best)
   const facts = rating === 'ungenau' || rating === 'fehler' || rating === 'patzer' ? detectFacts(fenBefore, ev.played, ev.best) : []
   const stockfish = `Stockfish sieht nach ${san} ${shown(ev.played)}`
-  const fallback = `${stockfish} – besser war ${better} (${shown(ev.best)}).`
-  const reveal = !facts.length && !bestWhy ? fallback : `Besser war ${better}${bestWhy ? `: ${bestWhy}` : ` (${shown(ev.best)}).`}`
+  const reveal = `Besser war ${better}${bestWhy ? `: ${bestWhy}` : ` (${shown(ev.best)}).`}`
   const fact = facts[0] ? factSentence(facts[0], seed) : null
 
   let text: string
   if (rating === 'best') text = [pick(seed, PRAISE_BEST), bestWhy].filter(Boolean).join(' ')
   else if (rating === 'excellent') text = pick(seed, PRAISE_EXCELLENT)
   else if (rating === 'gut') text = pick(seed, PRAISE_GOOD)
-  else text = fact ?? `${stockfish}.`
+  else {
+    const gain = rating !== 'ungenau' || lossCp >= 10 ? gainSentence(ev, lossCp) : null
+    text = [fact ?? `${stockfish}.`, gain].filter(Boolean).join(' ')
+  }
   return { rating, lossCp, facts, text, reveal, bestWhy, betterUci: ev.best.uci, betterSan }
 }

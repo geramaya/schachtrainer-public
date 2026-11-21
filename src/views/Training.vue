@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { Arrow, ContentBundle, Deviation, Puzzle, Side } from '../content/types.ts'
 import { nodeOfVariation, treeFor } from '../content/tree.ts'
 import { applyUci } from '../chess/game.ts'
@@ -19,6 +19,10 @@ import { BASE } from '../ui/assetBase.ts'
 import { markApplied, progress, recordAnswer, update } from '../store/state.ts'
 import Board from '../ui/Board.vue'
 import { playVerdict } from '../ui/sound.ts'
+import MoveList from '../ui/MoveList.vue'
+import { gameFens } from '../train/review.ts'
+import { historyNotice, historyTarget } from '../ui/history.ts'
+import { shouldHandleKey } from '../ui/keys.ts'
 
 import EvalBar from '../ui/EvalBar.vue'
 import EnginePanel from '../ui/EnginePanel.vue'
@@ -56,6 +60,9 @@ const message = ref('')
 const arrows = ref<Arrow[]>([])
 const hintSquares = ref<string[]>([])
 const ev = ref<EngineView>(EMPTY_VIEW)
+// Moves back and forth in a puzzle with a move sequence: only shows earlier positions, the task goes on; the own move only counts in the current position.
+const viewPly = ref<number | null>(null)
+const fresh = ref(false)
 const boardArrows = computed(() => [...arrows.value, ...ev.value.arrows])
 
 const timers: ReturnType<typeof setTimeout>[] = []
@@ -81,13 +88,29 @@ const expectedUci = computed(() => {
   return deviation.value?.punishUci
 })
 
+const puzzleFens = computed(() => (puzzle.value ? gameFens(puzzle.value.fen, played.value) : []))
+const histSans = computed(() => {
+  let cur = puzzle.value?.fen ?? ''
+  return played.value.map((u) => { const r = applyUci(cur, u); cur = r?.fen ?? cur; return r?.san ?? u })
+})
+const histStart = computed(() => { const f = puzzle.value?.fen.split(' '); return f ? (Number(f[5]) - 1) * 2 + (f[1] === 'b' ? 1 : 0) : 0 })
+const shownFen = computed(() => (viewPly.value === null ? fen.value : puzzleFens.value[viewPly.value] ?? fen.value))
+const shownLast = computed<[string, string] | undefined>(() => {
+  if (viewPly.value === null) return lastMove.value
+  const u = played.value[viewPly.value - 1]
+  return u ? [u.slice(0, 2), u.slice(2, 4)] : undefined
+})
+const notice = computed(() => historyNotice({ view: viewPly.value, startPly: histStart.value, fresh: fresh.value }))
+const goto = (n: number | null) => { viewPly.value = n === null || n >= played.value.length ? null : n; if (viewPly.value === null) fresh.value = false }
+watch(() => played.value.length, () => { if (viewPly.value !== null) fresh.value = true })
+
 const turnOf = (f: string): Side => (f.split(' ')[1] === 'b' ? 'black' : 'white')
 
 function load(i: number) {
   while (timers.length) clearTimeout(timers.pop())
   index.value = i
   missed.value = false; hinted.value = false; solutionShown.value = false; done.value = false; busy.value = false; wrongTries.value = 0
-  message.value = ''; arrows.value = []; hintSquares.value = []; lastMove.value = undefined; played.value = []
+  message.value = ''; arrows.value = []; hintSquares.value = []; lastMove.value = undefined; played.value = []; viewPly.value = null; fresh.value = false
   const t = tasks.value[i]
   if (!t) return
   if (t.kind === 'card') {
@@ -206,7 +229,14 @@ function showSolution() {
   message.value = 'Lösung als Pfeil. Spiel den Zug oder geh weiter.'
 }
 
-const onKey = (e: KeyboardEvent) => { if (hintKeyApplies(e) && !finished.value) { e.preventDefault(); showHint() } }
+const onKey = (e: KeyboardEvent) => {
+  if (hintKeyApplies(e) && !finished.value) { e.preventDefault(); showHint(); return }
+  const t = e.target as HTMLElement | null
+  if (finished.value || !puzzle.value || !shouldHandleKey(e.key, t?.tagName ?? '', !!t?.isContentEditable, { alt: e.altKey, ctrl: e.ctrlKey, meta: e.metaKey, shift: e.shiftKey })) return
+  const to = historyTarget(e.key, viewPly.value, played.value.length)
+  if (to === undefined) return
+  e.preventDefault(); goto(to)
+}
 onMounted(() => document.addEventListener('keydown', onKey))
 onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 
@@ -217,7 +247,7 @@ const rest = computed(() => restSeconds(tasks.value, index.value + (done.value ?
 const canAdvance = computed(() => done.value || solutionShown.value)
 const label = computed(() => (card.value ? 'Karte: spiel deinen Repertoirezug' : puzzle.value ? 'Rätsel: finde den besten Zug' : 'Abweichung: bestrafe den Gegner'))
 const sideWord = computed(() => (side.value === 'white' ? 'Weiß' : 'Schwarz'))
-const movable = computed(() => !done.value && !busy.value && !finished.value)
+const movable = computed(() => !done.value && !busy.value && !finished.value && viewPly.value === null)
 </script>
 
 <template>
@@ -252,11 +282,12 @@ const movable = computed(() => !done.value && !busy.value && !finished.value)
         <p v-if="deviation && !done" class="muted">Dein Gegner weicht ab. Finde deine Antwort.</p>
         <p v-if="puzzle" class="muted">Wertung {{ puzzle.rating }}</p>
         <p v-if="message" class="verdict" role="status">{{ message }}</p>
+        <p v-if="notice" class="viewnote" role="status">{{ notice }}</p>
       </div>
     </template>
     <template #board>
       <EvalBar :view="ev" :orientation="side" />
-      <Board :fen="fen" :orientation="side" :movable="movable" :layer-lock="!done" :arrows="boardArrows" :highlight="hintSquares" :last-move="lastMove" @move="onMove" />
+      <Board :fen="shownFen" :orientation="side" :movable="movable" :layer-lock="!done" :arrows="viewPly === null ? boardArrows : []" :highlight="viewPly === null ? hintSquares : []" :last-move="shownLast" @move="onMove" />
     </template>
     <template #controls>
       <button type="button" title="Hinweis: markiert die Figur (Taste H)" :disabled="done || solutionShown" @click="showHint">Hinweis <kbd>H</kbd></button>
@@ -266,7 +297,8 @@ const movable = computed(() => !done.value && !busy.value && !finished.value)
       <span class="pos">{{ index + 1 }}/{{ tasks.length }}</span>
     </template>
     <template #right>
-      <EnginePanel :fen="fen" :orientation="side" :lock="canAdvance ? null : 'task'" @view="ev = $event" />
+      <EnginePanel :fen="shownFen" :orientation="side" :lock="canAdvance ? null : 'task'" @view="ev = $event" />
+      <MoveList v-if="puzzle" :sans="histSans" :current="viewPly ?? played.length" :start-ply="histStart" @select="goto" />
     </template>
   </BoardLayout>
 </template>
@@ -281,5 +313,6 @@ const movable = computed(() => !done.value && !busy.value && !finished.value)
 .ctas { justify-content: center; margin-top: .6rem; }
 .ctl kbd { font: 600 var(--fs-label)/1 var(--mono); padding: 2px 5px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
 .runbar i { min-width: 0; font-size: 9px; overflow: hidden; }
+.viewnote { color: var(--hint); font-weight: 600; }
 .runbar i.kindp { border-radius: 50%; }
 </style>

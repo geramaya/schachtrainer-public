@@ -16,6 +16,10 @@ export interface AccessInput {
   myTurn: boolean
   /** the finished game is browsed */
   browsing: boolean
+  /** teacher game: the player lifted the lock on purpose (counts as a help) */
+  engineUnlocked: boolean
+  /** the engine field may also run while Stockfish thinks or the teacher judges */
+  analyseWhileThinking: boolean
 }
 export interface Access {
   engineLock: 'task' | 'busy' | null
@@ -23,12 +27,15 @@ export interface Access {
   coachEngine: boolean
   /** "Hinweis" / "Bester Zug" may be used */
   canAsk: boolean
+  /** the coach may draw arrows and circles (not during a teacher game: tips only on request) */
+  coachShapes: boolean
 }
 
 export function access(s: AccessInput): Access {
   const playing = s.phase === 'play'
-  const engineLock = !playing ? (s.analysing ? 'busy' : null) : s.free && !s.withTeacher && s.along ? (s.thinking || s.judging ? 'busy' : null) : 'task'
+  const busy = (s.thinking || s.judging) && !s.analyseWhileThinking ? 'busy' : null
+  const engineLock = !playing ? (s.analysing ? 'busy' : null) : (s.free && !s.withTeacher && s.along) || (s.withTeacher && s.engineUnlocked) ? busy : 'task'
   const coachEngine = !s.thinking && !s.analysing && !s.judging && !s.pending && !(playing && (s.withTeacher || (s.free && !s.along)))
   const canAsk = playing && s.withTeacher && !s.thinking && !s.judging && !s.helping && !s.pending && s.myTurn && !s.browsing
-  return { engineLock, coachEngine, canAsk }
+  return { engineLock, coachEngine, canAsk, coachShapes: !(playing && s.withTeacher) }
 }

@@ -5,4 +5,7 @@ import '@lichess-org/chessground/assets/chessground.cburnett.css'
 import './styles.css'
 import App from './App.vue'
 
+import { installQuipUnlock } from './audio/play-quip.ts'
+
+installQuipUnlock()
 createApp(App).mount('#app')

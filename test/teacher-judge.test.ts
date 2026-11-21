@@ -59,7 +59,8 @@ test('fallback: no provable fact -> Stockfish sentence with both evaluations', (
   const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4'], 30), line('a2a3', ['a2a3', 'e7e5'], -150)))
   assert.equal(j.rating, 'fehler')
   assert.deepEqual(j.facts, [])
-  assert.equal(j.reveal, 'Stockfish sieht nach a3 −1,50 – besser war e4 (+0,30).')
+  assert.equal(j.reveal, 'Besser war e4 (+0,30).')
+  assert.match(j.text, /^Stockfish sieht nach a3 −1,50\./) // the evaluation sentence is said once (text), the reveal only adds the move
   assert.doesNotMatch(j.text, /e4/, 'the better move is revealed only on request')
 })
 
@@ -278,4 +279,18 @@ test('material sentences say "1 Bauerneinheit", not "1 Bauerneinheiten"', () => 
     assert.match(t, /1 Bauerneinheit\b/)
     assert.doesNotMatch(t, /1 Bauerneinheiten/)
   }
+})
+
+test('Ungenau/Fehler/Patzer: the text says how much the best move would have brought, without naming it', () => {
+  const j = judgeMove(START, 'd2d4', ev(line('e2e4', ['e2e4', 'e7e5'], 30), line('d2d4', ['d2d4', 'd7d5'], -90)))
+  assert.notEqual(j.rating, 'best')
+  assert.match(j.text, /Der beste Zug hätte dir etwa 1,2 Bauerneinheiten mehr gebracht\./)
+  assert.doesNotMatch(j.text, /e4/)
+})
+
+test('no gain sentence for mate scores (cp is meaningless there) and none for good moves', () => {
+  const m = judgeMove(MATE_IN_ONE, 'a1a7', ev(line('a1a8', ['a1a8'], null, 1), line('a1a7', ['a1a7', 'g8f8'], 0)))
+  assert.doesNotMatch(m.text, /Bauerneinheiten mehr gebracht/)
+  const g = judgeMove(START, 'd2d4', ev(line('e2e4', ['e2e4', 'e7e5'], 30), line('d2d4', ['d2d4', 'd7d5'], 25)))
+  assert.doesNotMatch(g.text, /mehr gebracht/)
 })

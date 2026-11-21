@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { access } from '../src/teacher/access.ts'
 import type { AccessInput } from '../src/teacher/access.ts'
 
-const base: AccessInput = { phase: 'play', withTeacher: false, free: false, along: false, thinking: false, judging: false, analysing: false, helping: false, pending: false, myTurn: true, browsing: false }
+const base: AccessInput = { phase: 'play', withTeacher: false, free: false, along: false, thinking: false, judging: false, analysing: false, helping: false, pending: false, myTurn: true, browsing: false, engineUnlocked: false, analyseWhileThinking: false }
 const bools = [false, true]
 
 test('teacher game: while playing the engine panel is locked and the coach panel recommends nothing, in every state', () => {
@@ -15,7 +15,7 @@ test('teacher game: while playing the engine panel is locked and the coach panel
 })
 
 test('free game without teacher: engine panel only with "mitlaufen" (busy while the engine itself works)', () => {
-  assert.deepEqual(access({ ...base, free: true }), { engineLock: 'task', coachEngine: false, canAsk: false })
+  assert.deepEqual(access({ ...base, free: true }), { engineLock: 'task', coachEngine: false, canAsk: false, coachShapes: true })
   assert.equal(access({ ...base, free: true, along: true }).engineLock, null)
   assert.equal(access({ ...base, free: true, along: true, thinking: true }).engineLock, 'busy')
   assert.equal(access({ ...base, free: true, along: true }).coachEngine, true)
@@ -23,7 +23,7 @@ test('free game without teacher: engine panel only with "mitlaufen" (busy while 
 })
 
 test('variation sparring without teacher keeps its old behaviour (panel locked, coach may run on the own turn)', () => {
-  assert.deepEqual(access(base), { engineLock: 'task', coachEngine: true, canAsk: false })
+  assert.deepEqual(access(base), { engineLock: 'task', coachEngine: true, canAsk: false, coachShapes: true })
 })
 
 test('outside a running game: nothing is locked, "busy" while the review runs', () => {
@@ -39,4 +39,20 @@ test('help buttons only on the own turn of a teacher game, never while something
     assert.equal(access({ ...base, withTeacher: true, ...patch }).canAsk, false, JSON.stringify(patch))
   }
   assert.equal(access({ ...base, withTeacher: false }).canAsk, false)
+})
+
+test('teacher game: no coach arrows while playing (tips only on request), shown again after the game and in other games', () => {
+  assert.equal(access({ ...base, withTeacher: true }).coachShapes, false)
+  assert.equal(access({ ...base, withTeacher: true, phase: 'over' }).coachShapes, true)
+  assert.equal(access({ ...base, withTeacher: false }).coachShapes, true)
+})
+
+test('teacher game: the lock holds only until the player lifts it on purpose; busy while the engine works unless "auch während Stockfish denkt"', () => {
+  const t = { ...base, withTeacher: true }
+  assert.equal(access({ ...t, engineUnlocked: true }).engineLock, null)
+  assert.equal(access({ ...t, engineUnlocked: true, thinking: true }).engineLock, 'busy')
+  assert.equal(access({ ...t, engineUnlocked: true, judging: true }).engineLock, 'busy')
+  assert.equal(access({ ...t, engineUnlocked: true, thinking: true, analyseWhileThinking: true }).engineLock, null)
+  assert.equal(access({ ...t, engineUnlocked: false, analyseWhileThinking: true }).engineLock, 'task')
+  assert.equal(access({ ...t, engineUnlocked: true }).coachEngine, false)
 })

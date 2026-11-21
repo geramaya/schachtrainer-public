@@ -9,7 +9,7 @@ test('image chain: the feeling, then neutral of the same figure; neutral alone h
 })
 
 test('teacher setting: default on with Jonas; stored value survives export/import; garbage falls back', () => {
-  assert.deepEqual(teacherOf({}), { on: true, figur: 'mann', quips: false, speak: false })
+  assert.deepEqual(teacherOf({}), { on: true, figur: 'mann', quips: false, speak: false, hold: 'blunder' })
   assert.deepEqual(parseTeacher({ on: false, figur: 'fuchs' }), { on: false, figur: 'fuchs' })
   assert.deepEqual(parseTeacher({ on: 'ja', figur: 'drache' }), {})
   const p = emptyProgress()
@@ -19,7 +19,7 @@ test('teacher setting: default on with Jonas; stored value survives export/impor
 })
 
 test('quip settings: off by default, stored and imported, garbage dropped', () => {
-  assert.deepEqual(teacherOf({ teacher: { quips: true } }), { on: true, figur: 'mann', quips: true, speak: false })
+  assert.deepEqual(teacherOf({ teacher: { quips: true } }), { on: true, figur: 'mann', quips: true, speak: false, hold: 'blunder' })
   assert.deepEqual(parseTeacher({ quips: true, speak: true }), { quips: true, speak: true })
   assert.deepEqual(parseTeacher({ quips: 'ja', speak: 1 }), {})
   const p = emptyProgress()
