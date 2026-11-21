@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { hrefHome, hrefMeinePartien, hrefSpielen } from '../router.ts'
-import { badgesOf, enrichAll, exportPgn, filterGames, importGames, listGames, removeGame } from '../games/library.ts'
+import RatingCard from '../ui/RatingCard.vue'
+import { replayRatings } from '../train/rating.ts'
+import { backfillRatings, badgesOf, enrichAll, exportPgn, filterGames, ratedGameOf, importGames, listGames, removeGame } from '../games/library.ts'
 import { eloText, identityOf, parseAccounts, resultClass, resultFor, sideOfPlayer } from '../games/identity.ts'
 import { loadEco } from '../openings/eco-load.ts'
 import { progress, update } from '../store/state.ts'
@@ -71,12 +73,21 @@ const openGame = (g: StoredGame) => { location.hash = hrefMeinePartien(g.id) }
 async function load() {
   try {
     games.value = await listGames(gameStore); problem.value = ''
+    // Wertungspartien from before the rating existed get their rating (additive; the previous versions are kept first)
+    if (await backfillRatings(gameStore, keepRatingBackup)) games.value = await listGames(gameStore)
     // games saved before the opening table existed (or while it was not loaded) are completed now, without an engine
     if (games.value.some((g) => !g.enriched)) { const table = await loadEco(); if (table) games.value = await enrichAll(gameStore, games.value, table) }
   } catch (e) { problem.value = (e as Error).message }
   loaded.value = true
   clearTimeout(slowTimer)
 }
+/** One slot in the browser: which games were changed and what their rating field was (nothing else changes, so "back" = remove the field). */
+const RATING_BACKUP_KEY = 'schachtrainer-wertung-sicherung'
+function keepRatingBackup(previous: StoredGame[]) {
+  try { localStorage.setItem(RATING_BACKUP_KEY, JSON.stringify({ savedAt: Date.now(), games: previous.map((g) => ({ id: g.id, rating: g.rating ?? null })) })) } catch { /* blocked or full: the change is additive anyway */ }
+}
+const ratingDeltas = computed(() => new Map(replayRatings(games.value.map(ratedGameOf)).entries.map((e) => [e.id, e.delta])))
+const deltaText = (id: string) => { const d = ratingDeltas.value.get(id); return d === undefined ? '' : d > 0 ? `+${d}` : d < 0 ? `−${Math.abs(d)}` : '±0' }
 onMounted(load)
 onBeforeUnmount(() => clearTimeout(slowTimer))
 
@@ -169,6 +180,8 @@ async function upload(e: Event) {
       </div>
     </details>
 
+    <RatingCard v-if="loaded && games.length" :games="games" :level="progress.settings.sparringElo" />
+
     <section class="card list">
       <div v-if="games.length" class="filter" role="search">
         <input v-model="text" type="search" placeholder="Suche: Name, ECO, Eröffnung, Ereignis, Datum" aria-label="Suche" />
@@ -231,6 +244,7 @@ async function upload(e: Event) {
                 <td class="marks nw">
                   <svg v-if="badgesOf(g).analysed" class="mk" data-tip="analysiert" role="img" aria-label="analysiert" viewBox="0 0 16 16" width="16" height="16"><path d="M2 13V9m4 4V4m4 9V7m4 6V2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
                   <span v-if="badgesOf(g).learning" class="mk tag" data-tip="Lernpartie: die Uhr stand beim Lehrer-Halt">Lern</span>
+                  <span v-if="deltaText(g.id)" class="mk tag" data-tip="Änderung deiner Wertung in dieser Partie">{{ deltaText(g.id) }}</span>
                   <span v-if="badgesOf(g).rated" class="mk tag" data-tip="Wertungspartie: ohne Lehrer, ohne Hilfen">Wertung</span>
                   <span v-if="badgesOf(g).timeControl" class="mk tag" data-tip="Bedenkzeit">{{ badgesOf(g).timeControl }}</span>
                 </td>
@@ -291,10 +305,11 @@ async function upload(e: Event) {
 .loading { min-height: 1.5em; }
 .empty .emptyact { display: flex; gap: 0.5rem; margin: 0.8rem 0 0.2rem; }
 .games { width: 100%; min-width: 960px; table-layout: fixed; border-collapse: collapse; }
-.c-sel { width: 2.8rem; } .c-date { width: 6.5rem; } .c-names { width: 22%; } .c-res { width: 7.6rem; } .c-side { width: 6rem; } .c-elo { width: 7rem; } .c-eco { width: 3.6rem; } .c-teacher { width: 7rem; } .c-acts { width: 5rem; } .c-marks { width: 9rem; }
+.c-sel { width: 2.8rem; } .c-date { width: 6.5rem; } .c-names { width: 22%; } .c-res { width: 7.6rem; } .c-side { width: 6rem; } .c-elo { width: 7rem; } .c-eco { width: 3.6rem; } .c-teacher { width: 7rem; } .c-acts { width: 5rem; } .c-marks { width: 10rem; }
 .marks { text-align: right; }
 .mk { display: inline-block; vertical-align: middle; margin-left: 6px; color: var(--muted); }
 .mk.tag { font: 600 11px/1 var(--mono); padding: 3px 5px; border: 1px solid var(--line); border-radius: 4px; }
+.filter .onlyan input { flex: none; min-width: 0; height: auto; }
 .onlyan { display: inline-flex; align-items: center; gap: 6px; height: 36px; color: var(--muted); }
 .games th, .games td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .games thead th { color: var(--muted); font-weight: 600; font-size: var(--fs-small, 0.85rem); }

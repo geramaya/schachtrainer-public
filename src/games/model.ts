@@ -5,6 +5,7 @@ import type { GameAnalysis } from '../analysis/build.ts'
 import type { EcoEntry } from '../openings/eco.ts'
 import { resultFor } from './identity.ts'
 import { hash } from '../teacher/blocks.ts'
+import type { Category } from '../train/rating.ts'
 
 export type GameResult = '1-0' | '0-1' | '1/2-1/2' | '*'
 export type Severity = 'ungenau' | 'fehler' | 'patzer'
@@ -52,6 +53,8 @@ export interface StoredGame {
   review: StoredReview | null
   /** full engine analysis (move signs, evaluations), computed once; null until the game was analysed */
   analysis: GameAnalysis | null
+  /** own training rating of a Wertungspartie (Elo per time category): before, after and the change of this game; absent for other games */
+  rating?: { category: Category; before: number; after: number; delta: number }
   /** own notes of the player per move (ply = 0-based index of the move) */
   notes: Record<number, string>
   /** comments that came with an imported file ("Fremdkommentar"), read-only */

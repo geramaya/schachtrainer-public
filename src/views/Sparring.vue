@@ -32,7 +32,7 @@ import { applySparringId } from '../train/pipeline.ts'
 import { hrefPartien } from '../router.ts'
 import { bookPliesOf, gameRecord, pickOpening } from '../train/free-play.ts'
 import type { GameRecord, Outcome } from '../train/free-play.ts'
-import { addResults, saveGame, setNote } from '../games/library.ts'
+import { addResults, listGames, ratingOf, saveGame, setNote } from '../games/library.ts'
 import { createNoteSaver, deferredNoteSave } from '../games/note-saver.ts'
 import type { NoteStatus } from '../games/note-saver.ts'
 import { identityOf } from '../games/identity.ts'
@@ -355,7 +355,8 @@ async function autoSave(record: GameRecord): Promise<string | null> {
     source: props.free ? 'free' : 'sparring', opening: info.name, eco: info.eco, repertoire, detected: found ? { eco: found.eco, name: found.name } : null, enriched: !!table,
     retractions, review: null, playerName: identityOf(progress.value.settings).name,
   })
-  const r = await saveGame(gameStore, stored)
+  const rating = ratingOf(await listGames(gameStore).catch(() => []), stored) // Wertungspartie: the own rating before and after this game
+  const r = await saveGame(gameStore, rating ? { ...stored, rating } : stored)
   if (r.ok && mine === token) savedId = r.id
   else if (!r.ok && mine === token) message.value = `Die Partie wurde nicht gespeichert: ${r.message}`
   return r.ok ? r.id : null // also after a reset: a note typed meanwhile still needs the id

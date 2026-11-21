@@ -31,7 +31,7 @@ export function toPgn(g: StoredGame): string {
     ['White', g.white], ['Black', g.black], ['Result', g.result],
   ]
   if (g.startFen !== new Chess().fen()) header.push(['SetUp', '1'], ['FEN', g.startFen])
-  if (g.ownSide && g.elo !== null) header.push([g.ownSide === 'white' ? 'BlackElo' : 'WhiteElo', String(g.elo)])
+  if (g.ownSide && g.elo !== null) header.push([g.ownSide === 'white' ? 'BlackElo' : 'WhiteElo', String(g.elo)], ...(g.rating ? [[g.ownSide === 'white' ? 'WhiteElo' : 'BlackElo', String(g.rating.before)] as [string, string]] : []))
   else for (const [k, v] of [['WhiteElo', g.meta?.whiteElo], ['BlackElo', g.meta?.blackElo]] as const) if (v) header.push([k, String(v)])
   if (g.meta?.timeControl) header.push(['TimeControl', g.meta.timeControl])
   if (g.reason === 'zeit') header.push(['Termination', 'time forfeit'])
