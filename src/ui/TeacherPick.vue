@@ -5,15 +5,15 @@ import { FIGUREN } from '../teacher/avatar.ts'
 import type { FigurId } from '../teacher/avatar.ts'
 
 /** Game start: free game or with teacher, and which of the four teachers. */
-defineProps<{ on: boolean; figur: FigurId; quips: boolean; speak: boolean; audio: boolean }>()
+withDefaults(defineProps<{ on: boolean; figur: FigurId; quips: boolean; speak: boolean; audio: boolean; labels?: { on: string; off: string } }>(), { labels: () => ({ on: 'Mit Lehrer', off: 'Freie Partie' }) })
 const emit = defineEmits<{ on: [boolean]; figur: [FigurId]; quips: [boolean]; speak: [boolean] }>()
 </script>
 
 <template>
   <div class="pick">
     <div class="mode" role="group" aria-label="Partieart">
-      <button :class="{ sel: on }" :aria-pressed="on" @click="emit('on', true)">Mit Lehrer</button>
-      <button :class="{ sel: !on }" :aria-pressed="!on" @click="emit('on', false)">Freie Partie</button>
+      <button :class="{ sel: on }" :aria-pressed="on" @click="emit('on', true)">{{ labels.on }}</button>
+      <button :class="{ sel: !on }" :aria-pressed="!on" @click="emit('on', false)">{{ labels.off }}</button>
     </div>
     <div v-if="on" class="figs" role="group" aria-label="Lehrer wählen">
       <button v-for="f in FIGUREN" :key="f.id" :class="{ sel: figur === f.id }" :aria-pressed="figur === f.id" :title="f.name" @click="emit('figur', f.id)">

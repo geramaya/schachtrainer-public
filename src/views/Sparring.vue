@@ -43,11 +43,10 @@ import MoveList from '../ui/MoveList.vue'
 import TeacherCard from '../ui/TeacherCard.vue'
 import TeacherPick from '../ui/TeacherPick.vue'
 import { FIGUREN, teacherOf } from '../teacher/avatar.ts'
-import { avatarMood } from '../teacher/mood.ts'
 import type { TeacherSettings } from '../teacher/avatar.ts'
 import { evaluateMove } from '../teacher/analyse.ts'
 import { judgeMove } from '../teacher/judge.ts'
-import { explainBest } from '../teacher/facts.ts'
+import { bestMoveText } from '../teacher/commentary.ts'
 import { lateHelp } from '../teacher/late-help.ts'
 import { access } from '../teacher/access.ts'
 import type { LateHelp } from '../teacher/late-help.ts'
@@ -57,14 +56,10 @@ import type { Held } from '../teacher/session.ts'
 import { repertoireNote, repertoireSentence } from '../teacher/repertoire.ts'
 import type { RepertoireNote } from '../teacher/repertoire.ts'
 import { LABEL, SYMBOL } from '../teacher/blocks.ts'
-import { pickQuip } from '../teacher/quips.ts'
-import type { QuipCategory, QuipFacts } from '../teacher/quips.ts'
 import { moveFacts, quipCategories } from '../teacher/quip-events.ts'
 import type { Rating } from '../teacher/judge.ts'
-import { QUIPS } from '../teacher/quips-data.ts'
-import { loadAudioManifest } from '../audio/manifest.ts'
-import { hasQuipAudio } from '../audio/quip-audio.ts'
-import { playQuip, stopQuip } from '../audio/play-quip.ts'
+import { stopQuip } from '../audio/play-quip.ts'
+import { useTeacherSpeech } from '../teacher/speech.ts'
 import BoardLayout from '../ui/BoardLayout.vue'
 import { EMPTY_VIEW } from '../coach/ceval.ts'
 import type { EngineView } from '../coach/ceval.ts'
@@ -112,35 +107,9 @@ const withTeacher = ref(false)
 const judging = ref(false)
 interface Said { j: Judgement | null; note: RepertoireNote | null; extra?: string; seed: string; /** planned repertoire move shown on request */ repShown?: boolean }
 const said = ref<Said | null>(null)
-// Quips: at most one per half-move, shown briefly at the avatar, optionally spoken
-const QUIP_SHOWN_MS = 9000
-/** Avatar feeling: the event of the last half-move for as long as a quip would run, then the position (evaluation of the last judged move). */
-const eventMood = ref<QuipCategory | null>(null)
-const positionCp = ref<number | null>(null)
-let moodTimer: ReturnType<typeof setTimeout> | undefined
-const mood = computed(() => avatarMood(teacher.value.figur, eventMood.value, positionCp.value))
-function setMood(category: QuipCategory | undefined) {
-  if (!withTeacher.value || !category) return
-  clearTimeout(moodTimer)
-  eventMood.value = category
-  moodTimer = setTimeout(() => { if (!pending.value) eventMood.value = null }, QUIP_SHOWN_MS)
-}
-const quip = ref('')
-let spoken: string[] = [] // this game's quips, against repetition
-let quipTimer: ReturnType<typeof setTimeout> | undefined
-const audioAvailable = ref(false)
-const clearQuip = () => { clearTimeout(quipTimer); quip.value = '' }
-function say(categories: readonly QuipCategory[], facts: QuipFacts, seed: string) {
-  setMood(categories[0])
-  if (!teacher.value.quips || !withTeacher.value) return
-  const q = pickQuip(QUIPS, teacher.value.figur, categories, facts, `${ucis.value.length}|${seed}`, spoken)
-  if (!q) return
-  spoken = [...spoken, q]
-  clearQuip()
-  quip.value = q
-  quipTimer = setTimeout(() => { if (!pending.value) quip.value = '' }, QUIP_SHOWN_MS)
-  if (teacher.value.speak && audioAvailable.value) void playQuip(teacher.value.figur, q)
-}
+// Quips and feeling: shared with the saved-game view and the analysis board (teacher/speech.ts)
+const speech = useTeacherSpeech({ teacher, enabled: () => withTeacher.value, hold: () => !!pending.value, seedKey: () => ucis.value.length })
+const { eventMood, positionCp, mood, quip, audioAvailable, say, clearQuip } = speech
 /** The quip for the move just applied (`ucis` already contains it). */
 function sayMove(fenBefore: string, uci: string, mine: boolean, rating: Rating | null, note: RepertoireNote | null) {
   const san = applyUci(fenBefore, uci)?.san ?? ''
@@ -207,8 +176,7 @@ function resetState() {
   ucis.value = []; lastMove.value = undefined
   result.value = ''; message.value = ''; thinking.value = false; view.value = null; rv.value = null; analysing.value = false; trained.value = 0
   said.value = null; pending.value = null; judging.value = false; retracted.value = []
-  clearQuip(); stopQuip(); spoken = []
-  clearTimeout(moodTimer); eventMood.value = null; positionCp.value = null
+  speech.reset()
   fullAnalysis.value = null
   help.value = null; helping.value = false; helps.value = { hints: 0, bests: 0, repertoire: 0 }; late.value = lateHelp(late.value, { kind: 'reset' })
 }
@@ -405,9 +373,7 @@ async function askHelp(kind: 'hint' | 'best') {
     try {
       const line = (await getEngine().analyse(at, { depth: TEACHER_DEPTH })).lines[0]
       if (mine !== token || fen.value !== at || !line) return
-      const san = applyUci(at, line.uci)?.san
-      const why = explainBest(at, line)
-      h = { fen: at, uci: line.uci, text: `Bester Zug: ${toGermanSan(san ?? line.uci)}${why ? `: ${why}` : '.'}`, hinted: false, shown: false }
+      h = { fen: at, uci: line.uci, text: bestMoveText(at, line), hinted: false, shown: false }
     } catch (e) {
       if (e instanceof CancelledError || mine !== token) return
       if (e instanceof EngineError) resetEngine()
@@ -570,11 +536,11 @@ function onKey(e: KeyboardEvent) {
   view.value = to
   e.preventDefault()
 }
-onMounted(() => { window.addEventListener('keydown', onKey); void loadAudioManifest().then((m) => { audioAvailable.value = hasQuipAudio(m) }) })
+onMounted(() => window.addEventListener('keydown', onKey))
 // Kept alive by Apply (tab switch): while hidden no keys and no speech; the game itself stays as it is.
 onDeactivated(() => { void noteSaver.flush(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
 onActivated(() => { window.removeEventListener('keydown', onKey); window.addEventListener('keydown', onKey) })
-onBeforeUnmount(() => { void noteSaver.flush(); clearTimeout(moodTimer); abandonGame(); token++; cancelEngine(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
+onBeforeUnmount(() => { void noteSaver.flush(); abandonGame(); token++; cancelEngine(); clearQuip(); stopQuip(); window.removeEventListener('keydown', onKey) })
 </script>
 
 <template>

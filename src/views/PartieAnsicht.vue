@@ -21,12 +21,20 @@ import { graphMarks } from '../analysis/marks.ts'
 import { NAME, SYMBOL } from '../analysis/category.ts'
 import { bookPliesOf, pickOpening } from '../train/free-play.ts'
 import { repertoireNote } from '../teacher/repertoire.ts'
-import { progress } from '../store/state.ts'
+import { progress, update } from '../store/state.ts'
 import type { ContentBundle } from '../content/types.ts'
 import { formatLine } from '../chess/notation.ts'
 import { EngineError } from '../engine/service.ts'
 import { cancelEngine, getEngine, resetEngine } from '../engine/instance.ts'
-import { FIGUREN } from '../teacher/avatar.ts'
+import { FIGUREN, teacherOf } from '../teacher/avatar.ts'
+import type { TeacherSettings } from '../teacher/avatar.ts'
+import TeacherCard from '../ui/TeacherCard.vue'
+import TeacherPick from '../ui/TeacherPick.vue'
+import { useTeacherSpeech, talk, setTalk } from '../teacher/speech.ts'
+import { balance, balanceMoves, gefuehlForCategory, quipCategoryOf, severityOfCategory } from '../teacher/commentary.ts'
+import { moveFacts } from '../teacher/quip-events.ts'
+import { moverAt } from '../analysis/build.ts'
+import { toGermanSan } from '../chess/notation.ts'
 import { navTarget, shouldHandleKey } from '../ui/keys.ts'
 import { downloadText } from '../ui/download.ts'
 import Board from '../ui/Board.vue'
@@ -137,6 +145,41 @@ function commentAt(i: number): string | null {
   }
   return moveComment(a, g.startFen, g.ucis, i, { repertoire })
 }
+// Teacher: walks through the game with the viewer (own comment text, feeling per category, optional quip) and sums up at the ends
+const teacher = computed(() => teacherOf(progress.value.settings))
+const setTeacher = (patch: Partial<TeacherSettings>) => update((p) => ({ ...p, settings: { ...p.settings, teacher: { ...p.settings.teacher, ...patch } } }))
+const speech = useTeacherSpeech({ teacher, enabled: () => talk.value.game, seedKey: () => view.value })
+const teacherName2 = computed(() => FIGUREN.find((f) => f.id === teacher.value.figur)!.name)
+const bilanz = computed(() => {
+  const g = game.value
+  const a = analysis.value
+  const s = summary.value
+  if (!g || !a || !s) return ''
+  const sides = mySide.value ? [mySide.value] : (['white', 'black'] as const)
+  return sides
+    .flatMap((side) => balance({ moves: balanceMoves(a.moves, g.sans.map(toGermanSan), (i) => moverAt(g.startFen, i), side), accuracy: s[side].accuracy, subject: mySide.value ? 'du' : side === 'white' ? 'Weiß' : 'Schwarz' }))
+    .join(' ')
+})
+const atEnds = computed(() => !!game.value && (view.value === 0 || view.value === game.value.ucis.length))
+const teacherCard = computed(() => {
+  const c = cat.value
+  const head = view.value > 0 && c ? { headline: `${SYMBOL[c]} ${NAME[c]}`, severity: severityOfCategory(c), text: comment.value ?? '' } : { headline: '', severity: '', text: '' }
+  if (view.value === 0) return { ...head, headline: 'Gesamtbilanz', text: bilanz.value || 'Analysiere die Partie, dann fasse ich sie hier zusammen.', note: '', gefuehl: speech.mood.value }
+  return { ...head, note: atEnds.value ? bilanz.value : '', gefuehl: gefuehlForCategory(teacher.value.figur, c) }
+})
+let sayTimer: ReturnType<typeof setTimeout> | undefined
+// a quip only for a single step through the game (not for jumps), debounced, and only for the viewer's own moves
+watch(view, (now, before) => {
+  clearTimeout(sayTimer)
+  speech.clearQuip()
+  const g = game.value
+  const c = cat.value
+  if (!g || !talk.value.game || !c || Math.abs(now - before) !== 1) return
+  const i = ply.value
+  if (mySide.value && moverAt(g.startFen, i) !== mySide.value) return
+  sayTimer = setTimeout(() => speech.say([quipCategoryOf(c)], moveFacts(fens.value[i] ?? '', g.ucis[i]!), `${g.id}|${i}`), 250)
+})
+onBeforeUnmount(() => clearTimeout(sayTimer))
 const graphMarkList = computed(() => (game.value && analysis.value ? graphMarks(analysis.value, game.value.startFen, game.value.ucis, { comment: commentAt }) : []))
 
 /** The move the board shows (ply = 0-based index), its comment and the own note. */
@@ -236,6 +279,15 @@ onBeforeUnmount(() => {
           <p v-if="!analysis" class="muted">Noch keine Analyse. Sie wird mit der Partie gespeichert und nicht neu gerechnet.</p>
         </template>
 
+        <TeacherPick
+          :on="talk.game" :figur="teacher.figur" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value" :labels="{ on: 'Lehrer an', off: 'Lehrer aus' }"
+          @on="setTalk({ game: $event })" @figur="setTeacher({ figur: $event })" @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+        />
+        <TeacherCard
+          v-if="talk.game && analysis" :figur="teacher.figur" :name="teacherName2" :gefuehl="teacherCard.gefuehl" :headline="teacherCard.headline" :severity="teacherCard.severity"
+          :text="teacherCard.text" :note="teacherCard.note" :blocked="false" :hinted="false" :quip="speech.quip.value" :quips="teacher.quips" :speak="teacher.speak" :audio="speech.audioAvailable.value"
+          @quips="setTeacher({ quips: $event })" @speak="setTeacher({ speak: $event })"
+        />
         <section v-if="view > 0" class="comment" :class="cat ? `q-${cat}` : ''" aria-label="Kommentar zum Zug">
           <h3>Zug {{ moveTitle }}<span v-if="cat" class="chip"><b class="sym">{{ SYMBOL[cat] }}</b> {{ NAME[cat] }}</span></h3>
           <p v-if="comment" class="said">{{ comment }}</p>
