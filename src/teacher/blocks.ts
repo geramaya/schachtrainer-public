@@ -9,7 +9,11 @@ const pick = (seed: string, variants: string[]): string => variants[hash(seed) %
 const de = toGermanSan
 
 /** "1 Bauerneinheit" / "3 Bauerneinheiten". */
-export const units = (n: number): string => `${n} ${n === 1 ? 'Bauerneinheit' : 'Bauerneinheiten'}`
+const UNITS_CAP = 10
+export const units = (n: number): string => (n > UNITS_CAP ? `mehr als ${UNITS_CAP} Bauerneinheiten` : `${n} ${n === 1 ? 'Bauerneinheit' : 'Bauerneinheiten'}`)
+
+/** Centipawns as "2,3 Bauerneinheiten"; above the cap "mehr als 10 Bauerneinheiten" (huge scores are search noise, not information). */
+export const pawnsText = (cp: number): string => (cp > UNITS_CAP * 100 ? units(UNITS_CAP + 1) : `${(cp / 100).toFixed(1).replace('.', ',')} Bauerneinheiten`)
 
 /** One sentence per category; `variants` = number of wordings, listed in BLOCKS for the report. */
 export function factSentence(f: Fact, seed: string): string {
@@ -49,8 +53,7 @@ export const SYMBOL: Record<Rating, string> = { best: '★', excellent: '✓✓'
 export function badgeTip(r: Rating, lossCp: number): string {
   if (r === 'best') return 'Der beste Zug der Engine.'
   if (r === 'excellent' || r === 'gut') return 'Fast so gut wie der beste Zug.'
-  const x = (lossCp / 100).toFixed(1).replace('.', ',')
-  return `${LABEL[r]}: ${lossCp < 5 ? 'kostet kaum etwas' : `verliert etwa ${x} Bauerneinheiten`} gegenüber dem besten Zug.`
+  return `${LABEL[r]}: ${lossCp < 5 ? 'kostet kaum etwas' : `verliert etwa ${pawnsText(lossCp)}`} gegenüber dem besten Zug.`
 }
 
 export const BOOK_NOTES = {

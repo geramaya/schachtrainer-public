@@ -325,3 +325,39 @@ test('the verdict badge explains its category with the loss of this move', () =>
   assert.equal(badgeTip('best', 0), 'Der beste Zug der Engine.')
   assert.equal(badgeTip('gut', 12), 'Fast so gut wie der beste Zug.')
 })
+
+// --- clear win / loss, mate, cap (XS 22.11.: 24.Db5+?! "7 vs 25,7 Bauerneinheiten") ---
+const WON_BEST = line('e2e4', ['e2e4', 'e7e5'], 2570)
+const WON_PLAYED = line('a2a3', ['a2a3', 'e7e5'], 500)
+
+test('clear win before and after: no pawn-unit gap, says "weiter klar auf Gewinn" and names the better move', () => {
+  const j = judgeMove(START, 'a2a3', ev(WON_BEST, WON_PLAYED))
+  assert.match(j.text, /Du stehst weiter klar auf Gewinn – e4 hätte schneller\/sicherer gewonnen\./)
+  assert.doesNotMatch(`${j.text} ${j.reveal}`, /Bauerneinheit/)
+})
+
+test('clear loss before and after: "an der Lage ändert das wenig"', () => {
+  const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4', 'e7e5'], -500), line('a2a3', ['a2a3', 'e7e5'], -2570)))
+  assert.match(j.text, /an der Lage ändert das wenig/)
+  assert.doesNotMatch(`${j.text} ${j.reveal}`, /Bauerneinheit/)
+})
+
+test('missed mate: "Matt in n" is named, never converted to pawn units', () => {
+  const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4', 'e7e5'], null, 5), line('a2a3', ['a2a3', 'e7e5'], 500)))
+  assert.match(j.text, /Du stehst weiter klar auf Gewinn – e4 hätte Matt in 5 erzwungen\./)
+  assert.doesNotMatch(j.text, /Bauerneinheit/)
+})
+
+test('pawn units are capped at "mehr als 10 Bauerneinheiten"', () => {
+  assert.equal(units(25), 'mehr als 10 Bauerneinheiten')
+  assert.equal(units(10), '10 Bauerneinheiten')
+  assert.match(badgeTip('fehler', 2570), /mehr als 10 Bauerneinheiten/)
+  const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4'], 150), line('a2a3', ['a2a3'], -1300)))
+  assert.doesNotMatch(j.text, /\d{2},\d Bauerneinheiten/)
+  assert.match(j.text, /mehr als 10 Bauerneinheiten/)
+})
+
+test('normal position unchanged: loss in pawn units with one decimal', () => {
+  const j = judgeMove(START, 'a2a3', ev(line('e2e4', ['e2e4'], 30), line('a2a3', ['a2a3', 'e7e5'], -200)))
+  assert.match(j.text, /Der beste Zug hätte dir etwa 2,3 Bauerneinheiten mehr gebracht\./)
+})
