@@ -12,3 +12,19 @@ export function loadingText(s: MaiaStatus): string {
     case 'error': return 'Maia konnte nicht geladen werden. Stockfish spielt stattdessen.'
   }
 }
+
+/** How long "Maia bereit" stays visible after loading. */
+export const READY_SHOWN_MS = 3000
+export type MaiaStatusMode = 'full' | 'line' | 'none'
+
+/**
+ * How much room the Maia state takes: the full block (text, bar, button; fixed height) while loading, checking or failed -
+ * and in the setup while idle (the "preload" offer); "ready" is one short line for READY_SHOWN_MS, then gone.
+ */
+export function maiaStatusMode(s: MaiaStatus, o: { setup: boolean; readyShownMs: number }): MaiaStatusMode {
+  switch (s.state) {
+    case 'loading': case 'error': return 'full'
+    case 'idle': return o.setup ? 'full' : 'none'
+    case 'ready': return o.readyShownMs < READY_SHOWN_MS ? 'line' : 'none'
+  }
+}

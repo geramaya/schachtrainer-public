@@ -30,6 +30,7 @@ import PlayerBar from '../ui/PlayerBar.vue'
 import { barSides, flipSide } from '../ui/orientation.ts'
 import { applySparringId } from '../train/pipeline.ts'
 import { hrefPartien } from '../router.ts'
+import { afterAnalysisHash } from '../games/after-analysis.ts'
 import { bookPliesOf, gameRecord, pickOpening } from '../train/free-play.ts'
 import type { GameRecord, Outcome } from '../train/free-play.ts'
 import { addResults, listGames, ratingOf, saveGame, setNote } from '../games/library.ts'
@@ -365,9 +366,7 @@ function finishGame(text: string, outcome: Outcome) {
   savedIds.set(gameKey, autoSave(record))
 }
 /** Every finished game goes into the browser database; a failure is shown, the game stays on screen. */
-let savedId: string | null = null
 async function autoSave(record: GameRecord): Promise<string | null> {
-  savedId = null
   if (!record.ucis.length) return null
   const mine = token
   const openingId = openingAt(ucis.value)
@@ -383,8 +382,7 @@ async function autoSave(record: GameRecord): Promise<string | null> {
   })
   const rating = ratingOf(await listGames(gameStore).catch(() => []), stored) // Wertungspartie: the own rating before and after this game
   const r = await saveGame(gameStore, rating ? { ...stored, rating } : stored)
-  if (r.ok && mine === token) savedId = r.id
-  else if (!r.ok && mine === token) message.value = `Die Partie wurde nicht gespeichert: ${r.message}`
+  if (!r.ok && mine === token) message.value = `Die Partie wurde nicht gespeichert: ${r.message}`
   return r.ok ? r.id : null // also after a reset: a note typed meanwhile still needs the id
 }
 /** A running game that is left (other page, other start position) is kept as an unfinished game. */
@@ -614,7 +612,11 @@ async function analyseGame() {
     rv.value = { errors: reviewErrors(startFen.value, ucis.value, ev, mySide.value), exit: bookExit(ucis.value, props.bundle, openingAt(ucis.value), progress.value.overlays, startFen.value) }
     // review and analysis in ONE write: two writes would read the stored game and overwrite each other
     const review = { marks: rv.value.errors.map((e) => ({ ply: e.ply, severity: e.severity, lossCp: e.lossCp, betterSan: e.betterSan })), bookExit: rv.value.exit }
-    void saveResults(review, analysis)
+    const id = await savedIds.get(gameKey)
+    const stored = await saveResults(id ?? null, review, analysis)
+    if (mine !== token) return
+    const target = afterAnalysisHash(id ?? null, stored)
+    if (target) location.hash = target // the game view of the stored game: starts at the first position, the teacher comments each move
   } catch (e) {
     if (mine !== token) return
     if (e instanceof EngineError) resetEngine()
@@ -627,10 +629,11 @@ function cancelAnalysis() { cancelled = true; cancelEngine() }
 
 // Full analysis (move signs, evaluations, graph), stored with the game
 const fullAnalysis = ref<GameAnalysis | null>(null)
-async function saveResults(review: StoredReview, a: GameAnalysis) {
-  if (!savedId) return
-  const r = await addResults(gameStore, savedId, { review, analysis: a })
+async function saveResults(id: string | null, review: StoredReview, a: GameAnalysis): Promise<boolean> {
+  if (!id) return false
+  const r = await addResults(gameStore, id, { review, analysis: a })
   if (!r.ok) message.value = `Die Analyse wurde nicht gespeichert: ${r.message}`
+  return r.ok
 }const labels = computed(() => (fullAnalysis.value ? moveLabels(fullAnalysis.value) : { nags: {} as Record<number, string>, cats: {} as Record<number, string>, titles: {} as Record<number, string> }))
 const graphMarkList = computed(() => (fullAnalysis.value ? graphMarks(fullAnalysis.value, startFen.value, ucis.value, { comment: (i) => moveComment(fullAnalysis.value!, startFen.value, ucis.value, i) }) : []))
 const summary = computed(() => (fullAnalysis.value ? summarize(fullAnalysis.value, startFen.value) : null))
@@ -813,14 +816,6 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
           <p v-if="message" class="verdict" role="status">{{ message }}</p>
           <div v-if="phase === 'over'" class="expl">
             <p class="verdict" role="status">{{ result }}</p>
-            <label v-if="shownPly > 0" class="note">Eigene Notiz zu Zug {{ formatLine([moveSans[shownPly - 1]!], startPly + shownPly - 1) }}
-              <textarea v-model="noteDraft" rows="2" maxlength="500" @input="onNoteInput"></textarea>
-              <span class="status" role="status">
-                <template v-if="noteStatus?.kind === 'saving'">speichert …</template>
-                <template v-else-if="noteStatus?.kind === 'saved'">gespeichert ✓</template>
-                <template v-else-if="noteStatus?.kind === 'error'"><span class="err">{{ noteStatus.message }}</span></template>
-              </span>
-            </label>
             <div v-if="withTeacher" class="bilanz">
               <h3>Lehrer-Bilanz</h3>
               <p>Rücknahmen: <b>{{ retracted.length }}</b><template v-if="retracted.length"> – {{ retracted.map((e) => `${SEVERITY[e.severity]} ${formatLine([e.san], startPlyOf(e))}`).join(', ') }}</template></p>
@@ -851,6 +846,14 @@ onBeforeUnmount(() => { stopTicker(); void noteSaver.flush(); abandonGame(); tok
               <p v-if="trained" class="muted" role="status">{{ trained }} Karten angelegt (Herkunft: Partie). <a class="linkbtn" :href="hrefPartien()">Jetzt üben</a></p>
               <p v-if="view !== null" class="muted"><button @click="view = null">Zur Endstellung</button></p>
             </div>
+            <label v-if="shownPly > 0" class="note">Eigene Notiz zu Zug {{ formatLine([moveSans[shownPly - 1]!], startPly + shownPly - 1) }}
+              <textarea v-model="noteDraft" rows="2" maxlength="500" @input="onNoteInput"></textarea>
+              <span class="status" role="status">
+                <template v-if="noteStatus?.kind === 'saving'">speichert …</template>
+                <template v-else-if="noteStatus?.kind === 'saved'">gespeichert ✓</template>
+                <template v-else-if="noteStatus?.kind === 'error'"><span class="err">{{ noteStatus.message }}</span></template>
+              </span>
+            </label>
           </div>
         </template>
       </div>
