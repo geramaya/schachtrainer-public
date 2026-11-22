@@ -1,0 +1,26 @@
+[
+ {
+  "id": "italian-sxe4",
+  "titel": "Schwarz schlägt auf e4",
+  "fen": "r1bqkb1r/pppp1ppp/2n5/4p1N1/2B1n3/8/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+  "loesung": "Bxf7+",
+  "satz": "Nach Sg5 schlägt Schwarz auf e4. Du antwortest Lxf7+: Das Schlagen auf e4 kostet Schwarz laut Engine (Tiefe 18) etwa zwei Bauern im Wert gegenüber dem besten Zug, und f7 war nur vom König gedeckt.",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game; Stockfish Tiefe 18 (aufgaben.json, fallenKandidaten)"
+ },
+ {
+  "id": "italian-evans-sf6",
+  "titel": "Evans-Gambit: Schwarz spielt Sf6, ohne das Läuferproblem zu lösen",
+  "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 2 8",
+  "loesung": "cxd4",
+  "satz": "Im Evans-Gambit spielt Schwarz Sf6. Du schlägst mit dem c-Bauern auf d4 und greifst damit den Läufer auf c5 an; Sf6 kostet Schwarz laut Engine (Tiefe 18) etwa zweieinhalb Bauern im Wert gegenüber dem besten Zug.",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json, fallenKandidaten)"
+ },
+ {
+  "id": "italian-fried-liver-df6",
+  "titel": "Fried Liver: Schwarz greift mit der Dame an",
+  "fen": "r1b1kb1r/ppp2Npp/2n2q2/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 1 7",
+  "loesung": "Bxd5",
+  "satz": "Nach dem Opfer auf f7 greift Schwarz mit Df6 den Springer auf f7 an, lässt dabei aber den Springer auf d5 ungedeckt. Du schlägst Lxd5: Df6 kostet Schwarz laut Engine (Tiefe 18) etwa viereinhalb Bauern im Wert gegenüber dem besten Zug (Kxf7).",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json, fallenKandidaten); Lxd5 Bestzug auch bei Stockfish Tiefe 22 (eigene Prüfung: +5,95 gegenüber Sxh8 +4,36 und Sc3 +1,75)"
+ }
+]

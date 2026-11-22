@@ -1,0 +1,792 @@
+{
+ "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -|e4": {
+  "satz": "Du besetzt mit dem e-Bauern gleich die Mitte – so beginnt jede Partie in diesem Lehrgang.",
+  "status": "entwurf"
+ },
+ "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -|e5": {
+  "satz": "Schwarz hält die Mitte ebenfalls besetzt; mit dieser Antwort rechnest du fast immer.",
+  "status": "entwurf"
+ },
+ "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -|Nf3": {
+  "satz": "Der Springer kommt ins Spiel und greift den Bauern auf e5 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf3e5"
+  ]
+ },
+ "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -|Nc6": {
+  "satz": "Schwarz deckt den Bauern auf e5 mit dem Springer und entwickelt sich dabei.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc6e5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -|Bc4": {
+  "satz": "Der Läufer zielt auf f7: Dort verteidigt nur der König. Das ist der Grund für diesen Zug.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game",
+  "pfeile": [
+   "Gc4f7"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|Bc5": {
+  "satz": "Schwarz entwickelt den Läufer und zielt auf f2 – das Giuoco Piano, in etwa 3 von 10 Fällen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game",
+  "pfeile": [
+   "Rc5f2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -|b4": {
+  "satz": "Du bietest den b-Bauern an, um den Läufer auf c5 anzugreifen und dir ein starkes Zentrum zu holen (Evans-Gambit). Die Engine sieht die Stellung danach ausgeglichen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Gb4c5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|Nf6": {
+  "satz": "Mit dem Springer greift Schwarz deinen e4-Bauern an – das ist die Zwei-Springer-Verteidigung, in etwa 3 von 10 Fällen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -|Ng5": {
+  "satz": "Springer und Läufer greifen f7 gemeinsam an, und dort verteidigt nur der König. Die Engine sieht die Stellung danach ausgeglichen: Du spielst auf Wirkung gegen unvorbereitete Gegner (dein Repertoire-Dokument nennt es High Risk, High Reward).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Gg5f7",
+   "Gc4f7"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq -|d5": {
+  "satz": "Das ist laut Wikipedia die einzige gute Verteidigung: Der Bauer stellt sich dem Läufer in den Weg und greift ihn an.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rd5c4",
+   "Rd5e4"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/2n2n2/3pp1N1/2B1P3/8/PPPP1PPP/RNBQK2R w KQkq -|exd5": {
+  "satz": "Du nimmst den Bauern und greifst mit ihm den Springer auf c6 an. Schwarz bekommt dafür laut Wikipedia schnelle Entwicklung und Initiative.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Gd5c6"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -|Bxb4": {
+  "satz": "Schwarz nimmt das Opfer an (so spielt es die Mehrheit laut Wikipedia) und greift mit dem Läufer den Bauern auf d2 an.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Rb4d2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq -|c3": {
+  "satz": "Du greifst den Läufer noch einmal an und gewinnst Zeit für den Aufbau der Mitte. Die Engine sieht die Stellung noch ungefähr ausgeglichen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Gc3b4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/2P2N2/P2P1PPP/RNBQK2R b KQkq -|Bc5": {
+  "satz": "Der Läufer geht zurück auf c5 und zielt wieder auf f2. Wikipedia hält das für die schwächere Wahl, weil du mit dem d-Bauern gleich Zeit gewinnst; die Engine sieht die Stellung danach trotzdem nur als ausgeglichen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Rc5f2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/P2P1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Der Bauer d4 greift den Läufer c5 und den Bauern e5 an; der Läufer muss ausweichen. So gewinnst du laut Wikipedia einen Zug (ein Tempo) Vorsprung in der Entwicklung.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Gd4c5",
+   "Gd4e5"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R b KQkq -|Nxd5": {
+  "satz": "Schwarz holt den Bauern zurück. Wikipedia nennt das für die Praxis zu riskant, und die Engine sieht Weiß danach leicht besser (+0,97). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense"
+ },
+ "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq -|Nxf7": {
+  "satz": "Der Fried-Liver-Angriff: Du gibst den Springer für einen Angriff auf den König und greifst dabei Dame und Turm an. Die Engine sieht dich danach leicht besser (+0,95).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack",
+  "pfeile": [
+   "Gf7d8",
+   "Gf7h8"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz nimmt den Bauern auf d4 und greift damit deinen Bauern auf c3 an. Die Engine sieht die Stellung trotzdem noch ausgeglichen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Rd4c3"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/2BpP3/2P2N2/P4PPP/RNBQK2R w KQkq -|O-O": {
+  "satz": "Du rochierst und bietest einen zweiten Bauern an (so beschreibt es Wikipedia). Die Engine sieht die Stellung dabei ausgeglichen (+0,39).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq -|Kxf7": {
+  "satz": "Schwarz nimmt den Springer mit dem König. Die Engine sieht dich trotzdem leicht besser (+0,72).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack"
+ },
+ "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQ -|Qf3+": {
+  "satz": "Du gibst Schach und greifst zugleich den Springer auf d5 an; der König muss ziehen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack",
+  "pfeile": [
+   "Gf3f7",
+   "Gf3d5"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R b KQkq -|Na5": {
+  "satz": "Der Springer greift deinen Läufer an, bevor du weiter angreifst. Wikipedia nennt 5…Sa5 die übliche Antwort und beschreibt es als Bauernopfer für Entwicklungsvorsprung.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Ra5c4"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/5n2/n2Pp1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq -|Bb5+": {
+  "satz": "Du gibst Schach und rettest damit den Läufer vor dem Springer auf a5.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Gb5e8"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/2BpP3/2P2N2/P4PPP/RNBQ1RK1 b kq -|dxc3": {
+  "satz": "Schwarz nimmt noch einen Bauern. Die Engine sieht dich danach klar besser (+1,23).",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/2B1P3/2p2N2/P4PPP/RNBQ1RK1 w kq -|Bxf7+": {
+  "satz": "Du schlägst den Bauern auf f7 mit Schach und greifst zugleich den Springer auf g8 an. Die Engine sieht dich klar besser (+1,07).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf7e8",
+   "Gf7g8"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/5n2/nB1Pp1N1/8/8/PPPP1PPP/RNBQK2R b KQkq -|c6": {
+  "satz": "Schwarz stellt den Bauern dazwischen: Er greift deinen Läufer auf b5 und den Bauern auf d5 an. Die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rc6b5",
+   "Rc6d5"
+  ]
+ },
+ "r1bqkb1r/pp3ppp/2p2n2/nB1Pp1N1/8/8/PPPP1PPP/RNBQK2R w KQkq -|dxc6": {
+  "satz": "Du nimmst den Bauern auf c6 und greifst den Bauern auf b7 an. Schwarz hat dafür Entwicklungsvorsprung (Wikipedia).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Gc6b7"
+  ]
+ },
+ "r1bqkb1r/pp3ppp/2P2n2/nB2p1N1/8/8/PPPP1PPP/RNBQK2R b KQkq -|bxc6": {
+  "satz": "Schwarz schlägt zurück und greift mit dem Bauern c6 deinen Läufer auf b5 an. Seine Bauern auf a und c stehen jetzt allein. Die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rc6b5"
+  ]
+ },
+ "r1bqkb1r/p4ppp/2p2n2/nB2p1N1/8/8/PPPP1PPP/RNBQK2R w KQkq -|Be2": {
+  "satz": "Du ziehst den Läufer zurück und rettest ihn vor dem Bauern auf c6.",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/pppp1Bpp/2n5/2b5/4P3/2p2N2/P4PPP/RNBQ1RK1 b kq -|Kxf7": {
+  "satz": "Schwarz nimmt den Läufer mit dem König. Die Engine sieht dich klar besser (+1,21).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bq2nr/pppp1kpp/2n5/2b5/4P3/2p2N2/P4PPP/RNBQ1RK1 w - -|Qd5+": {
+  "satz": "Du gibst Schach und greifst zugleich Springer c6 und Läufer c5 an. Die Engine sieht dich klar besser (+1,08).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd5c6",
+   "Gd5c5"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -|Bb6": {
+  "satz": "Schwarz weicht dem Bauern aus und lehnt das Opfer ab. Wikipedia sieht das meist als schwächer an, weil Schwarz dafür einen Zug verliert (ein Tempo).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Rb6f2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1bn5/4p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R w KQkq -|b5": {
+  "satz": "Der Bauer greift den Springer auf c6 an. Die Engine sieht die Stellung danach ausgeglichen (−0,42); diese Nebenlinie kommt selten vor.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gb5c6"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|Nd4": {
+  "satz": "Schwarz greift mit dem Springer deinen Springer auf f3 und den Bauern auf c2 an. Die Engine sieht dich danach klar besser (+1,07).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4f3",
+   "Rd4c2"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq -|Nxd4": {
+  "satz": "Du nimmst den Springer. Die Engine sieht dich klar besser (+1,08).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/8/4p3/2BNP3/8/PPPP1PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt zurück und holt den Springer. Die Engine sieht dich klar besser (+1,12).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/8/8/2BpP3/8/PPPP1PPP/RNBQK2R w KQkq -|O-O": {
+  "satz": "Du rochierst. Die Engine sieht dich weiter klar besser (+1,20).",
+  "status": "entwurf"
+ },
+ "r1bq2nr/pppp1kpp/2n5/2bQ4/4P3/2p2N2/P4PPP/RNB2RK1 b - -|Ke8": {
+  "satz": "Der König geht zurück nach e8 und deckt Dame und Bauern auf d7. Die Engine sieht dich klar besser (+1,22).",
+  "status": "entwurf",
+  "pfeile": [
+   "Be8d8"
+  ]
+ },
+ "r1bqk1nr/pppp2pp/2n5/2bQ4/4P3/2p2N2/P4PPP/RNB2RK1 w - -|Qh5+": {
+  "satz": "Du gibst Schach und greifst zugleich den Läufer auf c5 und den Bauern auf h7 an. Die Engine sieht dich klar besser (+1,04).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gh5c5",
+   "Gh5h7"
+  ]
+ },
+ "r1bqk1nr/pppp2pp/2n5/2b4Q/4P3/2p2N2/P4PPP/RNB2RK1 b - -|g6": {
+  "satz": "Der Bauer greift deine Dame auf h5 an. Die Engine sieht dich danach klar besser (+2,99).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rg6h5"
+  ]
+ },
+ "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R b KQ -|Ke6": {
+  "satz": "Der König geht nach e6 und deckt Springer und Bauern. Wikipedia nennt das die übliche Antwort auf Dame f3 mit Schach.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack",
+  "pfeile": [
+   "Be6d5",
+   "Be6e5"
+  ]
+ },
+ "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R w KQ -|Nc3": {
+  "satz": "Du entwickelst den Springer und greifst den Springer auf d5 an; er ist durch deinen Läufer c4 an den König gebunden (gefesselt, Wikipedia).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack",
+  "pfeile": [
+   "Gc3d5"
+  ]
+ },
+ "r1bqkb1r/p4ppp/2p2n2/n3p1N1/8/8/PPPPBPPP/RNBQK2R b KQkq -|h6": {
+  "satz": "Der Bauer greift deinen Springer auf g5 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rh6g5"
+  ]
+ },
+ "r1bqkb1r/p4pp1/2p2n1p/n3p1N1/8/8/PPPPBPPP/RNBQK2R w KQkq -|Nf3": {
+  "satz": "Du ziehst den Springer zurück, er greift wieder den Bauern auf e5 an. Die Engine sieht die Stellung ausgeglichen (−0,35).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf3e5"
+  ]
+ },
+ "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R b KQ -|Ke8": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz geht mit dem König zurück nach e8 und deckt Dame und Läufer; die Engine sieht dich danach klar besser (+2,65).",
+  "status": "entwurf",
+  "pfeile": [
+   "Be8d8"
+  ]
+ },
+ "r1bqkb1r/p4pp1/2p2n1p/n3p3/8/5N2/PPPPBPPP/RNBQK2R b KQkq -|e4": {
+  "satz": "Der Bauer greift deinen Springer auf f3 an. Die Engine sieht die Stellung ausgeglichen (−0,13).",
+  "status": "entwurf",
+  "pfeile": [
+   "Re4f3"
+  ]
+ },
+ "r1bqkb1r/p4pp1/2p2n1p/n7/4p3/5N2/PPPPBPPP/RNBQK2R w KQkq -|Ne5": {
+  "satz": "Der Springer greift die Bauern auf f7 und c6 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Ge5f7",
+   "Ge5c6"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1bn5/1P2p3/2B1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -|Nd4": {
+  "satz": "Der Springer greift Bauer b5, Springer f3 und Bauer c2 zugleich an. Die Engine sieht die Stellung danach ausgeglichen (+0,31).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4b5",
+   "Rd4f3",
+   "Rd4c2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P2p3/2BnP3/5N2/P1PP1PPP/RNBQK2R w KQkq -|Nxd4": {
+  "satz": "Du nimmst den Springer und beendest damit die Drohungen auf b5 und c2. Die Engine sieht die Stellung ausgeglichen (+0,45).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|h6": {
+  "satz": "Schwarz zieht einen Randbauern, statt sich zu entwickeln. Wikipedia hält das für Zeitverschwendung, aber nicht für widerlegt; die Engine sieht dich leicht besser (+0,64).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game"
+ },
+ "r1bqkbnr/pppp1pp1/2n4p/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht dich leicht besser (+0,77).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqkbnr/pppp1pp1/2n4p/4p3/2BPP3/5N2/PPP2PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt den Bauern auf d4. Die Engine sieht dich weiter leicht besser (+0,67).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1pp1/2n4p/8/2BpP3/5N2/PPP2PPP/RNBQK2R w KQkq -|Nxd4": {
+  "satz": "Du holst den Bauern zurück und greifst den Springer auf c6 an. Die Engine sieht dich leicht besser (+0,63).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4c6"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|d6": {
+  "satz": "Schwarz deckt den Bauern auf e5 mit dem d-Bauern. Wikipedia nennt das die Semi-Italienische Eröffnung, heute selten; in deinem Spielbereich kommt es trotzdem vor.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game",
+  "pfeile": [
+   "Bd6e5"
+  ]
+ },
+ "r1bqkbnr/ppp2ppp/2np4/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -|Nc3": {
+  "satz": "Du entwickelst den Springer und deckst den Bauern auf e4. Die Engine sieht die Stellung ausgeglichen (+0,38).",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3e4"
+  ]
+ },
+ "r1bqkbnr/pppp1pp1/2n4p/8/2BNP3/8/PPP2PPP/RNBQK2R b KQkq -|Nxd4": {
+  "satz": "Schwarz tauscht die Springer und greift den Bauern auf c2 an. Die Engine sieht dich klar besser (+1,23).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4c2"
+  ]
+ },
+ "r1bqkbnr/pppp1pp1/7p/8/2BnP3/8/PPP2PPP/RNBQK2R w KQkq -|Qxd4": {
+  "satz": "Du nimmst mit der Dame zurück und greifst die Bauern auf a7, d7 und g7 an. Die Engine sieht dich klar besser (+1,24).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4a7",
+   "Gd4d7",
+   "Gd4g7"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/2P2N2/P2P1PPP/RNBQK2R b KQkq -|Ba5": {
+  "satz": "Der Läufer greift deinen Bauern auf c3 an; das ist die Hauptlinie des Evans-Gambits (Wikipedia).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Ra5c3"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/b3p3/2B1P3/2P2N2/P2P1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Du stellst mit d4 die Mitte auf und greifst den Bauern auf e5 an. Der Läufer auf a5 fesselt den Bauern c3 und hindert dich später, mit ihm auf d4 zurückzuschlagen (Wikipedia).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/b3p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz nimmt den zweiten Bauern. Die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bqk1nr/pppp1ppp/2n5/b7/2BpP3/2P2N2/P4PPP/RNBQK2R w KQkq -|O-O": {
+  "satz": "Du rochierst und gibst den zweiten Bauern preis (Wikipedia: Evans-Hauptlinie). Die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq -|Bc5": {
+  "satz": "Schwarz ignoriert die Drohung auf f7 und zielt selbst auf f2 – laut Wikipedia führt das zu wilden Verwicklungen. Die Engine sieht dich danach leicht besser (+0,96).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rc5f2"
+  ]
+ },
+ "r1bqk2r/pppp1ppp/2n2n2/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R w KQkq -|Bxf7+": {
+  "satz": "Du schlägst den Bauern auf f7 mit Schach. Die Engine sieht dich klar besser (+1,00).",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/2P2N2/P2P1PPP/RNBQK2R b KQkq -|Be7": {
+  "satz": "Der Läufer geht zurück nach e7. Wikipedia nennt das eine sichere und praktische Alternative; die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bqk1nr/ppppbppp/2n5/4p3/2B1P3/2P2N2/P2P1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht ungefähr Gleichstand.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -|Be7": {
+  "satz": "Schwarz entwickelt den Läufer; das ist die Ungarische Verteidigung. Wikipedia nennt sie solide und eher remislastig.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game"
+ },
+ "r1bqk1nr/ppppbppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht die Stellung ausgeglichen (+0,47).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1bn5/1P2p3/2B1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -|Na5": {
+  "satz": "Der Springer greift deinen Läufer auf c4 an. Die Engine sieht die Stellung ausgeglichen (−0,35).",
+  "status": "entwurf",
+  "pfeile": [
+   "Ra5c4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/nP2p3/2B1P3/5N2/P1PP1PPP/RNBQK2R w KQkq -|Nxe5": {
+  "satz": "Du nimmst den Bauern auf e5 und greifst die Bauern auf d7 und f7 an. Die Engine sieht die Stellung ausgeglichen (−0,31).",
+  "status": "entwurf",
+  "pfeile": [
+   "Ge5d7",
+   "Ge5f7"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 b kq -|dxc3": {
+  "satz": "Schwarz nimmt noch einen Bauern (Compromised Defence). Die Engine sieht die Stellung danach ausgeglichen (+0,46).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+ },
+ "r1bqk1nr/pppp1ppp/2n5/b7/2B1P3/2p2N2/P4PPP/RNBQ1RK1 w kq -|Qb3": {
+  "satz": "Du greifst den Bauern auf b7 und den Bauern auf c3 zugleich an. Die Engine sieht dich leicht besser (+0,62).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gb3b7",
+   "Gb3c3"
+  ]
+ },
+ "r1bqkbnr/pppp1pp1/7p/8/2BQP3/8/PPP2PPP/RNB1K2R b KQkq -|d6": {
+  "satz": "Schwarz kontrolliert mit dem d-Bauern das Feld e5. Die Engine sieht dich klar besser (+1,28).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/ppp2pp1/3p3p/8/2BQP3/8/PPP2PPP/RNB1K2R w KQkq -|Nc3": {
+  "satz": "Du entwickelst den Springer und deckst den Bauern auf e4. Die Engine sieht dich klar besser (+1,22).",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3e4"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R b KQkq -|Nd4": {
+  "satz": "Der Springer greift den Bauern auf c2 an. Wikipedia nennt 5…Sd4 die Fritz-Variante.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense",
+  "pfeile": [
+   "Rd4c2"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/5n2/3Pp1N1/2Bn4/8/PPPP1PPP/RNBQK2R w KQkq -|c3": {
+  "satz": "Du greifst den Springer auf d4 an. Die Engine sieht die Stellung ausgeglichen (+0,36).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gc3d4"
+  ]
+ },
+ "r1bqkbnr/ppp2ppp/2np4/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq -|Bg4": {
+  "satz": "Der Läufer entwickelt sich und greift deinen Springer auf f3 an. Die Engine sieht dich leicht besser (+0,68).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rg4f3"
+  ]
+ },
+ "r2qkbnr/ppp2ppp/2np4/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq -|h3": {
+  "satz": "Du greifst den Läufer auf g4 an. Die Engine sieht die Stellung ausgeglichen (+0,42).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gh3g4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -|Nxb4": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz nimmt den Bauern mit dem Springer und greift die Bauern auf a2 und c2 an; Wikipedia nennt das weniger flexibel als das Schlagen mit dem Läufer.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit",
+  "pfeile": [
+   "Rb4a2",
+   "Rb4c2"
+  ]
+ },
+ "r1bqk1nr/ppppbppp/2n5/4p3/2BPP3/5N2/PPP2PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt den Bauern auf d4. Die Engine sieht die Stellung ausgeglichen (+0,49).",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/ppppbppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R w KQkq -|c3": {
+  "satz": "Du greifst den Bauern auf d4 an. Die Engine sieht ungefähr Gleichstand (+0,20).",
+  "status": "entwurf",
+  "pfeile": [
+   "Gc3d4"
+  ]
+ },
+ "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R b KQ -|Qf6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame deine Dame auf f3 an; die Engine sieht dich danach klar besser (+2,81).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6f3"
+  ]
+ },
+ "r1bqk2r/pppp1Bpp/2n2n2/2b1p1N1/4P3/8/PPPP1PPP/RNBQK2R b KQkq -|Kf8": {
+  "satz": "Der König zieht nach f8 und greift deinen Läufer auf f7 an. Die Engine sieht dich klar besser (+1,28).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf8f7"
+  ]
+ },
+ "r1bq1k1r/pppp1Bpp/2n2n2/2b1p1N1/4P3/8/PPPP1PPP/RNBQK2R w KQ -|Bb3": {
+  "satz": "Du ziehst den Läufer zurück nach b3. Die Engine sieht dich klar besser (+1,36).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1pp1/2n4p/4p3/2BPP3/5N2/PPP2PPP/RNBQK2R b KQkq -|d6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz deckt den Bauern auf e5 mit dem d-Bauern; die Engine sieht dich leicht besser (+0,70).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Italian_Game",
+  "pfeile": [
+   "Bd6e5"
+  ]
+ },
+ "r1bqk1nr/ppppbppp/2n5/4p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt den Bauern auf d4. Die Engine sieht noch ungefähr Gleichstand.",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/ppppbppp/2n5/8/2BpP3/2P2N2/P4PPP/RNBQK2R w KQkq -|cxd4": {
+  "satz": "Du holst den Bauern zurück. Die Engine sieht ungefähr Gleichstand (+0,05).",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/8/8/2BpP3/8/PPPP1PPP/RNBQ1RK1 b kq -|Bc5": {
+  "satz": "Schwarz stellt den Läufer nach c5 und deckt damit den Bauern auf d4. Dafür ist f7 wieder nur vom König gedeckt: Mit Lxf7+ Kxf7 Dh5+ Ke7 Dxc5+ gewinnst du den Läufer und danach den Bauern auf d4, zusammen zwei Bauern (Wikibooks versieht Lc5 mit einem Fragezeichen). Die Engine sieht dich danach auf Gewinn (+3,67).",
+  "status": "entwurf",
+  "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Bc4/3...Nd4; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bc5d4"
+  ],
+  "felder": [
+   "Yf7"
+  ]
+ },
+ "r1bqk1nr/pppp3p/2n3p1/2b4Q/4P3/2p2N2/P4PPP/RNB2RK1 w - -|Qxc5": {
+  "satz": "Du nimmst mit der Dame den Läufer auf c5: Er steht ungedeckt, denn Schwarz musste zweimal auf Schach antworten. Die Dame greift jetzt auch den Bauern auf c3 an, und die Engine sieht dich auf Gewinn (+3,12).",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Gc5c3",
+   "Gc5a7"
+  ]
+ },
+ "r1bqk1nr/pppp3p/2n3p1/2Q5/4P3/2p2N2/P4PPP/RNB2RK1 b - -|d6": {
+  "satz": "Der Bauer greift deine Dame auf c5 an. Sie weicht aus und holt dabei den Bauern auf c3; die Engine sieht dich weiter auf Gewinn (+3,39). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rd6c5"
+  ]
+ },
+ "r1bqk1nr/ppp4p/2np2p1/2Q5/4P3/2p2N2/P4PPP/RNB2RK1 w - -|Qxc3": {
+  "satz": "Du schlägst den Bauern auf c3 und greifst dabei den Turm auf h8 und den Springer auf c6 an. Der schwarze König steht noch in der Mitte, und die Engine sieht dich auf Gewinn (+3,60).",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Gc3h8",
+   "Gc3c6"
+  ]
+ },
+ "r1bqk1nr/ppp4p/2np2p1/8/4P3/2Q2N2/P4PPP/RNB2RK1 b - -|Nf6": {
+  "satz": "Der Springer greift deinen Bauern auf e4 an und stellt sich zugleich auf die Diagonale zwischen deiner Dame und dem Turm auf h8. Die Engine sieht dich weiter auf Gewinn (+3,43). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/2N2Q2/PPPP1PPP/R1B1K2R b KQ -|Nb4": {
+  "satz": "Der Springer greift deine Bauern auf a2 und c2 an; Schwarz will mit c6 den gefesselten Springer auf d5 stützen (Wikipedia). Die Engine sieht dich nur leicht besser (+0,91).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rb4a2",
+   "Rb4c2"
+  ]
+ },
+ "r1bq1b1r/ppp3pp/4k3/3np3/1nB5/2N2Q2/PPPP1PPP/R1B1K2R w KQ -|O-O": {
+  "satz": "Du rochierst, bevor du weiter angreifst: Dein König ist sicher, der von Schwarz steht auf e6 und kann nicht mehr rochieren. Wikipedia führt die Rochade unter den besseren Zügen auf, und die Engine sieht dich klar besser (+1,06).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bf1f2"
+  ]
+ },
+ "r1bq1b1r/ppp3pp/4k3/3np3/1nB5/2N2Q2/PPPP1PPP/R1B2RK1 b - -|c6": {
+  "satz": "Der c-Bauern stützt den gefesselten Springer auf d5, den dein Läufer c4 festhält. Die Engine sieht dich nur noch leicht besser (+0,81). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bc6d5"
+  ]
+ },
+ "r1bq1b1r/pp4pp/2p1k3/3np3/1nB5/2N2Q2/PPPP1PPP/R1B2RK1 w - -|d4": {
+  "satz": "Du greifst den Bauern auf e5 an und öffnest dem Läufer c1 den Weg. Schwarz kommt mit seinem König auf e6 nicht zur Ruhe, und die Engine sieht dich leicht besser (+0,89).",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bq1b1r/pp4pp/2p1k3/3np3/1nBP4/2N2Q2/PPP2PPP/R1B2RK1 b - -|Qf6": {
+  "satz": "Die Dame greift deine Dame auf f3 an und deckt den Bauern auf e5. Die Engine sieht dich weiter leicht besser (+0,84). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rf6f3",
+   "Bf6e5"
+  ]
+ },
+ "r1bqkb1r/p4pp1/2p2n1p/n3N3/4p3/8/PPPPBPPP/RNBQK2R b KQkq -|Bd6": {
+  "satz": "Der Läufer greift deinen Springer auf e5 an; Wikipedia nennt Ld6 hier den häufigsten Zug. Die Engine sieht die Stellung ausgeglichen (+0,02).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rd6e5"
+  ]
+ },
+ "r1bqk2r/p4pp1/2pb1n1p/n3N3/4p3/8/PPPPBPPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Du deckst den Springer auf e5 mit dem d-Bauern und baust die Mitte auf; Wikipedia nennt d4 die häufigste Antwort. Du hast einen Bauern mehr, und die Engine sieht die Stellung ausgeglichen (−0,06).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bd4e5"
+  ]
+ },
+ "r1bqk2r/p4pp1/2pb1n1p/n3N3/3Pp3/8/PPP1BPPP/RNBQK2R b KQkq d3|exd3": {
+  "satz": "Schwarz schlägt im Vorbeigehen (en passant) deinen Bauern auf d4 und greift mit dem Bauern auf d3 deinen Läufer e2 und den Bauern c2 an. Die Engine sieht die Stellung ausgeglichen (+0,06). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rd3e2",
+   "Rd3c2"
+  ]
+ },
+ "r1bqk2r/p4pp1/2pb1n1p/n3N3/8/3p4/PPP1BPPP/RNBQK2R w KQkq -|Nxd3": {
+  "satz": "Du holst den Bauern auf d3 mit dem Springer zurück und hast wieder einen Bauern mehr. Wikipedia beschreibt deine Seite so: in der Entwicklung zurück, aber mit Mehrbauern und besserer Bauernstruktur. Die Engine sieht die Stellung ausgeglichen (−0,11).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bd3b2",
+   "Bd3f2"
+  ]
+ },
+ "r1bqk2r/p4pp1/2pb1n1p/n7/8/3N4/PPP1BPPP/RNBQK2R b KQkq -|O-O": {
+  "satz": "Schwarz rochiert und bringt den König in Sicherheit. Für den Bauern, den er hergegeben hat, sind seine Figuren aktiver (Wikipedia: Vorsprung in der Entwicklung), und die Engine sieht die Stellung ausgeglichen (−0,06). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bf8f7"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P2p3/2BNP3/8/P1PP1PPP/RNBQK2R b KQkq -|Bxd4": {
+  "satz": "Schwarz schlägt den Springer zurück: Der Läufer auf d4 greift deinen Bauern auf f2 und deinen Turm auf a1 an und deckt e5. Die Engine sieht die Stellung ausgeglichen (+0,34).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rd4f2",
+   "Rd4a1",
+   "Bd4e5"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/8/1P2p3/2BbP3/8/P1PP1PPP/RNBQK2R w KQkq -|c3": {
+  "satz": "Du greifst den Läufer auf d4 an, er muss weichen oder tauschen, und du kannst danach selbst mit d4 die Mitte besetzen. Die Engine sieht die Stellung ungefähr ausgeglichen (+0,45).",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Gc3d4"
+  ],
+  "felder": [
+   "Yd4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/8/1P2p3/2BbP3/2P5/P2P1PPP/RNBQK2R b KQkq -|Bb6": {
+  "satz": "Der Läufer weicht nach b6 aus und zielt von dort weiter auf deinen Bauern auf f2. Die Engine sieht die Stellung ausgeglichen (+0,40). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rb6f2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P2p3/2B1P3/2P5/P2P1PPP/RNBQK2R w KQkq -|d4": {
+  "satz": "Das ist der Zug, den c3 vorbereitet hat: Du greifst den Bauern auf e5 an und hast Bauern auf d4 und e4 in der Mitte. Die Engine sieht die Stellung ausgeglichen (+0,32).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P2p3/2BPP3/2P5/P4PPP/RNBQK2R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt den Bauern auf d4 und greift damit deinen Bauern auf c3 an. Die Engine sieht die Stellung ausgeglichen (+0,46). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Rd4c3"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P6/2BpP3/2P5/P4PPP/RNBQK2R w KQkq -|O-O": {
+  "satz": "Du rochierst und bringst deinen König in Sicherheit, bevor der Bauer auf d4 den Bauern auf c3 erobert; einen weiteren Bauern anzubieten, gehört im Evans-Gambit dazu (Wikipedia). Die Engine sieht die Stellung ausgeglichen (+0,34).",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Bf1f2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/1b6/1P6/2BpP3/2P5/P4PPP/RNBQ1RK1 b kq -|Ne7": {
+  "satz": "Der Springer geht nach e7, entwickelt sich und deckt den Läufer auf c8. Die Engine sieht dich leicht besser (+0,53). Dieser Zug stammt von der Engine (Stockfish), weil Lichess hier zu wenige Partien hat.",
+  "status": "entwurf",
+  "quelle": "Stockfish Tiefe 18 (aufgaben.json)",
+  "pfeile": [
+   "Be7c8"
+  ]
+ }
+}

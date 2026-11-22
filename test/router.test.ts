@@ -74,3 +74,17 @@ test('parseRoute knows the ten-minute training and marks no navigation item (the
   assert.equal(navItemOf(parseRoute('#/training')), null)
   assert.deepEqual(parseRoute('#/training/x'), { name: 'notfound' })
 })
+
+test('Lehrgang routes: page, practise a variety, practise a trap; all belong to "Kurse"', async () => {
+  const { parseRoute, navItemOf, hrefLehrgang, hrefLehrgangUeben } = await import('../src/router.ts')
+  assert.deepEqual(parseRoute('#/lehrgang/scotch'), { name: 'lehrgang', id: 'scotch' })
+  assert.deepEqual(parseRoute('#/lehrgang/scotch/v/v1a2b3c4d'), { name: 'lehrgang-ueben', id: 'scotch', kind: 'v', itemId: 'v1a2b3c4d' })
+  assert.deepEqual(parseRoute('#/lehrgang/caro-kann/f/platzhalter-1'), { name: 'lehrgang-ueben', id: 'caro-kann', kind: 'f', itemId: 'platzhalter-1' })
+  assert.deepEqual(parseRoute('#/lehrgang/italian/m/platzhalter-1'), { name: 'lehrgang-ueben', id: 'italian', kind: 'm', itemId: 'platzhalter-1' })
+  assert.equal(hrefLehrgangUeben('italian', 'm', 'platzhalter-1'), '#/lehrgang/italian/m/platzhalter-1')
+  assert.deepEqual(parseRoute('#/lehrgang/scotch/x/y'), { name: 'notfound' })
+  assert.equal(hrefLehrgang('scotch'), '#/lehrgang/scotch')
+  assert.equal(hrefLehrgangUeben('scotch', 'v', 'a b'), '#/lehrgang/scotch/v/a%20b')
+  assert.equal(navItemOf(parseRoute('#/lehrgang/scotch')), 'kurse')
+  assert.equal(navItemOf(parseRoute('#/lehrgang/scotch/v/x')), 'kurse')
+})

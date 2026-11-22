@@ -16,6 +16,9 @@ import Partien from './views/Partien.vue'
 import Analyse from './views/Analyse.vue'
 import Spielen from './views/Spielen.vue'
 import MeinePartien from './views/MeinePartien.vue'
+import Lehrgang from './views/Lehrgang.vue'
+import LehrgangSystem from './views/LehrgangSystem.vue'
+import LehrgangUeben from './views/LehrgangUeben.vue'
 import PartieAnsicht from './views/PartieAnsicht.vue'
 
 const bundle = ref<ContentBundle | null>(null)
@@ -38,11 +41,11 @@ const active = computed(() => navItemOf(r.value))
 const LIST_FIRST_MS = 1500
 onMounted(() => {
   if (r.value.name === 'meinepartien' && !r.value.id) setTimeout(() => void ensureBundle(), LIST_FIRST_MS)
-  else void ensureBundle()
+  else if (r.value.name !== 'lehrgang' && r.value.name !== 'lehrgang-system' && r.value.name !== 'lehrgang-ueben') void ensureBundle()
 })
-watch(r, (now) => { if (!(now.name === 'meinepartien' && !now.id)) void ensureBundle() })
+watch(r, (now) => { if (!(now.name === 'meinepartien' && !now.id) && now.name !== 'lehrgang' && now.name !== 'lehrgang-system' && now.name !== 'lehrgang-ueben') void ensureBundle() })
 /** Board pages use the whole window (three columns, no page scroll); the loading and error states keep the normal frame. */
-const wide = computed(() => r.value.name === 'analyse' || (r.value.name === 'meinepartien' && !!r.value.id) || (r.value.name === 'spielen' && !!bundle.value) || ((r.value.name === 'variation' || r.value.name === 'partien' || r.value.name === 'training') && !!bundle.value))
+const wide = computed(() => r.value.name === 'analyse' || r.value.name === 'lehrgang-ueben' || r.value.name === 'lehrgang-system' || (r.value.name === 'meinepartien' && !!r.value.id) || (r.value.name === 'spielen' && !!bundle.value) || ((r.value.name === 'variation' || r.value.name === 'partien' || r.value.name === 'training') && !!bundle.value))
 </script>
 
 <template>
@@ -59,6 +62,9 @@ const wide = computed(() => r.value.name === 'analyse' || (r.value.name === 'mei
     <PartieAnsicht v-else-if="r.name === 'meinepartien' && r.id" :id="r.id" :bundle="bundle" />
     <MeinePartien v-else-if="r.name === 'meinepartien'" />
     <Spielen v-else-if="r.name === 'spielen' && bundle" :bundle="bundle" :fen="r.fen" />
+    <Lehrgang v-else-if="r.name === 'lehrgang'" :id="r.id" />
+    <LehrgangSystem v-else-if="r.name === 'lehrgang-system'" :id="r.id" :system-id="r.systemId" />
+    <LehrgangUeben v-else-if="r.name === 'lehrgang-ueben'" :id="r.id" :kind="r.kind" :item-id="r.itemId" :modus="r.modus" />
     <Partien v-else-if="r.name === 'partien' && bundle" />
     <p v-else-if="error" class="err" role="alert">{{ error }} <button type="button" @click="retryBundle">Erneut versuchen</button></p>
     <p v-else-if="!bundle" class="muted">Lade Inhalte …</p>

@@ -9,7 +9,7 @@ import type { FigurId } from '../teacher/avatar.ts'
  * and the two quip switches as small icons (sayings, read aloud; the latter only where audio exists).
  */
 /** `on` stays undefined when the view has no switch (Vue would otherwise turn an absent boolean into false). */
-const props = withDefaults(defineProps<{ figur: FigurId; name: string; quips: boolean; speak: boolean; audio: boolean; on?: boolean; lockFigur?: boolean; /** no avatar button: the pick cards show the teachers */ noPick?: boolean }>(), { on: undefined, lockFigur: false, noPick: false })
+const props = withDefaults(defineProps<{ figur: FigurId; name: string; quips: boolean; speak: boolean; audio: boolean; on?: boolean; lockFigur?: boolean; /** no avatar button: the pick cards show the teachers */ noPick?: boolean; /** no quip switches (a Lehrgang: the teacher only explains) */ plain?: boolean }>(), { on: undefined, lockFigur: false, noPick: false, plain: false })
 const emit = defineEmits<{ figur: [FigurId]; on: [boolean]; quips: [boolean]; speak: [boolean] }>()
 
 const open = ref(false)
@@ -40,10 +40,10 @@ function choose(id: FigurId) { open.value = false; if (id !== props.figur) emit(
     <button v-if="on !== undefined" type="button" class="sw" role="switch" :aria-checked="on" :title="on ? 'Lehrer ausschalten' : 'Lehrer einschalten'" @click="emit('on', !on)">
       <span class="knob" aria-hidden="true"></span><b>Lehrer</b>
     </button>
-    <button type="button" class="ic" :class="{ act: quips }" :aria-pressed="quips" aria-label="Sprüche" title="Sprüche (spitze Bemerkungen)" @click="emit('quips', !quips)">
+    <button v-if="!plain" type="button" class="ic" :class="{ act: quips }" :aria-pressed="quips" aria-label="Sprüche" title="Sprüche (spitze Bemerkungen)" @click="emit('quips', !quips)">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z" /></svg>
     </button>
-    <button v-if="audio" type="button" class="ic" :class="{ act: speak && quips }" :aria-pressed="speak" :disabled="!quips" aria-label="Sprüche vorlesen" title="Sprüche vorlesen" @click="emit('speak', !speak)">
+    <button v-if="audio && !plain" type="button" class="ic" :class="{ act: speak && quips }" :aria-pressed="speak" :disabled="!quips" aria-label="Sprüche vorlesen" title="Sprüche vorlesen" @click="emit('speak', !speak)">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor" /><path d="M16 9a4 4 0 0 1 0 6" /></svg>
     </button>
   </div>

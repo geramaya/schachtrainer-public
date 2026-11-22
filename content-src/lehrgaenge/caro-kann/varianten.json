@@ -1,0 +1,1153 @@
+[
+ {
+  "id": "v80f18d48",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.04887011471489893,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "dxe4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nxe4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Ng3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bg6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nd7",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "Ngf6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "c4",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Du entwickelst alle Figuren, ohne dir Bauernschwächen zu holen: Der Läufer geht über f5 nach g6, die Springer nach d7 und f6, und e6 stützt dein Zentrum. Am Ende hast du weder isolierte noch doppelte Bauern.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence",
+    "belege": [
+     "struktur"
+    ]
+   },
+   {
+    "satz": "Durch den Tausch auf e4 ist die d-Linie für dich halboffen. Für später gilt: Mit dem c-Bauern kannst du vorrücken und Druck auf den Bauern d4 machen.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung ; https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence",
+    "belege": [
+     "struktur"
+    ]
+   },
+   {
+    "satz": "Rückt Weiß statt Sf3 mit dem h-Bauern vor, schiebst du deinen h-Bauern ein Feld: Dann hat der Läufer g6 das Feld h7 als Rückzug. Ein weit vorgerückter weißer h-Bauer kann im Endspiel zur Schwäche werden.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "v1f4e52ea",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.04436283412357906,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "cxd5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "a6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bf4",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "Bg4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Be2",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Ne5",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Nach dem Tausch auf d5 steht jeder mit einem Zentrumsbauern auf d; keine Seite hat isolierte oder doppelte Bauern. Reihenfolge: erst Läufer und Springer entwickeln, dann den e-Bauern ziehen.",
+    "status": "entwurf",
+    "quelle": "eigene Beobachtung am Brett (Bauernstruktur nach der Linie, chess.js)",
+    "belege": [
+     "struktur"
+    ]
+   },
+   {
+    "satz": "Mit e6 sicherst du den Bauern d5; die Stellung gleicht dann der Abtauschvariante des Damengambits mit vertauschten Farben.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   },
+   {
+    "satz": "Auf der c-Linie hast du keinen Bauern mehr, sie ist für dich halboffen. Achte später, nach 8. Se5, auf Weiß' Springer: Er greift den ungedeckten Läufer g4, den Springer c6 und den Bauern f7 an.",
+    "status": "entwurf",
+    "belege": [
+     "struktur"
+    ],
+    "quelle": "eigene Beobachtung am Brett (Stellung nach 8. Se5, chess.js)"
+   }
+  ]
+ },
+ {
+  "id": "v52f91a71",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.043079896105169886,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "f4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Weiß hat mit e5 Raum gewonnen und stützt den Bauern jetzt mit f4. Dein Läufer steht dagegen schon draußen auf f5, während Weiß noch keine Leichtfigur entwickelt hat.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+    "belege": [
+     "entwicklung"
+    ]
+   },
+   {
+    "satz": "Das übliche Muster der Vorstoßvariante: Der e-Bauer deckt den Bauern d5 und gibt dem Läufer f8 Raum. Danach greifst du mit dem c-Bauern den Bauern d4 an, das untere Ende der weißen Bauernkette.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   },
+   {
+    "satz": "Weiß versucht oft, den Läufer f5 mit einem Bauernvorstoß am Rand zu vertreiben, mit dem g- oder dem h-Bauern. Behalte die Randbauern im Blick.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "v29313e6a",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.031227468617280478,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "In der Short-Variante entwickelt Weiß ruhig: Sf3 deckt d4 und e5, dann kommt Sc3. Du antwortest genauso ruhig: Läufer f5 draußen, e6 deckt den Bauern d5.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+    "belege": [
+     "entwicklung"
+    ]
+   },
+   {
+    "satz": "Der Hebel bleibt der c-Bauer: Er greift den Bauern d4 an, das untere Ende der Kette d4–e5. Verstärke ihn später mit Figuren, die d4 mit angreifen, etwa mit dem Springer b8, der über c6 ins Spiel kommt.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   },
+   {
+    "satz": "Dein Läufer f5 ist oft Angriffspunkt für Weiß, meist mit einem Randbauern. Bei diesem ruhigen Aufbau hast du aber Zeit, alles in Ruhe zu entwickeln.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "entwicklung"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "v2cb96bc0",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.031134922883203447,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Mit c3 stützt Weiß den Bauern d4 und nimmt dem Springer b1 das Feld c3. Nach Sf3 steht d4 mehrfach gedeckt: vom Bauern c3, vom Springer f3 und von der Dame d1.",
+    "status": "entwurf",
+    "belege": [
+     "struktur"
+    ]
+   },
+   {
+    "satz": "Das Muster bleibt gleich: Der e-Bauer sichert den Bauern d5, danach gehst du mit dem c-Bauern gegen d4. Weil d4 gut gedeckt ist, brauchst du dafür Figuren, die ihn mit angreifen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   },
+   {
+    "satz": "Dein Läufer f5 steht draußen und ist oft Angriffspunkt für Weiß, meist mit einem Randbauern. Achte darauf, bevor du dich ganz auf d4 konzentrierst.",
+    "status": "entwurf",
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vfc4aca28",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.02940147437161348,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bxd3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Qxd3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nd7",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "Ne7",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Qe2",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Mit Lxd3 tauschst du den Läufer f5 ab, der in der Vorstoßvariante oft Angriffspunkt für Weiß ist. Nach Dxd3 e6 hat keine Seite mehr das Läuferpaar.",
+    "status": "entwurf",
+    "quelle": "eigene Beobachtung am Brett (Läufer nach der Linie, chess.js)",
+    "belege": [
+     "struktur"
+    ]
+   },
+   {
+    "satz": "Der Hebel: c5 greift den Bauern d4 an, das untere Ende der weißen Kette. Weiß stützt mit c3, du bringst die Springer nach d7 und e7, wo sie die Bauern c5 und d5 decken und den Bauern e5 unter Druck setzen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+    "belege": [
+     "zugfolge"
+    ]
+   },
+   {
+    "satz": "Später, nach 9. De2, steht die Stellung ausgeglichen (+0,17), beide Seiten ohne Bauernschwächen. Du hast mit dem Läufertausch nichts verschenkt.",
+    "status": "entwurf",
+    "belege": [
+     "endbewertung"
+    ],
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json)"
+   }
+  ]
+ },
+ {
+  "id": "vd2a7aed9",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.028145550923347553,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h5",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vce1666f5",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02641267731782136,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bxd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nd7",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v11c1f10b",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02496198270983111,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "cxd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bb5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v7a167a09",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.024818914427745274,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "cxd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vd1f4a938",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.024294261570340127,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qb6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "veb05e34b",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.024193223334749797,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "dxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v24e7e3e0",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.023612047513787683,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "cxd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v66254d98",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02353385877705488,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "dxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ng3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bg6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v5508b050",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.022449468756083793,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "cxd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v653f22e5",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02189854278173207,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "f3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "dxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "fxe4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v91060690",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.020793407055711536,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c4",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vfa554029",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02052481868837062,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "g4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be4",
+    "satz": "TODO texter"
+   }
+  ]
+ }
+]

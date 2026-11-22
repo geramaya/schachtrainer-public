@@ -34,14 +34,16 @@ const props = withDefaults(defineProps<{
   on?: boolean
   /** the teacher cannot be changed here (a running game) */
   lockFigur?: boolean
-}>(), { on: undefined, lockFigur: false })
+  /** no quip switches (a Lehrgang) */
+  plain?: boolean
+}>(), { on: undefined, lockFigur: false, plain: false })
 const emit = defineEmits<{ hint: []; best: []; later: []; repertoire: []; quips: [boolean]; speak: [boolean]; figur: [FigurId]; on: [boolean] }>()
 </script>
 
 <template>
   <section class="teacher" :class="[severity, { held: blocked }]" aria-label="Lehrer">
     <p v-if="blocked" class="ask" role="alert">Rückfrage vom Trainer</p>
-    <TeacherHead :figur="figur" :name="name" :on="on" :lock-figur="lockFigur" :quips="quips" :speak="speak" :audio="audio" @figur="emit('figur', $event)" @on="emit('on', $event)" @quips="emit('quips', $event)" @speak="emit('speak', $event)" />
+    <TeacherHead :figur="figur" :name="name" :on="on" :lock-figur="lockFigur" :plain="plain" :quips="quips" :speak="speak" :audio="audio" @figur="emit('figur', $event)" @on="emit('on', $event)" @quips="emit('quips', $event)" @speak="emit('speak', $event)" />
     <template v-if="on !== false">
       <div class="main">
         <TeacherAvatar :figur="figur" :gefuehl="gefuehl" />

@@ -1,0 +1,883 @@
+{
+ "schema": 1,
+ "lehrgang": "caro-kann",
+ "abruf": "2026-11-22",
+ "band": {
+  "speeds": "blitz,rapid,classical",
+  "ratings": "1200,1400,1600"
+ },
+ "schwellen": {
+  "kernAnzahl": 6,
+  "erweiterung": 0.95,
+  "minPfad": 0.02,
+  "maxPly": 20,
+  "minPartien": 30
+ },
+ "abdeckung": 0.5137154646723211,
+ "baum": [
+  {
+   "san": "e5",
+   "uci": "e4e5",
+   "eigen": false,
+   "spiele": 22141255,
+   "anteil": 0.49054170015040655,
+   "kinder": [
+    {
+     "san": "Bf5",
+     "uci": "c8f5",
+     "eigen": true,
+     "kinder": [
+      {
+       "san": "Nf3",
+       "uci": "g1f3",
+       "eigen": false,
+       "spiele": 4631144,
+       "anteil": 0.33281399387946,
+       "kinder": [
+        {
+         "san": "e6",
+         "uci": "e7e6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Bd3",
+           "uci": "f1d3",
+           "eigen": false,
+           "spiele": 2082032,
+           "anteil": 0.3598463918521797,
+           "kinder": [
+            {
+             "san": "Bxd3",
+             "uci": "f5d3",
+             "eigen": true,
+             "kinder": [
+              {
+               "san": "Qxd3",
+               "uci": "d1d3",
+               "eigen": false,
+               "spiele": 1247311,
+               "anteil": 0.9614809744380747,
+               "kinder": [
+                {
+                 "san": "c5",
+                 "uci": "c6c5",
+                 "eigen": true,
+                 "kinder": [
+                  {
+                   "san": "c3",
+                   "uci": "c2c3",
+                   "eigen": false,
+                   "spiele": 439815,
+                   "anteil": 0.46760276171784465,
+                   "kinder": [
+                    {
+                     "san": "Nd7",
+                     "uci": "b8d7",
+                     "eigen": true,
+                     "kinder": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "san": "Nc3",
+           "uci": "b1c3",
+           "eigen": false,
+           "spiele": 1106699,
+           "anteil": 0.19127546647525853,
+           "kinder": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "Bd3",
+       "uci": "f1d3",
+       "eigen": false,
+       "spiele": 3155629,
+       "anteil": 0.2267771182869387,
+       "kinder": [
+        {
+         "san": "Bxd3",
+         "uci": "f5d3",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Qxd3",
+           "uci": "d1d3",
+           "eigen": false,
+           "spiele": 2284988,
+           "anteil": 0.972856936059334,
+           "kinder": [
+            {
+             "san": "e6",
+             "uci": "e7e6",
+             "eigen": true,
+             "kinder": [
+              {
+               "san": "Nf3",
+               "uci": "g1f3",
+               "eigen": false,
+               "spiele": 1171408,
+               "anteil": 0.5809889839011502,
+               "kinder": [
+                {
+                 "san": "c5",
+                 "uci": "c6c5",
+                 "eigen": true,
+                 "kinder": [
+                  {
+                   "san": "c3",
+                   "uci": "c2c3",
+                   "eigen": false,
+                   "spiele": 439815,
+                   "anteil": 0.46760276171784465,
+                   "kinder": [
+                    {
+                     "san": "Nd7",
+                     "uci": "b8d7",
+                     "eigen": true,
+                     "kinder": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "Nc3",
+       "uci": "b1c3",
+       "eigen": false,
+       "spiele": 1273434,
+       "anteil": 0.09151446283723767,
+       "kinder": [
+        {
+         "san": "Qb6",
+         "uci": "d8b6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Nf3",
+           "uci": "g1f3",
+           "eigen": false,
+           "spiele": 5875,
+           "anteil": 0.5411753868828297,
+           "kinder": [
+            {
+             "san": "e6",
+             "uci": "e7e6",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "f4",
+       "uci": "f2f4",
+       "eigen": false,
+       "spiele": 1222040,
+       "anteil": 0.08782106820268497,
+       "kinder": []
+      },
+      {
+       "san": "c3",
+       "uci": "c2c3",
+       "eigen": false,
+       "spiele": 883199,
+       "anteil": 0.06347049164965399,
+       "kinder": [
+        {
+         "san": "e6",
+         "uci": "e7e6",
+         "eigen": true,
+         "kinder": []
+        }
+       ]
+      },
+      {
+       "san": "h4",
+       "uci": "h2h4",
+       "eigen": false,
+       "spiele": 798400,
+       "anteil": 0.05737646955338915,
+       "kinder": [
+        {
+         "san": "h5",
+         "uci": "h7h5",
+         "eigen": true,
+         "kinder": []
+        }
+       ]
+      },
+      {
+       "san": "c4",
+       "uci": "c2c4",
+       "eigen": false,
+       "spiele": 589843,
+       "anteil": 0.04238866349045556,
+       "kinder": []
+      },
+      {
+       "san": "g4",
+       "uci": "g2g4",
+       "eigen": false,
+       "spiele": 582224,
+       "anteil": 0.04184112927010577,
+       "kinder": [
+        {
+         "san": "Be4",
+         "uci": "f5e4",
+         "eigen": true,
+         "kinder": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "san": "exd5",
+   "uci": "e4d5",
+   "eigen": false,
+   "spiele": 11921864,
+   "anteil": 0.26413007914510384,
+   "kinder": [
+    {
+     "san": "cxd5",
+     "uci": "c6d5",
+     "eigen": true,
+     "kinder": [
+      {
+       "san": "Nf3",
+       "uci": "g1f3",
+       "eigen": false,
+       "spiele": 3706480,
+       "anteil": 0.3102674425194338,
+       "kinder": [
+        {
+         "san": "Nc6",
+         "uci": "b8c6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Bb5",
+           "uci": "f1b5",
+           "eigen": false,
+           "spiele": 1780522,
+           "anteil": 0.30459657148761554,
+           "kinder": [
+            {
+             "san": "e6",
+             "uci": "e7e6",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          },
+          {
+           "san": "Nc3",
+           "uci": "b1c3",
+           "eigen": false,
+           "spiele": 1684232,
+           "anteil": 0.2881240966355539,
+           "kinder": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "Nc3",
+       "uci": "b1c3",
+       "eigen": false,
+       "spiele": 3424719,
+       "anteil": 0.28668138111569813,
+       "kinder": [
+        {
+         "san": "a6",
+         "uci": "a7a6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Nf3",
+           "uci": "g1f3",
+           "eigen": false,
+           "spiele": 145992,
+           "anteil": 0.5858709087114949,
+           "kinder": [
+            {
+             "san": "Nc6",
+             "uci": "b8c6",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "c4",
+       "uci": "c2c4",
+       "eigen": false,
+       "spiele": 1803781,
+       "anteil": 0.15099353503462767,
+       "kinder": [
+        {
+         "san": "Nf6",
+         "uci": "g8f6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Nc3",
+           "uci": "b1c3",
+           "eigen": false,
+           "spiele": 556265,
+           "anteil": 0.5628981922980401,
+           "kinder": [
+            {
+             "san": "e6",
+             "uci": "e7e6",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "san": "Bd3",
+       "uci": "f1d3",
+       "eigen": false,
+       "spiele": 1571001,
+       "anteil": 0.13150764673368615,
+       "kinder": [
+        {
+         "san": "Nc6",
+         "uci": "b8c6",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "c3",
+           "uci": "c2c3",
+           "eigen": false,
+           "spiele": 566100,
+           "anteil": 0.7145192172979031,
+           "kinder": [
+            {
+             "san": "Nf6",
+             "uci": "g8f6",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "san": "Nc3",
+   "uci": "b1c3",
+   "eigen": false,
+   "spiele": 7843241,
+   "anteil": 0.17376778212569138,
+   "kinder": [
+    {
+     "san": "dxe4",
+     "uci": "d5e4",
+     "eigen": true,
+     "kinder": [
+      {
+       "san": "Nxe4",
+       "uci": "c3e4",
+       "eigen": false,
+       "spiele": 5657514,
+       "anteil": 0.9053899816665983,
+       "kinder": [
+        {
+         "san": "Bf5",
+         "uci": "c8f5",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Ng3",
+           "uci": "e4g3",
+           "eigen": false,
+           "spiele": 1920567,
+           "anteil": 0.5562818554748766,
+           "kinder": [
+            {
+             "san": "Bg6",
+             "uci": "f5g6",
+             "eigen": true,
+             "kinder": [
+              {
+               "san": "Nf3",
+               "uci": "g1f3",
+               "eigen": false,
+               "spiele": 1001237,
+               "anteil": 0.5583975719638115,
+               "kinder": [
+                {
+                 "san": "Nd7",
+                 "uci": "b8d7",
+                 "eigen": true,
+                 "kinder": []
+                }
+               ]
+              },
+              {
+               "san": "h4",
+               "uci": "h2h4",
+               "eigen": false,
+               "spiele": 482155,
+               "anteil": 0.2689015500927468,
+               "kinder": [
+                {
+                 "san": "h6",
+                 "uci": "h7h6",
+                 "eigen": true,
+                 "kinder": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "san": "Bd3",
+           "uci": "f1d3",
+           "eigen": false,
+           "spiele": 530913,
+           "anteil": 0.1537760821339392,
+           "kinder": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "san": "f3",
+   "uci": "f2f3",
+   "eigen": false,
+   "spiele": 1417944,
+   "anteil": 0.03141468992963895,
+   "kinder": [
+    {
+     "san": "dxe4",
+     "uci": "d5e4",
+     "eigen": true,
+     "kinder": [
+      {
+       "san": "fxe4",
+       "uci": "f3e4",
+       "eigen": false,
+       "spiele": 712567,
+       "anteil": 0.966356331581624,
+       "kinder": [
+        {
+         "san": "e5",
+         "uci": "e7e5",
+         "eigen": true,
+         "kinder": [
+          {
+           "san": "Nf3",
+           "uci": "g1f3",
+           "eigen": false,
+           "spiele": 145584,
+           "anteil": 0.721348515028094,
+           "kinder": [
+            {
+             "san": "exd4",
+             "uci": "e5d4",
+             "eigen": true,
+             "kinder": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "varianten": [
+  {
+   "id": "v80f18d48",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "Nc3",
+    "dxe4",
+    "Nxe4",
+    "Bf5",
+    "Ng3",
+    "Bg6",
+    "Nf3",
+    "Nd7"
+   ],
+   "anteil": 0.04887011471489893,
+   "kumuliert": 0.04887011471489893,
+   "stufe": "kern",
+   "grund": "selten"
+  },
+  {
+   "id": "v1f4e52ea",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "exd5",
+    "cxd5",
+    "Nc3",
+    "a6",
+    "Nf3",
+    "Nc6"
+   ],
+   "anteil": 0.04436283412357906,
+   "kumuliert": 0.09323294883847799,
+   "stufe": "kern",
+   "grund": "selten"
+  },
+  {
+   "id": "v52f91a71",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "f4"
+   ],
+   "anteil": 0.043079896105169886,
+   "kumuliert": 0.13631284494364787,
+   "stufe": "kern",
+   "grund": "luecke"
+  },
+  {
+   "id": "v29313e6a",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Nc3"
+   ],
+   "anteil": 0.031227468617280478,
+   "kumuliert": 0.16754031356092836,
+   "stufe": "kern",
+   "grund": "luecke"
+  },
+  {
+   "id": "v2cb96bc0",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "c3",
+    "e6"
+   ],
+   "anteil": 0.031134922883203447,
+   "kumuliert": 0.1986752364441318,
+   "stufe": "kern",
+   "grund": "selten"
+  },
+  {
+   "id": "vfc4aca28",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "e6",
+    "Nf3",
+    "c5",
+    "c3",
+    "Nd7"
+   ],
+   "anteil": 0.02940147437161348,
+   "kumuliert": 0.22807671081574526,
+   "stufe": "kern",
+   "grund": "selten"
+  },
+  {
+   "id": "vd2a7aed9",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "h4",
+    "h5"
+   ],
+   "anteil": 0.028145550923347553,
+   "kumuliert": 0.2562222617390928,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "vce1666f5",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "c5",
+    "c3",
+    "Nd7"
+   ],
+   "anteil": 0.02641267731782136,
+   "kumuliert": 0.28263493905691417,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "v11c1f10b",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "exd5",
+    "cxd5",
+    "Nf3",
+    "Nc6",
+    "Bb5",
+    "e6"
+   ],
+   "anteil": 0.02496198270983111,
+   "kumuliert": 0.3075969217667453,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "v7a167a09",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "exd5",
+    "cxd5",
+    "Bd3",
+    "Nc6",
+    "c3",
+    "Nf6"
+   ],
+   "anteil": 0.024818914427745274,
+   "kumuliert": 0.33241583619449055,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "vd1f4a938",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nc3",
+    "Qb6",
+    "Nf3",
+    "e6"
+   ],
+   "anteil": 0.024294261570340127,
+   "kumuliert": 0.3567100977648307,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "veb05e34b",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "Nc3",
+    "dxe4",
+    "Nxe4",
+    "Bf5",
+    "Bd3"
+   ],
+   "anteil": 0.024193223334749797,
+   "kumuliert": 0.38090332109958047,
+   "stufe": "erweiterung",
+   "grund": "luecke"
+  },
+  {
+   "id": "v24e7e3e0",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "exd5",
+    "cxd5",
+    "Nf3",
+    "Nc6",
+    "Nc3"
+   ],
+   "anteil": 0.023612047513787683,
+   "kumuliert": 0.4045153686133682,
+   "stufe": "erweiterung",
+   "grund": "luecke"
+  },
+  {
+   "id": "v66254d98",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "Nc3",
+    "dxe4",
+    "Nxe4",
+    "Bf5",
+    "Ng3",
+    "Bg6",
+    "h4",
+    "h6"
+   ],
+   "anteil": 0.02353385877705488,
+   "kumuliert": 0.42804922739042306,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "v5508b050",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "exd5",
+    "cxd5",
+    "c4",
+    "Nf6",
+    "Nc3",
+    "e6"
+   ],
+   "anteil": 0.022449468756083793,
+   "kumuliert": 0.45049869614650684,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "v653f22e5",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "f3",
+    "dxe4",
+    "fxe4",
+    "e5",
+    "Nf3",
+    "exd4"
+   ],
+   "anteil": 0.02189854278173207,
+   "kumuliert": 0.4723972389282389,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  },
+  {
+   "id": "v91060690",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "c4"
+   ],
+   "anteil": 0.020793407055711536,
+   "kumuliert": 0.49319064598395046,
+   "stufe": "erweiterung",
+   "grund": "luecke"
+  },
+  {
+   "id": "vfa554029",
+   "line": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "g4",
+    "Be4"
+   ],
+   "anteil": 0.02052481868837062,
+   "kumuliert": 0.5137154646723211,
+   "stufe": "erweiterung",
+   "grund": "selten"
+  }
+ ]
+}

@@ -1,0 +1,882 @@
+[
+ {
+  "id": "v6bb76fb5",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.0903329936991053,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vca1d77a3",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.05669943502826108,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c5",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v122185e2",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.0380112023852597,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qf6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v674ee191",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.03755331432208386,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v01fc805c",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.036815522561253596,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "va639f8c2",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.032910696200214,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "bxc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nb6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vbc9b4328",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.03242001724353433,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vdb63e050",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.028507125933083376,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nge7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qd2",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vfd5ba6fa",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.026442735711819796,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qe7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v1d1139ce",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.025271581451565387,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "f6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "va35e88e7",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.024471877898564108,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vcd8ac680",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02413220710725406,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bf4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "O-O-O",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v91bbd654",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.023386461742812087,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bxd4",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v93bcb73b",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.023228312703805678,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bd3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v88c90fd8",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.023223774236221746,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ne5",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "ve7d6f146",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.022594555220724424,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "bxc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qe7",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vcd5ab875",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.021671132261556526,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v0463ee04",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.020769649319065102,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   }
+  ]
+ }
+]

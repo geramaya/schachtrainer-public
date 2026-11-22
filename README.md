@@ -49,6 +49,28 @@ depth 18 as the reference. All move claims are engine-verified; failing claims a
 `--only <openingId>` rebuilds one opening and merges it into the bundle. A second run from `tools/.cache` must yield the
 same `contentVersion`.
 
+### Lehrgänge (1200–1600)
+
+Separate from the repertoire courses (their progress is untouched). Source: `content-src/lehrgaenge/<id>/` with
+`lehrgang.json` (name, side, entry), `spielplan.md` (five sections: Idee, Deine Züge, Pläne, Fallen, Wenn Unbekanntes kommt),
+`varianten.json` (per variety: `zuege` with one sentence per move, `stufe` kern/erweiterung/nachschlagen, `anteil`),
+`fallen.json` (FEN, solution move, sentence) and `daten.json` (output of the data run). Open texts are marked `TODO texter`.
+
+- `npm run lehrgang:daten -- <token-file>` (or `LICHESS_TOKEN_FILE`): Lichess explorer, speeds blitz/rapid/classical, ratings
+  1200/1400/1600, own cache `tools/.cache/lehrgang-explorer.json`, 1 request/s, repeatable. Own moves come from the repertoire
+  tree in `public/content/bundle.json`; replies from the explorer. Tiers by cumulative share (constants in `tools/lib/lehrgang.ts`):
+  Kern = the 6 most frequent varieties, Erweiterung until the cumulative share reaches 95 %, rest Nachschlagen (owner decision 22.11.). `-- --cache` re-derives trees and tiers from the stored explorer cache without token or network. Merges tier/share into `varianten.json`, written sentences stay.
+- `npm run lehrgang:build` -> `public/content/lehrgaenge.json` (all lines legal with chess.js, else exit 1).
+- Sentences are written **per position**, not per variety: `stellungen.json` (key = FEN without move counters `|` SAN of the move,
+  value `{ satz, status: entwurf|geprueft, quelle?, belege? }`). The builder fills the sentence into every variety that contains the
+  position and move (own moves: "warum", opponent moves: one short sentence) and replaces the placeholders of `varianten.json`.
+- `npm run lehrgang:aufgaben`: one fact sheet per unique position+move (`aufgaben.json`: line, mover, own/opponent, share, Stockfish
+  depth 18 before/after, facts of the move, fact sheet of the line, gap flag, `kern`) plus trap candidates (a frequent opponent move that
+  costs 2 pawns by the engine). Analyses cached in `tools/.cache/lehrgang-analysis.json`.
+- `npm run lehrgang:check`: every sentence against its fact sheet with the intro checkers (moves, evaluation direction, material, shares,
+  plan words need `belege`) and the Spielplan against the entry line; exit 1 with the list.
+- Progress lives under its own localStorage key `schachtrainer-lehrgang-v1` (`src/lehrgang/store.ts`, export/import functions for the backup).
+
 Audio: `npm run audio:texts`, then `python3 tools/gen-audio.py --key-file <openrouter key>` (run by the owner only).
 
 Teacher quips (Sparring, setting "Sprüche", off by default; texts in `src/teacher/quips-data.ts`) and their spoken versions:

@@ -1,0 +1,77 @@
+[
+ {
+  "id": "evergreen",
+  "titel": "Evergreen-Partie (Evans-Gambit)",
+  "weiss": "Adolf Anderssen",
+  "schwarz": "Jean Dufresne",
+  "jahr": 1852,
+  "event": "Vermutlich eine Freundschaftspartie, vermutlich in Berlin (beides nicht gesichert); erstmals gedruckt in der Deutschen Schachzeitung 1852",
+  "quelle": "https://en.wikipedia.org/wiki/Evergreen_Game; https://www.chesshistory.com/winter/extra/evergreen.html",
+  "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O d3 8. Qb3 Qf6 9. e5 Qg6 10. Re1 Nge7 11. Ba3 b5 12. Qxb5 Rb8 13. Qa4 Bb6 14. Nbd2 Bb7 15. Ne4 Qf5 16. Bxd3 Qh5 17. Nf6+ gxf6 18. exf6 Rg8 19. Rad1 Qxf3 20. Rxe7+ Nxe7 21. Qxd7+ Kxd7 22. Bf5+ Ke8 23. Bd7+ Kf8 24. Bxe7# 1-0",
+  "kommentare": [
+   {
+    "ply": 7,
+    "satz": "Anderssen bietet den b-Bauern an und greift den Läufer auf c5 an. Folgt Schwarz dem Angebot, gewinnt Weiß mit dem c- und dem d-Bauern Zeit und baut ein breites Zentrum. Das ist das Prinzip des Evans-Gambits; die Engine sieht die Stellung danach ausgeglichen (−0,01).",
+    "pfeile": [
+     "Gb4c5"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+    "status": "entwurf"
+   },
+   {
+    "ply": 13,
+    "satz": "Anderssen rochiert, statt den Bauern auf d4 zurückzuholen: Er bietet damit einen zweiten Bauern an, sichert seinen König und lässt die Mitte offen. Wikipedia nennt diese Rochade den üblichen Weg im Evans-Gambit. Die Engine sieht die Stellung ausgeglichen (−0,03).",
+    "pfeile": [
+     "Bf1f2"
+    ],
+    "felder": [
+     "Yd4"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+    "status": "entwurf"
+   },
+   {
+    "ply": 15,
+    "satz": "Die Dame stellt sich hinter den Läufer auf c4: Beide zielen auf f7, und zugleich ist der Bauer auf b7 bedroht. Schwarz muss beides im Blick behalten, die Engine sieht die Stellung ausgeglichen (+0,41).",
+    "pfeile": [
+     "Gb3b7",
+     "Gc4f7"
+    ],
+    "felder": [
+     "Yf7"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+    "status": "entwurf"
+   },
+   {
+    "ply": 21,
+    "satz": "Der Läufer entwickelt sich nach a3 und greift den Springer auf e7 an. Die Engine sieht Schwarz hier leicht besser (−0,69): Das Opfer ist ein Risiko, das erst aufgeht, wenn der schwarze König in der Mitte bleibt.",
+    "pfeile": [
+     "Ga3e7"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 18 (aufgaben.json)",
+    "status": "entwurf"
+   },
+   {
+    "ply": 33,
+    "satz": "Anderssen gibt mit dem Springer Schach auf f6 und greift dabei zugleich die Dame auf h5 an. Die Engine sah vorher +5,45 für Weiß und danach nur noch +0,89: Das Opfer war nicht der stärkste Weg, Wikipedia nennt es objektiv schwächer als die Alternativen.",
+    "pfeile": [
+     "Gf6e8",
+     "Gf6h5"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evergreen_Game; Stockfish Tiefe 18 (aufgaben.json)",
+    "status": "entwurf"
+   },
+   {
+    "ply": 41,
+    "satz": "Anderssen opfert die Dame mit Schach auf d7: Nach Kxd7 gibt der Läufer dreimal Schach, Lf5+, Ld7+ und Lxe7#. Das gelingt, weil der schwarze König nie zur Rochade kam und ungeschützt in der Mitte stand.",
+    "pfeile": [
+     "Gd7e8",
+     "Gd3f5"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Evergreen_Game",
+    "status": "entwurf"
+   }
+  ]
+ }
+]

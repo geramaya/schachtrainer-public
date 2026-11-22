@@ -1,0 +1,29 @@
+[
+ {
+  "id": "fantasy-c3",
+  "titel": "Fantasy-Variante: Dame mit Schach auf h4",
+  "fen": "rnbqkbnr/pp3ppp/2p5/4p3/3PP3/2P5/PP4PP/RNBQKBNR b KQkq - 0 5",
+  "loesung": "Qh4+",
+  "satz": "Nach 3. f3 dxe4 4. fxe4 e5 hätte Weiß mit Sf3 die Diagonale e1–h4 decken müssen. Spielt er stattdessen c3?, kommt Dh4+: Nach g3 schlägst du mit Schach auf e4 und bedrohst den Turm h1, nach Kd2 fällt der Bauer e4 ebenfalls (Engine-Variante: Sf6 Sf3 Df2+ Le2 Sxe4+). Stockfish sieht c3 als Fehler im Wert von gut zwei Bauern; etwa jeder siebte Gegner auf deiner Stufe spielt es.",
+  "quelle": "aufgaben.json fallenKandidaten (Lichess-Explorer 1200-1600, Stockfish Tiefe 18; Verlust 228 cp, Anteil im Knoten 13,7 %); eigene Analyse Stockfish Tiefe 22 (Dh4+ +2,18 für Schwarz; nach g3 Dxe4+ Le2 Dxh1 +5,68); Hauptlinie 3.f3 dxe4 4.fxe4 e5: https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._f3",
+  "pfeile": [
+   "Gd8h4",
+   "Gh4e1",
+   "Gh4e4"
+  ],
+  "platzhalter": false
+ },
+ {
+  "id": "steinitz-nd6",
+  "titel": "Warnung: Springer d6 matt",
+  "fen": "r1bqkb1r/pp1npppp/2p2n2/8/3PN3/8/PPP1QPPP/R1B1KBNR w KQkq - 3 6",
+  "loesung": "Nd6#",
+  "satz": "In der Steinitz-Variante (4… Sd7) kann Weiß mit Dame e2 antworten. Wer jetzt mit Sgf6?? den Springer auf e4 angreift, läuft in eine Mattstellung: Springer d6 matt. Das ist kein Zug deines Repertoires, aber eine bekannte Warnung vor dem Zug Sd7.",
+  "quelle": "https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence (Abschnitt Steinitz-Variante: 5.Qe2 Ngf6?? 6.Nd6#)",
+  "pfeile": [
+   "Ge4d6",
+   "Rd6e8"
+  ],
+  "platzhalter": false
+ }
+]

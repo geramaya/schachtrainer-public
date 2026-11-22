@@ -9,6 +9,10 @@ export type Route =
   | { name: 'variation'; variationId: string; stage: Stage; fen?: string }
   | { name: 'about' }
   | { name: 'courses' }
+  | { name: 'lehrgang'; id: string }
+  | { name: 'lehrgang-system'; id: string; systemId: string }
+  /** kind s = the main line of a system (itemId = system id); a model game of a system has the item id "<system>/<game>". `modus` = the step the page starts in. */
+  | { name: 'lehrgang-ueben'; id: string; kind: 'v' | 'f' | 'm' | 's'; itemId: string; modus?: 'gefuehrt' | 'kopf' }
   | { name: 'training' }
   | { name: 'partien' }
   | { name: 'analyse'; fen?: string }
@@ -36,6 +40,10 @@ export function parseRoute(hash: string): Route {
   }
   if (parts[0] === 'ueber' && parts.length === 1) return { name: 'about' }
   if (parts[0] === 'kurse' && parts.length === 1) return { name: 'courses' }
+  if (parts[0] === 'lehrgang' && parts.length === 2) return { name: 'lehrgang', id: parts[1]! }
+  if (parts[0] === 'lehrgang' && parts.length === 4 && parts[2] === 'system') return { name: 'lehrgang-system', id: parts[1]!, systemId: parts[3]! }
+  if (parts[0] === 'lehrgang' && parts.length === 4 && (parts[2] === 'v' || parts[2] === 'f' || parts[2] === 'm' || parts[2] === 's')) return { name: 'lehrgang-ueben', id: parts[1]!, kind: parts[2], itemId: parts[3]! }
+  if (parts[0] === 'lehrgang' && parts.length === 5 && parts[2] === 's' && (parts[4] === 'gefuehrt' || parts[4] === 'kopf')) return { name: 'lehrgang-ueben', id: parts[1]!, kind: 's', itemId: parts[3]!, modus: parts[4] }
   if (parts[0] === 'training' && parts.length === 1) return { name: 'training' }
   if (parts[0] === 'partien' && parts.length === 1) return { name: 'partien' }
   if (parts[0] === 'analyse' && parts.length === 1) {
@@ -63,6 +71,9 @@ export const hrefAnalyse = (fen?: string) => `#/analyse${fen ? `?fen=${encodeURI
 export const hrefSpielen = (fen?: string) => '#/spielen' + (fen ? '?fen=' + encodeURIComponent(fen) : '')
 export const hrefMeinePartien = (id?: string) => '#/meine-partien' + (id ? '/' + encodeURIComponent(id) : '')
 export const hrefKurse = () => '#/kurse'
+export const hrefLehrgang = (id: string) => `#/lehrgang/${encodeURIComponent(id)}`
+export const hrefLehrgangUeben = (id: string, kind: 'v' | 'f' | 'm' | 's', itemId: string, modus?: 'gefuehrt' | 'kopf') => `#/lehrgang/${encodeURIComponent(id)}/${kind}/${encodeURIComponent(itemId)}${modus ? `/${modus}` : ''}`
+export const hrefLehrgangSystem = (id: string, systemId: string) => `#/lehrgang/${encodeURIComponent(id)}/system/${encodeURIComponent(systemId)}`
 export const hrefTraining = () => '#/training'
 
 export type NavId = 'start' | 'kurse' | 'spielen' | 'partien' | 'analyse' | 'ueber'
@@ -71,7 +82,7 @@ export type NavId = 'start' | 'kurse' | 'spielen' | 'partien' | 'analyse' | 'ueb
 export function navItemOf(r: Route): NavId | null {
   switch (r.name) {
     case 'home': return 'start'
-    case 'courses': case 'opening': case 'variation': return 'kurse'
+    case 'courses': case 'opening': case 'variation': case 'lehrgang': case 'lehrgang-system': case 'lehrgang-ueben': return 'kurse'
     case 'spielen': return 'spielen'
     case 'meinepartien': return 'partien'
     case 'analyse': return 'analyse'

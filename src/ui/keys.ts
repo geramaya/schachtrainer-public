@@ -29,3 +29,9 @@ export function isFlipKey(key: string, tag: string, editable: boolean, mods: Mod
   if (mods.alt || mods.ctrl || mods.meta || editable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) return false
   return key.toLowerCase() === 'f'
 }
+
+/** Tag to pass to the key helpers: a checkbox or radio does not use the arrow keys, so it counts as a plain control. */
+export function keyTag(el: { tagName: string; type?: string } | null | undefined): string {
+  if (el?.tagName === 'INPUT' && (el.type === 'checkbox' || el.type === 'radio')) return 'CHECKBOX'
+  return el?.tagName ?? ''
+}

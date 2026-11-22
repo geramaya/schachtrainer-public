@@ -10,6 +10,7 @@ import type { PromotionPiece } from '../chess/game.ts'
 import { squarePercent } from '../chess/squarePosition.ts'
 import PromotionDialog from './PromotionDialog.vue'
 import type { CoachShape } from '../coach/explain.ts'
+import type { Marke } from '../lehrgang/marks.ts'
 import { boardShapes } from '../coach/boardShapes.ts'
 import BoardLayers from './BoardLayers.vue'
 import { layerModel, threatShapes } from '../chess/layerModel.ts'
@@ -32,8 +33,12 @@ const props = defineProps<{
   highlight?: string[]
   /** Coach arrows and circles: blue = own chance, red = opponent idea, yellow = weak square; dim = not hovered. */
   shapes?: CoachShape[]
+  /** Info marks of a lesson sentence (Lichess colours): arrow with `dest`, circle without; own right-click marks stay untouched. */
+  marks?: Marke[]
   /** Frame on the target square of the last answer: green = right, red = wrong (colour plus the verdict line elsewhere). */
   flash?: { square: string; kind: 'ok' | 'err' } | null
+  /** Squares kept in a red frame (start and target of a wrong move) until the parent clears them. */
+  errSquares?: string[]
   /** Shakes the board frame once when it turns true (wrong answer). */
   wobble?: boolean
   /** An open exercise is on the board: the layers that would give the answer away stay off until it is solved. */
@@ -52,6 +57,8 @@ const flashStyle = computed(() => {
   const { left, top } = squarePercent(props.flash.square, props.orientation)
   return { left: `${left}%`, top: `${top}%` }
 })
+
+const errStyles = computed(() => (props.errSquares ?? []).map((sq) => { const { left, top } = squarePercent(sq, props.orientation); return { left: `${left}%`, top: `${top}%` } }))
 
 const turnColor = (): Side => (props.fen.split(' ')[1] === 'b' ? 'black' : 'white')
 
@@ -89,6 +96,7 @@ function config() {
       brushes: BRUSHES,
       autoShapes: [
         ...boardShapes(props.shapes ?? []).map((c) => ({ ...c, orig: c.orig as Key, dest: c.dest as Key | undefined })),
+        ...(props.marks ?? []).map((m) => ({ orig: m.orig as Key, dest: m.dest as Key | undefined, brush: m.brush })),
         ...props.arrows.map((a) => ({ orig: a.orig as Key, dest: a.dest as Key, brush: a.brush })),
         ...tintShapes.value,
         ...threats.value.map((t) => ({ orig: t.orig as Key, dest: t.dest as Key, brush: t.brush, ...(t.label ? { label: t.label } : {}) })),
@@ -153,14 +161,19 @@ async function runThreats(fen: string, tries = 0) {
 watch(() => [props.fen, props.orientation, active.value.has('threats')] as const, () => void runThreats(props.fen), { immediate: true })
 onBeforeUnmount(() => { threatToken++; clearTimeout(threatTimer) })
 
+/** The parent rejects a move by leaving the fen prop alone: then the piece has to go back, which only a config with the fen does (resync drops an unchanged fen). */
+function putBackIfRejected() {
+  if (props.fen === syncedFen) api?.set(config())
+  else resync()
+}
+
 function onAfter(from: Key, to: Key) {
   if (needsPromotion(props.fen, from, to)) {
     pending.value = { from, to }
     return
   }
   emit('move', toUci(from, to))
-  // If the parent rejects the move the fen prop stays the same: put the piece back.
-  void nextTick(resync)
+  void nextTick(putBackIfRejected)
 }
 
 function pick(piece: PromotionPiece) {
@@ -168,7 +181,7 @@ function pick(piece: PromotionPiece) {
   pending.value = null
   if (!p) return
   emit('move', toUci(p.from, p.to, piece))
-  void nextTick(resync)
+  void nextTick(putBackIfRejected)
 }
 
 function cancelPromotion() {
@@ -178,7 +191,7 @@ function cancelPromotion() {
 
 onMounted(() => { api = Chessground(el.value!, config()); syncedFen = props.fen })
 onBeforeUnmount(() => api?.destroy())
-watch(() => [props.fen, props.orientation, props.movable, props.arrows, props.lastMove, props.highlight, props.shapes, threats.value, tintShapes.value], resync, { deep: true })
+watch(() => [props.fen, props.orientation, props.movable, props.arrows, props.marks, props.lastMove, props.highlight, props.errSquares, props.shapes, threats.value, tintShapes.value], resync, { deep: true })
 </script>
 
 <template>
@@ -186,6 +199,7 @@ watch(() => [props.fen, props.orientation, props.movable, props.arrows, props.la
     <div ref="wrap" class="board-wrap" @mousemove="onHover" @mouseleave="hovered = null" @click="onTap">
       <div ref="el" class="board"></div>
       <BoardLayers :model="model" :orientation="orientation" :hovered="focusSquare" />
+      <div v-for="(st, i) in errStyles" :key="i" class="flash err" :style="st" aria-hidden="true"></div>
       <div v-if="flash && flashStyle" class="flash" :class="flash.kind" :style="flashStyle" aria-hidden="true"></div>
     </div>
     <PromotionDialog v-if="pending" :color="turnColor()" @pick="pick" @cancel="cancelPromotion" />

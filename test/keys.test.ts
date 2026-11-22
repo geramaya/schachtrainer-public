@@ -58,3 +58,13 @@ test('F flips the board, but never while typing and never with modifiers', () =>
   assert.equal(isFlipKey('f', 'BODY', false, { ...none, ctrl: true }), false)
   assert.equal(isFlipKey('h', 'BODY', false, none), false)
 })
+
+import { keyTag } from '../src/ui/keys.ts'
+test('a focused checkbox or radio does not swallow the board keys, text inputs and sliders still do', () => {
+  const none = { alt: false, ctrl: false, meta: false, shift: false }
+  assert.equal(shouldHandleKey('ArrowRight', keyTag({ tagName: 'INPUT', type: 'checkbox' }), false, none), true)
+  assert.equal(shouldHandleKey('ArrowLeft', keyTag({ tagName: 'INPUT', type: 'radio' }), false, none), true)
+  assert.equal(shouldHandleKey('ArrowRight', keyTag({ tagName: 'INPUT', type: 'text' }), false, none), false)
+  assert.equal(shouldHandleKey('ArrowRight', keyTag({ tagName: 'INPUT', type: 'range' }), false, none), false)
+  assert.equal(keyTag({ tagName: 'DIV' }), 'DIV')
+})

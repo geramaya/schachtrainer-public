@@ -13,7 +13,13 @@
     "eco": "node tools/build-eco.ts",
     "audio:texts": "node tools/export-audio-texts.ts",
     "audio:lehrer": "bash tools/gen-lehrer-audio.sh",
-    "audio:test": "python3 -m unittest test/test_gen_audio.py"
+    "audio:test": "python3 -m unittest test/test_gen_audio.py",
+    "lehrgang:daten": "nice -n 19 node tools/lehrgang-daten.ts",
+    "lehrgang:build": "node tools/lehrgang-build.ts",
+    "lehrgang:tiefe": "nice -n 19 node tools/lehrgang-tiefe.ts",
+    "lehrgang:aufgaben": "nice -n 19 node tools/lehrgang-aufgaben.ts",
+    "lehrgang:check": "node tools/lehrgang-check.ts",
+    "lehrgang:system": "nice -n 19 node tools/lehrgang-system.ts"
   },
   "dependencies": {
     "@lichess-org/chessground": "10.5.0",

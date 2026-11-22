@@ -1,0 +1,89 @@
+[
+ {
+  "id": "kann-mieses-1885",
+  "titel": "Mieses – Kann: Vorstoßvariante mit Läufertausch und c5",
+  "weiss": "Jacques Mieses",
+  "schwarz": "Marcus Kann",
+  "jahr": 1885,
+  "event": "4. Deutscher Schachkongress, Hamburg",
+  "quelle": "https://lichess.org/study/8Uztu7Xx/zwZF55Xp (Zugfolge); https://wanderingdragonschess.club/games/57 (Zugfolge); https://en.wikipedia.org/wiki/Marcus_Kann (Spieler, Ort, Jahr, Ergebnis, Stellung nach 17…Tc1)",
+  "platzhalter": false,
+  "pgn": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Bd3 Bxd3 5. Qxd3 e6 6. f4 c5 7. c3 Nc6 8. Nf3 Qb6 9. O-O Nh6 10. b3 cxd4 11. cxd4 Nf5 12. Bb2 Rc8 13. a3 Ncxd4 14. Nxd4 Bc5 15. Rd1 Nxd4 16. Bxd4 Bxd4+ 17. Qxd4 Rc1 18. Kf2 Rxd1 19. Qxb6 axb6 20. Ke2 Rc1 21. Kd2 Rg1 22. g3 Kd7 23. a4 Rc8 24. b4 Rcc1 0-1",
+  "kommentare": [
+   {
+    "ply": 6,
+    "satz": "Kann holt den Läufer nach f5, bevor er sich mit dem e-Bauern selbst den Weg versperrt; von dort schaut er auf den Bauern c2. Das ist der erste Schritt der Vorstoßvariante: Läufer nach außen, dann e-Bauer, dann der c-Bauer.",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "pfeile": [
+     "Gf5c2"
+    ],
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+   },
+   {
+    "ply": 8,
+    "satz": "Weiß hat mit Ld3 den Läufertausch angeboten, Kann nimmt ihn an. So ist sein Läufer weg, bevor Weiß ihn mit Randbauern angreifen kann; die weiße Dame wird gleich zurückschlagen.",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "pfeile": [
+     "Rd1d3"
+    ],
+    "quelle": "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+   },
+   {
+    "ply": 12,
+    "satz": "Jetzt kommt der Hebel: Der c-Bauer greift den Bauern d4 an, das untere Ende der weißen Kette d4–e5. Weiß hat mit f4 statt Sf3 gespielt, Stockfish sieht die Stellung ausgeglichen (−0,04).",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "pfeile": [
+     "Gc5d4"
+    ],
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 ; https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+   },
+   {
+    "ply": 16,
+    "satz": "Die Dame deckt den Bauern c5 und greift den Bauern b2 an, so bleibt der Druck auf d4 bestehen. Stockfish sieht Weiß hier aber leicht besser (+0,57): Der Plan ist richtig, jeder Zug muss es nicht sein.",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "pfeile": [
+     "Gb6b2",
+     "Bb6c5"
+    ],
+    "quelle": "https://lichess.org/study/8Uztu7Xx/zwZF55Xp"
+   },
+   {
+    "ply": 24,
+    "satz": "Nach dem Tausch auf d4 sind beide c-Bauern weg: Kann stellt den Turm auf die offene c-Linie, sein Ziel ist das Feld c1. Stockfish sieht Schwarz hier klar besser (−1,34).",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "felder": [
+     "Yc1"
+    ],
+    "quelle": "https://lichess.org/study/8Uztu7Xx/zwZF55Xp"
+   },
+   {
+    "ply": 34,
+    "satz": "Mit Rc1 dringt Kann auf der offenen c-Linie ein und greift den Turm d1 und den Springer b1 an. Stockfish sieht Schwarz entscheidend besser (−6,57); laut Wikipedia verliert Weiß danach die Qualität und bald die Partie.",
+    "status": "entwurf",
+    "belege": [
+     "zugfolge"
+    ],
+    "pfeile": [
+     "Gc1d1",
+     "Gc1b1"
+    ],
+    "quelle": "https://en.wikipedia.org/wiki/Marcus_Kann"
+   }
+  ]
+ }
+]

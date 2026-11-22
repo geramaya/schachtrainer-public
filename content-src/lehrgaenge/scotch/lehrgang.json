@@ -1,0 +1,13 @@
+{
+ "id": "scotch",
+ "name": "Schottisch",
+ "side": "white",
+ "entry": [
+  "e4",
+  "e5",
+  "Nf3",
+  "Nc6",
+  "d4"
+ ],
+ "band": "1200–1600"
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "sf6-fehler",
+  "titel": "Zu früh Sf6 gegen den Läufer auf c5",
+  "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R w KQkq - 3 6",
+  "loesung": "Nxc6",
+  "satz": "Schwarz hat mit Sf6 die Drohung Sxc6 übersehen: Du tauschst auf c6 und greifst dabei die Dame an; danach fällt der ungedeckte Läufer auf c5. Die Engine sieht Sf6 als Fehler im Wert von gut sechs Bauern.",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game (Abruf 2026-11-22); Stockfish-Verlust laut aufgaben.json"
+ },
+ {
+  "id": "d6-fehler",
+  "titel": "Zu früh d6 gegen den Läufer auf c5",
+  "fen": "r1bqk1nr/ppp2ppp/2np4/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R w KQkq - 0 6",
+  "loesung": "Nxc6",
+  "satz": "Nach Sxc6 bxc6 nimmst du mit Lxc5; schlägt Schwarz mit dem d-Bauern zurück, hat er drei Bauern auf der c-Linie, und der Bauer c5 lässt sich auf Dauer nicht halten (eigene Analyse, Stockfish Tiefe 22: Dxd8+ Kxd8 Sd2 Sf6 0-0-0 Ke7 Sb3 a5 Sxc5). Die Engine sieht d6 als Fehler im Wert von rund drei Bauern.",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game (Abruf 2026-11-22: tripled pawns); eigene Analyse Stockfish Tiefe 22 (Bauer c5 fällt, Bewertung −2,99 für Schwarz, Tiefe 24: −3,06)"
+ },
+ {
+  "id": "sh5-fehler",
+  "titel": "Springer an den Rand nach h5",
+  "fen": "r1bqkb1r/pppp1ppp/8/4P2n/3Q4/8/PPP2PPP/RNB1KB1R w KQkq - 1 7",
+  "loesung": "g4",
+  "satz": "Schwarz hat den Springer nach h5 gestellt. Mit g4 greifst du ihn an; die Engine sieht den Zug von Schwarz als Fehler im Wert von gut dreieinhalb Bauern. Das spielt Schwarz an dieser Stelle in etwa 1 von 5 Fällen.",
+  "quelle": "Stockfish-Bewertung und Häufigkeit laut aufgaben.json (fallenKandidaten, Lichess-Explorer 1200–1600)"
+ }
+]

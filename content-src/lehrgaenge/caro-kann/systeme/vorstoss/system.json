@@ -1,0 +1,1657 @@
+{
+ "id": "vorstoss",
+ "titel": "Vorstoßvariante",
+ "zuege": [
+  "e4",
+  "c6",
+  "d4",
+  "d5",
+  "e5",
+  "Bf5"
+ ],
+ "idee": [
+  {
+   "id": "struktur",
+   "titel": "Struktur",
+   "satz": "Mit e5 schließt Weiß die Mitte und gewinnt Raum: Die Bauern d4 und e5 bilden eine Kette, die in deine Hälfte hineinragt. Dein Läufer c8 ist trotzdem nicht eingesperrt, denn er kommt vor e6 nach f5 und schaut von dort auf c2. Der Bauer d4 ist das untere Ende der Kette; wer ihn unter Druck setzt, wackelt auch e5.",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6"
+   ],
+   "status": "entwurf",
+   "pfeile": [
+    "Gf5c2"
+   ],
+   "felder": [
+    "Yd4"
+   ],
+   "quelle": [
+    "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Variation (nur: Raumvorteil, Kette in der schwarzen Hälfte, Läufer c8 frei)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5 (Läufer außerhalb der Kette, e6 danach möglich)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 (Weiß schließt die Mitte und gewinnt Raum)",
+    "eigene Beobachtung am Brett (chess.js): Läufer f5 auf c2, d4 am Kettenende"
+   ]
+  },
+  {
+   "id": "figuren",
+   "titel": "Wohin die Figuren",
+   "satz": "Deinen Läufer tauschst du gegen den weißen Läufer, sobald Weiß den Tausch anbietet; dann haben die Randbauern auf f5 keinen Angriffspunkt mehr. Der Springer b8 geht nach d7 und setzt e5 unter Druck; der Springer g8 zieht über e7 nach c6 oder nach f5, von beiden Feldern zielt er auf d4. Die Dame gehört nach b6: Von dort greift sie b2 an und deckt den Bauern c5.",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "c5",
+    "c3",
+    "Nd7",
+    "O-O",
+    "Ne7",
+    "Qe2",
+    "Nc6",
+    "Rd1",
+    "Qb6"
+   ],
+   "status": "entwurf",
+   "pfeile": [
+    "Gb6b2",
+    "Gc6d4",
+    "Gd7e5"
+   ],
+   "felder": [
+    "Yd4"
+   ],
+   "quelle": [
+    "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi",
+    "https://lichess.org/study/8Uztu7Xx/GJvjSow8",
+    "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+   ]
+  },
+  {
+   "id": "plan-schwarz",
+   "titel": "Pläne Schwarz",
+   "satz": "Dein wichtigstes Mittel ist c5: Der Bauer greift d4 an, das untere Ende der weißen Kette, und Weiß muss ihn decken. Weiß ist auf den Tausch auf d4 eingestellt, darum bringst du erst Springer und Dame ins Spiel, statt früh zu schlagen. Ein Springerschlag auf e5 kostet Material, weil d4 und der Springer f3 den Bauern decken; als Ausweichplan bleibt der f-Bauer, der e5 von der Seite angreift.",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "c5",
+    "c3",
+    "Nd7",
+    "O-O",
+    "Ne7"
+   ],
+   "status": "entwurf",
+   "pfeile": [
+    "Gc5d4",
+    "Gd7e5"
+   ],
+   "felder": [
+    "Yd4"
+   ],
+   "quelle": [
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5 (c5 greift das Kettenende an)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5 (f6 als weitere Idee)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nf3 (Weiß bereitet Nxd4 nach cxd4 vor)",
+    "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung (Hebel c6-c5)",
+    "eigene Beobachtung am Brett (chess.js): Sxe5 verliert Material, e5 von d4 und Sf3 gedeckt",
+    "Lichess-Studie 8Uztu7Xx/Lvj2m3fi (Kampfschach), nur als weitere Stimme zur gleichen Linie, frei formuliert"
+   ]
+  },
+  {
+   "id": "plan-weiss",
+   "titel": "Pläne Weiß",
+   "satz": "Weiß hat den Raumvorteil und kann in Ruhe entwickeln: Mit c3 und dem Springer f3 ist d4 sicher gedeckt. Will er mehr, geht er auf deinen Läufer los, etwa mit dem g- und dem h-Bauern, oder er baut die Kette mit dem f-Bauern aus. Hat er auf d3 getauscht und mit der Dame zurückgeschlagen, zielt sie auf deinen Bauern h7.",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "c5",
+    "c3",
+    "Nd7",
+    "O-O",
+    "Ne7"
+   ],
+   "status": "entwurf",
+   "pfeile": [
+    "Bc3d4",
+    "Bf3d4",
+    "Rd3h7"
+   ],
+   "quelle": [
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5 (Raumvorteil, ruhige Entwicklung, Angriff auf den Läufer)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nc3 (g4 und h4)",
+    "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung (Angriff auf den Läufer f5 mit g2-g4)",
+    "eigene Beobachtung am Brett (chess.js): d4 von c3 und Sf3 gedeckt, Dame d3 zielt auf h7"
+   ]
+  },
+  {
+   "id": "achten",
+   "titel": "Worauf achten",
+   "satz": "Gegen h4 darfst du nicht sofort e6 spielen: Nach g4, f3 und h5 ist dein Läufer nicht mehr zu retten, und die Engine sieht Weiß auf Gewinn (+4,41). Spiele stattdessen h5: Der Bauer nimmt g4 unter Kontrolle, und e6 und Se7 folgen in Ruhe. Prüfe bei jedem Randbauernzug von Weiß als Erstes, wohin dein Läufer ausweichen kann.",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "h4",
+    "e6",
+    "g4",
+    "Be4",
+    "f3",
+    "Bg6",
+    "h5"
+   ],
+   "status": "entwurf",
+   "pfeile": [
+    "Rh5g6"
+   ],
+   "quelle": [
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._h4",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+    "Stockfish Tiefe 18 (aufgaben.json)"
+   ]
+  }
+ ],
+ "hauptlinie": {
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "Weiß stellt einen Bauern ins Zentrum.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "struktur"
+   },
+   {
+    "san": "c6",
+    "satz": "Der c-Bauer bereitet den Vorstoß des d-Bauern vor und lässt den Läufer c8 frei, anders als der e-Bauer in der Französischen Verteidigung.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "struktur",
+    "quelle": [
+     "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Variation"
+    ]
+   },
+   {
+    "san": "d4",
+    "satz": "Weiß stellt einen zweiten Bauern ins Zentrum.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "struktur"
+   },
+   {
+    "san": "d5",
+    "satz": "Du greifst den Bauern e4 an und stellst selbst einen Bauern ins Zentrum; dafür war c6 da.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "struktur",
+    "pfeile": [
+     "Gd5e4"
+    ]
+   },
+   {
+    "san": "e5",
+    "satz": "Weiß rückt mit dem e-Bauern vor und gewinnt Raum: Mit d4 und e5 steht jetzt eine Kette in deiner Hälfte. Das ist die Vorstoßvariante.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "struktur",
+    "quelle": [
+     "https://www.chess.com/openings/Caro-Kann-Defense-Advance-Variation",
+     "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+    ]
+   },
+   {
+    "san": "Bf5",
+    "satz": "Du holst den Läufer nach außen, bevor der e-Bauer ihn einsperrt; von f5 schaut er auf c2.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "struktur",
+    "pfeile": [
+     "Gf5c2"
+    ],
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5"
+    ]
+   },
+   {
+    "san": "Nf3",
+    "satz": "Sf3 deckt d4 und e5 und bereitet vor, nach deinem Hebel mit dem c-Bauern auf d4 mit dem Springer zurückzunehmen. Das ist der Beginn der ruhigen Short-Variante.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Bf3d4",
+     "Bf3e5"
+    ],
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nf3"
+    ]
+   },
+   {
+    "san": "e6",
+    "satz": "e6 deckt den Bauern d5 und den Läufer f5; außerdem hat dein Läufer f8 jetzt freie Bahn und kann später den Hebel mit dem c-Bauern unterstützen.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "struktur",
+    "pfeile": [
+     "Be6d5",
+     "Be6f5"
+    ],
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5"
+    ]
+   },
+   {
+    "san": "Bd3",
+    "satz": "Weiß bietet den Läufertausch an: Ld3 greift deinen Läufer f5 an. Bei Wertungen von 1200 bis 1600 ist Ld3 hier der häufigste Zug, die Theorie nennt Le2 als den üblichen.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Rd3f5"
+    ],
+    "quelle": [
+     "Lichess Opening Explorer, Wertung 1200–1600, Abruf 2026-11-22 (daten.json)",
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nf3/4...e6"
+    ]
+   },
+   {
+    "san": "Bxd3",
+    "satz": "Du tauschst den Läufer, statt ihn jagen zu lassen; so fällt der Angriffspunkt für die Randbauern weg. Weiß hat danach keinen Läufer mehr auf den hellen Feldern, und darauf baut dein Spiel auf.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "figuren",
+    "quelle": [
+     "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi",
+     "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3"
+    ]
+   },
+   {
+    "san": "Qxd3",
+    "satz": "Weiß schlägt mit der Dame zurück; sie zielt jetzt auf deinen Bauern h7.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Rd3h7"
+    ],
+    "quelle": [
+     "eigene Beobachtung am Brett (chess.js)"
+    ]
+   },
+   {
+    "san": "c5",
+    "satz": "Jetzt kommt dein Hebel: c5 greift den Bauern d4 an, das untere Ende der weißen Kette. Stockfish sieht die Stellung danach ausgeglichen (+0,35). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Gc5d4"
+    ],
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+     "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "c3",
+    "satz": "Weiß stützt d4 mit c3, damit der Hebel die Kette nicht untergräbt; mit dem Springer f3 und der Dame ist d4 jetzt mehrfach gedeckt.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Bc3d4"
+    ],
+    "quelle": [
+     "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi"
+    ]
+   },
+   {
+    "san": "Nd7",
+    "satz": "Sd7 setzt e5 unter Druck und stützt c5. Der andere Springer behält den Weg über e7.",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "figuren",
+    "pfeile": [
+     "Gd7e5",
+     "Bd7c5"
+    ],
+    "quelle": [
+     "eigene Beobachtung am Brett (chess.js): Sd7 greift e5 an, deckt c5, e7 bleibt für den Springer g8 frei",
+     "Lichess-Studie 8Uztu7Xx/Lvj2m3fi (Kampfschach) als weitere Stimme zur Zugwahl, frei formuliert"
+    ]
+   },
+   {
+    "san": "O-O",
+    "satz": "Weiß rochiert kurz und bringt seinen König in Sicherheit.",
+    "herkunft": "daten",
+    "status": "entwurf",
+    "plan": "plan-weiss"
+   },
+   {
+    "san": "Ne7",
+    "satz": "Se7 deckt den Bauern d5; von e7 aus kann der Springer später nach c6 oder f5. Stockfish sieht die Stellung ausgeglichen (+0,10).",
+    "herkunft": "repertoire",
+    "status": "entwurf",
+    "plan": "figuren",
+    "pfeile": [
+     "Be7d5"
+    ],
+    "felder": [
+     "Yf5"
+    ],
+    "quelle": [
+     "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi",
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Qe2",
+    "satz": "Ab hier stammen die Züge aus Stockfish (Tiefe 18), denn die Lichess-Daten reichen nicht weiter. De2 ist ein spielbarer Zug unter mehreren gleichwertigen, nicht der einzige: Er deckt den Bauern e5 und b2.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Be2e5",
+     "Be2b2"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Nc6",
+    "satz": "Stockfish zieht Sc6: Der Springer greift d4 und e5 an und verstärkt den Hebel c5.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Gc6d4",
+     "Gc6e5"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Rd1",
+    "satz": "Stockfish zieht Td1: Der Turm deckt d4 zusätzlich, Weiß hält die Mitte zusammen.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Bd1d4"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Qb6",
+    "satz": "Stockfish zieht Db6: Die Dame greift b2 an und deckt c5, so bleibt der Hebel gegen d4 gestützt. Die Stellung bleibt ausgeglichen (+0,03).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Gb6b2",
+     "Bb6c5"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)",
+     "https://lichess.org/study/8Uztu7Xx/GJvjSow8"
+    ]
+   },
+   {
+    "san": "h3",
+    "satz": "Stockfish zieht h3: Der Bauer gibt dem weißen König ein Fluchtfeld.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Rc8",
+    "satz": "Stockfish zieht Tc8: Der Turm geht hinter den Bauern c5 auf die c-Linie und deckt den Springer c6.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Bc8c6"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Be3",
+    "satz": "Stockfish zieht Le3: Der Läufer wird entwickelt und deckt d4 und f2.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Be3d4"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Qa6",
+    "satz": "Stockfish zieht Da6: Die Dame greift die weiße Dame an und bietet den Damentausch an. Die Stellung bleibt ausgeglichen (−0,11).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Ga6e2"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "Qxa6",
+    "satz": "Weiß nimmt den Damentausch an und schlägt auf a6 (Zug von Stockfish).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "bxa6",
+    "satz": "Du schlägst mit dem b-Bauern zurück: Das gibt dir doppelte a-Bauern, aber eine halboffene b-Linie. Die Stellung bleibt ausgeglichen (−0,01).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)",
+     "eigene Beobachtung am Brett (chess.js)"
+    ]
+   },
+   {
+    "san": "Nbd2",
+    "satz": "Stockfish zieht Sbd2: Weiß entwickelt den letzten Springer und deckt damit den Springer f3.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Bd2f3"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "cxd4",
+    "satz": "Stockfish lässt dich jetzt auf d4 schlagen: Der Bauer greift den Bauern c3 und den Läufer e3 an.",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "pfeile": [
+     "Gd4e3",
+     "Gd4c3"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "cxd4",
+    "satz": "Weiß nimmt mit dem c-Bauern zurück (Zug von Stockfish) und hat wieder einen Bauern auf d4, gedeckt vom Läufer e3. Die Stellung ist ausgeglichen (−0,01).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-weiss",
+    "pfeile": [
+     "Be3d4"
+    ],
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "san": "a5",
+    "satz": "Stockfish zieht a5. Die Stellung bleibt ausgeglichen (+0,03).",
+    "herkunft": "engine",
+    "status": "entwurf",
+    "plan": "plan-schwarz",
+    "quelle": [
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   }
+  ],
+  "aeste": [
+   {
+    "id": "ast1",
+    "ab": 6,
+    "satz": "4. Ld3 tauscht sofort die Läufer, ohne etwas zu entwickeln; Wikibooks hält den Zug für unterlegen (vor allem wegen der Partie, in der Capablanca 1927 Nimzowitsch damit strategisch überspielte). Im Lichess-Explorer wählt Weiß ihn bei Wertungen von 1200 bis 1600 trotzdem etwa in jeder vierten Partie. Du tauschst, spielst e6 und folgst mit dem c-Bauern, so wie Capablanca in dieser Partie.",
+    "anteil": 0.2267771182869387,
+    "zuege": [
+     {
+      "san": "Bd3",
+      "satz": "Weiß tauscht die hellen Läufer sofort: Ld3 greift deinen Läufer f5 an.",
+      "herkunft": "daten",
+      "status": "entwurf",
+      "pfeile": [
+       "Rd3f5"
+      ],
+      "quelle": [
+       "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3"
+      ]
+     },
+     {
+      "san": "Bxd3",
+      "satz": "Du nimmst den Tausch an; danach hat Weiß keinen Läufer mehr auf den hellen Feldern.",
+      "herkunft": "repertoire",
+      "status": "entwurf",
+      "quelle": [
+       "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3"
+      ]
+     },
+     {
+      "san": "Qxd3",
+      "satz": "Weiß schlägt mit der Dame zurück.",
+      "herkunft": "daten",
+      "status": "entwurf"
+     },
+     {
+      "san": "e6",
+      "satz": "e6 deckt den Bauern d5 und bereitet den Hebel mit dem c-Bauern vor. Die Stellung ist ausgeglichen (+0,19).",
+      "herkunft": "repertoire",
+      "status": "entwurf",
+      "pfeile": [
+       "Be6d5"
+      ],
+      "quelle": [
+       "Stockfish Tiefe 18 (aufgaben.json)"
+      ]
+     }
+    ],
+    "status": "entwurf",
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3",
+     "Lichess Opening Explorer, Wertung 1200–1600, Abruf 2026-11-22 (daten.json)",
+     "https://www.pgnmentor.com/players/Capablanca.zip"
+    ]
+   },
+   {
+    "id": "ast2",
+    "ab": 6,
+    "satz": "4. Sc3 nimmt deinem Läufer das Feld e4 und bereitet den Läuferangriff mit dem g- und dem h-Bauern vor, also den Van-der-Wiel-Angriff. Wikibooks nennt 4...e6 als üblichen Zug; dein Repertoire spielt hier Db6, und Stockfish sieht Weiß danach leicht im Vorteil (+0,83). Hier ist dein Repertoire also offen: Prüfe, ob du bei Db6 bleibst oder auf e6 umstellst.",
+    "anteil": 0.09151446283723767,
+    "zuege": [
+     {
+      "san": "Nc3",
+      "satz": "Weiß entwickelt den Springer, greift d5 an und entzieht deinem Läufer das Feld e4.",
+      "herkunft": "daten",
+      "status": "entwurf",
+      "pfeile": [
+       "Rc3d5"
+      ],
+      "quelle": [
+       "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nc3"
+      ]
+     },
+     {
+      "san": "Qb6",
+      "satz": "Dein Repertoire spielt Db6: Die Dame greift b2 und d4 an. Stockfish sieht Weiß danach leicht im Vorteil (+0,83); üblich ist hier der Zug mit dem e-Bauern.",
+      "herkunft": "repertoire",
+      "status": "entwurf",
+      "pfeile": [
+       "Gb6b2",
+       "Gb6d4"
+      ],
+      "quelle": [
+       "Stockfish Tiefe 18 (aufgaben.json)",
+       "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nc3"
+      ]
+     },
+     {
+      "san": "Nf3",
+      "satz": "Sf3 entwickelt den zweiten Springer und deckt d4 und e5.",
+      "herkunft": "daten",
+      "status": "entwurf",
+      "pfeile": [
+       "Bf3d4",
+       "Bf3e5"
+      ]
+     },
+     {
+      "san": "e6",
+      "satz": "e6 deckt den Bauern d5 und den Läufer f5.",
+      "herkunft": "repertoire",
+      "status": "entwurf",
+      "pfeile": [
+       "Be6d5",
+       "Be6f5"
+      ]
+     }
+    ],
+    "status": "entwurf",
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nc3",
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   },
+   {
+    "id": "ast3",
+    "ab": 6,
+    "satz": "4. f4 stützt e5 mit einem Bauern und nimmt Raum, bevor Weiß eine Figur entwickelt. Du spielst weiter e6 und kannst später den c-Bauern folgen lassen. Dein Repertoire legt nach f4 nichts fest, die Züge kommen von Stockfish, und der sieht die Stellung durchgehend ausgeglichen (−0,08).",
+    "anteil": 0.08782106820268497,
+    "zuege": [
+     {
+      "san": "f4",
+      "satz": "Weiß stützt e5 mit dem f-Bauern und gewinnt weiter Raum, hat aber noch keine Figur entwickelt.",
+      "herkunft": "daten",
+      "status": "entwurf",
+      "pfeile": [
+       "Bf4e5"
+      ],
+      "quelle": [
+       "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5"
+      ]
+     },
+     {
+      "san": "e6",
+      "satz": "Stockfish zieht e6: Der Bauer deckt d5 und den Läufer f5. Die Stellung ist ausgeglichen (−0,14).",
+      "herkunft": "engine",
+      "status": "entwurf",
+      "pfeile": [
+       "Be6d5",
+       "Be6f5"
+      ],
+      "quelle": [
+       "Stockfish Tiefe 18 (aufgaben.json)"
+      ]
+     },
+     {
+      "san": "Nf3",
+      "satz": "Sf3 entwickelt die erste weiße Figur und deckt d4 und e5.",
+      "herkunft": "engine",
+      "status": "entwurf",
+      "pfeile": [
+       "Bf3d4",
+       "Bf3e5"
+      ]
+     },
+     {
+      "san": "h5",
+      "satz": "Stockfish zieht h5: Der Bauer hält den weißen g-Bauern davon ab, deinen Läufer zu jagen. Die Stellung ist ausgeglichen (−0,08).",
+      "herkunft": "engine",
+      "status": "entwurf",
+      "quelle": [
+       "Stockfish Tiefe 18 (aufgaben.json)"
+      ]
+     }
+    ],
+    "status": "entwurf",
+    "quelle": [
+     "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+     "Stockfish Tiefe 18 (aufgaben.json)"
+    ]
+   }
+  ]
+ },
+ "motive": [
+  {
+   "id": "m1",
+   "titel": "Weiß überzieht mit g4 und h4: Gegenschläge",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nc3",
+    "e6",
+    "g4",
+    "Bg6",
+    "Nge2",
+    "c5",
+    "h4",
+    "h5"
+   ],
+   "satz": "Weiß will deinen Läufer mit dem g- und dem h-Bauern vertreiben: Nach g4 weicht er nach g6 aus, und h4 droht h5, womit der Läufer gefangen wäre. Du antwortest mit h5: Der Bauer greift g4 an und nimmt Weiß den Vorstoß h5 weg; die Stellung ist ausgeglichen. Weiß hat dafür viele Randbauern gezogen und seinen Königsflügel geschwächt, was die Rätsel mit Schlägen auf der h-Linie und gegen c2 bestrafen.",
+   "pfeile": [
+    "Gh5g4",
+    "Rg4h5",
+    "Gg6c2"
+   ],
+   "quelle": [
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Nc3 (Plan g4 und h4-h5)",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5 (g4 und h4 schwächen den weißen Königsflügel)",
+    "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung (Läufer f5 als Angriffsziel)",
+    "Beispiellinie (eigene Zusammenstellung); Stockfish Tiefe 18: ausgeglichen"
+   ],
+   "raetsel": [
+    {
+     "id": "r1",
+     "fen": "rn1qk1nr/pp2bpp1/2p1p1b1/3pP1B1/3P2PP/2N5/PPPQ4/R3KBNR b KQkq - 0 10",
+     "loesung": [
+      "e7g5",
+      "h4g5",
+      "h8h1"
+     ],
+     "hinweis": "Weiß hat g4 und h4 gespielt. Der h-Bauer steht jetzt zwischen deinem Turm h8 und dem Turm h1. Was passiert, wenn er schlagen muss?",
+     "satz": "Lxg5! lockt den h-Bauern von der h-Linie: Nach hxg5 ist die Linie offen, und dein Turm h8 schlägt den ungedeckten Turm h1.",
+     "puzzleId": "7yjkv",
+     "rating": 1108,
+     "themes": [
+      "crushing",
+      "opening",
+      "short"
+     ],
+     "url": "https://lichess.org/training/7yjkv",
+     "status": "entwurf"
+    },
+    {
+     "id": "r2",
+     "fen": "rn2kbnr/pp3ppq/2p1p1b1/3pP3/3P1NPP/5P2/PPP3B1/RNBQ1K1R b kq - 0 12",
+     "loesung": [
+      "g6c2",
+      "d1e2",
+      "c2b1"
+     ],
+     "hinweis": "Dein Läufer g6 wird gejagt, aber hinter ihm steht deine Dame h7 auf derselben Diagonale. Welches Feld auf dieser Diagonale ist nur schwach gedeckt?",
+     "satz": "Lxc2! greift die Dame d1 an. Schlägt sie zurück, nimmt deine Dame h7 sie auf c2; zieht sie nach e2, gewinnt Lxb1 den Springer.",
+     "puzzleId": "XCR2j",
+     "rating": 1579,
+     "themes": [
+      "advantage",
+      "opening",
+      "short"
+     ],
+     "url": "https://lichess.org/training/XCR2j",
+     "status": "entwurf"
+    }
+   ],
+   "status": "entwurf"
+  },
+  {
+   "id": "m2",
+   "titel": "Druck auf d4: Hebel c5 und Springer c6",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Nf3",
+    "e6",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "c5",
+    "c3",
+    "Nd7",
+    "O-O",
+    "Ne7",
+    "Qe2",
+    "Nc6",
+    "Rd1",
+    "Qb6"
+   ],
+   "satz": "Dein c-Bauer greift d4 an und rüttelt damit an der ganzen weißen Kette. Weiß stützt d4 mit c3, dem Springer f3 und dem Turm d1, also brauchst du mehr Angreifer: Springer c6, Dame b6 und der Bauer c5 arbeiten zusammen. Schlage erst auf d4, wenn alles bereitsteht: Ein unvorbereiteter Springerschlag kostet Material, in den Rätseln trifft er mit Tempo die weiße Dame.",
+   "pfeile": [
+    "Gc5d4",
+    "Gc6d4",
+    "Bb6c5"
+   ],
+   "felder": [
+    "Yd4"
+   ],
+   "quelle": [
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+    "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5",
+    "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi",
+    "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung"
+   ],
+   "raetsel": [
+    {
+     "id": "r3",
+     "fen": "r2q1rk1/pp3ppp/2n1p3/3pPb2/3P4/1QN5/PP3PPP/R1B1K1NR b KQ - 1 11",
+     "loesung": [
+      "c6d4",
+      "b3d1",
+      "d4c2"
+     ],
+     "hinweis": "Weiß hat die Dame nach b3 gestellt, und der Bauer d4 hat keinen Schutz mehr. Wie nimmst du ihn mit Tempo auf die Dame?",
+     "satz": "Sxd4! greift die Dame b3 an. Nach Dd1 folgt Sc2+: Der Springer gabelt König e1 und Turm a1, und der Läufer f5 deckt ihn.",
+     "puzzleId": "bPvnp",
+     "rating": 1161,
+     "themes": [
+      "advantage",
+      "opening",
+      "short"
+     ],
+     "url": "https://lichess.org/training/bPvnp",
+     "status": "entwurf"
+    },
+    {
+     "id": "r4",
+     "fen": "r3kb1r/4npp1/1pn1p1p1/p1NpP3/P1qP4/B1P5/2QN1PPP/R3K2R b KQkq - 1 17",
+     "loesung": [
+      "c6d4",
+      "c2d3",
+      "c4d3"
+     ],
+     "hinweis": "Dein Springer c6 kann den Bauern d4 schlagen. Was geschieht, wenn Weiß mit dem Bauern c3 zurücknimmt?",
+     "satz": "Sxd4! Der Bauer c3 steht zwischen den Damen: Nach cxd4 schlägt Dc4 die ungedeckte Dame c2. Der beste weiße Versuch ist Sxc4: Dann schlägt Sxc2+ die Dame und gabelt König und Turm a1. Auch Dd3 hilft nicht, die Dame fällt nach Dxd3.",
+     "puzzleId": "2ZVNb",
+     "rating": 1360,
+     "themes": [
+      "advantage",
+      "middlegame",
+      "short"
+     ],
+     "url": "https://lichess.org/training/2ZVNb",
+     "status": "entwurf"
+    }
+   ],
+   "status": "entwurf"
+  },
+  {
+   "id": "m3",
+   "titel": "Die Dame auf b6: Druck auf b2 und d4",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "e6",
+    "Nc3",
+    "Qb6"
+   ],
+   "satz": "Db6 greift b2 und d4 zugleich an und bereitet den Hebel mit dem c-Bauern vor. Weiß muss b2 decken, hier tut das der Läufer c1, und darf d4 nicht ungedeckt lassen. In anderen Linien holt Schwarz den Bauern b2 sogar, und Weiß bekommt dafür aktives Figurenspiel; die Lichess-Studie nennt das eine der meistdiskutierten Linien.",
+   "pfeile": [
+    "Gb6b2",
+    "Gb6d4"
+   ],
+   "felder": [
+    "Yd4"
+   ],
+   "quelle": [
+    "https://lichess.org/study/8Uztu7Xx/GJvjSow8",
+    "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi"
+   ],
+   "raetsel": [
+    {
+     "id": "r5",
+     "fen": "r3kb1r/pp3ppp/1q2p3/3pP3/3Q1P2/2N5/PP4PP/R1BR2K1 b kq - 0 14",
+     "loesung": [
+      "f8c5",
+      "c1e3",
+      "c5d4"
+     ],
+     "hinweis": "Weiß hat mit der Dame auf d4 geschlagen. Deine Dame b6 steht auf derselben Diagonale. Welcher Zug greift die Dame d4 an und bleibt gedeckt?",
+     "satz": "Lc5! greift die Dame d4 an, und deine Dame b6 deckt den Läufer. Nach Le3 schlägt Lxd4, und nach Lxd4 weicht deine Dame aus: Du gewinnst die Dame für einen Läufer.",
+     "puzzleId": "9Sk7P",
+     "rating": 1147,
+     "themes": [
+      "advantage",
+      "middlegame",
+      "pin",
+      "short"
+     ],
+     "url": "https://lichess.org/training/9Sk7P",
+     "status": "entwurf"
+    },
+    {
+     "id": "r6",
+     "fen": "2r1kb1r/pp1b1p2/1qn1p3/3pPpBp/P2N3P/2P2N2/1PQ2PP1/R4RK1 b k - 0 15",
+     "loesung": [
+      "c6d4",
+      "f3d4",
+      "b6d4"
+     ],
+     "hinweis": "Dein Turm c8 zielt über die c-Linie auf die weiße Dame c2; dazwischen stehen dein Springer c6 und der weiße Bauer c3. Wie räumst du die Linie?",
+     "satz": "Sxd4 Sxd4 Dxd4! Schlägt Weiß mit c3 zurück, steht die Dame c2 ungedeckt vor dem Turm c8: Txc2.",
+     "puzzleId": "5yOE2",
+     "rating": 1212,
+     "themes": [
+      "crushing",
+      "middlegame",
+      "short"
+     ],
+     "url": "https://lichess.org/training/5yOE2",
+     "status": "entwurf"
+    }
+   ],
+   "status": "entwurf"
+  },
+  {
+   "id": "m4",
+   "titel": "Schach über die Diagonale a5–e1",
+   "zuege": [
+    "e4",
+    "c6",
+    "d4",
+    "d5",
+    "e5",
+    "Bf5",
+    "Bd3",
+    "Bxd3",
+    "Qxd3",
+    "Qa5+"
+   ],
+   "satz": "Solange der weiße König noch auf e1 steht, ist die Diagonale a5–e1 für dich ein Schachweg: Da5+ gibt Schach und greift nebenbei an, was ungedeckt ist. Nach Ld3, Lxd3 und Dxd3 ist Da5+ ein spielbarer Zug, den eine Lichess-Studie sogar dem üblichen Zug mit dem e-Bauern vorzieht. Auch ein Läufer kann auf dieser Diagonale Schach geben und zwingt dann den Springer b1 ins Feld d2.",
+   "pfeile": [
+    "Ga5e1"
+   ],
+   "felder": [
+    "Ye1"
+   ],
+   "quelle": [
+    "https://lichess.org/study/8Uztu7Xx/Lvj2m3fi",
+    "https://lichess.org/study/8Uztu7Xx/GJvjSow8",
+    "https://database.lichess.org/#puzzles"
+   ],
+   "raetsel": [
+    {
+     "id": "r7",
+     "fen": "r3kbnr/pp3pp1/2n1p2p/3pP3/2PP1P1P/2Q1BN2/PqP3P1/RN2K2R b KQkq - 2 12",
+     "loesung": [
+      "f8b4",
+      "e3d2",
+      "b4c3"
+     ],
+     "hinweis": "Die weiße Dame steht auf c3, der König noch auf e1. Dein Läufer f8 kann auf der Diagonale a5–e1 etwas gewinnen.",
+     "satz": "Lb4! greift die Dame c3 an, die an den König e1 gefesselt ist, also die Diagonale nicht verlassen darf; deine Dame b2 deckt den Läufer. Nach Ld2 schlägt Lxc3 die Dame.",
+     "puzzleId": "Hh7ZE",
+     "rating": 1396,
+     "themes": [
+      "crushing",
+      "middlegame",
+      "pin",
+      "short"
+     ],
+     "url": "https://lichess.org/training/Hh7ZE",
+     "status": "entwurf"
+    },
+    {
+     "id": "r8",
+     "fen": "r2qk2r/pp2bpp1/2n4p/1BP1P3/3pN1b1/5N2/PP3PPP/R2QK2R b KQkq - 1 12",
+     "loesung": [
+      "d8a5",
+      "d1d2",
+      "a5b5"
+     ],
+     "hinweis": "Der weiße Läufer b5 steht ohne Schutz. Welcher Zug gibt Schach und greift ihn zugleich an?",
+     "satz": "Da5+! gibt Schach über die Diagonale a5–e1 und greift den ungedeckten Läufer b5 an; nach Dd2 schlägt Dxb5.",
+     "puzzleId": "k9ees",
+     "rating": 1401,
+     "themes": [
+      "advantage",
+      "fork",
+      "opening",
+      "short"
+     ],
+     "url": "https://lichess.org/training/k9ees",
+     "status": "entwurf"
+    }
+   ],
+   "status": "entwurf"
+  }
+ ],
+ "musterpartien": [
+  {
+   "id": "muster-1",
+   "titel": "Nimzowitsch – Capablanca: Läufertausch, Db6 und ein Springer auf f5",
+   "weiss": "Aron Nimzowitsch",
+   "schwarz": "José Raúl Capablanca",
+   "jahr": 1927,
+   "event": "New York 1927 (Turnier)",
+   "quelle": "https://www.pgnmentor.com/players/Capablanca.zip (Zugfolge, Eintrag New York, Weiß Nimzowitsch); https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3 (Zugfolge); https://en.wikipedia.org/wiki/New_York_1927_chess_tournament (Turnier, Februar bis März 1927); https://lichess.org/study/8Uztu7Xx/GJvjSow8 (Anmerkungen; die Studie führt die Partie zwei Züge länger bis 48…Tf2, hier steht die Zugfolge bis 46…Tf1 wie in pgnmentor und Wikibooks)",
+   "platzhalter": false,
+   "pgn": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Bd3 Bxd3 5. Qxd3 e6 6. Nc3 Qb6 7. Nge2 c5 8. dxc5 Bxc5 9. O-O Ne7 10. Na4 Qc6 11. Nxc5 Qxc5 12. Be3 Qc7 13. f4 Nf5 14. c3 Nc6 15. Rad1 g6 16. g4 Nxe3 17. Qxe3 h5 18. g5 O-O 19. Nd4 Qb6 20. Rf2 Rfc8 21. a3 Rc7 22. Rd3 Na5 23. Re2 Re8 24. Kg2 Nc6 25. Red2 Rec8 26. Re2 Ne7 27. Red2 Rc4 28. Qh3 Kg7 29. Rf2 a5 30. Re2 Nf5 31. Nxf5+ gxf5 32. Qf3 Kg6 33. Red2 Re4 34. Rd4 Rc4 35. Qf2 Qb5 36. Kg3 Rcxd4 37. cxd4 Qc4 38. Kg2 b5 39. Kg1 b4 40. axb4 axb4 41. Kg2 Qc1 42. Kg3 Qh1 43. Rd3 Re1 44. Rf3 Rd1 45. b3 Rc1 46. Re3 Rf1 0-1",
+   "kommentare": [
+    {
+     "ply": 8,
+     "satz": "Capablanca tauscht auf d3: Danach hat Weiß keinen Läufer mehr auf den hellen Feldern, und darauf baut Schwarz sein Spiel. Wikibooks hält 4. Ld3 für unterlegen, und der Explorer zeigt ihn bei Wertungen von 1200 bis 1600 trotzdem in etwa jeder vierten Partie.",
+     "pfeile": [
+      "Rd1d3"
+     ],
+     "quelle": [
+      "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5/3...Bf5/4._Bd3 (unterlegen)",
+      "Lichess Opening Explorer, Wertung 1200–1600, Abruf 2026-11-22 (daten.json, Anteil 0,227)"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 12,
+     "satz": "Db6 greift b2 und d4 an; weil noch kein Bauer dazwischensteht, schaut die Dame bis auf d4. Weiß verstärkt d4 gleich mit einem zweiten Verteidiger: Der Springer g1 zieht nach e2.",
+     "pfeile": [
+      "Gb6b2",
+      "Gb6d4"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/GJvjSow8"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 14,
+     "satz": "Jetzt kommt der Hebel: c5 greift d4 an, und die Dame b6 steht dahinter. Nach dxc5 holt Capablanca den Bauern mit dem Läufer zurück und hat dabei den Läufer f8 entwickelt.",
+     "pfeile": [
+      "Gc5d4"
+     ],
+     "quelle": [
+      "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+      "https://lichess.org/study/8Uztu7Xx/GJvjSow8"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 26,
+     "satz": "Mit f4 hat Weiß Raum gewonnen, aber das Feld e3 bleibt ohne Bauerndeckung. Sf5 greift den Läufer e3 an und will ihn tauschen.",
+     "pfeile": [
+      "Gf5e3"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/GJvjSow8"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 31,
+     "satz": "Weiß will den Springer mit g4 vertreiben, doch der Zug schwächt seine dunklen Felder: Nach g4 steht Schwarz leicht besser (−0,58). Nach Sxe3 hat Weiß keinen Läufer mehr, der die dunklen Felder decken könnte (so die Anmerkung der Lichess-Studie zum nächsten Zug).",
+     "pfeile": [
+      "Rg4f5"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/GJvjSow8",
+      "Stockfish Tiefe 18 (aufgaben.json)"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 34,
+     "satz": "Mit h5 hält Capablanca den Königsflügel geschlossen: Weiß findet dort keinen sicheren Aufbruch, und Schwarz kann in Ruhe am Damenflügel arbeiten.",
+     "pfeile": [
+      "Gh5g4"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/GJvjSow8"
+     ],
+     "status": "entwurf"
+    }
+   ]
+  },
+  {
+   "id": "muster-2",
+   "titel": "Mieses – Kann: Läufertausch, c5 und Turm auf c1",
+   "weiss": "Jacques Mieses",
+   "schwarz": "Marcus Kann",
+   "jahr": 1885,
+   "event": "4. Deutscher Schachkongress, Hamburg",
+   "quelle": "https://lichess.org/study/8Uztu7Xx/zwZF55Xp (Zugfolge); https://wanderingdragonschess.club/games/57 (Zugfolge); https://en.wikipedia.org/wiki/Marcus_Kann (Spieler, Ort, Jahr, Ergebnis, Stellung nach 17…Tc1)",
+   "platzhalter": false,
+   "pgn": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. Bd3 Bxd3 5. Qxd3 e6 6. f4 c5 7. c3 Nc6 8. Nf3 Qb6 9. O-O Nh6 10. b3 cxd4 11. cxd4 Nf5 12. Bb2 Rc8 13. a3 Ncxd4 14. Nxd4 Bc5 15. Rd1 Nxd4 16. Bxd4 Bxd4+ 17. Qxd4 Rc1 18. Kf2 Rxd1 19. Qxb6 axb6 20. Ke2 Rc1 21. Kd2 Rg1 22. g3 Kd7 23. a4 Rc8 24. b4 Rcc1 0-1",
+   "kommentare": [
+    {
+     "ply": 8,
+     "satz": "Kann nimmt den Läufertausch an: So ist sein Läufer weg, bevor Weiß ihn mit Randbauern jagen kann. Die weiße Dame schlägt gleich zurück.",
+     "pfeile": [
+      "Rd1d3"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/zwZF55Xp"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 12,
+     "satz": "Jetzt kommt der Hebel: Der c-Bauer greift d4 an, das untere Ende der weißen Kette d4–e5. Weiß hat mit f4 statt Sf3 gespielt; Stockfish sieht die Stellung ausgeglichen (−0,04).",
+     "pfeile": [
+      "Gc5d4"
+     ],
+     "quelle": [
+      "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c6/2._d4/2...d5/3._e5",
+      "https://de.wikipedia.org/wiki/Caro-Kann-Verteidigung",
+      "Stockfish Tiefe 18 (aufgaben.json)"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 16,
+     "satz": "Die Dame greift b2 an und deckt c5, so bleibt der Druck auf d4 bestehen. Stockfish sieht Weiß hier aber leicht besser (+0,57): Der Aufbau stimmt, jeder einzelne Zug muss es nicht.",
+     "pfeile": [
+      "Gb6b2",
+      "Bb6c5"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/zwZF55Xp",
+      "Stockfish Tiefe 18 (aufgaben.json)"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 24,
+     "satz": "Nach dem Tausch auf d4 sind beide c-Bauern weg: Kann stellt den Turm auf die offene c-Linie, er will auf das Feld c1. Stockfish sieht Schwarz hier klar besser (−1,34).",
+     "felder": [
+      "Yc1"
+     ],
+     "quelle": [
+      "https://lichess.org/study/8Uztu7Xx/zwZF55Xp",
+      "Stockfish Tiefe 18 (aufgaben.json)"
+     ],
+     "status": "entwurf"
+    },
+    {
+     "ply": 34,
+     "satz": "Mit Tc1 dringt Kann auf der offenen c-Linie ein und greift den Turm d1 und den Springer b1 an. Schwarz steht hier auf Gewinn (−6,57). Laut Wikipedia verliert Weiß danach die Qualität, also einen Turm gegen eine Leichtfigur, und bald die Partie.",
+     "pfeile": [
+      "Gc1d1",
+      "Gc1b1"
+     ],
+     "quelle": [
+      "https://en.wikipedia.org/wiki/Marcus_Kann",
+      "Stockfish Tiefe 18 (aufgaben.json)"
+     ],
+     "status": "entwurf"
+    }
+   ]
+  }
+ ],
+ "kandidaten": [
+  {
+   "puzzleId": "k9ees",
+   "fen": "r2qk2r/pp2bpp1/2n4p/1BP1P3/3p2b1/2N2N2/PP3PPP/R2QK2R w KQkq - 0 12",
+   "moves": [
+    "c3e4",
+    "d8a5",
+    "d1d2",
+    "a5b5"
+   ],
+   "rating": 1401,
+   "themes": [
+    "advantage",
+    "fork",
+    "opening",
+    "short"
+   ],
+   "url": "https://lichess.org/training/k9ees"
+  },
+  {
+   "puzzleId": "LtqKj",
+   "fen": "r3kbnr/1p1b1ppp/pq6/4n3/3N2PP/4B3/PPP1NP2/R2QKB1R w KQkq - 0 13",
+   "moves": [
+    "d4f5",
+    "e5f3"
+   ],
+   "rating": 1363,
+   "themes": [
+    "mate",
+    "mateIn1",
+    "oneMove",
+    "opening"
+   ],
+   "url": "https://lichess.org/training/LtqKj"
+  },
+  {
+   "puzzleId": "uRQEf",
+   "fen": "2r1kb1r/pp1n1p1p/6p1/2pPPpBb/1qNP4/1P3N2/P4PPP/R1QK3R b k - 4 16",
+   "moves": [
+    "c5d4",
+    "c4d6",
+    "f8d6",
+    "c1c8"
+   ],
+   "rating": 1223,
+   "themes": [
+    "discoveredAttack",
+    "fork",
+    "mate",
+    "mateIn2",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/uRQEf"
+  },
+  {
+   "puzzleId": "RdJxc",
+   "fen": "r2qk1nr/pp2bppp/4p1b1/2Pp4/1PnN4/P1B5/2P2PPP/RN1QKB1R w KQkq - 4 11",
+   "moves": [
+    "d4e6",
+    "f7e6",
+    "c3g7",
+    "e7f6",
+    "g7h8",
+    "f6h8"
+   ],
+   "rating": 1511,
+   "themes": [
+    "advantage",
+    "long",
+    "opening"
+   ],
+   "url": "https://lichess.org/training/RdJxc"
+  },
+  {
+   "puzzleId": "g2eFO",
+   "fen": "2r1k2r/pp2nppp/4p3/3pP3/2qN1PPP/1N1Q4/PP6/R3K2R w KQk - 3 18",
+   "moves": [
+    "a1c1",
+    "c4d3",
+    "c1c8",
+    "e7c8"
+   ],
+   "rating": 1535,
+   "themes": [
+    "crushing",
+    "hangingPiece",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/g2eFO"
+  },
+  {
+   "puzzleId": "sbjFq",
+   "fen": "r2qk2r/pp3ppp/1bn1p3/4P3/4NP2/3PpN2/PP4PP/R2Q1RK1 w kq - 0 15",
+   "moves": [
+    "e4d6",
+    "d8d6",
+    "e5d6",
+    "e3e2"
+   ],
+   "rating": 1559,
+   "themes": [
+    "advancedPawn",
+    "advantage",
+    "discoveredAttack",
+    "middlegame",
+    "sacrifice",
+    "short"
+   ],
+   "url": "https://lichess.org/training/sbjFq"
+  },
+  {
+   "puzzleId": "Hh7ZE",
+   "fen": "r3kbnr/pp3pp1/2n1p2p/3pP3/2PP1P1P/3QBN2/PqP3P1/RN2K2R w KQkq - 1 12",
+   "moves": [
+    "d3c3",
+    "f8b4",
+    "e3d2",
+    "b4c3"
+   ],
+   "rating": 1396,
+   "themes": [
+    "crushing",
+    "middlegame",
+    "pin",
+    "short"
+   ],
+   "url": "https://lichess.org/training/Hh7ZE"
+  },
+  {
+   "puzzleId": "7Jn7C",
+   "fen": "r1b2rk1/1pq1nppp/2n1p3/3pP1Q1/8/b1BB1N2/2P2PPP/RR4K1 b - - 5 16",
+   "moves": [
+    "c8d7",
+    "d3h7",
+    "g8h7",
+    "g5h5",
+    "h7g8",
+    "f3g5"
+   ],
+   "rating": 1478,
+   "themes": [
+    "attraction",
+    "crushing",
+    "kingsideAttack",
+    "long",
+    "middlegame",
+    "sacrifice"
+   ],
+   "url": "https://lichess.org/training/7Jn7C"
+  },
+  {
+   "puzzleId": "Bdfj2",
+   "fen": "r3k2r/1pQ1Bppp/p3p1n1/8/4q3/8/PPP2PPP/3R1RK1 b kq - 1 18",
+   "moves": [
+    "g6e7",
+    "c7d7",
+    "e8f8",
+    "d7d8",
+    "a8d8",
+    "d1d8"
+   ],
+   "rating": 1344,
+   "themes": [
+    "backRankMate",
+    "long",
+    "master",
+    "mate",
+    "mateIn3",
+    "middlegame",
+    "sacrifice"
+   ],
+   "url": "https://lichess.org/training/Bdfj2"
+  },
+  {
+   "puzzleId": "9fFke",
+   "fen": "r3r1k1/p2qn2p/2p1p1pB/3p1p2/3Q4/P1P5/P4PPP/R3R1K1 b - - 6 17",
+   "moves": [
+    "e6e5",
+    "d4e5",
+    "e7c8",
+    "e5e8",
+    "d7e8",
+    "e1e8"
+   ],
+   "rating": 1512,
+   "themes": [
+    "crushing",
+    "kingsideAttack",
+    "long",
+    "middlegame"
+   ],
+   "url": "https://lichess.org/training/9fFke"
+  },
+  {
+   "puzzleId": "wBtBs",
+   "fen": "3rkb1r/pp2nppb/2BQp3/q1P1P1BN/6PP/2p5/PPP2P2/R4RK1 b k - 0 15",
+   "moves": [
+    "b7c6",
+    "h5g7",
+    "f8g7",
+    "d6e7"
+   ],
+   "rating": 1516,
+   "themes": [
+    "deflection",
+    "mate",
+    "mateIn2",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/wBtBs"
+  },
+  {
+   "puzzleId": "mSys9",
+   "fen": "r3k2r/p4ppp/2n1p3/1p1pP3/3P1P2/q1N1Q1P1/4N2P/1K1R3R w kq - 0 18",
+   "moves": [
+    "b1c2",
+    "c6b4",
+    "c2d2",
+    "a3b2",
+    "d2e1",
+    "b4c2"
+   ],
+   "rating": 1200,
+   "themes": [
+    "advantage",
+    "exposedKing",
+    "long",
+    "middlegame"
+   ],
+   "url": "https://lichess.org/training/mSys9"
+  },
+  {
+   "puzzleId": "uZC85",
+   "fen": "r3kb1r/pp1np1pb/1qp1pn1p/3p3P/N2P1BP1/3B4/PPP2P2/R2QK1NR b KQkq - 7 11",
+   "moves": [
+    "b6d4",
+    "d3g6",
+    "h7g6",
+    "d1d4"
+   ],
+   "rating": 1306,
+   "themes": [
+    "collinearMove",
+    "crushing",
+    "discoveredAttack",
+    "opening",
+    "short"
+   ],
+   "url": "https://lichess.org/training/uZC85"
+  },
+  {
+   "puzzleId": "azrqR",
+   "fen": "r3k2r/1p1n1ppp/pq2p3/3pP3/3PbPP1/Q7/PP2BR1P/R1B3K1 b kq - 0 16",
+   "moves": [
+    "b6d4",
+    "c1e3",
+    "d4e3",
+    "a3e3"
+   ],
+   "rating": 1273,
+   "themes": [
+    "crushing",
+    "middlegame",
+    "short",
+    "trappedPiece"
+   ],
+   "url": "https://lichess.org/training/azrqR"
+  },
+  {
+   "puzzleId": "0SYS3",
+   "fen": "1r2k2r/p1q1bpp1/b1p1p3/2Ppn1Np/3B3P/2P5/PPQN1PP1/2KR3R b k - 1 15",
+   "moves": [
+    "a6d3",
+    "d4e5",
+    "c7e5",
+    "c2d3"
+   ],
+   "rating": 1322,
+   "themes": [
+    "capturingDefender",
+    "crushing",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/0SYS3"
+  },
+  {
+   "puzzleId": "Powfq",
+   "fen": "r3k2r/pp3pp1/2b1pq1p/3p4/5B2/2P3Q1/PP3PPP/R4RK1 b kq - 1 17",
+   "moves": [
+    "g7g5",
+    "f4e5",
+    "f6f5",
+    "e5h8"
+   ],
+   "rating": 1243,
+   "themes": [
+    "advantage",
+    "middlegame",
+    "short",
+    "skewer"
+   ],
+   "url": "https://lichess.org/training/Powfq"
+  },
+  {
+   "puzzleId": "F4iBS",
+   "fen": "r3kbnr/pR3pp1/2n1p1b1/2ppP1Pp/3P3P/2N1BP2/P1q1N3/3QKB1R b Kkq - 0 12",
+   "moves": [
+    "c5d4",
+    "d1c2",
+    "g6c2",
+    "e2d4"
+   ],
+   "rating": 1500,
+   "themes": [
+    "crushing",
+    "intermezzo",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/F4iBS"
+  },
+  {
+   "puzzleId": "QSc8J",
+   "fen": "r3kb1r/pp1n1pp1/2p1p1p1/3pPn2/3P1B1q/1N1B1PP1/PPP4P/R2QK2R b KQkq - 0 12",
+   "moves": [
+    "f5g3",
+    "f4g3",
+    "h4g3",
+    "h2g3",
+    "h8h1",
+    "d3f1"
+   ],
+   "rating": 1251,
+   "themes": [
+    "advantage",
+    "defensiveMove",
+    "long",
+    "middlegame"
+   ],
+   "url": "https://lichess.org/training/QSc8J"
+  },
+  {
+   "puzzleId": "zUR40",
+   "fen": "r1b1k1nr/pp3ppp/2n5/q1bQP3/4N3/8/PP3PPP/R1B1KBNR w KQkq - 3 10",
+   "moves": [
+    "c1d2",
+    "c5f2",
+    "e1f2",
+    "a5d5"
+   ],
+   "rating": 1424,
+   "themes": [
+    "advantage",
+    "attackingF2F7",
+    "discoveredAttack",
+    "opening",
+    "short"
+   ],
+   "url": "https://lichess.org/training/zUR40"
+  },
+  {
+   "puzzleId": "iBMXJ",
+   "fen": "2r1kbnr/p4ppp/4p3/3pP3/8/5P2/PPnBBP1P/RN1K3R b k - 3 13",
+   "moves": [
+    "g8e7",
+    "e2b5",
+    "e7c6",
+    "d1c2"
+   ],
+   "rating": 1334,
+   "themes": [
+    "advantage",
+    "interference",
+    "middlegame",
+    "pin",
+    "short"
+   ],
+   "url": "https://lichess.org/training/iBMXJ"
+  },
+  {
+   "puzzleId": "7yscu",
+   "fen": "rq2k2r/pp3ppp/3bp3/2Npn2Q/5B2/7P/PP3PP1/2R2RK1 b kq - 5 18",
+   "moves": [
+    "e8g8",
+    "f4e5",
+    "d6e5",
+    "c5d7",
+    "e5h2",
+    "g1h1",
+    "b8d8",
+    "d7f8"
+   ],
+   "rating": 1459,
+   "themes": [
+    "advantage",
+    "fork",
+    "middlegame",
+    "veryLong"
+   ],
+   "url": "https://lichess.org/training/7yscu"
+  },
+  {
+   "puzzleId": "WsBIv",
+   "fen": "rnbq1b1r/pp3Qp1/2pk1p1p/3pN3/2PP4/8/PP3PPP/RN2KB1R b KQ - 0 10",
+   "moves": [
+    "f6e5",
+    "c4c5"
+   ],
+   "rating": 1357,
+   "themes": [
+    "mate",
+    "mateIn1",
+    "oneMove",
+    "opening"
+   ],
+   "url": "https://lichess.org/training/WsBIv"
+  },
+  {
+   "puzzleId": "f92mr",
+   "fen": "r3kb1r/pp3pp1/1qn1p1p1/1N1pPn2/3P4/1QB2N2/PP3PPP/R4RK1 b kq - 8 14",
+   "moves": [
+    "a7a6",
+    "b5d6",
+    "f5d6",
+    "b3b6"
+   ],
+   "rating": 1314,
+   "themes": [
+    "crushing",
+    "discoveredAttack",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/f92mr"
+  },
+  {
+   "puzzleId": "2ZVNb",
+   "fen": "r3kb1r/4npp1/1pn1p1p1/p1NpP3/P1qP4/B1P2N2/2Q2PPP/R3K2R w KQkq - 0 17",
+   "moves": [
+    "f3d2",
+    "c6d4",
+    "c2d3",
+    "c4d3"
+   ],
+   "rating": 1360,
+   "themes": [
+    "advantage",
+    "middlegame",
+    "short"
+   ],
+   "url": "https://lichess.org/training/2ZVNb"
+  }
+ ]
+}

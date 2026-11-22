@@ -106,3 +106,15 @@ test('the explorer returns castling as king moves, also from an older cache entr
   assert.deepEqual(await ex.moves(fen), [{ uci: 'e8g8', games: 50 }])
   rmSync(dir, { recursive: true })
 })
+
+test('explorer with its own base url (Lehrgang band 1200-1600) leaves the default band of the content pipeline untouched', async () => {
+  const s = setup()
+  try {
+    const urls: string[] = []
+    const mk = (base?: string) => lichessExplorer({ tokenFile: s.tokenFile, cacheFile: s.cacheFile + (base ? '.l' : ''), sleep: async () => {}, base, fetchFn: async (u) => { urls.push(String(u)); return ok(body) } })
+    await mk('https://explorer.lichess.ovh/lichess?variant=standard&speeds=blitz,rapid,classical&ratings=1200,1400,1600').moves(FEN)
+    await mk().moves(FEN)
+    assert.match(urls[0]!, /ratings=1200,1400,1600/)
+    assert.match(urls[1]!, /ratings=1400,1600,1800/)
+  } finally { s.done() }
+})

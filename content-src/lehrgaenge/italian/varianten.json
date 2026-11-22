@@ -1,0 +1,1300 @@
+[
+ {
+  "id": "vca30451d",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.05212351246391361,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nd4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Der Springertausch lässt Schwarz einen Bauern auf d4 vorgeschoben zurück. Du rochierst, entwickelst dich in Ruhe und holst ihn später mit dem c-Bauern ab; Wikipedia hält Sd4 gegen erfahrene Spieler für Zeitverschwendung.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Italian_Game"
+   },
+   {
+    "satz": "Zieht Schwarz danach Lc5, ist f7 wieder nur vom König gedeckt: Lxf7+ Kxf7 Dh5+ Ke7 Dxc5+ gewinnt den Läufer und danach den Bauern auf d4, also zwei Bauern. Die Engine sieht dich nach Lc5 klar besser (+3,67).",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Bc4/3...Nd4; Stockfish Tiefe 18 (aufgaben.json)"
+   },
+   {
+    "satz": "Spielt Schwarz ruhiger, zum Beispiel Sf6, stehst du trotzdem gut: Nach der Rochade sieht die Engine dich klar besser (+1,20), und du drückst mit dem c-Bauern auf den vorgeschobenen Bauern auf d4.",
+    "status": "entwurf",
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json); Sf6 Tiefe 20 eigene Prüfung (+1,29)"
+   }
+  ]
+ },
+ {
+  "id": "v2c4bc842",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.04130624206338768,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bxb4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "dxc3",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bxf7+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Kxf7",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Qd5+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Ke8",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Qh5+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "g6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Qxc5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "Qxc3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Im Evans-Gambit gibst du den b-Bauern her, damit der Läufer von Schwarz Zeit verliert und du mit c-Bauer und d-Bauer ein breites Zentrum baust. Wikipedia beschreibt das als Opfer für schnelle Entwicklung und Angriffschancen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+   },
+   {
+    "satz": "Gegen Lc5 kommt d4 mit Tempo: Der Läufer muss wieder weichen, und mit der Rochade bietest du sogar den zweiten Bauern an. Wikipedia hält Lc5 für die schwächere Antwort, weil du mit dem d-Bauern Zeit gewinnst.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+   },
+   {
+    "satz": "Nimmt Schwarz auch den zweiten Bauern, folgt Lxf7+ Kxf7 Dd5+, und mit Dxc5+ gewinnst du den Läufer. Bei bester Verteidigung sieht die Engine dich klar besser (ab etwa +1,2); in der gezeigten Linie mit Ke8 Dh5+ g6 steigt es auf +3,6, weil Schwarz mit g6 ungenau spielt.",
+    "status": "entwurf",
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json); Stockfish Tiefe 20 eigene Prüfung (nach 8…Kxf7 9.Dd5+: Kf8 −1,36, Ke8 −1,26, Linie mit g6 +3,6)"
+   }
+  ]
+ },
+ {
+  "id": "v91f514f9",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.038052181164802565,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nxd5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nxf7",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Kxf7",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Qf3+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Ke6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nb4",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Qf6",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Beim Fried-Liver-Angriff gibst du einen Springer ab, um den schwarzen König in die Mitte zu zwingen: Nach Kxf7 und Df3+ steht er auf e6 und kann nicht mehr rochieren. Wikipedia nennt den Angriff stark, aber noch nicht als entscheidend bewiesen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Bc4/3...Nf6/4._Ng5/4...d5/5._exd5"
+   },
+   {
+    "satz": "Schwarz antwortet mit Sb4 und c6 und stützt so den gefesselten Springer auf d5. Du rochierst und baust mit d4 die Mitte auf; die Engine sieht dich dabei nur leicht besser (+0,84).",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json)"
+   },
+   {
+    "satz": "Das ist ein Angriff auf Risiko: Wikibooks bewertet die Stellung als unklar. Du spielst ihn auf Wirkung gegen Gegner, die ihn nicht kennen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...e5/2._Nf3/2...Nc6/3._Bc4/3...Nf6/4._Ng5/4...d5/5._exd5; docs/repertoire-v1.8.md (High Risk, High Reward)"
+   }
+  ]
+ },
+ {
+  "id": "vb215010b",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.03231804159058373,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nxd5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nxf7",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Kxf7",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Qf3+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Ke8",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Zieht Schwarz den König zurück nach e8, hängt sein Springer auf d5: Läufer c4 und Dame f3 greifen ihn an, und nur die Dame deckt ihn. Die Engine spielt hier Lxd5 und sieht dich klar besser (+2,65).",
+    "status": "entwurf",
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json); Lxd5 Bestzug Tiefe 20 eigene Prüfung (+3,14)"
+   },
+   {
+    "satz": "Wikipedia nennt Ke6 den üblichen Zug; Ke8 ist darum eine Lücke in deinem Repertoire, die wir noch mit dir festlegen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Fried_Liver_Attack; Stockfish Tiefe 18 (aufgaben.json)"
+   },
+   {
+    "satz": "Merke dir den Unterschied: Nach Ke6 bleibt der König mitten im Brett und du brauchst Geduld, nach Ke8 holst du dir das Material sofort zurück.",
+    "status": "entwurf",
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json)"
+   }
+  ]
+ },
+ {
+  "id": "v67e25f5a",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.029502600864386577,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Na5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bb5+",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "c6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "dxc6",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "bxc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Be2",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "h6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Ne5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bd6",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "exd3",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "Nxd3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Gegen Sa5 nimmst du auf d5 den Bauern, rettest mit Lb5+ deinen Läufer und bleibst am Ende einen Bauern vor. Schwarz bekommt dafür einen Vorsprung in der Entwicklung.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense"
+   },
+   {
+    "satz": "Dein Vorteil ist die Bauernstruktur: Schwarz hat zwei einzelne Bauern auf der a- und der c-Linie, du keinen. Dafür bist du in der Entwicklung zurück; das ist der Preis für deinen Mehrbauern.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense"
+   },
+   {
+    "satz": "Nach 11.d4 sieht die Engine die Stellung ausgeglichen (−0,06). Als Aufbau nennt Wikipedia, mit dem b-Bauern das Feld c4 zu kontrollieren und den Läufer c1 auf die lange Diagonale zu bringen.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Two_Knights_Defense; Stockfish Tiefe 18 (aufgaben.json)"
+   }
+  ]
+ },
+ {
+  "id": "vff63a870",
+  "name": "TODO texter",
+  "stufe": "kern",
+  "anteil": 0.024942573075892458,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bb6",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "b5",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Nd4",
+    "satz": "TODO texter",
+    "herkunft": "daten"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire"
+   },
+   {
+    "san": "Bxd4",
+    "satz": "TODO texter",
+    "herkunft": "daten",
+    "neu": true
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Bb6",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter",
+    "herkunft": "repertoire",
+    "neu": true
+   },
+   {
+    "san": "Ne7",
+    "satz": "TODO texter",
+    "herkunft": "engine",
+    "neu": true
+   }
+  ],
+  "ziel": [
+   {
+    "satz": "Lehnt Schwarz das Opfer mit Lb6 ab, verlierst du keinen Bauern: Du spielst b5 und greifst den Springer an. Wikipedia sieht das Ablehnen meist als schwächer, weil Schwarz einen Zug verliert.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit"
+   },
+   {
+    "satz": "Du baust trotzdem ein Zentrum: Mit c3 vertreibst du den Läufer von d4, mit d4 greifst du den Bauern auf e5 an, und dann rochierst du. Die Engine sieht dich am Ende leicht besser (+0,53).",
+    "status": "entwurf",
+    "quelle": "Stockfish Tiefe 18 (aufgaben.json)"
+   },
+   {
+    "satz": "Nimm nach Sd4 nicht auf e5, sondern tausche mit Sxd4. Wikipedia zeigt, dass Sxe5 Dg5 Schwarz einen starken Angriff gibt, und die Engine sieht das für dich deutlich schlechter.",
+    "status": "entwurf",
+    "quelle": "https://en.wikipedia.org/wiki/Evans_Gambit; Stockfish Tiefe 20 eigene Prüfung (Sxd4 +0,42, Sxe5 Dg5 −1,64)"
+   }
+  ]
+ },
+ {
+  "id": "vd168a7fd",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02402833874569512,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bb6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Na5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxe5",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vccb55ef5",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02294590807883451,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bxb4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ba5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "O-O",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "dxc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qb3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v248052e7",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02231954964156843,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qxd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vb081b476",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.022238553527209694,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vf0c0e501",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.021993486687663696,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bg4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vd58883b2",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.021120171796372274,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxb4",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v90cf0b70",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02110913865111824,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v255b07ed",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02101368728394121,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxd5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nxf7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Kxf7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qf3+",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Qf6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "vf228af8e",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02083625943422193,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Ng5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bxf7+",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Kf8",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bb3",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "va2fbffc8",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.02052642969996768,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "h6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d6",
+    "satz": "TODO texter"
+   }
+  ]
+ },
+ {
+  "id": "v313d297d",
+  "name": "TODO texter",
+  "stufe": "erweiterung",
+  "anteil": 0.020166076642374808,
+  "zuege": [
+   {
+    "san": "e4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "e5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nf3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Nc6",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bc5",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "b4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Bxb4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "c3",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "Be7",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "d4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "exd4",
+    "satz": "TODO texter"
+   },
+   {
+    "san": "cxd4",
+    "satz": "TODO texter"
+   }
+  ]
+ }
+]

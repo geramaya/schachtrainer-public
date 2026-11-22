@@ -1,0 +1,372 @@
+{
+ "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -|e4": {
+  "satz": "Mit e4 stellst du einen Bauern ins Zentrum.",
+  "status": "entwurf",
+  "pfeile": [
+   "Ge4d5"
+  ]
+ },
+ "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -|e5": {
+  "satz": "Schwarz antwortet mit einem eigenen Bauern im Zentrum.",
+  "status": "entwurf",
+  "pfeile": [
+   "Re5d4"
+  ]
+ },
+ "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -|Nf3": {
+  "satz": "Der Springer greift den Bauern auf e5 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf3e5"
+  ]
+ },
+ "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -|Nc6": {
+  "satz": "Schwarz entwickelt einen Springer und deckt damit den Bauern auf e5.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc6e5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -|d4": {
+  "satz": "Jetzt stellst du einen Bauern auf d4 und greifst den Bauern auf e5 an; Schwarz kann ihn kaum halten und muss das Zentrum öffnen.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game",
+  "pfeile": [
+   "Gd4e5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt den Bauern auf d4; das passiert in etwa 8 von 10 deiner Partien.",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq -|Nxd4": {
+  "satz": "Du holst den Bauern mit dem Springer zurück; er steht jetzt zentral und greift den Springer auf c6 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4c6"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|Nxd4": {
+  "satz": "Schwarz schlägt deinen Springer; der neue Springer auf d4 greift deinen Bauern auf c2 an, mit dem Tausch musst du in etwa vier von zehn Partien rechnen.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4c2"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3nP3/8/PPP2PPP/RNBQKB1R w KQkq -|Qxd4": {
+  "satz": "Du schlägst mit der Dame zurück; sie steht zentral und greift die Bauern auf a7, d7 und g7 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4a7",
+   "Gd4d7",
+   "Gd4g7"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|d6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Mit d6 stützt Schwarz das Feld e5; laut Engine steht Weiß danach leicht besser (+0,88). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|Nf6": {
+  "satz": "Schwarz entwickelt den Springer und greift deinen Bauern auf e4 an; das spielt Schwarz in etwa jeder zwölften Partie.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/2n2n2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -|Nxc6": {
+  "satz": "Du tauschst auf c6; der Springer greift dabei auch die Dame auf d8 an.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game",
+  "pfeile": [
+   "Gc6d8"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/2N2n2/8/4P3/8/PPP2PPP/RNBQKB1R b KQkq -|bxc6": {
+  "satz": "Schwarz schlägt mit dem b-Bauern zurück und bekommt dadurch zwei Bauern auf der c-Linie; sein Bauer auf a7 hat keinen Nachbarbauern mehr.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game",
+  "felder": "Yc6,Yc7,Ya7"
+ },
+ "r1bqkb1r/p1pp1ppp/2p2n2/8/4P3/8/PPP2PPP/RNBQKB1R w KQkq -|e5": {
+  "satz": "Du stößt e5 vor und greifst damit den Springer auf f6 an.",
+  "status": "entwurf",
+  "quelle": "https://en.wikipedia.org/wiki/Scotch_Game",
+  "pfeile": [
+   "Ge5f6"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3QP3/8/PPP2PPP/RNB1KB1R b KQkq -|c5": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit c5 deine Dame an; laut Engine steht Weiß danach klar besser (+1,55).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rc5d4"
+  ]
+ },
+ "r1bqkb1r/p1pp1ppp/2p2n2/4P3/8/8/PPP2PPP/RNBQKB1R b KQkq -|Nd5": {
+  "satz": "Der angegriffene Springer weicht nach d5 aus.",
+  "status": "entwurf"
+ },
+ "r1bqkb1r/p1pp1ppp/2p5/3nP3/8/8/PPP2PPP/RNBQKB1R w KQkq -|c4": {
+  "satz": "Du greifst mit c4 den Springer auf d5 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gc4d5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3QP3/8/PPP2PPP/RNB1KB1R b KQkq -|Qf6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame deine Dame auf d4 und den Bauern auf f2 an; laut Engine steht Weiß danach leicht besser (+0,52).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6d4",
+   "Rf6f2"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|Nf6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz entwickelt den Springer und greift e4 an; laut Engine steht Weiß danach klar besser (+1,19).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3QP3/8/PPP2PPP/RNB1KB1R b KQkq -|b6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Der Zug ist selten und kostet Schwarz laut Engine viel, denn Weiß steht danach klar besser (+1,73).",
+  "status": "entwurf"
+ },
+ "r1bqkb1r/p1pp1ppp/2p5/3nP3/2P5/8/PP3PPP/RNBQKB1R b KQkq -|Nb6": {
+  "satz": "Schwarz greift mit dem Springer deinen Bauern auf c4 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rb6c4"
+  ]
+ },
+ "r1bqkb1r/p1pp1ppp/1np5/4P3/2P5/8/PP3PPP/RNBQKB1R w KQkq -|Bd3": {
+  "satz": "Der Läufer kommt ins Spiel, kontrolliert e4 und zielt auf den Bauern auf h7.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd3h7"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|Bc5": {
+  "satz": "Schwarz entwickelt den Läufer und greift deinen Springer auf d4 an; das spielt Schwarz in etwa jeder siebten Partie.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rc5d4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -|Be3": {
+  "satz": "Du entwickelst den Läufer; er kontrolliert d4, wo dein Springer unter Druck steht.",
+  "status": "entwurf",
+  "pfeile": [
+   "Be3d4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3QP3/8/PPP2PPP/RNB1KB1R b KQkq -|d6": {
+  "satz": "Schwarz kontrolliert mit d6 das Feld e5; das spielt Schwarz in etwa jeder achten Partie.",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/ppp2ppp/3p4/8/3QP3/8/PPP2PPP/RNB1KB1R w KQkq -|Bd3": {
+  "satz": "Du entwickelst den Läufer nach d3; er kontrolliert e4.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bd3e4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3QP3/8/PPP2PPP/RNB1KB1R b KQkq -|Nf6": {
+  "satz": "Schwarz entwickelt den Springer und greift deinen Bauern auf e4 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/5n2/8/3QP3/8/PPP2PPP/RNB1KB1R w KQkq -|e5": {
+  "satz": "Du stößt e5 vor und greifst den Springer auf f6 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Ge5f6"
+  ]
+ },
+ "r1bqkbnr/ppp2ppp/3p4/8/3QP3/3B4/PPP2PPP/RNB1K2R b KQkq -|Nf6": {
+  "satz": "Schwarz entwickelt den zweiten Springer und greift e4 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6e4"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/3p1n2/8/3QP3/3B4/PPP2PPP/RNB1K2R w KQkq -|Nc3": {
+  "satz": "Du entwickelst den Springer; er kontrolliert e4.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3e4"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R b KQkq -|Qf6": {
+  "satz": "Schwarz zieht die Dame nach f6; sie zielt auf deinen Springer auf d4 und den Bauern auf f2.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6d4",
+   "Rf6f2"
+  ]
+ },
+ "r1b1k1nr/pppp1ppp/2n2q2/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R w KQkq -|c3": {
+  "satz": "Mit dem c-Bauern kontrollierst du d4 und stützt so deinen Springer.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3d4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|Qf6": {
+  "satz": "Schwarz zieht die Dame nach f6; sie zielt auf deinen Springer auf d4 und den Bauern auf f2.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rf6d4",
+   "Rf6f2"
+  ]
+ },
+ "r1b1kbnr/pppp1ppp/2n2q2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -|Nf3": {
+  "satz": "Du ziehst den Springer nach f3 zurück und weichst damit dem Druck auf d4 aus.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf3d4",
+   "Gf3e5"
+  ]
+ },
+ "r1bqkb1r/ppp2ppp/3p1n2/8/3QP3/2NB4/PPP2PPP/R1B1K2R b KQkq -|Be7": {
+  "satz": "Schwarz entwickelt den Läufer.",
+  "status": "entwurf"
+ },
+ "r1bqk2r/ppp1bppp/3p1n2/8/3QP3/2NB4/PPP2PPP/R1B1K2R w KQkq -|Bf4": {
+  "satz": "Dein Läufer kontrolliert e5 und greift den Bauern auf d6 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gf4d6"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|d6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz kontrolliert mit d6 das Feld e5; laut Engine steht Weiß danach leicht besser (+0,62).",
+  "status": "entwurf"
+ },
+ "r1b1k1nr/pppp1ppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R b KQkq -|Nge7": {
+  "satz": "Schwarz entwickelt den zweiten Springer; er kontrolliert die Mitte.",
+  "status": "entwurf"
+ },
+ "r1b1k2r/ppppnppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R w KQkq -|Qd2": {
+  "satz": "Du ziehst die Dame nach d2 und kontrollierst weiter d4; laut Engine ist die Stellung ausgeglichen (−0,02).",
+  "status": "entwurf",
+  "pfeile": [
+   "Bd2d4"
+  ]
+ },
+ "r1bqkb1r/pppp1ppp/5n2/4P3/3Q4/8/PPP2PPP/RNB1KB1R b KQkq -|Qe7": {
+  "satz": "Schwarz greift mit der Dame den Bauern auf e5 an; laut Engine gewinnt Weiß trotzdem (+3,12).",
+  "status": "entwurf",
+  "pfeile": [
+   "Re7e5"
+  ]
+ },
+ "r1b1kb1r/ppppqppp/5n2/4P3/3Q4/8/PPP2PPP/RNB1KB1R w KQkq -|Be3": {
+  "satz": "Du entwickelst den Läufer und kontrollierst d4; laut Engine gewinnt Weiß (+3,19).",
+  "status": "entwurf",
+  "pfeile": [
+   "Be3d4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|f6": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz kontrolliert mit f6 das Feld e5; laut Engine steht Weiß danach klar besser (+1,71).",
+  "status": "entwurf"
+ },
+ "r1b1kbnr/pppp1ppp/2n2q2/8/4P3/5N2/PPP2PPP/RNBQKB1R b KQkq -|Bc5": {
+  "satz": "Schwarz entwickelt den Läufer und greift deinen Bauern auf f2 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rc5f2"
+  ]
+ },
+ "r1b1k1nr/pppp1ppp/2n2q2/2b5/4P3/5N2/PPP2PPP/RNBQKB1R w KQkq -|Nc3": {
+  "satz": "Du entwickelst den Springer; er kontrolliert e4.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3e4"
+  ]
+ },
+ "r1bqk2r/ppp1bppp/3p1n2/8/3QPB2/2NB4/PPP2PPP/R3K2R b KQkq -|O-O": {
+  "satz": "Schwarz rochiert.",
+  "status": "entwurf"
+ },
+ "r1bq1rk1/ppp1bppp/3p1n2/8/3QPB2/2NB4/PPP2PPP/R3K2R w KQ -|O-O-O": {
+  "satz": "Du rochierst auf die andere Seite als Schwarz.",
+  "status": "entwurf"
+ },
+ "r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R b KQkq -|Nxd4": {
+  "satz": "Schwarz schlägt den Springer; der neue Springer auf d4 greift deinen Bauern auf c2 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4c2"
+  ]
+ },
+ "r1bqk1nr/pppp1ppp/8/2b5/3nP3/4B3/PPP2PPP/RN1QKB1R w KQkq -|Bxd4": {
+  "satz": "Du schlägst mit dem Läufer zurück; er greift den Bauern auf g7 und den Läufer auf c5 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4g7",
+   "Gd4c5"
+  ]
+ },
+ "r1bqkbnr/ppp2ppp/3p4/8/3QP3/3B4/PPP2PPP/RNB1K2R b KQkq -|Be6": {
+  "satz": "Schwarz entwickelt den Läufer; er greift deinen Bauern auf a2 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Re6a2"
+  ]
+ },
+ "r2qkbnr/ppp2ppp/3pb3/8/3QP3/3B4/PPP2PPP/RNB1K2R w KQkq -|Nc3": {
+  "satz": "Du entwickelst den Springer; er kontrolliert e4.",
+  "status": "entwurf",
+  "pfeile": [
+   "Bc3e4"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|Ne5": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz stellt den Springer auf e5 ins Zentrum; laut Engine steht Weiß danach klar besser (+1,24).",
+  "status": "entwurf"
+ },
+ "r1bqkb1r/p1pp1ppp/2p2n2/4P3/8/8/PPP2PPP/RNBQKB1R b KQkq -|Qe7": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame den Bauern auf e5 an; laut Engine ist die Stellung ausgeglichen (+0,07).",
+  "status": "entwurf",
+  "pfeile": [
+   "Re7e5"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|Nxd4": {
+  "satz": "Schwarz schlägt sofort mit dem Springer auf d4; er greift deinen Springer auf f3 und deinen Bauern auf c2 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd4f3",
+   "Rd4c2"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/8/4p3/3nP3/5N2/PPP2PPP/RNBQKB1R w KQkq -|Nxd4": {
+  "satz": "Du schlägst den Springer zurück.",
+  "status": "entwurf"
+ },
+ "r1bqkbnr/pppp1ppp/8/4p3/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -|exd4": {
+  "satz": "Schwarz schlägt zurück und hat dadurch zwei Bauern auf der d-Linie.",
+  "status": "entwurf",
+  "felder": "Yd4,Yd7"
+ },
+ "r1bqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKB1R w KQkq -|Qxd4": {
+  "satz": "Du schlägst mit der Dame zurück; sie greift die Bauern auf a7, d7 und g7 an.",
+  "status": "entwurf",
+  "pfeile": [
+   "Gd4a7",
+   "Gd4d7",
+   "Gd4g7"
+  ]
+ },
+ "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -|d5": {
+  "satz": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz stößt d5 vor und greift deinen Bauern auf e4 an; laut Engine steht Weiß danach leicht besser (+0,79).",
+  "status": "entwurf",
+  "pfeile": [
+   "Rd5e4"
+  ]
+ }
+}

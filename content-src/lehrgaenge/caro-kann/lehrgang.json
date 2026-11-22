@@ -1,0 +1,12 @@
+{
+ "id": "caro-kann",
+ "name": "Caro-Kann",
+ "side": "black",
+ "entry": [
+  "e4",
+  "c6",
+  "d4",
+  "d5"
+ ],
+ "band": "1200–1600"
+}

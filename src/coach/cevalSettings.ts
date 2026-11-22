@@ -12,30 +12,30 @@ const clampInt = (v: unknown, min: number, max: number, fallback: number): numbe
   typeof v === 'number' && Number.isFinite(v) ? Math.min(max, Math.max(min, Math.round(v))) : fallback
 
 /** Stored data is untrusted: wrong types fall back to the default, numbers are clamped into their range. */
-export function parseSettings(raw: unknown): EngineSettings {
+export function parseSettings(raw: unknown, d: EngineSettings = DEFAULT_SETTINGS): EngineSettings {
   const o = typeof raw === 'object' && raw !== null ? (raw as Record<string, unknown>) : {}
   return {
-    enabled: typeof o.enabled === 'boolean' ? o.enabled : DEFAULT_SETTINGS.enabled,
-    multipv: clampInt(o.multipv, MULTIPV_RANGE.min, MULTIPV_RANGE.max, DEFAULT_SETTINGS.multipv),
-    depth: clampInt(o.depth, DEPTH_RANGE.min, DEPTH_RANGE.max, DEFAULT_SETTINGS.depth),
-    showBar: typeof o.showBar === 'boolean' ? o.showBar : DEFAULT_SETTINGS.showBar,
-    showLines: typeof o.showLines === 'boolean' ? o.showLines : DEFAULT_SETTINGS.showLines,
-    whileThinking: typeof o.whileThinking === 'boolean' ? o.whileThinking : DEFAULT_SETTINGS.whileThinking,
+    enabled: typeof o.enabled === 'boolean' ? o.enabled : d.enabled,
+    multipv: clampInt(o.multipv, MULTIPV_RANGE.min, MULTIPV_RANGE.max, d.multipv),
+    depth: clampInt(o.depth, DEPTH_RANGE.min, DEPTH_RANGE.max, d.depth),
+    showBar: typeof o.showBar === 'boolean' ? o.showBar : d.showBar,
+    showLines: typeof o.showLines === 'boolean' ? o.showLines : d.showLines,
+    whileThinking: typeof o.whileThinking === 'boolean' ? o.whileThinking : d.whileThinking,
   }
 }
 
-export function loadSettings(storage: StorageLike | undefined): EngineSettings {
+export function loadSettings(storage: StorageLike | undefined, key = KEY, defaults = DEFAULT_SETTINGS): EngineSettings {
   try {
-    const raw = storage?.getItem(KEY)
-    return parseSettings(raw ? JSON.parse(raw) : undefined)
+    const raw = storage?.getItem(key)
+    return parseSettings(raw ? JSON.parse(raw) : undefined, defaults)
   } catch {
-    return DEFAULT_SETTINGS
+    return defaults
   }
 }
 
-export function saveSettings(s: EngineSettings, storage: StorageLike | undefined): void {
+export function saveSettings(s: EngineSettings, storage: StorageLike | undefined, key = KEY): void {
   try {
-    storage?.setItem(KEY, JSON.stringify(s))
+    storage?.setItem(key, JSON.stringify(s))
   } catch {
     // storage full or blocked: the setting then only lives until the page is closed
   }

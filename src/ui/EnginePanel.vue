@@ -9,10 +9,10 @@ import type { EngineView, PvMove, Score } from '../coach/ceval.ts'
 import { scoreLabel } from '../coach/ceval.ts'
 import { evalPov, povSign, setEvalPov, parsePov } from './orientation.ts'
 import { DEPTH_RANGE, MULTIPV_RANGE, engineAccess } from '../coach/cevalSettings.ts'
-import type { EngineLock } from '../coach/cevalSettings.ts'
+import type { EngineLock, EngineSettings } from '../coach/cevalSettings.ts'
 import { hrefAnalyse } from '../router.ts'
 import MiniBoard from './MiniBoard.vue'
-import { engineSettings, setEngineSettings } from './useEngineSettings.ts'
+import { engineSettings, lehrgangEngineSettings, setEngineSettings, setLehrgangEngineSettings } from './useEngineSettings.ts'
 import { engineErrorText } from '../content/fetch-bundle.ts'
 import { EngineError } from '../engine/service.ts'
 
@@ -27,12 +27,17 @@ const props = withDefaults(defineProps<{
   unlockable?: boolean
   /** text of the locked state when the default does not fit (Wertungspartie) */
   lockedText?: string
-}>(), { lock: null, analyseLink: true, unlockable: false, lockedText: '' })
+  /** which persistent setting set the field uses: the whole app, or the Lehrgang prototype (own key, off by default) */
+  scope?: 'app' | 'lehrgang'
+}>(), { lock: null, analyseLink: true, unlockable: false, lockedText: '', scope: 'app' })
 const emit = defineEmits<{ view: [EngineView]; unlock: [] }>()
+
+const settings = computed(() => (props.scope === 'lehrgang' ? lehrgangEngineSettings.value : engineSettings.value))
+const setSettings = (patch: Partial<EngineSettings>) => (props.scope === 'lehrgang' ? setLehrgangEngineSettings(patch) : setEngineSettings(patch))
 
 /** Scores come from White view; with the setting "from the bottom side" they flip when Black stands at the bottom. */
 const lab = (s: Score): string => (povSign(evalPov.value, props.orientation) === 1 ? scoreLabel(s) : scoreLabel({ cp: s.cp === null ? null : -s.cp, mate: s.mate === null ? null : -s.mate }))
-const access = computed(() => engineAccess(engineSettings.value.enabled, props.lock))
+const access = computed(() => engineAccess(settings.value.enabled, props.lock))
 const state = ref<LiveState | null>(null)
 let usedEpoch = 0 // instance of the engine the running analysis belongs to: a late error of a replaced worker must not reset its successor
 const controller = createLiveController({
@@ -42,7 +47,7 @@ const controller = createLiveController({
 })
 
 watch(
-  () => [props.fen, access.value, engineSettings.value.multipv, engineSettings.value.depth] as const,
+  () => [props.fen, access.value, settings.value.multipv, settings.value.depth] as const,
   ([fen, acc, multipv, depth]) => {
     if (acc === 'on') controller.run(fen, { multipv, depth })
     else { controller.stop(); state.value = null }
@@ -52,7 +57,7 @@ watch(
 /** "Erneut versuchen": a fresh worker and a new run for the shown position. */
 function retry() {
   resetEngine('coach')
-  if (access.value === 'on') controller.run(props.fen, { multipv: engineSettings.value.multipv, depth: engineSettings.value.depth })
+  if (access.value === 'on') controller.run(props.fen, { multipv: settings.value.multipv, depth: settings.value.depth })
 }
 onBeforeUnmount(() => { controller.stop(); emit('view', { score: null, arrows: [], access: 'off' }) })
 
@@ -68,8 +73,8 @@ const score = computed(() => {
   return shownScore({ fen: props.fen, ended: here.value?.ended ?? false, error: here.value?.error ?? '', best: summary.value?.best ?? null, held: held.value })
 })
 const arrows = computed(() => (access.value === 'on' && summary.value ? engineArrows(summary.value.lines) : []))
-watch([score, arrows, access, () => engineSettings.value.showBar, () => engineSettings.value.showLines], () => {
-  const { showBar, showLines } = engineSettings.value
+watch([score, arrows, access, () => settings.value.showBar, () => settings.value.showLines], () => {
+  const { showBar, showLines } = settings.value
   emit('view', { score: showBar ? score.value : null, arrows: showLines ? arrows.value : [], access: showBar ? access.value : 'off' })
 }, { immediate: true })
 
@@ -86,12 +91,12 @@ const togglePin = (m: PvMove) => { pinned.value = pinned.value?.fen === m.fen ? 
 
 const onToggle = (e: Event) => {
   const box = e.target as HTMLInputElement
-  if (access.value === 'locked') { box.checked = engineSettings.value.enabled; if (props.unlockable) emit('unlock'); return }
-  setEngineSettings({ enabled: box.checked })
+  if (access.value === 'locked') { box.checked = settings.value.enabled; if (props.unlockable) emit('unlock'); return }
+  setSettings({ enabled: box.checked })
 }
-const onFlag = (key: 'showBar' | 'showLines' | 'whileThinking', e: Event) => setEngineSettings({ [key]: (e.target as HTMLInputElement).checked })
-const onLines = (e: Event) => setEngineSettings({ multipv: Number((e.target as HTMLSelectElement).value) })
-const onDepth = (e: Event) => setEngineSettings({ depth: Number((e.target as HTMLInputElement).value) })
+const onFlag = (key: 'showBar' | 'showLines' | 'whileThinking', e: Event) => setSettings({ [key]: (e.target as HTMLInputElement).checked })
+const onLines = (e: Event) => setSettings({ multipv: Number((e.target as HTMLSelectElement).value) })
+const onDepth = (e: Event) => setSettings({ depth: Number((e.target as HTMLInputElement).value) })
 const settingsOpen = ref(false)
 const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 1 }, (_, i) => MULTIPV_RANGE.min + i)
 </script>
@@ -101,7 +106,7 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
     <header class="chead">
       <div class="hl">
         <label class="switch" :class="{ locked: access === 'locked' }" :title="access === 'locked' ? (unlockable ? 'Stockfish ist im Spiel mit Lehrer gesperrt – klicken hebt die Sperre auf (zählt als Hilfe)' : 'Stockfish: gesperrt, bis du gezogen hast') : 'Stockfish ein oder aus'">
-          <input type="checkbox" role="switch" :checked="engineSettings.enabled" aria-label="Stockfish ein oder aus" @change="onToggle" />
+          <input type="checkbox" role="switch" :checked="settings.enabled" aria-label="Stockfish ein oder aus" @change="onToggle" />
           <span class="knob" aria-hidden="true"></span>
           <b>Stockfish</b>
         </label>
@@ -110,7 +115,7 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
       <div class="hr">
         <span v-if="access === 'locked'" class="depth lockword">gesperrt</span>
         <span v-if="access === 'on'" class="depth">
-          <span class="w">Tiefe </span>{{ depthShown }}/{{ engineSettings.depth }}
+          <span class="w">Tiefe </span>{{ depthShown }}/{{ settings.depth }}
           <span v-if="running" class="spin" role="status" aria-label="Stockfish rechnet"></span>
         </span>
         <button v-if="access !== 'locked'" type="button" class="ico" :class="{ open: settingsOpen }" :aria-expanded="settingsOpen" aria-controls="engine-settings" title="Einstellungen" aria-label="Einstellungen" @click="settingsOpen = !settingsOpen">⚙</button>
@@ -120,20 +125,20 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
 
     <div v-if="settingsOpen && access !== 'locked'" id="engine-settings" class="opts" @keydown.escape="settingsOpen = false">
       <label>Linien
-        <select :value="engineSettings.multipv" @change="onLines"><option v-for="n in lineCounts" :key="n" :value="n">{{ n }}</option></select>
+        <select :value="settings.multipv" @change="onLines"><option v-for="n in lineCounts" :key="n" :value="n">{{ n }}</option></select>
       </label>
       <label>Bewertung aus Sicht
         <select :value="evalPov" @change="setEvalPov(parsePov(($event.target as HTMLSelectElement).value))"><option value="white">Weiß</option><option value="bottom">unten stehende Seite</option></select>
       </label>
-      <label><input type="checkbox" :checked="engineSettings.showBar" @change="onFlag('showBar', $event)" /> Bewertungsbalken anzeigen</label>
-      <label><input type="checkbox" :checked="engineSettings.showLines" @change="onFlag('showLines', $event)" /> Varianten und Pfeile anzeigen</label>
-      <label><input type="checkbox" :checked="engineSettings.whileThinking" @change="onFlag('whileThinking', $event)" /> Auch während Stockfish denkt (Partie)</label>
-      <label>Höchsttiefe <b>{{ engineSettings.depth }}</b>
-        <input type="range" :min="DEPTH_RANGE.min" :max="DEPTH_RANGE.max" :value="engineSettings.depth" aria-label="Höchsttiefe der Analyse" @change="onDepth" />
+      <label><input type="checkbox" :checked="settings.showBar" @change="onFlag('showBar', $event)" /> Bewertungsbalken anzeigen</label>
+      <label><input type="checkbox" :checked="settings.showLines" @change="onFlag('showLines', $event)" /> Varianten und Pfeile anzeigen</label>
+      <label><input type="checkbox" :checked="settings.whileThinking" @change="onFlag('whileThinking', $event)" /> Auch während Stockfish denkt (Partie)</label>
+      <label>Höchsttiefe <b>{{ settings.depth }}</b>
+        <input type="range" :min="DEPTH_RANGE.min" :max="DEPTH_RANGE.max" :value="settings.depth" aria-label="Höchsttiefe der Analyse" @change="onDepth" />
       </label>
     </div>
 
-    <div class="body" :style="{ '--lines': engineSettings.multipv }">
+    <div class="body" :style="{ '--lines': settings.multipv }">
       <p v-if="access === 'locked'" class="note" role="status">{{ lockedText || (unlockable ? 'Im Spiel mit Lehrer gesperrt.' : 'Bewertung und Varianten nach deinem Zug verfügbar.') }} <button v-if="unlockable" type="button" class="unlock" @click="emit('unlock')">Trotzdem anzeigen (zählt als Hilfe)</button></p>
       <p v-else-if="access === 'off'" class="note">Engine aus. Schalter oben einschalten.</p>
       <p v-else-if="access === 'busy'" class="note" role="status">Die Engine ist gerade mit der Partie beschäftigt.</p>
@@ -141,7 +146,7 @@ const lineCounts = Array.from({ length: MULTIPV_RANGE.max - MULTIPV_RANGE.min + 
         <p v-if="state?.ended" class="note">Stellung beendet: kein Zug mehr möglich.</p>
         <p v-else-if="state?.error" class="note" role="status" :title="state.error">{{ engineErrorText(new EngineError(state.error)) }} <button type="button" @click="retry">Erneut versuchen</button></p>
         <p v-else-if="!summary" class="note" role="status">Stockfish rechnet …</p>
-        <p v-else-if="!engineSettings.showLines" class="note">Varianten ausgeblendet (⚙ Einstellungen).</p>
+        <p v-else-if="!settings.showLines" class="note">Varianten ausgeblendet (⚙ Einstellungen).</p>
         <ol v-else class="pvs">
           <li v-for="(l, i) in summary.lines" :key="i">
             <b class="sc">{{ lab(l.score) }}</b>

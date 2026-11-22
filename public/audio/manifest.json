@@ -6490,5 +6490,2225 @@
     "voice": "callum",
     "model": "elevenlabs/eleven-v4",
     "createdAt": "2026-11-21T10:53:28+00:00"
+  },
+  "lehrgang-jvw8vb": {
+    "file": "lehrgang-jvw8vb-04eb259d.mp3",
+    "title": "Caro-Kann: Idee",
+    "text": "Mit 1… c6 bereitest du 2… d5 vor. Anders als in der Französischen Verteidigung bleibt dein Läufer c8 dabei frei. Du bekommst eine solide Bauernstruktur und etwas weniger Raum als Weiß.",
+    "sources": [],
+    "durationSec": 11.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:56:42+00:00"
+  },
+  "lehrgang-5x5xsa": {
+    "file": "lehrgang-5x5xsa-ff8cde05.mp3",
+    "title": "Caro-Kann: Deine Züge",
+    "text": "Gegen 3. e5 spielst du Lf5. Gegen 3. exd5 schlägst du mit dem c-Bauern zurück. Gegen 3. Sc3 nimmst du auf e4 und entwickelst den Läufer nach f5.",
+    "sources": [],
+    "durationSec": 12.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:56:46+00:00"
+  },
+  "lehrgang-kfy70g": {
+    "file": "lehrgang-kfy70g-900eb62e.mp3",
+    "title": "Caro-Kann: Pläne",
+    "text": "Gegen den Vorstoß holst du den Läufer nach außen, bevor du den e-Bauern ziehst, und greifst dann mit dem c-Bauern den Bauern d4 an, das untere Ende der weißen Bauernkette. Nach dem Abtausch auf d5 setzt du mit dem Springer auf c6 den Bauern d4 unter Druck. Im Panow-Angriff (Weiß spielt c4) festigst du mit e6 dein Zentrum.",
+    "sources": [],
+    "durationSec": 20.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:56:51+00:00"
+  },
+  "lehrgang-1mwtfk0": {
+    "file": "lehrgang-1mwtfk0-ebdd1590.mp3",
+    "title": "Caro-Kann: Fallen",
+    "text": "In der Fantasy-Variante (3. f3) verliert Weiß mit c3 einen Bauern: Nach dxe4 fxe4 e5 und c3 gewinnt Dh4+ den Bauern e4. Und wenn du je Sd7 statt Lf5 spielst: Nach Dame e2 verliert Sgf6?? sofort, denn Springer d6 ist matt.",
+    "sources": [],
+    "durationSec": 19.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:56:57+00:00"
+  },
+  "lehrgang-10ml9x3": {
+    "file": "lehrgang-10ml9x3-cfa433e6.mp3",
+    "title": "Caro-Kann: Wenn Unbekanntes kommt",
+    "text": "Halte die Struktur stabil: Entwickle den Läufer c8, bevor du den e-Bauern ziehst, und decke deinen Bauern d5. Dann suchst du mit dem c-Bauern oder dem Springer c6 Druck auf d4.",
+    "sources": [],
+    "durationSec": 12.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:01+00:00"
+  },
+  "lehrgang-a2onas": {
+    "file": "lehrgang-a2onas-18712c3b.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß stellt einen Bauern ins Zentrum.",
+    "sources": [],
+    "durationSec": 2.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:04+00:00"
+  },
+  "lehrgang-1bb9fk8": {
+    "file": "lehrgang-1bb9fk8-4c5cc20b.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Der c-Bauer stützt den kommenden Vorstoß deines d-Bauern und lässt, anders als in der Französischen Verteidigung, den Läufer c8 frei.",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:09+00:00"
+  },
+  "lehrgang-yps3ei": {
+    "file": "lehrgang-yps3ei-15887bb0.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß stellt einen zweiten Bauern ins Zentrum; damit musst du in fast jeder Partie rechnen.",
+    "sources": [],
+    "durationSec": 5.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:11+00:00"
+  },
+  "lehrgang-1li3wui": {
+    "file": "lehrgang-1li3wui-4586261b.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Mit dem d-Bauern greifst du den Bauern e4 an und stellst selbst einen Bauern ins Zentrum – dafür war c6 da.",
+    "sources": [],
+    "durationSec": 7.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:14+00:00"
+  },
+  "lehrgang-i8lkkw": {
+    "file": "lehrgang-i8lkkw-a0c84c67.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß entwickelt den Springer, deckt den Bauern e4 und greift deinen Bauern d5 an; dein d-Bauer kann den Bauern e4 holen.",
+    "sources": [],
+    "durationSec": 8.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:18+00:00"
+  },
+  "lehrgang-148d9w5": {
+    "file": "lehrgang-148d9w5-b987fd20.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Du schlägst den Bauern e4; Weiß nimmt gleich zurück, danach sind die Zentrumsbauern abgetauscht.",
+    "sources": [],
+    "durationSec": 6.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:23+00:00"
+  },
+  "lehrgang-1k1out6": {
+    "file": "lehrgang-1k1out6-2d8da4e7.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß schlägt zurück und hat jetzt einen Springer auf e4.",
+    "sources": [],
+    "durationSec": 3.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:26+00:00"
+  },
+  "lehrgang-10wsa6j": {
+    "file": "lehrgang-10wsa6j-51b20f70.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Du entwickelst den Läufer außerhalb der Bauernkette und greifst dabei den Springer e4 an.",
+    "sources": [],
+    "durationSec": 5.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:30+00:00"
+  },
+  "lehrgang-1pzwju6": {
+    "file": "lehrgang-1pzwju6-c18b972b.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß zieht den Springer mit Angriff auf deinen Läufer f5 zurück.",
+    "sources": [],
+    "durationSec": 4.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:33+00:00"
+  },
+  "lehrgang-kvosv1": {
+    "file": "lehrgang-kvosv1-a369bea1.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Du ziehst den Läufer nach g6: Er bleibt im Spiel und zielt weiter auf den Bauern c2.",
+    "sources": [],
+    "durationSec": 5.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:37+00:00"
+  },
+  "lehrgang-14p59xx": {
+    "file": "lehrgang-14p59xx-2a84b568.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Weiß bringt den zweiten Springer ins Spiel und deckt damit seinen Bauern d4.",
+    "sources": [],
+    "durationSec": 4.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:40+00:00"
+  },
+  "lehrgang-rzuijv": {
+    "file": "lehrgang-rzuijv-5da0639d.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Sg3 Lg6 6.Sf3",
+    "text": "Du entwickelst den Springer nach d7; der zweite Springer kann danach ebenfalls ins Spiel.",
+    "sources": [],
+    "durationSec": 5.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:44+00:00"
+  },
+  "lehrgang-1i7cyzu": {
+    "file": "lehrgang-1i7cyzu-516c72e9.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Weiß schlägt den Bauern d5 und bietet den Abtausch an; du nimmst einfach mit dem c-Bauern zurück.",
+    "sources": [],
+    "durationSec": 5.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:48+00:00"
+  },
+  "lehrgang-1faosdy": {
+    "file": "lehrgang-1faosdy-42de9177.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Du schlägst mit dem Bauern zurück und behältst so deine Stellung im Zentrum. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 5.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:52+00:00"
+  },
+  "lehrgang-1bib2fs": {
+    "file": "lehrgang-1bib2fs-fb77de39.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Weiß entwickelt den Springer und greift deinen Bauern d5 an. Danach ist die Stellung ausgeglichen.",
+    "sources": [],
+    "durationSec": 5.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:57:57+00:00"
+  },
+  "lehrgang-1rq2b7n": {
+    "file": "lehrgang-1rq2b7n-b9b7382d.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Mit a6 verhinderst du den Läuferzug Lb5; die Stellung bleibt ausgeglichen.",
+    "sources": [],
+    "durationSec": 5.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:01+00:00"
+  },
+  "lehrgang-120go53": {
+    "file": "lehrgang-120go53-3ae410b7.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Weiß entwickelt den Springer und deckt den Bauern d4. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 5.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:04+00:00"
+  },
+  "lehrgang-1go13f8": {
+    "file": "lehrgang-1go13f8-36ba8bce.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Sc3 a6",
+    "text": "Du entwickelst den Springer mit Angriff auf den Bauern d4. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 4.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:07+00:00"
+  },
+  "lehrgang-1lt3rzy": {
+    "file": "lehrgang-1lt3rzy-08ca74c7.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.f4",
+    "text": "Weiß rückt mit dem e-Bauern vor und gewinnt Raum; das ist die Vorstoßvariante, mit der du in etwa jeder zweiten Partie rechnen musst.",
+    "sources": [],
+    "durationSec": 7.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:11+00:00"
+  },
+  "lehrgang-1pn9pxw": {
+    "file": "lehrgang-1pn9pxw-346a14f1.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.f4",
+    "text": "Du holst den Läufer nach außen, bevor du den e-Bauern ziehst und deinem Läufer selbst den Weg versperrst. Von f5 aus schaut er auf den Bauern c2.",
+    "sources": [],
+    "durationSec": 9.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:14+00:00"
+  },
+  "lehrgang-1n94m4i": {
+    "file": "lehrgang-1n94m4i-c789cfee.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.f4",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Weiß deckt mit f4 den vorgerückten Bauern e5. Stockfish sieht die Stellung danach ausgeglichen.",
+    "sources": [],
+    "durationSec": 10.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:18+00:00"
+  },
+  "lehrgang-1vacoug": {
+    "file": "lehrgang-1vacoug-64383e6d.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Short-System: 4…e6 5.Sc3",
+    "text": "Weiß entwickelt den Springer und deckt die Bauern d4 und e5; das ist die ruhige Short-Variante, die oft mit Le2 weitergeht.",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:22+00:00"
+  },
+  "lehrgang-12bcqoy": {
+    "file": "lehrgang-12bcqoy-25f66683.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Short-System: 4…e6 5.Sc3",
+    "text": "Mit e6 deckst du den Bauern d5 und den Läufer f5. Außerdem hat dein Läufer f8 jetzt freie Bahn und kann später den Vorstoß des c-Bauern unterstützen.",
+    "sources": [],
+    "durationSec": 10.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:26+00:00"
+  },
+  "lehrgang-1ji5lt": {
+    "file": "lehrgang-1ji5lt-d8255518.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Short-System: 4…e6 5.Sc3",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Weiß entwickelt den Springer und greift deinen Bauern d5 an.",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:30+00:00"
+  },
+  "lehrgang-1vrlcza": {
+    "file": "lehrgang-1vrlcza-d649fe89.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.c3",
+    "text": "Weiß deckt mit c3 seinen Bauern d4 und festigt so sein Zentrum.",
+    "sources": [],
+    "durationSec": 5.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:33+00:00"
+  },
+  "lehrgang-wxvrtm": {
+    "file": "lehrgang-wxvrtm-102349c0.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.c3",
+    "text": "Du deckst mit e6 deinen Bauern d5 und den Läufer f5 und gibst dem Läufer f8 Raum.",
+    "sources": [],
+    "durationSec": 6.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:37+00:00"
+  },
+  "lehrgang-1l8l64z": {
+    "file": "lehrgang-1l8l64z-10fb1027.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Weiß bietet den Läufertausch an: Ld3 greift deinen Läufer f5 an.",
+    "sources": [],
+    "durationSec": 5.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:39+00:00"
+  },
+  "lehrgang-qmzk7p": {
+    "file": "lehrgang-qmzk7p-fa1b7e7f.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Du tauschst den Läufer ab, statt ihn angreifen zu lassen; der Läufer f5 ist ein häufiger Angriffspunkt für Weiß.",
+    "sources": [],
+    "durationSec": 7.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:43+00:00"
+  },
+  "lehrgang-n9su83": {
+    "file": "lehrgang-n9su83-111b01b5.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Weiß nimmt mit der Dame zurück; sie zielt jetzt auf deinen Bauern h7.",
+    "sources": [],
+    "durationSec": 4.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:46+00:00"
+  },
+  "lehrgang-1b3jwqr": {
+    "file": "lehrgang-1b3jwqr-a47fdc0a.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Mit e6 deckst du den Bauern d5. Danach kannst du mit dem c-Bauern gegen das weiße Zentrum antreten.",
+    "sources": [],
+    "durationSec": 7.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:50+00:00"
+  },
+  "lehrgang-16mfpkf": {
+    "file": "lehrgang-16mfpkf-d8a9c2f1.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Weiß entwickelt den Springer und deckt damit die Bauern d4 und e5.",
+    "sources": [],
+    "durationSec": 4.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:54+00:00"
+  },
+  "lehrgang-1awg7af": {
+    "file": "lehrgang-1awg7af-1811badc.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Mit dem c-Bauern greifst du den Bauern d4 an, das untere Ende der weißen Bauernkette d4–e5; das ist der klassische Gegenschlag gegen die Vorstoßvariante. Stockfish sieht die Stellung danach ausgeglichen (+0,35). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+    "sources": [],
+    "durationSec": 22.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:58:59+00:00"
+  },
+  "lehrgang-gijndz": {
+    "file": "lehrgang-gijndz-c0884d30.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Weiß stützt mit c3 den angegriffenen Bauern d4.",
+    "sources": [],
+    "durationSec": 3.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:02+00:00"
+  },
+  "lehrgang-ca24qx": {
+    "file": "lehrgang-ca24qx-7d5fe388.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.Ld3",
+    "text": "Du entwickelst den Springer nach d7, deckst den Bauern c5 und setzt den Bauern e5 unter Druck.",
+    "sources": [],
+    "durationSec": 6.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:06+00:00"
+  },
+  "lehrgang-15y1su1": {
+    "file": "lehrgang-15y1su1-5cf4d514.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Tal-Variante: 4…h5",
+    "text": "Weiß spielt die Tal-Variante mit dem h-Bauern; der Läufer f5 ist ein häufiger Angriffspunkt für solche Bauernvorstöße am Rand.",
+    "sources": [],
+    "durationSec": 8.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:10+00:00"
+  },
+  "lehrgang-cqhup9": {
+    "file": "lehrgang-cqhup9-b672f413.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Tal-Variante: 4…h5",
+    "text": "Mit h5 verhinderst du den Vorstoß des g-Bauern; ohne diesen Zug würde der Läufer f5 nach dem e-Bauernzug eingesperrt.",
+    "sources": [],
+    "durationSec": 8.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:14+00:00"
+  },
+  "lehrgang-13rtv4k": {
+    "file": "lehrgang-13rtv4k-742137c1.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Short-System: 4…e6 5.Ld3",
+    "text": "Du tauschst den Läufer ab, bevor er zum Angriffspunkt für Weiß wird.",
+    "sources": [],
+    "durationSec": 4.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:16+00:00"
+  },
+  "lehrgang-12ilaav": {
+    "file": "lehrgang-12ilaav-74ad35fb.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Short-System: 4…e6 5.Ld3",
+    "text": "Weiß nimmt mit der Dame zurück; sie deckt jetzt den Springer f3 und schaut auf deinen Bauern h7.",
+    "sources": [],
+    "durationSec": 6.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:19+00:00"
+  },
+  "lehrgang-12lc49z": {
+    "file": "lehrgang-12lc49z-746217a6.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 5.Lb5 e6",
+    "text": "Weiß entwickelt den Springer und deckt den Bauern d4; ein ruhiger Aufbau.",
+    "sources": [],
+    "durationSec": 4.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:22+00:00"
+  },
+  "lehrgang-xa6dfo": {
+    "file": "lehrgang-xa6dfo-afe4975e.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 5.Lb5 e6",
+    "text": "Du entwickelst den Springer und greifst den Bauern d4 an. Stockfish sieht die Stellung danach ausgeglichen (+0,25).",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:26+00:00"
+  },
+  "lehrgang-5rswgw": {
+    "file": "lehrgang-5rswgw-9f939b35.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 5.Lb5 e6",
+    "text": "Weiß greift mit Lb5 deinen Springer c6 an.",
+    "sources": [],
+    "durationSec": 4.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:30+00:00"
+  },
+  "lehrgang-1f4wl9f": {
+    "file": "lehrgang-1f4wl9f-bbfc26c9.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 5.Lb5 e6",
+    "text": "Mit e6 deckst du den Bauern d5. Die Stellung bleibt ausgeglichen.",
+    "sources": [],
+    "durationSec": 4.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:34+00:00"
+  },
+  "lehrgang-hoxf3e": {
+    "file": "lehrgang-hoxf3e-a2968ccc.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Ld3 Sc6",
+    "text": "Weiß entwickelt den Läufer nach d3 und stellt ihn so, dass ein späteres Lf5 mit Läufertausch beantwortet werden kann; Lg4 bleibt dir möglich.",
+    "sources": [],
+    "durationSec": 9.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:37+00:00"
+  },
+  "lehrgang-ovjxhy": {
+    "file": "lehrgang-ovjxhy-feb342b9.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Ld3 Sc6",
+    "text": "Du entwickelst den Springer und setzt den Bauern d4 unter Druck.",
+    "sources": [],
+    "durationSec": 3.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:39+00:00"
+  },
+  "lehrgang-1u2ekoc": {
+    "file": "lehrgang-1u2ekoc-27ea5327.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Ld3 Sc6",
+    "text": "Weiß stützt mit c3 den Bauern d4.",
+    "sources": [],
+    "durationSec": 3.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:41+00:00"
+  },
+  "lehrgang-1bbtdpl": {
+    "file": "lehrgang-1bbtdpl-dbb32f4a.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 4.Ld3 Sc6",
+    "text": "Du entwickelst den Springer und deckst den Bauern d5. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 4.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:45+00:00"
+  },
+  "lehrgang-1hkneqt": {
+    "file": "lehrgang-1hkneqt-318b148c.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Van-der-Wiel-System, Dreyev-Verteidigung: 5.Sf3 e6",
+    "text": "Weiß entwickelt den Springer und greift deinen Bauern d5 an – das musst du beantworten.",
+    "sources": [],
+    "durationSec": 5.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:47+00:00"
+  },
+  "lehrgang-1856jdd": {
+    "file": "lehrgang-1856jdd-dcf20f31.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Van-der-Wiel-System, Dreyev-Verteidigung: 5.Sf3 e6",
+    "text": "Du greifst die Bauern d4 und b2 an. Stockfish sieht Weiß danach aber leicht besser (+0,83); bei diesem Zug ist also Vorsicht angebracht.",
+    "sources": [],
+    "durationSec": 9.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:51+00:00"
+  },
+  "lehrgang-1d75m7y": {
+    "file": "lehrgang-1d75m7y-a778c99d.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Van-der-Wiel-System, Dreyev-Verteidigung: 5.Sf3 e6",
+    "text": "Weiß entwickelt den Springer und deckt damit den Bauern d4 gegen die Dame.",
+    "sources": [],
+    "durationSec": 4.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:54+00:00"
+  },
+  "lehrgang-o9o5jp": {
+    "file": "lehrgang-o9o5jp-67c7b9f5.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Van-der-Wiel-System, Dreyev-Verteidigung: 5.Sf3 e6",
+    "text": "Du deckst den Bauern d5 und den Läufer f5. Stockfish sieht die Stellung hier weiter ausgeglichen (+0,49).",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T16:59:58+00:00"
+  },
+  "lehrgang-d9l4xt": {
+    "file": "lehrgang-d9l4xt-68d64307.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System: 5.Ld3",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Weiß entwickelt den Läufer und deckt den Springer e4. Stockfish bewertet die Stellung danach mit −0,27, also ausgeglichen.",
+    "sources": [],
+    "durationSec": 13.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:02+00:00"
+  },
+  "lehrgang-tvetf0": {
+    "file": "lehrgang-tvetf0-23dd76db.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Abtauschvariante: 5.Sc3",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Weiß entwickelt den Springer und greift deinen Bauern d5 an. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 9.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:06+00:00"
+  },
+  "lehrgang-1cn25ge": {
+    "file": "lehrgang-1cn25ge-276a2304.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System, Hauptlinie: 6…h6",
+    "text": "Weiß schiebt den h-Bauern vor; der nächste Randbauernzug würde deinen Läufer g6 vertreiben und dich um dein Läuferpaar (beide Läufer) bringen.",
+    "sources": [],
+    "durationSec": 8.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:09+00:00"
+  },
+  "lehrgang-1b0w172": {
+    "file": "lehrgang-1b0w172-68a131c1.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Klassisches System, Hauptlinie: 6…h6",
+    "text": "Mit h6 machst du das Feld h7 für deinen Läufer frei; wenn Weiß den h-Bauern weiter vorschiebt, weicht er dorthin aus.",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:12+00:00"
+  },
+  "lehrgang-r2dds2": {
+    "file": "lehrgang-r2dds2-9b6941e0.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Panow-Angriff",
+    "text": "Weiß greift mit c4 deinen Bauern d5 an – das ist der Panow-Angriff.",
+    "sources": [],
+    "durationSec": 4.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:14+00:00"
+  },
+  "lehrgang-1d22drh": {
+    "file": "lehrgang-1d22drh-1db4addc.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Panow-Angriff",
+    "text": "Du entwickelst den Springer und deckst damit den Bauern d5, den Weiß mit c4 angreift.",
+    "sources": [],
+    "durationSec": 5.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:18+00:00"
+  },
+  "lehrgang-ggr0nx": {
+    "file": "lehrgang-ggr0nx-f8bd48f2.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Panow-Angriff",
+    "text": "Weiß entwickelt den Springer und greift wieder den Bauern d5 an. Die Stellung ist ausgeglichen.",
+    "sources": [],
+    "durationSec": 5.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:22+00:00"
+  },
+  "lehrgang-1ad9f9l": {
+    "file": "lehrgang-1ad9f9l-15b668c5.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Panow-Angriff",
+    "text": "Mit e6 festigst du dein Zentrum und deckst den Bauern d5.",
+    "sources": [],
+    "durationSec": 4.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:25+00:00"
+  },
+  "lehrgang-yo177v": {
+    "file": "lehrgang-yo177v-31ab3e44.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Weiß deckt mit f3 seinen Bauern e4; das ist die Fantasy-Variante, ein zweischneidiger Versuch.",
+    "sources": [],
+    "durationSec": 6.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:29+00:00"
+  },
+  "lehrgang-14esvk4": {
+    "file": "lehrgang-14esvk4-011a3c56.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Du schlägst den Bauern e4 und greifst damit den Bauern f3 an; Weiß schlägt meistens zurück.",
+    "sources": [],
+    "durationSec": 6.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:32+00:00"
+  },
+  "lehrgang-1g7fwky": {
+    "file": "lehrgang-1g7fwky-3d0aaa42.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Weiß nimmt zurück und hat jetzt ein breites Bauernzentrum aus d4 und e4 und die halboffene f-Linie.",
+    "sources": [],
+    "durationSec": 6.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:35+00:00"
+  },
+  "lehrgang-1d258i4": {
+    "file": "lehrgang-1d258i4-1cdbf678.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Du greifst den Bauern d4 an – e5 ist in dieser Variante die Hauptfortsetzung.",
+    "sources": [],
+    "durationSec": 5.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:37+00:00"
+  },
+  "lehrgang-zk8roz": {
+    "file": "lehrgang-zk8roz-1d43389a.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Weiß entwickelt den Springer und greift deinen Bauern e5 an.",
+    "sources": [],
+    "durationSec": 4.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:40+00:00"
+  },
+  "lehrgang-9onhg": {
+    "file": "lehrgang-9onhg-0daa51fd.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Maróczy-Variante: 3…dxe4 4.fxe4",
+    "text": "Du schlägst den Bauern d4; Weiß kann zurückschlagen. Stockfish sieht Weiß danach leicht besser (+0,59).",
+    "sources": [],
+    "durationSec": 7.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:44+00:00"
+  },
+  "lehrgang-1vciw2q": {
+    "file": "lehrgang-1vciw2q-76dd5e3c.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante: 3…Lf5 4.c4",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Weiß greift mit c4 deinen Bauern d5 an.",
+    "sources": [],
+    "durationSec": 7.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:47+00:00"
+  },
+  "lehrgang-zjc7qr": {
+    "file": "lehrgang-zjc7qr-33967f6b.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Bayonet-Angriff: 4…Le4",
+    "text": "Weiß greift mit dem g-Bauern deinen Läufer f5 an (Bayonet-Angriff). Stockfish sieht die Stellung danach ausgeglichen (+0,07).",
+    "sources": [],
+    "durationSec": 9.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:51+00:00"
+  },
+  "lehrgang-1k3dvft": {
+    "file": "lehrgang-1k3dvft-226b21b0.mp3",
+    "title": "Caro-Kann: Caro-Kann-Verteidigung: Vorstoßvariante, Bayonet-Angriff: 4…Le4",
+    "text": "Du weichst mit dem Läufer nach e4 aus: Dort greift er den Bauern c2 und den Turm h1 an.",
+    "sources": [],
+    "durationSec": 7.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:55+00:00"
+  },
+  "lehrgang-1ihqfi5": {
+    "file": "lehrgang-1ihqfi5-c4288cc2.mp3",
+    "title": "Italienisch: Idee",
+    "text": "Du spielst 1. e4 e5 2. Sf3 Sc6 3. Lc4. Der Läufer zielt auf f7, und dort verteidigt nur der König. Du suchst früh Druck und Verwicklungen, die viele Gegner auf deinem Niveau nicht kennen.",
+    "sources": [],
+    "durationSec": 16.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:00:59+00:00"
+  },
+  "lehrgang-7z7bqr": {
+    "file": "lehrgang-7z7bqr-487fa0f1.mp3",
+    "title": "Italienisch: Deine Züge",
+    "text": "Gegen Lc5 spielst du b4, das Evans-Gambit. Gegen Sf6 spielst du Sg5 und greifst f7 doppelt an. Gegen die ruhigeren Antworten h6, d6 und Le7 (zusammen etwa jede vierte Partie) spielst du d4 beziehungsweise Sc3 und entwickelst dich.",
+    "sources": [],
+    "durationSec": 19.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:04+00:00"
+  },
+  "lehrgang-1mkpi04": {
+    "file": "lehrgang-1mkpi04-a08d4715.mp3",
+    "title": "Italienisch: Pläne",
+    "text": "Im Evans-Gambit gibst du einen Bauern für ein starkes Zentrum und schnelle Entwicklung; nach c3 und d4 muss der Läufer weichen. Nach Sg5 d5 nimmst du den Bauern auf d5: Schwarz bekommt dafür schnelle Entwicklung, du bleibst vorn im Material.",
+    "sources": [],
+    "durationSec": 15.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:08+00:00"
+  },
+  "lehrgang-hd1wky": {
+    "file": "lehrgang-hd1wky-58521ac3.mp3",
+    "title": "Italienisch: Fallen",
+    "text": "Nimmt Schwarz nach Sg5 d5 und exd5 mit Sxd5, opferst du auf f7 und gibst Schach auf f3. Im Evans-Gambit nimmt Schwarz nach d4 exd4 und O-O manchmal noch den Bauern auf c3; dann ist Lxf7+ mit Schach ein guter Zug: Die Engine (Stockfish Tiefe 22) bewertet ihn mit +1,16, ebenso stark wie Db3 mit +1,17.",
+    "sources": [],
+    "durationSec": 30.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:14+00:00"
+  },
+  "lehrgang-q4uizk": {
+    "file": "lehrgang-q4uizk-5cf59433.mp3",
+    "title": "Italienisch: Wenn Unbekanntes kommt",
+    "text": "Frag dich zuerst: Was greift f7 an, was deckt es? Le7 nennt Wikipedia solide und eher remislastig, d6 die selten gespielte Semi-Italienische Eröffnung – dann entwickelst du dich weiter und kannst mit d4 die Mitte öffnen. Offen sind noch: Sxb4 im Evans-Gambit, Ke8 und Df6 nach dem Opfer auf f7 sowie d6 nach h6. Hier legen wir die Antwort noch mit dir fest.",
+    "sources": [],
+    "durationSec": 27.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:20+00:00"
+  },
+  "lehrgang-rtq5cw": {
+    "file": "lehrgang-rtq5cw-783a551c.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Du besetzt mit dem e-Bauern gleich die Mitte – so beginnt jede Partie in diesem Lehrgang.",
+    "sources": [],
+    "durationSec": 5.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:22+00:00"
+  },
+  "lehrgang-1pa2qm8": {
+    "file": "lehrgang-1pa2qm8-1ff4a2b0.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Schwarz hält die Mitte ebenfalls besetzt; mit dieser Antwort rechnest du fast immer.",
+    "sources": [],
+    "durationSec": 4.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:25+00:00"
+  },
+  "lehrgang-s195w2": {
+    "file": "lehrgang-s195w2-bf56c0c5.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Der Springer kommt ins Spiel und greift den Bauern auf e5 an.",
+    "sources": [],
+    "durationSec": 4.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:28+00:00"
+  },
+  "lehrgang-1s7wr7j": {
+    "file": "lehrgang-1s7wr7j-4b50408a.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Schwarz deckt den Bauern auf e5 mit dem Springer und entwickelt sich dabei.",
+    "sources": [],
+    "durationSec": 4.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:31+00:00"
+  },
+  "lehrgang-184qxd1": {
+    "file": "lehrgang-184qxd1-6fd556fe.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Der Läufer zielt auf f7: Dort verteidigt nur der König. Das ist der Grund für diesen Zug.",
+    "sources": [],
+    "durationSec": 6.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:35+00:00"
+  },
+  "lehrgang-16klt4z": {
+    "file": "lehrgang-16klt4z-a4780d9f.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Schwarz greift mit dem Springer deinen Springer auf f3 und den Bauern auf c2 an. Die Engine sieht dich danach klar besser (+1,07).",
+    "sources": [],
+    "durationSec": 9.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:38+00:00"
+  },
+  "lehrgang-1gwhjjv": {
+    "file": "lehrgang-1gwhjjv-64021952.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Du nimmst den Springer. Die Engine sieht dich klar besser (+1,08).",
+    "sources": [],
+    "durationSec": 4.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:40+00:00"
+  },
+  "lehrgang-45u62p": {
+    "file": "lehrgang-45u62p-89b52769.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Schwarz schlägt zurück und holt den Springer. Die Engine sieht dich klar besser (+1,12).",
+    "sources": [],
+    "durationSec": 6.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:44+00:00"
+  },
+  "lehrgang-1gccmej": {
+    "file": "lehrgang-1gccmej-26d5d070.mp3",
+    "title": "Italienisch: Italienische Partie: Blackburne-Kostić-Gambit: 4.Sxd4 exd4",
+    "text": "Du rochierst. Die Engine sieht dich weiter klar besser (+1,20).",
+    "sources": [],
+    "durationSec": 4.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:47+00:00"
+  },
+  "lehrgang-2tmrq1": {
+    "file": "lehrgang-2tmrq1-1bf3038a.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Schwarz entwickelt den Läufer und zielt auf f2 – das Giuoco Piano, in etwa 3 von 10 Fällen.",
+    "sources": [],
+    "durationSec": 7.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:50+00:00"
+  },
+  "lehrgang-h3tqma": {
+    "file": "lehrgang-h3tqma-79e05b5d.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du bietest den b-Bauern an, um den Läufer auf c5 anzugreifen und dir ein starkes Zentrum zu holen (Evans-Gambit). Die Engine sieht die Stellung danach ausgeglichen.",
+    "sources": [],
+    "durationSec": 9.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:01:58+00:00"
+  },
+  "lehrgang-b2xzfx": {
+    "file": "lehrgang-b2xzfx-84ea22cb.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Schwarz nimmt das Opfer an (so spielt es die Mehrheit laut Wikipedia) und greift mit dem Läufer den Bauern auf d2 an.",
+    "sources": [],
+    "durationSec": 7.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:00+00:00"
+  },
+  "lehrgang-s30fuc": {
+    "file": "lehrgang-s30fuc-dd48da4d.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du greifst den Läufer noch einmal an und gewinnst Zeit für den Aufbau der Mitte. Die Engine sieht die Stellung noch ungefähr ausgeglichen.",
+    "sources": [],
+    "durationSec": 7.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:03+00:00"
+  },
+  "lehrgang-16nb2ba": {
+    "file": "lehrgang-16nb2ba-209e2a4e.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Der Läufer geht zurück auf c5 und zielt wieder auf f2. Wikipedia hält das für die schwächere Wahl, weil du mit dem d-Bauern gleich Zeit gewinnst; die Engine sieht die Stellung danach trotzdem nur als ausgeglichen.",
+    "sources": [],
+    "durationSec": 12.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:06+00:00"
+  },
+  "lehrgang-3e1viq": {
+    "file": "lehrgang-3e1viq-d08e5e4c.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Der Bauer d4 greift den Läufer c5 und den Bauern e5 an; der Läufer muss ausweichen. So gewinnst du laut Wikipedia einen Zug (ein Tempo) Vorsprung in der Entwicklung.",
+    "sources": [],
+    "durationSec": 11.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:08+00:00"
+  },
+  "lehrgang-1dokhd5": {
+    "file": "lehrgang-1dokhd5-c60289e5.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Schwarz nimmt den Bauern auf d4 und greift damit deinen Bauern auf c3 an. Die Engine sieht die Stellung trotzdem noch ausgeglichen.",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:11+00:00"
+  },
+  "lehrgang-pklrrz": {
+    "file": "lehrgang-pklrrz-5f03c1eb.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du rochierst und bietest einen zweiten Bauern an (so beschreibt es Wikipedia). Die Engine sieht die Stellung dabei ausgeglichen (+0,39).",
+    "sources": [],
+    "durationSec": 9.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:13+00:00"
+  },
+  "lehrgang-1wc5kwu": {
+    "file": "lehrgang-1wc5kwu-3ff33018.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Schwarz nimmt noch einen Bauern. Die Engine sieht dich danach klar besser (+1,23).",
+    "sources": [],
+    "durationSec": 5.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:16+00:00"
+  },
+  "lehrgang-1orvr3v": {
+    "file": "lehrgang-1orvr3v-57b1e299.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du schlägst den Bauern auf f7 mit Schach und greifst zugleich den Springer auf g8 an. Die Engine sieht dich klar besser (+1,07).",
+    "sources": [],
+    "durationSec": 8.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:19+00:00"
+  },
+  "lehrgang-1yueta3": {
+    "file": "lehrgang-1yueta3-e8096a4b.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Schwarz nimmt den Läufer mit dem König. Die Engine sieht dich klar besser (+1,21).",
+    "sources": [],
+    "durationSec": 6.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:22+00:00"
+  },
+  "lehrgang-setje6": {
+    "file": "lehrgang-setje6-2411152a.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du gibst Schach und greifst zugleich Springer c6 und Läufer c5 an. Die Engine sieht dich klar besser (+1,08).",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:24+00:00"
+  },
+  "lehrgang-1hx6kpt": {
+    "file": "lehrgang-1hx6kpt-e34a32b5.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Der König geht zurück nach e8 und deckt Dame und Bauern auf d7. Die Engine sieht dich klar besser (+1,22).",
+    "sources": [],
+    "durationSec": 8.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:28+00:00"
+  },
+  "lehrgang-1e360rt": {
+    "file": "lehrgang-1e360rt-bb2fc9d2.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Du gibst Schach und greifst zugleich den Läufer auf c5 und den Bauern auf h7 an. Die Engine sieht dich klar besser (+1,04).",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:31+00:00"
+  },
+  "lehrgang-6ntkeq": {
+    "file": "lehrgang-6ntkeq-9095a883.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, McDonnell-Verteidigung: 6.d4 exd4",
+    "text": "Der Bauer greift deine Dame auf h5 an. Die Engine sieht dich danach klar besser (+2,99).",
+    "sources": [],
+    "durationSec": 6.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:35+00:00"
+  },
+  "lehrgang-1g26bg4": {
+    "file": "lehrgang-1g26bg4-cd75230f.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Mit dem Springer greift Schwarz deinen e4-Bauern an – das ist die Zwei-Springer-Verteidigung, in etwa 3 von 10 Fällen.",
+    "sources": [],
+    "durationSec": 7.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:38+00:00"
+  },
+  "lehrgang-10a1sb9": {
+    "file": "lehrgang-10a1sb9-550ba09d.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Springer und Läufer greifen f7 gemeinsam an, und dort verteidigt nur der König. Die Engine sieht die Stellung danach ausgeglichen: Du spielst auf Wirkung gegen unvorbereitete Gegner (dein Repertoire-Dokument nennt es High Risk, High Reward).",
+    "sources": [],
+    "durationSec": 15.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:42+00:00"
+  },
+  "lehrgang-167d6r7": {
+    "file": "lehrgang-167d6r7-47c0adef.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Das ist laut Wikipedia die einzige gute Verteidigung: Der Bauer stellt sich dem Läufer in den Weg und greift ihn an.",
+    "sources": [],
+    "durationSec": 6.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:46+00:00"
+  },
+  "lehrgang-14iis19": {
+    "file": "lehrgang-14iis19-79c835ba.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Du nimmst den Bauern und greifst mit ihm den Springer auf c6 an. Schwarz bekommt dafür laut Wikipedia schnelle Entwicklung und Initiative.",
+    "sources": [],
+    "durationSec": 8.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:48+00:00"
+  },
+  "lehrgang-rhyp19": {
+    "file": "lehrgang-rhyp19-3ff7cd0c.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Schwarz holt den Bauern zurück. Wikipedia nennt das für die Praxis zu riskant, und die Engine sieht Weiß danach leicht besser (+0,97). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+    "sources": [],
+    "durationSec": 17.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:53+00:00"
+  },
+  "lehrgang-ygs402": {
+    "file": "lehrgang-ygs402-6c6a9075.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Der Fried-Liver-Angriff: Du gibst den Springer für einen Angriff auf den König und greifst dabei Dame und Turm an. Die Engine sieht dich danach leicht besser (+0,95).",
+    "sources": [],
+    "durationSec": 10.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:56+00:00"
+  },
+  "lehrgang-1hi6mri": {
+    "file": "lehrgang-1hi6mri-bf0405d3.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Schwarz nimmt den Springer mit dem König. Die Engine sieht dich trotzdem leicht besser (+0,72).",
+    "sources": [],
+    "durationSec": 6.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:02:59+00:00"
+  },
+  "lehrgang-xfwi9k": {
+    "file": "lehrgang-xfwi9k-d3d015eb.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Du gibst Schach und greifst zugleich den Springer auf d5 an; der König muss ziehen.",
+    "sources": [],
+    "durationSec": 5.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:01+00:00"
+  },
+  "lehrgang-1s7twsk": {
+    "file": "lehrgang-1s7twsk-3691c299.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Der König geht nach e6 und deckt Springer und Bauern. Wikipedia nennt das die übliche Antwort auf Dame f3 mit Schach.",
+    "sources": [],
+    "durationSec": 8.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:04+00:00"
+  },
+  "lehrgang-12oru25": {
+    "file": "lehrgang-12oru25-cb9b84ff.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke6",
+    "text": "Du entwickelst den Springer und greifst den Springer auf d5 an; er ist durch deinen Läufer c4 an den König gebunden (gefesselt, Wikipedia).",
+    "sources": [],
+    "durationSec": 8.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:09+00:00"
+  },
+  "lehrgang-1isxcm3": {
+    "file": "lehrgang-1isxcm3-4592fc98.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Ke8",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz geht mit dem König zurück nach e8 und deckt Dame und Läufer; die Engine sieht dich danach klar besser (+2,65).",
+    "sources": [],
+    "durationSec": 12.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:13+00:00"
+  },
+  "lehrgang-12ox3wq": {
+    "file": "lehrgang-12ox3wq-36ba219f.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Der Springer greift deinen Läufer an, bevor du weiter angreifst. Wikipedia nennt 5…Sa5 die übliche Antwort und beschreibt es als Bauernopfer für Entwicklungsvorsprung.",
+    "sources": [],
+    "durationSec": 10.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:18+00:00"
+  },
+  "lehrgang-r56zl2": {
+    "file": "lehrgang-r56zl2-5ee0cd77.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Du gibst Schach und rettest damit den Läufer vor dem Springer auf a5.",
+    "sources": [],
+    "durationSec": 4.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:20+00:00"
+  },
+  "lehrgang-otii4u": {
+    "file": "lehrgang-otii4u-47480461.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Schwarz stellt den Bauern dazwischen: Er greift deinen Läufer auf b5 und den Bauern auf d5 an. Die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 8.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:24+00:00"
+  },
+  "lehrgang-bz04re": {
+    "file": "lehrgang-bz04re-da116790.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Du nimmst den Bauern auf c6 und greifst den Bauern auf b7 an. Schwarz hat dafür Entwicklungsvorsprung (Wikipedia).",
+    "sources": [],
+    "durationSec": 7.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:27+00:00"
+  },
+  "lehrgang-1b7gx1d": {
+    "file": "lehrgang-1b7gx1d-8c757ad6.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Schwarz schlägt zurück und greift mit dem Bauern c6 deinen Läufer auf b5 an. Seine Bauern auf a und c stehen jetzt allein. Die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 10.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:31+00:00"
+  },
+  "lehrgang-lfxscn": {
+    "file": "lehrgang-lfxscn-19288467.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Du ziehst den Läufer zurück und rettest ihn vor dem Bauern auf c6.",
+    "sources": [],
+    "durationSec": 3.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:34+00:00"
+  },
+  "lehrgang-10i2qg2": {
+    "file": "lehrgang-10i2qg2-ee9a17b0.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Der Bauer greift deinen Springer auf g5 an.",
+    "sources": [],
+    "durationSec": 2.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:38+00:00"
+  },
+  "lehrgang-1hnusjn": {
+    "file": "lehrgang-1hnusjn-088efc13.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Du ziehst den Springer zurück, er greift wieder den Bauern auf e5 an. Die Engine sieht die Stellung ausgeglichen (−0,35).",
+    "sources": [],
+    "durationSec": 8.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:42+00:00"
+  },
+  "lehrgang-17k5k2u": {
+    "file": "lehrgang-17k5k2u-12975dba.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Der Bauer greift deinen Springer auf f3 an. Die Engine sieht die Stellung ausgeglichen (−0,13).",
+    "sources": [],
+    "durationSec": 7.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:44+00:00"
+  },
+  "lehrgang-18tknjc": {
+    "file": "lehrgang-18tknjc-b9d367fe.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Polerio-Verteidigung, Suhle-Verteidigung: 9.Sf3 e4",
+    "text": "Der Springer greift die Bauern auf f7 und c6 an.",
+    "sources": [],
+    "durationSec": 4.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:47+00:00"
+  },
+  "lehrgang-1b5dfcq": {
+    "file": "lehrgang-1b5dfcq-9968b1f9.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sd4",
+    "text": "Schwarz weicht dem Bauern aus und lehnt das Opfer ab. Wikipedia sieht das meist als schwächer an, weil Schwarz dafür einen Zug verliert (ein Tempo).",
+    "sources": [],
+    "durationSec": 8.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:50+00:00"
+  },
+  "lehrgang-owk5xh": {
+    "file": "lehrgang-owk5xh-3355a646.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sd4",
+    "text": "Der Bauer greift den Springer auf c6 an. Die Engine sieht die Stellung danach ausgeglichen (−0,42); diese Nebenlinie kommt selten vor.",
+    "sources": [],
+    "durationSec": 9.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:54+00:00"
+  },
+  "lehrgang-22uosw": {
+    "file": "lehrgang-22uosw-91d81680.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sd4",
+    "text": "Der Springer greift Bauer b5, Springer f3 und Bauer c2 zugleich an. Die Engine sieht die Stellung danach ausgeglichen (+0,31).",
+    "sources": [],
+    "durationSec": 9.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:03:56+00:00"
+  },
+  "lehrgang-vu32df": {
+    "file": "lehrgang-vu32df-3007fe79.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sd4",
+    "text": "Du nimmst den Springer und beendest damit die Drohungen auf b5 und c2. Die Engine sieht die Stellung ausgeglichen (+0,45).",
+    "sources": [],
+    "durationSec": 8.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:01+00:00"
+  },
+  "lehrgang-xot4h": {
+    "file": "lehrgang-xot4h-059f89c0.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sa5",
+    "text": "Der Springer greift deinen Läufer auf c4 an. Die Engine sieht die Stellung ausgeglichen (−0,35).",
+    "sources": [],
+    "durationSec": 6.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:03+00:00"
+  },
+  "lehrgang-gynnm3": {
+    "file": "lehrgang-gynnm3-bc6ba6e8.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, abgelehnt: 5.b5 Sa5",
+    "text": "Du nimmst den Bauern auf e5 und greifst die Bauern auf d7 und f7 an. Die Engine sieht die Stellung ausgeglichen (−0,31).",
+    "sources": [],
+    "durationSec": 9.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:06+00:00"
+  },
+  "lehrgang-qmsoyb": {
+    "file": "lehrgang-qmsoyb-b06dbb91.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Der Läufer greift deinen Bauern auf c3 an; das ist die Hauptlinie des Evans-Gambits (Wikipedia).",
+    "sources": [],
+    "durationSec": 6.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:09+00:00"
+  },
+  "lehrgang-1m406lz": {
+    "file": "lehrgang-1m406lz-5f2328ee.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Du stellst mit d4 die Mitte auf und greifst den Bauern auf e5 an. Der Läufer auf a5 fesselt den Bauern c3 und hindert dich später, mit ihm auf d4 zurückzuschlagen (Wikipedia).",
+    "sources": [],
+    "durationSec": 12.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:12+00:00"
+  },
+  "lehrgang-qmwwig": {
+    "file": "lehrgang-qmwwig-7e07c12a.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Schwarz nimmt den zweiten Bauern. Die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 4.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:15+00:00"
+  },
+  "lehrgang-15sbtyx": {
+    "file": "lehrgang-15sbtyx-bc92735b.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Du rochierst und gibst den zweiten Bauern preis (Wikipedia: Evans-Hauptlinie). Die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 7.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:17+00:00"
+  },
+  "lehrgang-ythms0": {
+    "file": "lehrgang-ythms0-52147e5e.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Schwarz nimmt noch einen Bauern (Compromised Defence). Die Engine sieht die Stellung danach ausgeglichen (+0,46).",
+    "sources": [],
+    "durationSec": 7.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:21+00:00"
+  },
+  "lehrgang-1tflhg8": {
+    "file": "lehrgang-1tflhg8-95e06638.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Kompromittierte Verteidigung: 8.Db3",
+    "text": "Du greifst den Bauern auf b7 und den Bauern auf c3 zugleich an. Die Engine sieht dich leicht besser (+0,62).",
+    "sources": [],
+    "durationSec": 8.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:24+00:00"
+  },
+  "lehrgang-1hqmice": {
+    "file": "lehrgang-1hqmice-b17f2074.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Schwarz zieht einen Randbauern, statt sich zu entwickeln. Wikipedia hält das für Zeitverschwendung, aber nicht für widerlegt; die Engine sieht dich leicht besser (+0,64).",
+    "sources": [],
+    "durationSec": 10.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:27+00:00"
+  },
+  "lehrgang-audcxh": {
+    "file": "lehrgang-audcxh-5c64e7af.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht dich leicht besser (+0,77).",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:31+00:00"
+  },
+  "lehrgang-46sxl5": {
+    "file": "lehrgang-46sxl5-917a46b6.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Schwarz schlägt den Bauern auf d4. Die Engine sieht dich weiter leicht besser (+0,67).",
+    "sources": [],
+    "durationSec": 6.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:34+00:00"
+  },
+  "lehrgang-1at4hlq": {
+    "file": "lehrgang-1at4hlq-9aedb541.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Du holst den Bauern zurück und greifst den Springer auf c6 an. Die Engine sieht dich leicht besser (+0,63).",
+    "sources": [],
+    "durationSec": 7.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:38+00:00"
+  },
+  "lehrgang-1tsbo3e": {
+    "file": "lehrgang-1tsbo3e-14eb84ec.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Schwarz tauscht die Springer und greift den Bauern auf c2 an. Die Engine sieht dich klar besser (+1,23).",
+    "sources": [],
+    "durationSec": 7.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:41+00:00"
+  },
+  "lehrgang-14be9cs": {
+    "file": "lehrgang-14be9cs-ba94fbfd.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Du nimmst mit der Dame zurück und greifst die Bauern auf a7, d7 und g7 an. Die Engine sieht dich klar besser (+1,24).",
+    "sources": [],
+    "durationSec": 9.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:44+00:00"
+  },
+  "lehrgang-f3u06l": {
+    "file": "lehrgang-f3u06l-d2d07f66.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Schwarz kontrolliert mit dem d-Bauern das Feld e5. Die Engine sieht dich klar besser (+1,28).",
+    "sources": [],
+    "durationSec": 7.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:48+00:00"
+  },
+  "lehrgang-18m5x7k": {
+    "file": "lehrgang-18m5x7k-40ea5035.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 exd4",
+    "text": "Du entwickelst den Springer und deckst den Bauern auf e4. Die Engine sieht dich klar besser (+1,22).",
+    "sources": [],
+    "durationSec": 7.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:52+00:00"
+  },
+  "lehrgang-170xx5j": {
+    "file": "lehrgang-170xx5j-0a446c50.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fritz-Variante: 6.c3",
+    "text": "Der Springer greift den Bauern auf c2 an. Wikipedia nennt 5…Sd4 die Fritz-Variante.",
+    "sources": [],
+    "durationSec": 6.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:56+00:00"
+  },
+  "lehrgang-tp0o01": {
+    "file": "lehrgang-tp0o01-a52a8011.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fritz-Variante: 6.c3",
+    "text": "Du greifst den Springer auf d4 an. Die Engine sieht die Stellung ausgeglichen (+0,36).",
+    "sources": [],
+    "durationSec": 6.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:04:59+00:00"
+  },
+  "lehrgang-12lu1o7": {
+    "file": "lehrgang-12lu1o7-fde36047.mp3",
+    "title": "Italienisch: Italienische Partie: Paris-Verteidigung: 4.Sc3 Lg4",
+    "text": "Schwarz deckt den Bauern auf e5 mit dem d-Bauern. Wikipedia nennt das die Semi-Italienische Eröffnung, heute selten; in deinem Spielbereich kommt es trotzdem vor.",
+    "sources": [],
+    "durationSec": 10.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:04+00:00"
+  },
+  "lehrgang-1acijqx": {
+    "file": "lehrgang-1acijqx-969a1343.mp3",
+    "title": "Italienisch: Italienische Partie: Paris-Verteidigung: 4.Sc3 Lg4",
+    "text": "Du entwickelst den Springer und deckst den Bauern auf e4. Die Engine sieht die Stellung ausgeglichen (+0,38).",
+    "sources": [],
+    "durationSec": 7.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:07+00:00"
+  },
+  "lehrgang-nyk0lm": {
+    "file": "lehrgang-nyk0lm-24221179.mp3",
+    "title": "Italienisch: Italienische Partie: Paris-Verteidigung: 4.Sc3 Lg4",
+    "text": "Der Läufer entwickelt sich und greift deinen Springer auf f3 an. Die Engine sieht dich leicht besser (+0,68).",
+    "sources": [],
+    "durationSec": 7.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:10+00:00"
+  },
+  "lehrgang-otygzh": {
+    "file": "lehrgang-otygzh-60c5b31e.mp3",
+    "title": "Italienisch: Italienische Partie: Paris-Verteidigung: 4.Sc3 Lg4",
+    "text": "Du greifst den Läufer auf g4 an. Die Engine sieht die Stellung ausgeglichen (+0,42).",
+    "sources": [],
+    "durationSec": 6.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:14+00:00"
+  },
+  "lehrgang-1l23dxs": {
+    "file": "lehrgang-1l23dxs-0776d7d3.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit: 4…Sxb4",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz nimmt den Bauern mit dem Springer und greift die Bauern auf a2 und c2 an; Wikipedia nennt das weniger flexibel als das Schlagen mit dem Läufer.",
+    "sources": [],
+    "durationSec": 13.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:17+00:00"
+  },
+  "lehrgang-o4c8pn": {
+    "file": "lehrgang-o4c8pn-4b34a5b4.mp3",
+    "title": "Italienisch: Italienische Partie: Ungarische Verteidigung: 4.d4 exd4",
+    "text": "Schwarz entwickelt den Läufer; das ist die Ungarische Verteidigung. Wikipedia nennt sie solide und eher remislastig.",
+    "sources": [],
+    "durationSec": 8.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:20+00:00"
+  },
+  "lehrgang-e1sprk": {
+    "file": "lehrgang-e1sprk-221fa7a4.mp3",
+    "title": "Italienisch: Italienische Partie: Ungarische Verteidigung: 4.d4 exd4",
+    "text": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht die Stellung ausgeglichen (+0,47).",
+    "sources": [],
+    "durationSec": 7.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:22+00:00"
+  },
+  "lehrgang-2n1rxr": {
+    "file": "lehrgang-2n1rxr-43766cbd.mp3",
+    "title": "Italienisch: Italienische Partie: Ungarische Verteidigung: 4.d4 exd4",
+    "text": "Schwarz schlägt den Bauern auf d4. Die Engine sieht die Stellung ausgeglichen (+0,49).",
+    "sources": [],
+    "durationSec": 6.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:25+00:00"
+  },
+  "lehrgang-1uh2eef": {
+    "file": "lehrgang-1uh2eef-487a6167.mp3",
+    "title": "Italienisch: Italienische Partie: Ungarische Verteidigung: 4.d4 exd4",
+    "text": "Du greifst den Bauern auf d4 an. Die Engine sieht ungefähr Gleichstand (+0,20).",
+    "sources": [],
+    "durationSec": 5.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:27+00:00"
+  },
+  "lehrgang-zmpenh": {
+    "file": "lehrgang-zmpenh-e1202ca5.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Fried-Liver-Angriff: 6…Kxf7 7.Df3+ Df6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame deine Dame auf f3 an; die Engine sieht dich danach klar besser (+2,81).",
+    "sources": [],
+    "durationSec": 11.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:31+00:00"
+  },
+  "lehrgang-eki38y": {
+    "file": "lehrgang-eki38y-01d79216.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Traxler-Gegenangriff, Läuferopfer-Variante: 5…Kf8 6.Lb3",
+    "text": "Schwarz ignoriert die Drohung auf f7 und zielt selbst auf f2 – laut Wikipedia führt das zu wilden Verwicklungen. Die Engine sieht dich danach leicht besser (+0,96).",
+    "sources": [],
+    "durationSec": 11.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:34+00:00"
+  },
+  "lehrgang-15jwxa7": {
+    "file": "lehrgang-15jwxa7-af0f6004.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Traxler-Gegenangriff, Läuferopfer-Variante: 5…Kf8 6.Lb3",
+    "text": "Du schlägst den Bauern auf f7 mit Schach. Die Engine sieht dich klar besser (+1,00).",
+    "sources": [],
+    "durationSec": 5.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:37+00:00"
+  },
+  "lehrgang-1um46vk": {
+    "file": "lehrgang-1um46vk-2cbb97e5.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Traxler-Gegenangriff, Läuferopfer-Variante: 5…Kf8 6.Lb3",
+    "text": "Der König zieht nach f8 und greift deinen Läufer auf f7 an. Die Engine sieht dich klar besser (+1,28).",
+    "sources": [],
+    "durationSec": 8.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:41+00:00"
+  },
+  "lehrgang-1yo0l9h": {
+    "file": "lehrgang-1yo0l9h-381ff157.mp3",
+    "title": "Italienisch: Italienische Partie: Zweispringerspiel im Nachzuge, Traxler-Gegenangriff, Läuferopfer-Variante: 5…Kf8 6.Lb3",
+    "text": "Du ziehst den Läufer zurück nach b3. Die Engine sieht dich klar besser (+1,36).",
+    "sources": [],
+    "durationSec": 5.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:44+00:00"
+  },
+  "lehrgang-gv4xf": {
+    "file": "lehrgang-gv4xf-12460eca.mp3",
+    "title": "Italienisch: Italienische Partie: Anti-Fried-Liver-Verteidigung: 4.d4 d6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz deckt den Bauern auf e5 mit dem d-Bauern; die Engine sieht dich leicht besser (+0,70).",
+    "sources": [],
+    "durationSec": 11.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:47+00:00"
+  },
+  "lehrgang-4ix5z8": {
+    "file": "lehrgang-4ix5z8-0f260b65.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Anderssen-Variante: 6.d4 exd4",
+    "text": "Der Läufer geht zurück nach e7. Wikipedia nennt das eine sichere und praktische Alternative; die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 8.5,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:49+00:00"
+  },
+  "lehrgang-1xtuhar": {
+    "file": "lehrgang-1xtuhar-47ec8e56.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Anderssen-Variante: 6.d4 exd4",
+    "text": "Du stellst den Bauern in die Mitte und greifst den Bauern auf e5 an. Die Engine sieht ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 6.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:52+00:00"
+  },
+  "lehrgang-rkr7we": {
+    "file": "lehrgang-rkr7we-b897a298.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Anderssen-Variante: 6.d4 exd4",
+    "text": "Schwarz schlägt den Bauern auf d4. Die Engine sieht noch ungefähr Gleichstand.",
+    "sources": [],
+    "durationSec": 4.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:54+00:00"
+  },
+  "lehrgang-r891q6": {
+    "file": "lehrgang-r891q6-f9a6e6e5.mp3",
+    "title": "Italienisch: Italienische Partie: Evans-Gambit, Anderssen-Variante: 6.d4 exd4",
+    "text": "Du holst den Bauern zurück. Die Engine sieht ungefähr Gleichstand (+0,05).",
+    "sources": [],
+    "durationSec": 5.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:05:57+00:00"
+  },
+  "lehrgang-6j1vm4": {
+    "file": "lehrgang-6j1vm4-79006794.mp3",
+    "title": "Schottisch: Idee",
+    "text": "Mit 3. d4 greifst du sofort das Zentrum an. Schwarz kann den Bauern auf e5 kaum halten und muss tauschen; du bekommst Platz für deine Figuren.",
+    "sources": [],
+    "durationSec": 8.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:00+00:00"
+  },
+  "lehrgang-1wnwzyz": {
+    "file": "lehrgang-1wnwzyz-942b6d85.mp3",
+    "title": "Schottisch: Deine Züge",
+    "text": "Du spielst 1. e4 e5 2. Sf3 Sc6 3. d4. Nach dem Tausch auf d4 holst du den Bauern mit dem Springer zurück.",
+    "sources": [],
+    "durationSec": 8.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:02+00:00"
+  },
+  "lehrgang-15tczhl": {
+    "file": "lehrgang-15tczhl-fcb2a9a5.mp3",
+    "title": "Schottisch: Pläne",
+    "text": "Antwortet Schwarz mit Sf6, tauschst du auf c6, damit Schwarz Doppelbauern bekommt, und stößt dann e5 vor. Antwortet er mit Lc5, entwickelst du mit Le3 und stützt so den Springer auf d4.",
+    "sources": [],
+    "durationSec": 14.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:07+00:00"
+  },
+  "lehrgang-plll0a": {
+    "file": "lehrgang-plll0a-fc16ec4f.mp3",
+    "title": "Schottisch: Fallen",
+    "text": "Antwortet Schwarz auf Le3 zu schnell mit Sf6, verliert er einen Läufer; mit d6 bekommt er drei Bauern auf der c-Linie und verliert später einen Bauern (siehe Fallen unten).",
+    "sources": [],
+    "durationSec": 11.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:10+00:00"
+  },
+  "lehrgang-10fn8u4": {
+    "file": "lehrgang-10fn8u4-43851ab3.mp3",
+    "title": "Schottisch: Wenn Unbekanntes kommt",
+    "text": "Spielt Schwarz früh d6, Sf6 oder d5, ist dein Repertoire noch offen. Die Lücken sind in den Stellungen markiert; wir füllen sie mit dir.",
+    "sources": [],
+    "durationSec": 9.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:12+00:00"
+  },
+  "lehrgang-1u8y5fh": {
+    "file": "lehrgang-1u8y5fh-8389fc78.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Mit e4 stellst du einen Bauern ins Zentrum.",
+    "sources": [],
+    "durationSec": 2.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:14+00:00"
+  },
+  "lehrgang-z6ho16": {
+    "file": "lehrgang-z6ho16-1115a750.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Schwarz antwortet mit einem eigenen Bauern im Zentrum.",
+    "sources": [],
+    "durationSec": 3.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:16+00:00"
+  },
+  "lehrgang-n0x4i6": {
+    "file": "lehrgang-n0x4i6-59cb307c.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Der Springer greift den Bauern auf e5 an.",
+    "sources": [],
+    "durationSec": 3.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:18+00:00"
+  },
+  "lehrgang-j8cs8r": {
+    "file": "lehrgang-j8cs8r-58f78151.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Schwarz entwickelt einen Springer und deckt damit den Bauern auf e5.",
+    "sources": [],
+    "durationSec": 4.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:20+00:00"
+  },
+  "lehrgang-h24n09": {
+    "file": "lehrgang-h24n09-bf80a79b.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Jetzt stellst du einen Bauern auf d4 und greifst den Bauern auf e5 an; Schwarz kann ihn kaum halten und muss das Zentrum öffnen.",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:22+00:00"
+  },
+  "lehrgang-yjbkyv": {
+    "file": "lehrgang-yjbkyv-2bb948e5.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Mit d6 stützt Schwarz das Feld e5; laut Engine steht Weiß danach leicht besser (+0,88). Zur Zahl: Ein Bauer ist in dieser Zählung etwa 1 Punkt wert; Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz.",
+    "sources": [],
+    "durationSec": 20.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:26+00:00"
+  },
+  "lehrgang-cmnoak": {
+    "file": "lehrgang-cmnoak-29434fde.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…c5",
+    "text": "Schwarz schlägt den Bauern auf d4; das passiert in etwa 8 von 10 deiner Partien.",
+    "sources": [],
+    "durationSec": 5.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:29+00:00"
+  },
+  "lehrgang-1oxh5yn": {
+    "file": "lehrgang-1oxh5yn-21d532c8.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…c5",
+    "text": "Du holst den Bauern mit dem Springer zurück; er steht jetzt zentral und greift den Springer auf c6 an.",
+    "sources": [],
+    "durationSec": 6.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:31+00:00"
+  },
+  "lehrgang-1wnh4ka": {
+    "file": "lehrgang-1wnh4ka-36738153.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…c5",
+    "text": "Schwarz schlägt deinen Springer; der neue Springer auf d4 greift deinen Bauern auf c2 an, mit dem Tausch musst du in etwa vier von zehn Partien rechnen.",
+    "sources": [],
+    "durationSec": 9.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:34+00:00"
+  },
+  "lehrgang-14v2c6x": {
+    "file": "lehrgang-14v2c6x-800a8603.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…c5",
+    "text": "Du schlägst mit der Dame zurück; sie steht zentral und greift die Bauern auf a7, d7 und g7 an.",
+    "sources": [],
+    "durationSec": 7.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:36+00:00"
+  },
+  "lehrgang-eo2p8l": {
+    "file": "lehrgang-eo2p8l-05ce2c0c.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…c5",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit c5 deine Dame an; laut Engine steht Weiß danach klar besser (+1,55).",
+    "sources": [],
+    "durationSec": 11.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:39+00:00"
+  },
+  "lehrgang-1mzbni7": {
+    "file": "lehrgang-1mzbni7-acf4329f.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…Df6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame deine Dame auf d4 und den Bauern auf f2 an; laut Engine steht Weiß danach leicht besser (+0,52).",
+    "sources": [],
+    "durationSec": 13.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:42+00:00"
+  },
+  "lehrgang-erhtw8": {
+    "file": "lehrgang-erhtw8-c7dc738c.mp3",
+    "title": "Schottisch: Schottische Partie: 3…Sf6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz entwickelt den Springer und greift e4 an; laut Engine steht Weiß danach klar besser (+1,19).",
+    "sources": [],
+    "durationSec": 11.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:45+00:00"
+  },
+  "lehrgang-1y2b6ma": {
+    "file": "lehrgang-1y2b6ma-4b40f4f9.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…b6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Der Zug ist selten und kostet Schwarz laut Engine viel, denn Weiß steht danach klar besser (+1,73).",
+    "sources": [],
+    "durationSec": 11.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:48+00:00"
+  },
+  "lehrgang-1d18o5r": {
+    "file": "lehrgang-1d18o5r-4366cd1e.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Schwarz entwickelt den Springer und greift deinen Bauern auf e4 an; das spielt Schwarz in etwa jeder zwölften Partie.",
+    "sources": [],
+    "durationSec": 7.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:54+00:00"
+  },
+  "lehrgang-p5yu9j": {
+    "file": "lehrgang-p5yu9j-c1c28874.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Du tauschst auf c6; der Springer greift dabei auch die Dame auf d8 an.",
+    "sources": [],
+    "durationSec": 4.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:57+00:00"
+  },
+  "lehrgang-1twyqme": {
+    "file": "lehrgang-1twyqme-656f01b8.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Schwarz schlägt mit dem b-Bauern zurück und bekommt dadurch zwei Bauern auf der c-Linie; sein Bauer auf a7 hat keinen Nachbarbauern mehr.",
+    "sources": [],
+    "durationSec": 8.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:06:59+00:00"
+  },
+  "lehrgang-ve5kl3": {
+    "file": "lehrgang-ve5kl3-357c0898.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Du stößt e5 vor und greifst damit den Springer auf f6 an.",
+    "sources": [],
+    "durationSec": 4.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:01+00:00"
+  },
+  "lehrgang-63m8al": {
+    "file": "lehrgang-63m8al-77da31be.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Der angegriffene Springer weicht nach d5 aus.",
+    "sources": [],
+    "durationSec": 2.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:03+00:00"
+  },
+  "lehrgang-tiu69o": {
+    "file": "lehrgang-tiu69o-c968132a.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Du greifst mit c4 den Springer auf d5 an.",
+    "sources": [],
+    "durationSec": 2.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:05+00:00"
+  },
+  "lehrgang-vtrkrs": {
+    "file": "lehrgang-vtrkrs-500be41e.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Schwarz greift mit dem Springer deinen Bauern auf c4 an.",
+    "sources": [],
+    "durationSec": 3.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:07+00:00"
+  },
+  "lehrgang-1n60s63": {
+    "file": "lehrgang-1n60s63-33473d58.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…Sd5 7.c4",
+    "text": "Der Läufer kommt ins Spiel, kontrolliert e4 und zielt auf den Bauern auf h7.",
+    "sources": [],
+    "durationSec": 5.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:10+00:00"
+  },
+  "lehrgang-1q0ssu7": {
+    "file": "lehrgang-1q0ssu7-4fbaf868.mp3",
+    "title": "Schottisch: Schottische Partie: 4…d6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz kontrolliert mit d6 das Feld e5; laut Engine steht Weiß danach leicht besser (+0,62).",
+    "sources": [],
+    "durationSec": 11.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:13+00:00"
+  },
+  "lehrgang-a99zrp": {
+    "file": "lehrgang-a99zrp-1cbd352f.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Schwarz entwickelt den Läufer und greift deinen Springer auf d4 an; das spielt Schwarz in etwa jeder siebten Partie.",
+    "sources": [],
+    "durationSec": 6.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:15+00:00"
+  },
+  "lehrgang-uhlacm": {
+    "file": "lehrgang-uhlacm-49704785.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Du entwickelst den Läufer; er kontrolliert d4, wo dein Springer unter Druck steht.",
+    "sources": [],
+    "durationSec": 5.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:18+00:00"
+  },
+  "lehrgang-1rn13uu": {
+    "file": "lehrgang-1rn13uu-ccdefa17.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Schwarz zieht die Dame nach f6; sie zielt auf deinen Springer auf d4 und den Bauern auf f2.",
+    "sources": [],
+    "durationSec": 6.3,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:20+00:00"
+  },
+  "lehrgang-1aqk8eg": {
+    "file": "lehrgang-1aqk8eg-3070fd00.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Mit dem c-Bauern kontrollierst du d4 und stützt so deinen Springer.",
+    "sources": [],
+    "durationSec": 4.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:22+00:00"
+  },
+  "lehrgang-1x4n89q": {
+    "file": "lehrgang-1x4n89q-3bafd019.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Schwarz entwickelt den zweiten Springer; er kontrolliert die Mitte.",
+    "sources": [],
+    "durationSec": 3.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:26+00:00"
+  },
+  "lehrgang-11fk3d0": {
+    "file": "lehrgang-11fk3d0-94921f71.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante, Blackburne-Angriff",
+    "text": "Du ziehst die Dame nach d2 und kontrollierst weiter d4; laut Engine ist die Stellung ausgeglichen (−0,02).",
+    "sources": [],
+    "durationSec": 7.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:28+00:00"
+  },
+  "lehrgang-1fi35rs": {
+    "file": "lehrgang-1fi35rs-daeb0a1b.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…Sf6 6.e5",
+    "text": "Schwarz entwickelt den Springer und greift deinen Bauern auf e4 an.",
+    "sources": [],
+    "durationSec": 4.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:30+00:00"
+  },
+  "lehrgang-f9a924": {
+    "file": "lehrgang-f9a924-5935c2cf.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…Sf6 6.e5",
+    "text": "Du stößt e5 vor und greifst den Springer auf f6 an.",
+    "sources": [],
+    "durationSec": 4.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:32+00:00"
+  },
+  "lehrgang-1a5wfa7": {
+    "file": "lehrgang-1a5wfa7-e7a9f548.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…Sf6 6.e5",
+    "text": "Schwarz greift mit der Dame den Bauern auf e5 an; laut Engine gewinnt Weiß trotzdem (+3,12).",
+    "sources": [],
+    "durationSec": 7.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:34+00:00"
+  },
+  "lehrgang-z4r269": {
+    "file": "lehrgang-z4r269-13c17288.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4): 5…Sf6 6.e5",
+    "text": "Du entwickelst den Läufer und kontrollierst d4; laut Engine gewinnt Weiß (+3,19).",
+    "sources": [],
+    "durationSec": 6.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:37+00:00"
+  },
+  "lehrgang-fx0ab1": {
+    "file": "lehrgang-fx0ab1-91dc83fc.mp3",
+    "title": "Schottisch: Schottische Partie: 3…f6",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz kontrolliert mit f6 das Feld e5; laut Engine steht Weiß danach klar besser (+1,71).",
+    "sources": [],
+    "durationSec": 11.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:40+00:00"
+  },
+  "lehrgang-fls5vd": {
+    "file": "lehrgang-fls5vd-97c7f808.mp3",
+    "title": "Schottisch: Schottische Partie: 4…Df6 5.Sf3",
+    "text": "Du ziehst den Springer nach f3 zurück und weichst damit dem Druck auf d4 aus.",
+    "sources": [],
+    "durationSec": 5.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:43+00:00"
+  },
+  "lehrgang-t1rjwx": {
+    "file": "lehrgang-t1rjwx-ffcb24e7.mp3",
+    "title": "Schottisch: Schottische Partie: 4…Df6 5.Sf3",
+    "text": "Schwarz entwickelt den Läufer und greift deinen Bauern auf f2 an.",
+    "sources": [],
+    "durationSec": 3.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:45+00:00"
+  },
+  "lehrgang-24tene": {
+    "file": "lehrgang-24tene-44aa57e7.mp3",
+    "title": "Schottisch: Schottische Partie: 4…Df6 5.Sf3",
+    "text": "Du entwickelst den Springer; er kontrolliert e4.",
+    "sources": [],
+    "durationSec": 3.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:47+00:00"
+  },
+  "lehrgang-1veqjnv": {
+    "file": "lehrgang-1veqjnv-81b5f66b.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Schwarz kontrolliert mit d6 das Feld e5; das spielt Schwarz in etwa jeder achten Partie.",
+    "sources": [],
+    "durationSec": 6.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:49+00:00"
+  },
+  "lehrgang-1b1qgrb": {
+    "file": "lehrgang-1b1qgrb-f8689669.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Du entwickelst den Läufer nach d3; er kontrolliert e4.",
+    "sources": [],
+    "durationSec": 3.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:51+00:00"
+  },
+  "lehrgang-xc7iru": {
+    "file": "lehrgang-xc7iru-dfb210cb.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Schwarz entwickelt den zweiten Springer und greift e4 an.",
+    "sources": [],
+    "durationSec": 3.8,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:53+00:00"
+  },
+  "lehrgang-15k008a": {
+    "file": "lehrgang-15k008a-20189af9.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Schwarz entwickelt den Läufer.",
+    "sources": [],
+    "durationSec": 2.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:55+00:00"
+  },
+  "lehrgang-1rfrezl": {
+    "file": "lehrgang-1rfrezl-a3273681.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Dein Läufer kontrolliert e5 und greift den Bauern auf d6 an.",
+    "sources": [],
+    "durationSec": 4.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:57+00:00"
+  },
+  "lehrgang-1k3sy0h": {
+    "file": "lehrgang-1k3sy0h-177a9642.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Schwarz rochiert.",
+    "sources": [],
+    "durationSec": 1.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:07:59+00:00"
+  },
+  "lehrgang-v4dsvm": {
+    "file": "lehrgang-v4dsvm-f89210cf.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Sf6 7.Sc3",
+    "text": "Du rochierst auf die andere Seite als Schwarz.",
+    "sources": [],
+    "durationSec": 2.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:01+00:00"
+  },
+  "lehrgang-or5d81": {
+    "file": "lehrgang-or5d81-fa72c077.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante (4…Lc5): 5.Le3 Sxd4",
+    "text": "Schwarz schlägt den Springer; der neue Springer auf d4 greift deinen Bauern auf c2 an.",
+    "sources": [],
+    "durationSec": 6.4,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:03+00:00"
+  },
+  "lehrgang-1pn921f": {
+    "file": "lehrgang-1pn921f-e87cc28e.mp3",
+    "title": "Schottisch: Schottisch: Klassische Variante (4…Lc5): 5.Le3 Sxd4",
+    "text": "Du schlägst mit dem Läufer zurück; er greift den Bauern auf g7 und den Läufer auf c5 an.",
+    "sources": [],
+    "durationSec": 6.0,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:06+00:00"
+  },
+  "lehrgang-fosva5": {
+    "file": "lehrgang-fosva5-d4cdfd6d.mp3",
+    "title": "Schottisch: Schottisch: Ghulam-Kassim-Variante: 6…Le6 7.Sc3",
+    "text": "Schwarz entwickelt den Läufer; er greift deinen Bauern auf a2 an.",
+    "sources": [],
+    "durationSec": 4.6,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:08+00:00"
+  },
+  "lehrgang-1fdax0v": {
+    "file": "lehrgang-1fdax0v-fd7bdce6.mp3",
+    "title": "Schottisch: Schottische Partie: 4…Se5",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz stellt den Springer auf e5 ins Zentrum; laut Engine steht Weiß danach klar besser (+1,24).",
+    "sources": [],
+    "durationSec": 11.7,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:11+00:00"
+  },
+  "lehrgang-1974p85": {
+    "file": "lehrgang-1974p85-615ea4f9.mp3",
+    "title": "Schottisch: Schottisch: Mieses-Variante: 6…De7",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz greift mit der Dame den Bauern auf e5 an; laut Engine ist die Stellung ausgeglichen (+0,07).",
+    "sources": [],
+    "durationSec": 10.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:13+00:00"
+  },
+  "lehrgang-1n5pe5f": {
+    "file": "lehrgang-1n5pe5f-804335ce.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4)",
+    "text": "Schwarz schlägt sofort mit dem Springer auf d4; er greift deinen Springer auf f3 und deinen Bauern auf c2 an.",
+    "sources": [],
+    "durationSec": 7.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:17+00:00"
+  },
+  "lehrgang-18wt7ym": {
+    "file": "lehrgang-18wt7ym-f90b7c7f.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4)",
+    "text": "Du schlägst den Springer zurück.",
+    "sources": [],
+    "durationSec": 1.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:18+00:00"
+  },
+  "lehrgang-t7tu8x": {
+    "file": "lehrgang-t7tu8x-01987762.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4)",
+    "text": "Schwarz schlägt zurück und hat dadurch zwei Bauern auf der d-Linie.",
+    "sources": [],
+    "durationSec": 4.2,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:21+00:00"
+  },
+  "lehrgang-lgav02": {
+    "file": "lehrgang-lgav02-dfac9fc7.mp3",
+    "title": "Schottisch: Schottisch: Lolli-Variante (3…Sxd4)",
+    "text": "Du schlägst mit der Dame zurück; sie greift die Bauern auf a7, d7 und g7 an.",
+    "sources": [],
+    "durationSec": 5.9,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:23+00:00"
+  },
+  "lehrgang-mum65b": {
+    "file": "lehrgang-mum65b-48361df5.mp3",
+    "title": "Schottisch: Schottische Partie: 3…d5",
+    "text": "Hier ist dein Repertoire noch offen – die Antwort legen wir mit dir fest. Schwarz stößt d5 vor und greift deinen Bauern auf e4 an; laut Engine steht Weiß danach leicht besser (+0,79).",
+    "sources": [],
+    "durationSec": 13.1,
+    "voice": "nadine",
+    "model": "heygen/heygen-voice-1-turbo:free",
+    "createdAt": "2026-11-22T17:08:26+00:00"
   }
 }

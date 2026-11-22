@@ -42,4 +42,7 @@ export async function playQuip(figur: FigurId, text: string): Promise<void> {
   if (file) await player.play(publicUrl(`audio/${file}`))
 }
 
+/** Plays a file of public/audio on the same unlocked element (no overlap with quips or other sentences). */
+export async function playAudioFile(file: string): Promise<void> { await player.play(publicUrl(`audio/${file}`)) }
+
 export function stopQuip(): void { player.stop() }

@@ -8,9 +8,11 @@ export interface ExplorerOptions {
   cacheFile: string
   fetchFn?: typeof fetch
   sleep?: (ms: number) => Promise<void>
+  /** Query base (variant, speeds, ratings); default = the content pipeline band 1400-1800. */
+  base?: string
 }
 
-const BASE = 'https://explorer.lichess.ovh/lichess?variant=standard&speeds=blitz,rapid,classical&ratings=1400,1600,1800'
+export const BASE = 'https://explorer.lichess.ovh/lichess?variant=standard&speeds=blitz,rapid,classical&ratings=1400,1600,1800'
 /** Captured at load time: the wasm Stockfish loader removes the global fetch while it initialises. */
 const nativeFetch = globalThis.fetch
 const MIN_GAP_MS = 1000
@@ -44,7 +46,7 @@ export function lichessExplorer(o: ExplorerOptions) {
       if (wait > 0) await sleep(wait)
       last = Date.now()
       stats.requests++
-      const res = await doFetch(`${BASE}&fen=${encodeURIComponent(fen)}`, { headers: { authorization: `Bearer ${token}` } })
+      const res = await doFetch(`${o.base ?? BASE}&fen=${encodeURIComponent(fen)}`, { headers: { authorization: `Bearer ${token}` } })
       if (res.status === 429) {
         await sleep(Number(res.headers.get('retry-after') ?? '60') * 1000)
         continue
